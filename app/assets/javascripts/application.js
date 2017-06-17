@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require agency
+//= require bootstrap.min
+//= require jquery.easing.min
