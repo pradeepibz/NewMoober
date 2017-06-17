@@ -453,6 +453,21 @@ h6 {
     font-size: 13px;
     margin-left: 15px;
   }
+  .realtime_section_right .slide__title {
+    margin-top: 10%;
+    font-size: 17px;
+    text-align: center;
+  }
+  .realtime_section_left img {
+    margin-top: 35%;
+    width: 75%;
+  }
+  .welcome_section {
+    background-color: #fff;
+  }
+  .realtime_section {
+    background-color: #fff;
+  }
 }
 
 /*iPhone 6, 6s, 7*/
@@ -516,6 +531,21 @@ h6 {
     font-size: 17px;
     margin-left: 15px;
   }
+  .realtime_section_right .slide__title {
+    margin-top: 10%;
+    font-size: 24px;
+    text-align: center;
+  }
+  .realtime_section_left img {
+   margin-top: 35%;
+   width: 75%;
+  }
+  .welcome_section {
+    background-color: #fff;
+  }
+  .realtime_section {
+    background-color: #fff;
+  }
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -574,5 +604,20 @@ h6 {
   .welcome_section_right .slide__text{
     font-size: 17px;
     margin-left: 15px;
+  }
+  .realtime_section_right .slide__title {
+    margin-top: 10%;
+    font-size: 24px;
+    text-align: center;
+  }
+  .realtime_section_left img {
+   margin-top: 35%;
+   width: 75%;
+  }
+  .welcome_section {
+    background-color: #fff;
+  }
+  .realtime_section {
+    background-color: #fff;
   }
 }

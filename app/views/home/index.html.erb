@@ -2,29 +2,7 @@
 <%= render 'nav'%>
 
 <!-- Header section home video -->
-<section class="slide">
-  <div class="slide--videoCover">
-    <div class="slide__videoWrapper">
-      <div class="slide_videoCover"></div>
-      <video autoplay loop muted id="welcomeVideo">
-        <% browser = Browser.new(request.env['HTTP_USER_AGENT'], accept_language: "en-us") %>
-        <% if browser.safari? %>
-        <source src="http://50.116.5.156/moober.mp4" type="video/mp4" width="100%">
-          <% else %>
-          <source src="/assets/videos/moober.webm" type="video/webm" width="100%">
-            <% end %>
-      </video>
-    </div>
-    <div class="slide__content">
-      <h1 class="slide__content__title"> MOVING.</br> MADE.</br> SIMPLE. </h1>
-      <div class="play videoPlayer" data-video="#welcomeVideo"> <img src="assets/play-mobile.svg" alt="Play Moober Video"> </div>
-      <div class="home_btn_align">
-        <button class="contactUs btn-left" data-toggle="modal" data-target="#moober_popup">Download App</button>
-        <button class="contactUs btn-right">Start a Move</button>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render 'home'%>
 
 <!-- welcome to moovber section -->
 <%= render 'welcome_section'%>
@@ -33,20 +11,7 @@
 <%= render 'how_it_work'%>
 
 <!-- realtime notifications -->
-<section class="slide realtime_section">
-  <div class="mt-10">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-6 realtime_section_right">
-          <div class="slide__title"> Get real-time notifications on moving day to ensure a smooth move. </div>
-        </div>
-        <div class="col-md-6 realtime_section_left">
-          <img src="assets/applike.png">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<%= render 'realtime' %>
 
 
 <!-- sidemenu -->
