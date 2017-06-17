@@ -1,0 +1,61 @@
+<!-- Navigation -->
+<%#= render 'nav'%>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="mrf-gradient"></div>
+  <div class="mrf-logo"> <a href="/"> <img src="assets/logo.png" alt="Moober"/> </a> </div>
+  <div class="mrf-menuContainer">
+    <ul>
+      <li> <button class="c-hamburger c-hamburger--htx"> <span>toggle menu</span> </button> </li>
+      <li class=" mrf-contactAction"> <a href="/contact"><b>Contact Us</b></a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Header section home video -->
+<%= render 'home'%>
+
+<!-- welcome to moovber section -->
+<%= render 'welcome_section'%>
+
+<!-- How it Works  -->
+<%= render 'how_it_work'%>
+
+<!-- realtime notifications -->
+<%= render 'realtime' %>
+
+<!-- savings -->
+<section class="slide">
+  <div class="mt-10">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6 saving_section_right">
+          <div class="slide__title"> Save cash by comparing quotes. Users who use Moober save an average of 25-35% on their entire move. </div>
+        </div>
+        <div class="col-md-6 saving_section_left">
+          <div class="slide__media">
+            <div class="fasterBrand"> <img src="assets/tentimesfaster.svg" alt="10x Faster"> </div>
+            <div class="chartContainer">
+              <div class="chartLegend"> $700 for a 1br apartment move </div>
+              <div class="chart mrf">
+                <div class="greyBar">
+                  <div class="colorBar mrf-animable" data-slide="4" data-animationin="translate({x:0, y: 0, z:0}, '%')" data-animationout="translate({x:-100, y: 0, z:0}, '%')" style="transform: translate3d(0%, 0%, 0px);"></div>
+                </div>
+              </div>
+              <div class="source"> Moober </div>
+              <div class="chartLegend"> $1,100 for a 1br apartment move </div>
+              <div class="chart others">
+                <div class="greyBar">
+                  <div class="colorBar mrf-animable" data-slide="4" data-animationin="translate({x:0, y: 0, z:0}, '%')" data-animationout="translate({x:-100, y: 0, z:0}, '%')" style="transform: translate3d(0%, 0%, 0px);"></div>
+                </div>
+              </div>
+              <div class="source"> Average NYC Moving Company </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- sidemenu -->
+<%= render 'side_nav'%>

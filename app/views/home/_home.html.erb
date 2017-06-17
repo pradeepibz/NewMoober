@@ -1,0 +1,23 @@
+<section class="slide">
+  <div class="slide--videoCover">
+    <div class="slide__videoWrapper">
+      <div class="slide_videoCover"></div>
+      <video autoplay loop muted id="welcomeVideo">
+        <% browser = Browser.new(request.env['HTTP_USER_AGENT'], accept_language: "en-us") %>
+        <% if browser.safari? %>
+        <source src="http://50.116.5.156/moober.mp4" type="video/mp4" width="100%">
+          <% else %>
+          <source src="/assets/videos/moober.webm" type="video/webm" width="100%">
+            <% end %>
+      </video>
+    </div>
+    <div class="slide__content">
+      <h1 class="slide__content__title"> MOVING.</br> MADE.</br> SIMPLE. </h1>
+      <div class="play videoPlayer" data-video="#welcomeVideo"> <img src="assets/play-mobile.svg" alt="Play Moober Video"> </div>
+      <div class="home_btn_align">
+        <button class="contactUs btn-left" data-toggle="modal" data-target="#moober_popup">Download App</button>
+        <button class="contactUs btn-right">Start a Move</button>
+      </div>
+    </div>
+  </div>
+</section>
