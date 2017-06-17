@@ -16,3 +16,4 @@
 //= require agency
 //= require bootstrap.min
 //= require jquery.easing.min
+//= require map
