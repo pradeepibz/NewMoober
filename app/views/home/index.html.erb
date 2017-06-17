@@ -1,28 +1,7 @@
 <!-- Navigation -->
-<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header page-scroll">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-      </button>
-      <a class="navbar-brand page-scroll" href="#page-top">Start Bootstrap</a>
-    </div>
+<%= render 'nav'%>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <button class="c-hamburger c-hamburger--htx"> <span>toggle menu</span> </button>
-        </li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
-</nav>
-
-<!-- Header home video -->
+<!-- Header section home video -->
 <section class="slide">
   <div class="slide--videoCover">
     <div class="slide__videoWrapper">
@@ -39,7 +18,7 @@
     <div class="slide__content">
       <h1 class="slide__content__title"> MOVING.</br> MADE.</br> SIMPLE. </h1>
       <div class="play videoPlayer" data-video="#welcomeVideo"> <img src="assets/play-mobile.svg" alt="Play Moober Video"> </div>
-      <div>
+      <div class="home_btn_align">
         <button class="contactUs btn-left" data-toggle="modal" data-target="#moober_popup">Download App</button>
         <button class="contactUs btn-right">Start a Move</button>
       </div>
@@ -47,22 +26,53 @@
   </div>
 </section>
 
-<!-- sidemenu -->
-<div class="mrf-webLateralMenuOverlay"></div>
-<div class="mrf-webLateralMenu">
-  <ul>
-    <li class="<%= active_class('/') %>"> <a href="/">Home</a></li>
-    <li class="<%= active_class('/how-it-works') %>"> <a href="/how-it-works">How it Works</a></li>
-    <li class="user_moves <%= active_class('/moves') %>"><a href="/moves">Moves</a></li>
-    <li class="<%= active_class('/apply') %>"> <a href="/apply">Moving Companies</a></li>
-    <li class="<%= active_class('/contact') %>"> <a href="/contact">Contact</a></li>
-    <li class="<%= active_class('/download') %> mrf-contactAction"> <a href="/download">Download App</a></li>
-    <li><span class="user-login-logut"></span></li>
-    <li><span class="user-signup"></span></li>
-  </ul>
-  <div class="side_image_section">
-    <a href="apply">
-      <img src="/assets/menu-image.png" align="center" class="side_image">
-    </a>
+<!-- welcome to moovber section -->
+<section class="slide">
+  <div class="mt-10">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <div class="slide__media">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h1 class="slide__title"> Welcome to Moober</h1>
+          <p class="slide__text">Moober simplifies moving by encompassing every aspect of your move within a friendly mobile experience. Before you call local movers, download Moober and let it do the work for you. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it Works  -->
+<div class="slide">
+  <div class="mt-10">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <div class="slide__media">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h1 class="slide__title">How it Works</h1>
+          <ol class="list_type">
+            <li>
+              <div class="slide__text">Enter your pick up address, destination address and a few details about your move.</div>
+            </li>
+            <li>
+              <div class="slide__text">Submit your request to local, verified moving companies who will quickly reply back with competitive quotes.</div>
+            </li>
+            <li>
+              <div class="slide__text">Choose the best offer and confirm your move.</div>
+            </li>
+            <div class="new-text">Moober provides support and assurance throughout your moving experience.</div>
+          </ol>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
+<!-- sidemenu -->
+<%= render 'side_nav'%>
