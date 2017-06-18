@@ -19,3 +19,4 @@
 //= require map
 //= require scroll
 //= require app
+//= require jquery.scrollify
