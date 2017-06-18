@@ -649,6 +649,12 @@ img {
     border: 0;
 }
 
+.popup-content {
+    margin-bottom: 0;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
 .badge {
     display: inline-block;
     min-width: 10px;
