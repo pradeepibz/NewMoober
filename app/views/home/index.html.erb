@@ -31,39 +31,58 @@
         <div class="col-md-6 saving_section_right">
           <div class="slide__title"> Save cash by comparing quotes. Users who use Moober save an average of 25-35% on their entire move. </div>
         </div>
-        <div class="col-md-6 saving_section_left">
-          <div class="slide__media">
-            <div class="fasterBrand"> <img src="assets/tentimesfaster.svg" alt="10x Faster"> </div>
-            <div class="chartContainer">
-              <div class="chartLegend"> $700 for a 1br apartment move </div>
-              <div class="chart mrf">
-                <div class="greyBar">
-                  <div class="colorBar mrf-animable" data-slide="4" data-animationin="translate({x:0, y: 0, z:0}, '%')" data-animationout="translate({x:-100, y: 0, z:0}, '%')" style="transform: translate3d(0%, 0%, 0px);"></div>
-                </div>
-              </div>
-              <div class="source"> Moober </div>
-              <div class="chartLegend"> $1,100 for a 1br apartment move </div>
-              <div class="chart others">
-                <div class="greyBar">
-                  <div class="colorBar mrf-animable" data-slide="4" data-animationin="translate({x:0, y: 0, z:0}, '%')" data-animationout="translate({x:-100, y: 0, z:0}, '%')" style="transform: translate3d(0%, 0%, 0px);"></div>
-                </div>
-              </div>
-              <div class="source"> Average NYC Moving Company </div>
-            </div>
-          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- notified -->
+<section class="slide notified">
+  <div class="mt-10">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6 notified_right">
+          <div class="slide__title"> Be notified throughout the entire process of your Moober moving experience. </div>
+        </div>
+        <div class="col-md-6 notified_left">
+          
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Featured on  -->
-<section class="slide">
-  
+<!-- applay section -->
+<section class="slide applay">
+  <div class="mt-10">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-6 applay_right">
+          <div class="slide__title">Are you a licensed, fully-insured moving company in the NYC area? Apply for your presence on Moober and join the party. </div>
+          <div class="apply_section">
+            <a class="apply_now" href="apply">Apply</a>
+          </div>
+        </div>
+        <div class="col-md-6 applay_left">
+          
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- share on facebook -->
+<%= render 'share_on_facebook' %>
+
+<!-- download moober -->
+<%= render 'download_moober' %>
+
+<!-- Featured on  -->
+<%= render 'featured'%>
 
 <!-- footer -->
 <%= render 'footer' %>
 
-<!-- sidemenu -->
-<%= render 'side_nav'%>
+<%= render 'download_app' %>
+
+<%= render 'shared/scrollify' %>

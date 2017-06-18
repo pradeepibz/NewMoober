@@ -37,9 +37,11 @@ $(function() {
         top: 600
       }
     });
+
     $('#moveNav').affix({
         offset: {
             top: 6
         }
     });
-  })
+    
+})

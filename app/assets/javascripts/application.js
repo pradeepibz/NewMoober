@@ -21,3 +21,4 @@
 //= require app
 //= require api
 //= require mobiscroll.javascript.min
+//= require jquery.scrollify
