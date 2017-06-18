@@ -7,4 +7,10 @@ class HomeController < ApplicationController
 
   def apply
   end
+
+  def start_a_move
+  end
+
+  def signin
+  end
 end
