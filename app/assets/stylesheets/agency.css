@@ -1225,4 +1225,10 @@ a {
   .home_image{
     display: block;
   }
+  .hero__image{
+    height: 300px;
+  }
+  .footer__content > li{
+    width: 100%;
+  }
 }
