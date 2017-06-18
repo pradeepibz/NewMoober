@@ -8,7 +8,7 @@
     </ul>
   </div>
 </nav>
-<div class="row">
+<!-- <section class="slide"> -->
   <div class="col-md-12 display_map" id="map"></div>
   <div class="search-map">
     <div class="row pd-15">
@@ -27,7 +27,9 @@
       </div>
     </div>
   </div>
-  <div class="row" id="room-type-section">
+<!-- </section> -->
+<section class="slide" id="room-type-section">
+  <div class="row">
     <div class="mt-40">
       <div class="container">
         <div class="row">
@@ -86,5 +88,665 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+<section class="slide" id="photos-section">
+  <div class="mt-40">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading1">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span><span class="span2">Take photos of your space.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span><span class="size-of-move-val-check-link"><a href='#moving-extra-section' data-section_id="#photos-section" class="smooth_scroll">Skip</a></span></h4>
+            <input type="file" class="hidden-btn" name="" id="image_upload" multiple>
+            <!-- <p>(20 max)</p> -->
+          </div>
+        </div>
+        <div class="scroll_div_new">
+          <div class="row">
+            <div class="image-content">
+              
+            </div>
+            <div class="col-md-4 image_upload_btn">
+              <div class="col-md-12 portfolio-item">
+                <img class="" src="/assets/add-image.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center" class="size-of-move-val-check-div">
+                <a href='#moving-extra-section' id="add_images" data-section_id="#photos-section" class="hidden-btn smooth_scroll">CONTINUE</a>
+                <a class="image-div-submit add_images_section" id="move-images">CONTINUE</a>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="moving-extra-section">
+  <div class="mt-40">
+    <!-- <p>moving-extra</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon3.jpg"></span><span class="span2">Will there be any extra large items?</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#photos-section" data-current_section="#moving-extra-section"></span></h4>
+            <!-- <p>(e.g Piano)</p> -->
+          </div>
+        </div>
+      <div class="scroll_div">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="ins-align">
+              <input id="yes" type="checkbox" class="new-app-ins moving-extra-model-yes">
+              <label for="yes">Yes</label><br />
+            </div>
+            <div class="new_popup_success_content">
+              <div class="ins-align">
+                <input id="no" type="checkbox" class="new-app-ins moving-extra-model-no">
+                <label for="no">No</label>
+              </div>
+            </div>
+            <div class="popup_success_content"></div>
+            <div class="add_new_btn">
+              <a class="" data-toggle="modal" data-target="#moving-extra">add more items</a>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+      <div class="bottom_div">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div align="center">
+              <a href='#building-type-setion' data-section_id="#moving-extra-section" class="new-next-btn smooth_scroll" id="extra-large">CONTINUE</a>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="building-type-setion">
+  <div class="mt-40">
+    <!-- <p>building-type</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon6.jpg"></span><span class="span2">Elelvator, Walk up or Residential home?</span><span class="span3 size-of-move-val-check-img"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-extra-section" data-current_section="#building-type-setion"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 new-content-div">
+              <div class="new-left">
+                <div class="start-sub-heading">
+                  <p>Pickup Location</p>
+                </div>
+                <div class="ins-align">
+                  <input id="pickup-walk" type="checkbox" class="new-app-ins pickup-walk-up" name="pickup" value="Walk Up" data-value="1">
+                  <label for="pickup-walk">Walk Up</label><br />
+                </div>
+                <div class="pickup-success-content">
+                  <div class="ins-align">
+                    <input id="pickup-elevator-building" type="checkbox" class="new-app-ins pickup-elevator" name="pickup" value="Elevator Building" data-value="2">
+                    <label for="pickup-elevator-building">Elevator Building</label>
+                  </div>
+                  <div class="ins-align">
+                    <input id="pickup-residential-home" type="checkbox" class="new-app-ins pickup-residential" name="pickup" value="Residential Home" data-value="3">
+                    <label for="pickup-residential-home">Residential Home</label>
+                  </div>
+                </div>
+                <div class="new_pickup-success-content"></div>
+              </div>
+              <div class="new-left">
+                <div class="start-sub-heading">
+                  <p>Destination Location</p>
+                </div>
+                <div class="ins-align">
+                  <input id="walk-up" type="checkbox" class="new-app-ins destination-walk-up" name="destination" value="Walk Up" data-value="1">
+                  <label for="walk-up">Walk Up</label><br />
+                </div>
+                <div class="destination-success-content">
+                  <div class="ins-align">
+                    <input id="elevator-building" type="checkbox" class="new-app-ins destination-elevator" name="destination" value="Elevator Building" data-value="2">
+                    <label for="elevator-building">Elevator Building</label>
+                  </div>
+                  <div class="ins-align">
+                    <input id="residential-home" type="checkbox" class="new-app-ins destination-residential" name="destination" value="Residential Home" data-value="3">
+                    <label for="residential-home">Residential Home</label>
+                  </div>
+                </div>
+                <div class="new_destination-success-content"></div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center">
+                <a href='#moving-date-section' id="walk_up_section" data-section_id="#building-type-setion" class="hidden-btn smooth_scroll">CONTINUE</a>
+                <a class="new-next-btn walk_up_btn" id="pickup-destination">CONTINUE</a>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="moving-date-section">
+  <div class="mt-40">
+    <!-- <p>moving-date</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon4.jpg"></span><span class="span2">When do you need to move?</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#building-type-setion" data-current_section="#moving-date-section"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="new-left">
+                <!-- <input id="move-date" type="text" class="datepicker new-app-input"> -->
+                <div mbsc-page class="demo-rtl">
+                  <input id="demo" placeholder="Please Select..." />
+
+                  <button id="clear">Clear</button>
+                  <button id="show">Show</button>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center">
+                <a href='#contact-details-section' data-section_id="#moving-date-section" class="new-next-btn smooth_scroll" id="date_move">CONTINUE</a>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="contact-details-section">
+  <div class="mt-40">
+    <!-- <p>contact-details</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon5.jpg"></span><span class="span2">Enter your contact information.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-date-section" data-current_section="#contact-details-section"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="new-left">
+                <input id="name" type="text" class="new-app-input" placeholder="Name">
+                <input id="phone" type="text" class="new-app-input" placeholder="Phone" onkeypress='validate(event)'>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <div class="bottom_div">
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <div align="center">
+                <a href='#review-request-section' id="contact_continue" data-section_id="#contact-details-section" class="hidden-btn smooth_scroll">CONTINUE</a>
+                  <a class="new-next-btn" id="contact_show">CONTINUE</a>
+                </div>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="review-request-section">
+  <div class="mt-40">
+    <!-- <p>review-request</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/detail_3.jpg"></span><span class="span2">Moving Details</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#contact-details-section" data-current_section="#review-request-section"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 new-content-div">
+              <div class="new-left">
+                <p>
+                  <label class="new-app-label">Room Type: <span class="result-size"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Extra Large Items: <span class="result_extra_large"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Pickup Building Type: <span class="result_pickup"></span><span class="result_pickup_walk"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Destination Building Type: <span class="result_destination"></span><span class="result_destination_walk"></span></label>
+                </p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Moving Date</h4>
+                </div>
+                <p class="moving_date"></p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Pickup Address</h4>
+                </div>
+                <p class="pickup_address"></p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Destination Address</h4>
+                </div>
+                <p class="destination_address"></p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Contact Details</h4>
+                </div>
+                <p>
+                  <label class="new-app-label">Full Name: <span class="contact_name"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Mobile Number: <span  class="contact_phone"></span></label>
+                </p>
+                <!-- <label class="new-app-label">Email Address : <span>hoooo@devlopingnow.com</span></label> -->
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center">
+                <div class="check_user_session"></div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    var now = new Date();
+    var minutes = now.getMinutes();
+    var hours = now.getHours();
+    var getMin = (minutes >= 30) ? 00 : 30
+    var getHour = (minutes >= 30) ? hours + 1 : hours
+    if (getHour === 24 && minutes >= 30){
+      getHour = 0
+    }
+    var minDate = new Date(new Date().setHours(getHour, getMin, 0, 0))
+    maxDate = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
+    // mobiscroll.settings = {
+    //     theme: 'ios',
+    //     lang: 'en'
+    // };
+
+    var current_date = ((minDate.getMonth()+1)+'-'+minDate.getDate()+'-'+minDate.getFullYear() + ' '+(getHour<12 ? getHour : getHour - 12)+':'+ (minDate.getMinutes()<30 ? '30' : "00") +' ' + (minDate.getHours()<12 ? 'AM' : 'PM'))
+
+    $("#demo").val(current_date);
+    var instance = mobiscroll.datetime('#demo', {
+      theme: 'ios',
+      display: 'inline',
+      min: minDate,
+      max: maxDate,
+      dateFormat: 'mm-dd-yyyy',
+      dateWheels: '|D M d|',
+      steps: { 
+        minute: 30,
+        second: 5
+        // zeroBased: true
+      }
+    });
+
+
+    document
+        .getElementById('show')
+        .addEventListener('click', function () {
+            instance.show();
+        }, false);
+    
+    document
+        .getElementById('clear')
+        .addEventListener('click', function () {
+            instance.clear();
+        }, false);
+    function validate(evt) {
+      var theEvent = evt || window.event;
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode( key );
+      var regex = /[0-9]|\./;
+      if( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+      }
+    }
+  </script>
+
+
+<!-- size of your move -->
+<div id="size-of-your-move" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Message</h4>
+          <p>What is the item you are looking to move?</p>
+          <input type="text" name="" class="new-popup-ins size_of_move_value" placeholder="Eg. Piano">
+          <button class="new-popup-btn size_of_move_ok">Okay</button>
+          <button class="new-popup-btn size_of_move_cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- moving-extra -->
+<div id="moving-extra" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Moving Extras</h4>
+          <p>Please list your extra items here.</p>
+          <input type="text" name="" class="new-popup-ins moving-extra_value" placeholder="Eg. Piano">
+          <button class="new-popup-btn moving_extra_ok">Okay</button>
+          <button class="new-popup-btn moving_extra_cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- edit moving-extra -->
+<div id="edit-moving-extra" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <input class='find_extra_input' type='hidden'>
+          <h4 class="modal-title">Moving Extras</h4>
+          <p>Please list your extra items here.</p>
+          <input type="text" name="" class="new-popup-ins edit-moving-extra_value" placeholder="Eg. Piano">
+          <input type="text" name="" class="edit_moving_extra_hidden">
+          <button class="new-popup-btn edit_moving_extra_ok">Okay</button>
+          <button class="new-popup-btn edit_moving_extra_cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- building-type -->
+<div id="building-type-pickup" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Which floor?</h4>
+          <p>Please mention which floor.</p>
+          <input type="text" name="" class="new-popup-ins pickup-value" placeholder="Eg. 3rd floor">
+          <button class="new-popup-btn pickup-ok">Okay</button>
+          <button class="new-popup-btn pickup-cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- edit pickup -->
+<div id="edit-building-type-pickup" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Which floor?</h4>
+          <p>Please mention which floor.</p>
+          <input type="text" name="" class="new-popup-ins edit-pickup-value" placeholder="Eg. 3rd floor">
+          <button class="new-popup-btn edit-pickup-ok">Okay</button>
+          <button class="new-popup-btn edit-pickup-cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- edit-building-type-destination -->
+<div id="edit-building-type-destination" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Which floor?</h4>
+          <p>Please mention which floor.</p>
+          <input type="text" name="" class="new-popup-ins edit-destination-value" placeholder="e.g. 3rd floor">
+          <button class="new-popup-btn edit-destination-ok">Okay</button>
+          <button class="new-popup-btn edit-destination-cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="building-type-destination" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Which floor?</h4>
+          <p>Please mention which floor.</p>
+          <input type="text" name="" class="new-popup-ins destination-value" placeholder="e.g. 3rd floor">
+          <button class="new-popup-btn destination-ok">Okay</button>
+          <button class="new-popup-btn destination-cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- request-received -->
+<div id="request-received" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Request Received!</h4>
+          <p>You're one step closer to your move! Look out for quotes from moving companies within the next 24 hours!</p>
+          <button class="new-popup-btn" data-dismiss="modal">All Requests</button>
+          <button class="new-popup-btn" data-dismiss="modal">Okay</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- sign-in -->
+<div id="sign-in" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Sign In</h4>
+          <input type="email" name="" class="new-popup-ins sign_in_email" placeholder="Email" required>
+          <input type="password" name="" class="new-popup-ins sign_in_password" placeholder="Password" required>
+          <button class="new-popup-btn sign_in_btn">Sign In</button>
+          <button class="new-popup-btn" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- sign-up -->
+<div id="sign-up" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Sign Up</h4>
+          <input type="email" name="" class="new-popup-ins sign_up_email" placeholder="Email" required>
+          <input type="password" name="" class="new-popup-ins sign_up_password" placeholder="Password" required>
+          <input type="password" name="" class="new-popup-ins sign_up_conform_password" placeholder="Confirmation Password" required>
+          <button class="new-popup-btn sign_up_btn">Sign Up</button>
+          <button class="new-popup-btn" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- validation popup -->
+<div id="page_valid" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Message</h4>
+          <p class="validation_popup_content"></p>
+          <button class="new-popup-btn" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- start a Move Done -->
+<div id="start-move-done" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Request Received!</h4>
+          <p>You're one step closer to your move! Look out for quotes from moving companies within the next 24 hours!</p>
+          <button class="new-popup-btn all_request_page">All Requests</button>
+          <button class="new-popup-btn start-move-done-ok">Okay</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- start a Move error -->
+<div id="start-move-error" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo2.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Message</h4>
+          <div class="start-move-error-message">
+          </div>
+          <button class="new-popup-btn start-move-error-ok">Okay</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
