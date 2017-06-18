@@ -2,6 +2,12 @@ class HomeController < ApplicationController
   def index
   end
 
+  def signin	
+  end
+
+  def how_it_works
+  end
+
   def contact
   end
 
@@ -11,6 +17,4 @@ class HomeController < ApplicationController
   def start_a_move
   end
 
-  def signin
-  end
 end

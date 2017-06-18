@@ -3,8 +3,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get '/start-a-move', to: "home#start_a_move"
-  get 'home/signin'
-  get '/sign_in', to: "home#signin", as: :signin
+  get '/how-it-works', to: "home#how_it_works", as: :how_it_works
 
   # Strat url
   get '/contact' => 'home#contact', as: :contact
@@ -15,7 +14,6 @@ Rails.application.routes.draw do
   get '/signup', to: "customers#sign_up", as: :user_sign_up
   get '/forget_password', to: "customers#forget_password", as: :forget_password
   # End url
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

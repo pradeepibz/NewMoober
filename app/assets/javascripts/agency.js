@@ -36,7 +36,7 @@ $(function() {
       offset: {
         top: 600
       }
-    })
+    });
 
     $('#moveNav').affix({
         offset: {
