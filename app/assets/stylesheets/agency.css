@@ -767,6 +767,9 @@ a {
   background-position: center center;
   background-size: cover;
 }
+.share_facebook_left img{
+  margin-left: -50%;
+}
 .share_facebook_right .slide__title{
   margin-top: 30%;
   width: 80%;
@@ -892,7 +895,20 @@ a {
 .logos__item:nth-child(n+4) {
     border-bottom: medium none;
 }
-
+.notified_right{
+  float: right !important;
+}
+.apply_now {
+    background: #ffc043 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 40px;
+    color: #3a69aa;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 8px;
+    padding: 15px 38px;
+    text-transform: uppercase;
+}
 
 /*responsive code*/
 /*iPhone 5, 5s*/
