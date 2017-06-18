@@ -19,4 +19,6 @@
 //= require map
 //= require scroll
 //= require app
+//= require api
+//= require mobiscroll.javascript.min
 //= require jquery.scrollify

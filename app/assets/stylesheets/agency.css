@@ -35,7 +35,6 @@ a.active {
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -192,6 +191,7 @@ h6 {
   text-indent: -9999px;
   transition: background 0.3s ease 0s;
   width: 66px;
+  margin-top: -9px;
 }
 .c-hamburger span {
   display: block;
