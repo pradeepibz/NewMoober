@@ -1012,6 +1012,7 @@ function userRegistration(email, password, password_confirmation) {
                   $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>")
                   $('.sign_up_body').css('display', 'none');
                   $('.start_move_body').css('display', 'block');
+                  $('.user-signup').css('display', 'none');
                   var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                   $('.check_user_session').html(submit_move_btn );
                 }else {

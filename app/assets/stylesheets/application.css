@@ -75,9 +75,6 @@ body {
   display: none;
 }
 
-section:nth-child(1) {
-    background-color: #66bb6a;
-}
 #mainNav, #moveNav {
   background-color: transparent;
   border-bottom: medium none;
@@ -808,7 +805,7 @@ input[type=checkbox], input[type=radio] {
 
 
 .signin{
-  margin-top:50px;
+  margin-top:10%;
 }
 .sign-form{
   text-align: center;
@@ -855,6 +852,9 @@ input.sign-app-input {
   text-transform: uppercase;
   width: 85%;
   text-decoration: none;
+}
+.web-facebook-btn a {
+  padding: 8px 30px 8px 20px;
 }
 
 p {
@@ -904,7 +904,7 @@ p {
 
 .devise-footer{
   width: 100%;
-  height: 100%;
+  height: 60%;
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
@@ -1012,6 +1012,56 @@ img {
     vertical-align: middle;
     border-radius: 25px !important;
     height: 40px !important;
+}
+.sign_in_body {
+  display: none;
+  height: 100vh;
+}
+.sign_up_body {
+  display: none;
+  height: 100vh;
+}
+.forget_pswd_body {
+  display: none;
+  height: 100vh;
+}
+.website-signup-btn {
+ background: #ffc043 none repeat scroll 0 0;
+ border: 0 none;
+ color: #000;
+ cursor: pointer;
+ display: inline-block;
+ padding: 10px 24px;
+ margin: 0;
+ text-align: center;
+ text-transform: uppercase;
+ width: 85%;
+}
+.modal_loading{
+  display:    none;
+  position:   fixed;
+  z-index:    1000;
+  top:        0;
+  left:       0;
+  height:     100%;
+  width:      100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.modal_loading img{
+  height: 150px;
+  width: 150px;
+  margin-top: 25%;
+}
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .modal_loading {
+  display: block;
+}
+.fb-promocode {
+  display: none;
 }
 
 .new_popup_image {

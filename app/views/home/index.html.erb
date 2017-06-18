@@ -86,3 +86,128 @@
 <%= render 'download_app' %>
 
 <%= render 'shared/scrollify' %>
+<script>
+  document.getElementById('shareBtn').onclick = function() {
+    localStorage.setItem('homapage_share', "true")
+    FB.ui({
+      method: 'share',
+      display: 'popup',
+      scope: 'email,user_birthday',
+      href: 'http://50.116.5.156/',
+    }, function(response){ 
+        "<%= session[:sharebutton] = true %>"
+        // window.location.href = "http://stage.moober.com/auth/facebook";
+        // window.location.href = "http://50.116.5.156/auth/facebook";
+        window.location.href = "http://localhost:3000/auth/facebook";
+      // };
+    });
+  }
+  $(document).ready(function(){
+    var homepageShare = localStorage.getItem('homapage_share');
+    <% if session[:fb_token].present? && session[:email].present? && session[:password] %>
+      var API_URL = "http://45.56.72.52/api/userapi/";
+      var email = "<%= session[:email] %>"
+      var password = "<%= session[:password] %>"
+      var check_user_params = '{"email":"'+email+'"}'
+        if (email != '' && homepageShare == "true") { 
+          $.ajax({
+            url: API_URL+'checkEmail',
+            method: 'POST',
+            data: check_user_params,
+            success: function (data) {
+              if (data.status == true) {
+                if (data.message == "user is not registered"){
+                  homeRegistration(email, password, password)
+                }
+              }
+            },
+            error: function (o) {
+              console.log(o)
+              homeLogin(email, password)
+            }
+          });
+        }
+    <% end %>
+  });
+  function homeLogin(email, password){
+    var API_URL = "http://45.56.72.52/api/userapi/";
+    var device_id = '';
+    var token = '';
+    var login_params = '{"email":"'+email+'","password":"'+password+'","device_id":"'+device_id+'","token":"'+token+'"}'
+      if (email != '' && password != '') {  
+        $.ajax({
+          url: API_URL+'userLogin',
+          method: 'POST',
+          data: login_params,
+          success: function (data) {
+            if (data.status == true) {
+              if (current_user == "" || current_user == null || current_user == undefined) {
+                localStorage.setItem('user_id', data.data.user_id)
+                localStorage.setItem('email', data.data.email)
+              }
+              var current_user = localStorage.getItem('user_id');
+              if (current_user != "" && current_user != null && current_user != undefined) {
+                $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>")
+                $('.user-signup').html("");
+                $('.fb-promocode').show();
+                $('#shareBtn').hide();
+              }else {
+                $('.user-login-logut').html("<a href='/signin'>Signin</a>")
+                $('.user-signup').html("<a href='/signup'>Signup</a>")
+              }
+              // window.location.href = '/start-a-move'
+            }
+          },
+          error: function (o) {
+            console.log(o);
+            alert("Invalid username or password")
+          }
+        });
+        <%= session[:email] = nil %>
+        <%= session[:password] = nil %>
+        localStorage.setItem('homapage_share', "")
+      }
+      else{
+        alert('Please Enter username and password');
+      }
+  }
+  function homeRegistration(email, password, password_confirmation){
+    var API_URL = "http://45.56.72.52/api/userapi/";
+    var device_id = '';
+    var token = '';
+    var sign_up_params = '{"email":"'+email+'","re_password":"'+password_confirmation+'","device_id":"'+device_id+'","password":"'+password+'","token":"'+token+'"}'
+    if (email != '' && password != '' && password_confirmation != '') { 
+      if (password == password_confirmation) {
+        $.ajax({
+          url: API_URL+'UserRegistration',
+          method: 'POST',
+          data: sign_up_params,
+          success: function (data) {
+            if (data.status == true) {
+              if (current_user == "" || current_user == null || current_user == undefined) {
+                localStorage.setItem('user_id', data.data.user_id)
+                localStorage.setItem('email', data.data.email)
+              }
+              var current_user = localStorage.getItem('user_id');
+              if (current_user != "" && current_user != null && current_user != undefined) {
+                $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>");
+                $('.user-signup').html("");
+                $('.fb-promocode').show();
+                $('#shareBtn').hide();
+              }else {
+                $('.user-login-logut').html("<a href='/signin'>Signin</a>")
+                $('.user-signup').html("<a href='/signup'>Signup</a>")
+              }
+            }
+          },
+          error: function (o) {
+            console.log(o);
+          }
+        });
+        <%= session[:email] = nil %>
+        <%= session[:password] = nil %>
+        // localStorage.setItem('homapage_share', "")
+      }
+    }
+  }
+</script>

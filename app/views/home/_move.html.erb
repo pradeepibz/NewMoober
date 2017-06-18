@@ -1,0 +1,400 @@
+<div class="search-map">
+    <div class="row pd-15">
+      <div class="col-md-4 search-map-div new-form">
+        <p>Moving from</p>
+        <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()" >
+      </div>
+      <div class="col-md-4 search-map-div new-form">
+        <p>Moving to</p>
+        <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()">
+      </div>
+      <div class="col-md-4 search-map-div" align="center">
+        <button class="hidden-btn" id="map_search_btn"></button>
+        <a href='#room-type-section' id="size_of_move" data-section_id="#map" class="hidden-btn smooth_scroll">CONTINUE</a>
+        <a class="image-div-submit map-section-btn" id="start-end">CONTINUE</a>
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
+<section class="slide" id="room-type-section">
+  <div class="row">
+    <div class="mt-40">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mt-20" align="center">
+            <div class="start-heading">
+              <h4><span class="span1"><img class="icon-image" src="/assets/icon1.jpg"></span><span class="span2"> What's the size of your move? </span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#map" data-current_section="#room-type-section"></span></h4>
+            </div>
+          </div>
+          <div class="scroll_div">
+            <div class="row room_image">
+              <div class="col-md-4">
+                <div class="col-md-12 mt-25">
+                  <img class="move-type" src="/assets/add-image.jpg">
+                  <div class="check-div">
+                    <div class="ins-image-align">
+                      <input id="single-item" type="checkbox" class="new-app-ins item1" name="movesize" value="single item" data-value="1">
+                      <label for="single-item">A single item</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12 move-type mt-25">
+                  <div class="check-div">
+                    <div class="ins-image-align">
+                      <input id="studio" type="checkbox" class="new-app-ins item2" name="movesize" value="studio" data-value="2">
+                      <label for="studio">Studio</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12 move-type mt-25">
+                  <div class="check-div">
+                    <div class="ins-image-align">
+                      <input id="normal" type="checkbox" class="new-app-ins item3" name="movesize" value="normal" data-value="3">
+                      <label for="normal"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom_div">
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <div align="center">
+                  <a href='#photos-section' id="room_type" data-section_id="#room-type-section" class="hidden-btn smooth_scroll">CONTINUE</a>
+                  <a class="new-next-btn room_type_check" id="move-size">CONTINUE</a>
+                </div>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="photos-section">
+  <div class="mt-40">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading1">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span><span class="span2">Take photos of your space.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span><span class="size-of-move-val-check-link"><a href='#moving-extra-section' data-section_id="#photos-section" class="smooth_scroll">Skip</a></span></h4>
+            <input type="file" class="hidden-btn" name="" id="image_upload" multiple>
+            <!-- <p>(20 max)</p> -->
+          </div>
+        </div>
+        <div class="scroll_div_new">
+          <div class="row">
+            <div class="image-content">
+              
+            </div>
+            <div class="col-md-4 image_upload_btn">
+              <div class="col-md-12 portfolio-item">
+                <img class="" src="/assets/add-image.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center" class="size-of-move-val-check-div">
+                <a href='#moving-extra-section' id="add_images" data-section_id="#photos-section" class="hidden-btn smooth_scroll">CONTINUE</a>
+                <a class="image-div-submit add_images_section" id="move-images">CONTINUE</a>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="moving-extra-section">
+  <div class="mt-40">
+    <!-- <p>moving-extra</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon3.jpg"></span><span class="span2">Will there be any extra large items?</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#photos-section" data-current_section="#moving-extra-section"></span></h4>
+            <!-- <p>(e.g Piano)</p> -->
+          </div>
+        </div>
+      <div class="scroll_div">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="ins-align">
+              <input id="yes" type="checkbox" class="new-app-ins moving-extra-model-yes">
+              <label for="yes">Yes</label><br />
+            </div>
+            <div class="new_popup_success_content">
+              <div class="ins-align">
+                <input id="no" type="checkbox" class="new-app-ins moving-extra-model-no">
+                <label for="no">No</label>
+              </div>
+            </div>
+            <div class="popup_success_content"></div>
+            <div class="add_new_btn">
+              <a class="" data-toggle="modal" data-target="#moving-extra">add more items</a>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+      <div class="bottom_div">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div align="center">
+              <a href='#building-type-setion' data-section_id="#moving-extra-section" class="new-next-btn smooth_scroll" id="extra-large">CONTINUE</a>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="building-type-setion">
+  <div class="mt-40">
+    <!-- <p>building-type</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon6.jpg"></span><span class="span2">Elelvator, Walk up or Residential home?</span><span class="span3 size-of-move-val-check-img"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-extra-section" data-current_section="#building-type-setion"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 new-content-div">
+              <div class="new-left">
+                <div class="start-sub-heading">
+                  <p>Pickup Location</p>
+                </div>
+                <div class="ins-align">
+                  <input id="pickup-walk" type="checkbox" class="new-app-ins pickup-walk-up" name="pickup" value="Walk Up" data-value="1">
+                  <label for="pickup-walk">Walk Up</label><br />
+                </div>
+                <div class="pickup-success-content">
+                  <div class="ins-align">
+                    <input id="pickup-elevator-building" type="checkbox" class="new-app-ins pickup-elevator" name="pickup" value="Elevator Building" data-value="2">
+                    <label for="pickup-elevator-building">Elevator Building</label>
+                  </div>
+                  <div class="ins-align">
+                    <input id="pickup-residential-home" type="checkbox" class="new-app-ins pickup-residential" name="pickup" value="Residential Home" data-value="3">
+                    <label for="pickup-residential-home">Residential Home</label>
+                  </div>
+                </div>
+                <div class="new_pickup-success-content"></div>
+              </div>
+              <div class="new-left">
+                <div class="start-sub-heading">
+                  <p>Destination Location</p>
+                </div>
+                <div class="ins-align">
+                  <input id="walk-up" type="checkbox" class="new-app-ins destination-walk-up" name="destination" value="Walk Up" data-value="1">
+                  <label for="walk-up">Walk Up</label><br />
+                </div>
+                <div class="destination-success-content">
+                  <div class="ins-align">
+                    <input id="elevator-building" type="checkbox" class="new-app-ins destination-elevator" name="destination" value="Elevator Building" data-value="2">
+                    <label for="elevator-building">Elevator Building</label>
+                  </div>
+                  <div class="ins-align">
+                    <input id="residential-home" type="checkbox" class="new-app-ins destination-residential" name="destination" value="Residential Home" data-value="3">
+                    <label for="residential-home">Residential Home</label>
+                  </div>
+                </div>
+                <div class="new_destination-success-content"></div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center">
+                <a href='#moving-date-section' id="walk_up_section" data-section_id="#building-type-setion" class="hidden-btn smooth_scroll">CONTINUE</a>
+                <a class="new-next-btn walk_up_btn" id="pickup-destination">CONTINUE</a>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="moving-date-section">
+  <div class="mt-40">
+    <!-- <p>moving-date</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon4.jpg"></span><span class="span2">When do you need to move?</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#building-type-setion" data-current_section="#moving-date-section"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="new-left">
+                <!-- <input id="move-date" type="text" class="datepicker new-app-input"> -->
+                <div mbsc-page class="demo-rtl">
+                  <input id="demo" placeholder="Please Select..." />
+
+                  <button id="clear">Clear</button>
+                  <button id="show">Show</button>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center">
+                <a href='#contact-details-section' data-section_id="#moving-date-section" class="new-next-btn smooth_scroll" id="date_move">CONTINUE</a>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="contact-details-section">
+  <div class="mt-40">
+    <!-- <p>contact-details</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon5.jpg"></span><span class="span2">Enter your contact information.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-date-section" data-current_section="#contact-details-section"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div class="new-left">
+                <input id="name" type="text" class="new-app-input" placeholder="Name">
+                <input id="phone" type="text" class="new-app-input" placeholder="Phone" onkeypress='validate(event)'>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+          <div class="bottom_div">
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                <div align="center">
+                <a href='#review-request-section' id="contact_continue" data-section_id="#contact-details-section" class="hidden-btn smooth_scroll">CONTINUE</a>
+                  <a class="new-next-btn" id="contact_show">CONTINUE</a>
+                </div>
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="slide" id="review-request-section">
+  <div class="mt-40">
+    <!-- <p>review-request</p> -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <div class="start-heading">
+            <h4><span class="span1"><img class="icon-image" src="/assets/detail_3.jpg"></span><span class="span2">Moving Details</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#contact-details-section" data-current_section="#review-request-section"></span></h4>
+          </div>
+        </div>
+        <div class="scroll_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 new-content-div">
+              <div class="new-left">
+                <p>
+                  <label class="new-app-label">Room Type: <span class="result-size"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Extra Large Items: <span class="result_extra_large"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Pickup Building Type: <span class="result_pickup"></span><span class="result_pickup_walk"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Destination Building Type: <span class="result_destination"></span><span class="result_destination_walk"></span></label>
+                </p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Moving Date</h4>
+                </div>
+                <p class="moving_date"></p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Pickup Address</h4>
+                </div>
+                <p class="pickup_address"></p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Destination Address</h4>
+                </div>
+                <p class="destination_address"></p>
+              </div>
+              <div class="new-left">
+                <div class="start-heading1">
+                  <h4>Contact Details</h4>
+                </div>
+                <p>
+                  <label class="new-app-label">Full Name: <span class="contact_name"></span></label>
+                </p>
+                <p>
+                  <label class="new-app-label">Mobile Number: <span  class="contact_phone"></span></label>
+                </p>
+                <!-- <label class="new-app-label">Email Address : <span>hoooo@devlopingnow.com</span></label> -->
+              </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+          </div>
+        </div>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center">
+                <div class="check_user_session"></div>
+              </div>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
