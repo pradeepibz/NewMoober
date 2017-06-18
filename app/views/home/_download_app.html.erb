@@ -8,7 +8,7 @@
           <div align="center">
             <img class="popup_image" src="/assets/applike.png">
             <p class="popup-content">Moober is launching in Summer 2017.<br>  Enter your email address below for updates:</p>
-            <%= form_for :subscribe , url: "#", :remote => true, :authenticity_token => true do |f| %>
+            <%= form_for :subscribe , url: create_subscribe_path, :remote => true, :authenticity_token => true do |f| %>
             <div class="form">
               <%= f.email_field :email, placeholder: "Email address", class: 'mt-15', required: true %>
             </div>

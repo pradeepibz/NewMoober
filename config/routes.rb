@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/apply' => 'home#apply', as: :apply
   get '/blog', to: "home#new_blog", as: :new_blog
 
+  post '/create_subscribe', to: "customers#create_subscribe", as: :create_subscribe
   get '/signin' => 'customers#sign_in', as: :user_sign_in
   get '/signup', to: "customers#sign_up", as: :user_sign_up
   get '/forget_password', to: "customers#forget_password", as: :forget_password
