@@ -41,7 +41,7 @@ function initMap() {
     $('#map_search_btn').click();
   });
 
-  // document.getElementById('map_search_btn').addEventListener('click', onChangeHandler);
+  document.getElementById('map_search_btn').addEventListener('click', onChangeHandler);
 }
 
   function geolocate() {
