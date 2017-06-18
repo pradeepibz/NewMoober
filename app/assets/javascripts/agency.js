@@ -36,5 +36,5 @@ $(function() {
       offset: {
         top: 600
       }
-    })
+    });
   })
