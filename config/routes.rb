@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'home#index'
 
   get 'home/index'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get '/signin' => 'customers#sign_in', as: :user_sign_in
   get '/signup', to: "customers#sign_up", as: :user_sign_up
   get '/forget_password', to: "customers#forget_password", as: :forget_password
+  match 'auth/:provider/callback', :to => 'home#get_facebook_auth_token', via: [:get, :post]
   # End url
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

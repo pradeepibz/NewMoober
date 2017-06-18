@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facebook_user_id: 1
+  promo_code: MyString
+  is_used: false
+  discount: 1.5
+
+two:
+  facebook_user_id: 1
+  promo_code: MyString
+  is_used: false
+  discount: 1.5

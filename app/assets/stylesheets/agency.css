@@ -456,10 +456,6 @@ body {
   background: $main-color;
   display: none;
 }
-
-section:nth-child(1) {
-    background-color: #66bb6a;
-}
 #mainNav, #moveNav {
   background-color: transparent;
   border-bottom: medium none;
@@ -789,7 +785,7 @@ a {
 .apply_section {
   height: 50px;
   position: relative;
-  z-index: 999;
+  /*z-index: 999;*/
   text-align: center;
   margin-top: 10%;
 }
