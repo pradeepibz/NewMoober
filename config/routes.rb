@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get '/start-a-move', to: "home#start_a_move"
   get 'home/signin'
-  get '/signin', to: "home#signin", as: :signin
+  get '/sign_in', to: "home#signin", as: :signin
 
   # Strat url
   get '/contact' => 'home#contact', as: :contact
