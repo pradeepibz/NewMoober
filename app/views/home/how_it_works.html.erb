@@ -1,13 +1,4 @@
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-  <div class="mrf-gradient"></div>
-  <div class="mrf-logo"> <a href="/"> <img src="assets/logo.png" alt="Moober"/> </a> </div>
-  <div class="mrf-menuContainer">
-    <ul>
-      <li> <button class="c-hamburger c-hamburger--htx"> <span>toggle menu</span> </button> </li>
-      <li class=" mrf-contactAction"> <a href="/contact"><b>Contact Us</b></a></li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/static_header' %>
 
 <!-- How it Works  -->
 <%= render 'how_it_work'%>
@@ -17,3 +8,6 @@
 
 <!-- footer -->
 <%= render 'footer' %>
+
+
+<%= render 'shared/scrollify' %>
