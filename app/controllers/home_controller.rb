@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def start_a_move
   end
+
+  def signin
+  end
 end

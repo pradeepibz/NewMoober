@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get '/start-a-move', to: "home#start_a_move"
+  get 'home/signin'
+  get '/signin', to: "home#signin", as: :signin
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

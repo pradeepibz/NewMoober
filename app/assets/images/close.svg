@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 121 Copy 3 + Rectangle 121 Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01-Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="12-icon-call" sketch:type="MSArtboardGroup" transform="translate(-659.000000, -1243.000000)" fill="#FFFFFF">
+            <g id="Rectangle-121-Copy-3-+-Rectangle-121-Copy-4" sketch:type="MSLayerGroup" transform="translate(658.000000, 1242.000000)">
+                <rect id="Rectangle-121-Copy-3" sketch:type="MSShapeGroup" transform="translate(17.000000, 17.000000) rotate(-45.000000) translate(-17.000000, -17.000000) " x="16" y="-5" width="2" height="44" rx="1"></rect>
+                <rect id="Rectangle-121-Copy-4" sketch:type="MSShapeGroup" transform="translate(17.000000, 17.000000) rotate(-315.000000) translate(-17.000000, -17.000000) " x="16" y="-5" width="2" height="44" rx="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
