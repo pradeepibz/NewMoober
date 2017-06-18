@@ -912,6 +912,16 @@ a {
 .applay_left img{
   max-width: 100%;
 }
+.applay_right .slide__title{
+  margin-left: 20px;
+  margin-top: 15%;
+}
+.notified{
+  background-color: #f2f2f2;
+}
+.notified_right .slide__title{
+   margin-top: 10%;
+}
 
 /*responsive code*/
 /*iPhone 5, 5s*/
@@ -1141,5 +1151,14 @@ a {
   }
   .realtime_section {
     background-color: #fff;
+  }
+  #mainNav.affix li:last-child, #moveNav li:last-child{
+    display: none;
+  }
+  #mainNav li.mrf-contactAction{
+    display: none;
+  }
+  .home .slide__content__title{
+
   }
 }
