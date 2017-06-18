@@ -380,6 +380,42 @@ a {
     font-weight: 400;
     display: block;
 }
+
+.form input{
+      width: calc(100% - 40px);
+    height: 50px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-family: Source Sans Pro, sans-serif;
+
+}
+
+.form input[type=submit] {
+    width: 30%;
+    min-width: 175px;
+    margin-top: 40px;
+    background-color: #FFC043;
+    box-shadow: 0 1px 0 0 #428219;
+    border-radius: 40px;
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 18px;
+    color: #FFF;
+    padding: 10px 0;
+    text-decoration: none;
+    margin: 0 auto;
+    border: 0;
+    letter-spacing: 0;
+    font-weight: 400;
+    display: block;
+}
 .logos{
   width: 80%;
   float: none;
@@ -561,4 +597,84 @@ p {
     align-self: flex-end;
     float: left;
     width: 33.33%;
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.close {
+    color: #3a69aa !important;
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 1 !important;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    text-shadow: 0 1px 0 #3a69aa !important;
+}
+
+.popup_image {
+    max-width: 75%;
+}
+img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+
+.popup-btn {
+    background-color: #FFC043;
+    border-radius: 40px;
+    color: #3a69aa;
+    padding: 12px 24px;
+    display: inline-block;
+    border: 0;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777;
+    border-radius: 10px;
+}
+.badge {
+    background-color: #ffc043 !important;
+    color: #3a69aa !important;
+    display: inline-block;
+    width: 40px !important;
+    padding: 5px !important;
+    font-size: 25px !important;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border-radius: 25px !important;
+    height: 40px !important;
 }
