@@ -34,7 +34,7 @@ $(function() {
     // Offset for Main Navigation
     $('#mainNav').affix({
       offset: {
-        top: 600
+        top: 550
       }
     });
 

@@ -922,6 +922,9 @@ a {
   display: none;
   margin-left: -20%;
 }
+/*.home_popup {
+  text-align: center;
+}*/
 
 /*responsive code*/
 /*iPhone 5, 5s*/
@@ -1355,5 +1358,15 @@ a {
   }
   .logos__item:nth-child(2)::after, .logos__item:nth-child(4)::after{
     width: 0px;
+  }
+  .home_popup img{
+    max-width: 54%;
+    margin: auto;
+  }
+  .popup-content {
+    font-size: 10px;
+  }
+  #subscribe_email {
+    margin-left: 0px;
   }
 }

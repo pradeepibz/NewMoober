@@ -1041,3 +1041,6 @@ function userRegistration(email, password, password_confirmation) {
 $(document).on('click', '.all_request_page', function(){
   window.location.href = "/moves"
 });
+  $(document).on('click', '.cancel-btn', function(){
+  location.reload();
+});
