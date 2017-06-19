@@ -19,6 +19,7 @@ $(function() {
     $('html, body').stop().animate({
       scrollTop: $(get_div_id).offset().top
     }, 1500, 'easeInOutExpo');
+    $(get_div_id).removeAttr("style").show();
     event.preventDefault();
   });
   

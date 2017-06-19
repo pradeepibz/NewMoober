@@ -1237,10 +1237,6 @@ input:focus {
   .mt-40 {
     margin-top: 13%;
   }
-  .scroll_div{
-    margin-top: 20px;
-    max-height: 528px;
-  }
   .image-div-submit{
     width: auto;
     border-radius: 15px;
@@ -1253,9 +1249,13 @@ input:focus {
     height: 150px;
     width: 150px;
   }
+  .scroll_div{
+    margin-top: 20px;
+    max-height: 380px;
+  }
   .scroll_div_new{
     margin-top: 20px;
-    max-height: 515px;
+    max-height: 370px;
   }
   .size-of-move-val-check-div{
     margin: 10px;

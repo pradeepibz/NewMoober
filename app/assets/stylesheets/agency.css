@@ -1053,8 +1053,13 @@ a {
   .loop_image_content {
     margin-top: 5%;
   }
+  .loop_image_section .mt-10{
+    margin-top: 15%;
+  }
   .loop_image img {
-    margin-top: 0px;
+    margin-top: -8%;
+    max-width: 80%;
+    margin-left: 10%;
   }
   .welcome_section_right .slide__title{
     font-size: 20px;
@@ -1278,7 +1283,9 @@ a {
     text-align: center;
   }
   .applay_left .apply_section_image{
-    margin-top: 10%;
+    margin-top: 0%;
+    max-width: 80%;
+    margin-left: 10%;
   }
   .share_facebook_right .slide__title{
     margin-top: 20%;
