@@ -1338,4 +1338,42 @@ a {
   .footer__followUs .data {
     margin-left: 0;
   }
+  .logos__item:nth-child(3)::after{
+    width: 1px;
+    background-color: #e6e6e6;
+    content: "";
+    height: 70%;
+    position: absolute;
+    right: -22%;
+    top: -10px;
+  }
+  .logos__item:nth-child(2)::after, .logos__item:nth-child(4)::after{
+    width: 0px;
+  }
+  .search-map{
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+  }
+  .search-map-div p{
+    text-align: left;
+    margin-left: 20px;
+  }
+  .search-map-div a{
+   margin: 10px;
+   width: auto;
+   border-radius: 15px;
+  }
+  .start-heading{
+    height: 55px;
+    width: 90%;
+  }
+  .mt-40 {
+    margin-top: 13%;
+  }
+  .scroll_div{
+    margin-top: 20px;
+    max-height: 528px;
+  }
 }

@@ -1174,6 +1174,21 @@ input:focus {
     margin-bottom: 25px;
     text-transform: none;
   }
+  .logos_item {
+    width: 40%;
+  }
+  .logos_item:nth-child(1):after, .logos_item:nth-child(3):after, .logos_item:nth-child(5):after{
+    width: 1px;
+    height: 70%;
+    content: '';
+    background-color: #E6E6E6;
+    position: absolute;
+    right: -22%;
+    top: -10px;
+  }
+  .logos_item:nth-child(2):after, .logos_item:nth-child(4):after, .logos_item:nth-child(6):after{
+    width: 0px;
+  }
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -1201,6 +1216,9 @@ input:focus {
     font-size: 25px;
     margin-bottom: 25px;
     text-transform: none;
+  }
+  .logos_item {
+    width: 40%;
   }
 }
 
