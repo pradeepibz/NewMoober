@@ -108,6 +108,9 @@ h6 {
   letter-spacing: 3px;
   margin: 30px;
   padding: 15px 38px;
+  font-family: Source Sans Pro,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .slide__videoWrapper::after {
   backface-visibility: hidden;
@@ -872,6 +875,7 @@ a {
   padding: 15px;
   text-align: center;
   white-space: nowrap;
+  font-weight: 700;
 }
 .join .logos__item img {
   transform: translate(-50%, -50%) scale(0.6);
