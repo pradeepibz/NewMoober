@@ -1129,3 +1129,78 @@ body.loading .modal_loading {
     font-size: 13px;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+
+/*responsive code*/
+
+/*iPhone 5, 5s*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px){
+
+}
+
+/*iPhone 6, 6s, 7*/
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px){
+  .new_popup_image {
+    margin: 10px;
+    margin-top: 0;
+    max-width: 70%;
+  }
+  .popup-content {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .popup_image {
+    max-width: 70%;
+  }
+  .moober_popup_sm{
+    margin: 30px !important;
+  }
+  .contact-title {
+    font-size: 30px;
+  }
+  .contact-form h1{
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-transform: none;
+  }
+}
+
+/*iPhone 6+, 6s+, 7+*/
+@media only screen and (min-device-width : 414px) and (max-device-width : 736px) {
+  .new_popup_image {
+    margin: 10px;
+    margin-top: 0;
+    max-width: 70%;
+  }
+  .popup-content {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .popup_image {
+    max-width: 70%;
+  }
+  .moober_popup_sm{
+    margin: 30px !important;
+  }
+  .contact-title {
+    font-size: 30px;
+  }
+  .contact-form h1{
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-transform: none;
+  }
+}
+
