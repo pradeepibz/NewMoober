@@ -1036,6 +1036,7 @@ a {
   .loop_image_content .slide__title{
     text-align: center;
     font-size: 20px;
+    text-transform: none;
   }
   .list_type .slide__text {
     margin-left: 20px;
@@ -1054,11 +1055,12 @@ a {
     margin-top: 5%;
   }
   .loop_image img {
-    margin-top: -20px;
+    margin-top: 0px;
   }
   .welcome_section_right .slide__title{
     font-size: 20px;
     text-align: center;
+    text-transform: none;
   }
   .welcome_section_right .slide__text{
     font-size: 17px;
@@ -1070,7 +1072,7 @@ a {
     text-align: center;
   }
   .realtime_section_left img {
-   margin-top: 35%;
+   margin-top: 50%;
    width: 75%;
   }
   .welcome_section {
@@ -1078,6 +1080,96 @@ a {
   }
   .realtime_section {
     background-color: #fff;
+  }
+  #mainNav.affix li:last-child, #moveNav li:last-child{
+    display: none;
+  }
+  #mainNav li.mrf-contactAction{
+    display: none;
+  }
+  .home .slide__content__title{
+    font-size: 40px;
+  }
+  .realtime_section .mt-10{
+    margin-top: 10%;
+  }
+  .saving_section_right .slide__title{
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+  .notified{
+    background-color: #fff;
+  }
+  .notified_right .slide__title{
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+  .applay_right .slide__title{
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+  .applay_left .apply_section_image{
+    margin-top: 10%;
+  }
+  .share_facebook_right .slide__title{
+    margin-top: 20%;
+    font-size: 24px;
+    text-align: center;
+  }
+  .apply_section{
+    margin-bottom: 10%;
+  }
+  .applay_right .apply_section{
+    margin-bottom: 10%;
+    margin-top: 25%;
+  }
+  .hero__title{
+    font-size: 30px;
+  }
+  .logos__item{
+    width: 40%;
+  }
+  .featuredon .slide__media--logo img{
+    width: 60%; 
+  }
+  .featuredon .slide__media--logo.techcrunch img {
+    padding-top: 30px;
+    width: 40%;
+  }
+  .skyline {
+    margin: auto;
+    width: 90%;
+    margin-bottom: -5px;
+  }
+  #welcomeVideo{
+    display: none;
+  }
+  .home_image{
+    display: block;
+  }
+  .hero__image{
+    height: 300px;
+  }
+  .footer__content > li{
+    width: 100%;
+  }
+  .footer ul{
+    text-align: center;
+    margin-left: -40px;
+  }
+  .footer__content{
+    display: list-item;
+  }
+  .share_facebook_left img {
+    margin-left: -30%;
+    margin-top: 10%;
+    height: 400px;
+  }
+  .footer__followUs .data {
+    margin-left: 0;
   }
 }
 
@@ -1242,5 +1334,8 @@ a {
     margin-left: -30%;
     margin-top: 10%;
     height: 400px;
+  }
+  .footer__followUs .data {
+    margin-left: 0;
   }
 }
