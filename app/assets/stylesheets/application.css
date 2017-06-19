@@ -1143,11 +1143,6 @@ input:focus {
 
 /*responsive code*/
 
-/*iPhone 5, 5s*/
-@media only screen and (min-device-width : 320px) and (max-device-width : 568px){
-
-}
-
 /*iPhone 6, 6s, 7*/
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px){
   .new_popup_image {
@@ -1268,6 +1263,9 @@ input:focus {
   .page_valid_align {
     top: 30%;
     margin: 50px !important;
+  }
+  .pd-15 {
+  	margin-right: 0px !important;
   }
 }
 
