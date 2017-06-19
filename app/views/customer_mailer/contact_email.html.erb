@@ -1,0 +1,17 @@
+<h3>Hi <%= @admin.email %></h3>
+
+<p>
+  <b>Contact detail</b>
+</p>
+<p>
+  Full Name: <%= @customer.try(:full_name) %>
+</p>
+<p>
+  Email: <%= @customer.try(:email) %>
+</p>
+<p>
+  Mobile: <%= @customer.try(:mobile) %>
+</p>
+<p>
+  Message: <%= @customer.try(:message) %>
+</p>

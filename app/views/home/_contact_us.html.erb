@@ -20,13 +20,24 @@
     	<div class="col-md-6 col-md-offset-3">
     		<div class="contact-form text-center">
     			<h1>Send us a Message</h1>
-    			<form class="form-group">
-					  <input type="text" name="" placeholder="Full Name">
-					  <input type="text" name="" placeholder="Email">
-					  <input type="text" name="" placeholder="Mobile Number">
-					  <input type="text" name="" placeholder="Message">
-					  <input type="submit" name="Submit" >
-					</form>
+          <%= form_for @contact, url: contacts_path, method: :post do |f| %>
+            <% if @contact.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                <ul>
+                <% @contact.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
+            <%= f.email_field :email, placeholder: "Email", required: true %>
+            <%= f.text_field :mobile, placeholder: "Mobile Number", required: true %>
+            <%= f.text_area :message, placeholder: "Message", cols: "2", rows: "3" %>
+            <%= f.submit "Submit" %>
+          <%end%>
     		</div>
     	</div>
     </div>

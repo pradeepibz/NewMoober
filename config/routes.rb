@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :contacts
+  resources :customers
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
   get '/how-it-works', to: "home#how_it_works", as: :how_it_works
 
   # Strat url
-  get '/contact' => 'home#contact', as: :contact
+  get '/contact' => 'home#contact_us', as: :contact_us
   get '/apply' => 'home#apply', as: :apply
   get '/blog', to: "home#new_blog", as: :new_blog
 

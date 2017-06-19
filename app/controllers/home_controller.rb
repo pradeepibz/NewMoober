@@ -15,10 +15,12 @@ class HomeController < ApplicationController
   def how_it_works
   end
 
-  def contact
+  def contact_us
+    @contact = Contact.new
   end
 
   def apply
+    @customer = Customer.new
   end
 
   def start_a_move

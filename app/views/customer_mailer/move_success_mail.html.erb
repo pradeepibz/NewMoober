@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/assets/email.css">
+<header id="mrf-desktopHeader">
+  <div class="mrf-gradient"></div>
+  <div class="mrf-logo" style="margin: auto !important; float: none !important;"> 
+    <a href="/">
+      <img src="http://stage.moober.com/assets/logo.png" alt="Moober"/>
+    </a>
+  </div> 
+ </header>
+
+ <h3 style="text-align: center; margin-top: 50px; font-weight: bold;"><%= @move_params["contact_name"] %>'s Moving Details</h3>
+
+ <table border="0" cellpadding="0" cellspacing="0" style="width:50%; align: center; margin: 50px 50px 70px 230px;">
+  <tbody>
+    <tr style="height: 40px;">
+      <th width="40" style="text-align: left; font-weight: bold;">Room Type: </th>
+      <td width="40" style="text-align: left;">asdasd</td>
+    </tr>
+    <tr style="height: 40px; text-align: left;">
+      <th style="text-align: left; font-weight: bold;">Extra Large Items:</th>
+      <td style="text-align: left;"><%= @move_params["extra_large_item"].present? ? @move_params["extra_large_item"].join(",") : "No" %></td>
+    </tr>
+    <tr style="height: 40px; text-align: left;">
+      <th style="text-align: left; font-weight: bold;">Pickup Building Type:</th>
+      <td style="text-align: left;"><%= @move_params["building_type"] %><%= "(#{@move_params['building_floor'].join(',')})" if @move_params['building_floor'].present? %></td>
+    </tr>
+    <tr align="left" style="height: 40px; text-align: left;">
+      <th style="text-align: left; font-weight: bold;">Destination Building Type:</th>
+      <td style="text-align: left;"><%= @move_params['dest_building_type'] %><%= "(#{@move_params['dest_building_floor'].join(',')})" if @move_params['dest_building_floor'].present? %></td>
+    </tr>
+    <tr align="left" style="height: 40px; text-align: left;">
+      <th style="text-align: left; font-weight: bold;">Moving Date:</th>
+      <td style="text-align: left;"><%= @move_params['move_date_time'] %></td>
+    </tr>
+    <tr align="left" style="height: 40px; text-align: left;">
+      <th style="text-align: left; font-weight: bold;">Pickup Address:</th>
+      <td style="text-align: left;"><%= @move_params['from_address'] %></td>
+    </tr>
+    <tr align="left" style="height: 40px; text-align: left;">
+      <th style="text-align: left; font-weight: bold;">Destination Address:</th>
+      <td style="text-align: left;"><%= @move_params['to_address'] %></td>
+    </tr>
+    <tr align="left" style="height: 40px; text-align: left;">
+      <th style="text-align: left; font-weight: bold;">Mobile Number:</th>
+      <td style="text-align: left;"><%= @move_params['contact_phone'] %></td>
+    </tr>
+  </tbody>
+</table>
+
+ <footer class="footer">
+  <div class="skyline mail_footer" style="margin-bottom: -5px !important;"><img style="margin-bottom: -5px !important;" src="http://stage.moober.com/assets/footer.png" width="100%" alt="Moober Solutions">
+  </div>
+</footer>

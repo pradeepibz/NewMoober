@@ -1,0 +1,20 @@
+<h3>Hi <%= @admin.email %></h3>
+
+<p>
+  <b>Customer detail</b>
+</p>
+<p>
+  Full Name: <%= @customer.try(:full_name) %>
+</p>
+<p>
+  Company: <%= @customer.try(:company) %>
+</p>
+<p>
+  City: <%= @customer.try(:city) %>
+</p>
+<p>
+  State: <%= @customer.try(:state) %>
+</p>
+<p>
+  Phone Number: <%= @customer.try(:phone) %>
+</p>

@@ -1,0 +1,65 @@
+<%= render "shared/static_header" %>
+
+<section class="slide" style="background:#f2f2f2;">
+  <div class="contact">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="contact-cover" style="width:100%;background-image:url(/assets/moober_background_image.jpg);"></div>
+        <div class="contact-title">APPLY TO EARN ON MOOBER</div>
+      </div>
+      <div class="col-md-12">
+        <div class="contact-description">
+          Ready to increase opportunities and volume for your moving business? Tell us a bit about your company and we'll be in touch within 24 hours.
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="mt-10">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="contact-form text-center">
+          <h1>Get Started</h1>
+          <%= form_for @customer, url: customers_path, method: :post do |f| %>
+            <% if @customer.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+                <ul>
+                <% @customer.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+             <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
+             <%= f.text_field :company, placeholder: "Company Name", required: true %>
+             <%= f.text_field :site_url, placeholder: "Site Url", required: true %>
+             <%= f.email_field :email, placeholder: "Email", required: true %>
+             <%= f.text_field :city, placeholder: "City", required: true %>
+             <%= f.select :state, options_for_select(Customer.const_get('STATES')), {prompt: 'Select the State'} %>
+             <%= f.text_field :phone, placeholder: "Phone Number", required: true,"data-errorMsg"=> "Please, provide a valid phone number", "data-pattern" => "^\d+$" %>
+
+             <%#= f.select :find_through, options_for_select(Customer.const_get('FIND_THROUGH')), {prompt: 'How did you hear about us?'} %>
+             <%= f.submit "Submit", class: 'submit_btn'%>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="mt-10">
+    <div class="row">
+      <%= render "shared/company_logos" %>
+    </div>
+  </div>
+</section>
+
+<section class="slide">
+  <%= render 'shared/footer' %>
+</section>
+
+<%= render 'shared/scrollify' %>

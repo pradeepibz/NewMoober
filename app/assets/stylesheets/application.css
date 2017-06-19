@@ -10,8 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require agency
+ *= require bootstrap.min
+ *= require contacts
+ *= require customers
+ *= require font-awesome.min
+ *= require home
+ *= require mobiscroll.javascript.min
  */
 $main-color: #fff;
 $highlight-color: #66bb6a;
@@ -707,6 +713,41 @@ input[type=checkbox], input[type=radio] {
     display: block;
 }
 
+.form textarea {
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    padding: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-family: Source Sans Pro, sans-serif;
+}
+
+.contact-form textarea {
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+    padding: 15px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #E6E6E6;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-family: Source Sans Pro, sans-serif;
+}
+input, textarea {
+    outline: 0;
+}
+
+
+
 .form input{
       width: calc(100% - 40px);
     height: 50px;
@@ -1068,3 +1109,23 @@ body.loading .modal_loading {
     margin-top: 20px;
     max-width: 75%;
 }
+
+.new_contact #error_explanation {
+    color: red;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+}
+.new_contact #error_explanation  h2{
+    font-size: 13px;
+}
+.new_customer #error_explanation {
+    color: red;
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+}
+.new_customer #error_explanation  h2{
+    font-size: 13px;
+}
+
