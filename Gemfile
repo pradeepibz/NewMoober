@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# activeadmin
+gem 'activeadmin'
+
 # Connect facebook
 gem 'omniauth'
 gem 'omniauth-facebook'
