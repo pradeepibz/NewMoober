@@ -1174,6 +1174,21 @@ input:focus {
     margin-bottom: 25px;
     text-transform: none;
   }
+  .logos_item {
+    width: 40%;
+  }
+  .logos_item:nth-child(1):after, .logos_item:nth-child(3):after, .logos_item:nth-child(5):after{
+    width: 1px;
+    height: 70%;
+    content: '';
+    background-color: #E6E6E6;
+    position: absolute;
+    right: -22%;
+    top: -10px;
+  }
+  .logos_item:nth-child(2):after, .logos_item:nth-child(4):after, .logos_item:nth-child(6):after{
+    width: 0px;
+  }
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -1201,6 +1216,58 @@ input:focus {
     font-size: 25px;
     margin-bottom: 25px;
     text-transform: none;
+  }
+  .logos_item {
+    width: 40%;
+  }
+  .search-map{
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+  }
+  .search-map-div p{
+    text-align: left;
+    margin-left: 20px;
+  }
+  .search-map-div a{
+   margin: 10px;
+   width: auto;
+   border-radius: 15px;
+  }
+  .start-heading{
+    height: 55px;
+    width: 90%;
+  }
+  .mt-40 {
+    margin-top: 13%;
+  }
+  .scroll_div{
+    margin-top: 20px;
+    max-height: 528px;
+  }
+  .image-div-submit{
+    width: auto;
+    border-radius: 15px;
+  }
+  .new-next-btn{
+    width: auto;
+    border-radius: 15px;
+  }
+  .portfolio-item img {
+    height: 150px;
+    width: 150px;
+  }
+  .scroll_div_new{
+    margin-top: 20px;
+    max-height: 515px;
+  }
+  .size-of-move-val-check-div{
+    margin: 10px;
+  }
+  .page_valid_align {
+    top: 30%;
+    margin: 50px !important;
   }
 }
 
