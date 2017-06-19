@@ -1195,7 +1195,11 @@ a {
     text-align: center;
   }
   .apply_section{
-    margin-bottom: 15%;
+    margin-bottom: 10%;
+  }
+  .applay_right .apply_section{
+    margin-bottom: 10%;
+    margin-top: 25%;
   }
   .hero__title{
     font-size: 30px;
@@ -1226,5 +1230,12 @@ a {
   }
   .footer__content > li{
     width: 100%;
+  }
+  .footer ul{
+    text-align: center;
+    margin-left: -40px;
+  }
+  .footer__content{
+    display: list-item;
   }
 }
