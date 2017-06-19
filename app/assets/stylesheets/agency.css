@@ -1238,4 +1238,9 @@ a {
   .footer__content{
     display: list-item;
   }
+  .share_facebook_left img {
+    margin-left: -30%;
+    margin-top: 10%;
+    height: 400px;
+  }
 }
