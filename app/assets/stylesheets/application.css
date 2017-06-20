@@ -1275,6 +1275,20 @@ input:focus {
   max-width: none !important;
 }
 /*responsive code*/
+/*iPhone 5, 5s*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px){
+  .list_of_moves_page {
+    margin-top: 25% !important;
+  }
+  .upcoming_moves, .past_moves {
+    margin: 0% !important;
+    padding: 15px 15px !important;
+  }
+  .list_of_moves_page .up-col-md-12 {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+}
 
 /*iPhone 6, 6s, 7*/
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px){
@@ -1317,7 +1331,6 @@ input:focus {
   .logos_item:nth-child(2):after, .logos_item:nth-child(4):after, .logos_item:nth-child(6):after{
     width: 0px;
   }
-<<<<<<< HEAD
   .search-map{
     width: 100%;
     left: 0;
@@ -1519,7 +1532,7 @@ input:focus {
   .new_slide__image{
   	width: 100%;
   	left: -19%;
-  	margin-top: -10%;
+  	margin-top: -7%;
   }
   .welcome_section_right{
   	float: left;
@@ -1527,20 +1540,19 @@ input:focus {
   .welcome_section_right .slide__text{
   	line-height: 1.40;
   }
-}
-
-/*iPhone 5, 5s*/
-@media only screen and (min-device-width : 320px) and (max-device-width : 568px)
-{
-  .list_of_moves_page {
-    margin-top: 25% !important;
+  .saving_section_left .fasterBrand {
+  	margin: 20px auto 0;
+  	max-width: 430px;
+  	text-align: center;
+  	width: 40%;
   }
-  .upcoming_moves, .past_moves {
-    margin: 0% !important;
-    padding: 15px 15px !important;
+  .saving_section_left .fasterBrand img {
+  	width: 100%;
+  	margin-top: 15%;
+  	margin-bottom: 15%;
   }
-  .list_of_moves_page .up-col-md-12 {
-    padding-right: 0px !important;
-    padding-left: 0px !important;
+  .saving_section_left .chartLegend {
+  	font-size: 25px;
+  	margin-top: 40px;
   }
 }
