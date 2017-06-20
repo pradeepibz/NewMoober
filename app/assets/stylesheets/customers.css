@@ -48,19 +48,6 @@
 .d_footer ul {
   margin-bottom: 0;
 }
-.footer__content {
-  background-color: #f2f2f2;
-  display: flex;
-  overflow: auto;
-  padding-bottom: 40px;
-  padding-top: 40px;
-}
-.footer__content > li {
-  align-self: flex-end;
-  float: left;
-  width: 33.33%;
-  list-style: none;
-}
 .footer__item {
   line-height: 20px;
   padding: 0 15px;
@@ -74,11 +61,6 @@
 }
 .footer__followUs .new_emails .footer__link a, .footer__item, .footer__item a {
   color: #666;
-}
-.footer__content > li {
-  align-self: flex-end;
-  float: left;
-  width: 33.33%;
 }
 .footer__followUs .emails {
   margin-bottom: 20px;
