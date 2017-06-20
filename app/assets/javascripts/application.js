@@ -33,10 +33,22 @@ $(document).ready(function(){
 		// Desktop
 		$(".d_nav").removeClass("hide");
 		$(".m_nav").addClass("hide");
+    $(".mbl_nav").addClass("hide");
 	}else{
 		// Mobile
 		$(".m_nav").removeClass("hide");
-		$(".d_nav").addClass("hide");
+    $(".d_nav").addClass("hide");
+		$(".mbl_nav").removeClass("hide");
 	}
 
+});
+$(document).on('click', '.mbl-toggle', function(){
+  $(this).addClass( "toggle-is-active" );
+  $('.mbl-webLateralMenuOverlay').addClass( "active" );
+  $('.mbl-webLateralMenu').addClass( "active" );
+});
+$(document).on('click', '.toggle-is-active', function(){
+  $(this).removeClass( "toggle-is-active" );
+  $('.mbl-webLateralMenuOverlay').removeClass( "active" );
+  $('.mbl-webLateralMenu').removeClass( "active" );
 });

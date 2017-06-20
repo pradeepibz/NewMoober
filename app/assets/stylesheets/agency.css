@@ -143,11 +143,23 @@ h6 {
   -webkit-transition: .3s -webkit-transform ease-in-out;
   transition: .3s transform ease-in-out
 }
-.mrf-webLateralMenu ul {
+ .mbl-webLateralMenu {
+  min-height: 60vh;
+  width: 300px;
+  right: 0;
+  z-index: 2;
+  background-color: #FFF;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  -webkit-transition: .3s -webkit-transform ease-in-out;
+  transition: .3s transform ease-in-out
+ }
+ 
+.mrf-webLateralMenu ul, .mbl-webLateralMenu ul{
   padding-top: 90px;
   text-align: right
 }
-.mrf-webLateralMenu li {
+.mrf-webLateralMenu li, .mbl-webLateralMenu li {
   margin-bottom: 10px;
   margin-right: 34px;
   padding-left: 20px;
@@ -157,21 +169,25 @@ h6 {
   position: relative;
   list-style: none;
 }
-.mrf-webLateralMenu li a {
+.mrf-webLateralMenu li a, .mbl-webLateralMenu li a {
   color: #424242;
   -webkit-transition: color .5s ease;
   transition: color .5s ease;
   font-size: 13px;
 }
-.mrf-webLateralMenu li:hover a {
+.mrf-webLateralMenu.active, .mbl-webLateralMenu.active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0)
+}
+.mrf-webLateralMenu li:hover a, .mbl-webLateralMenu li a:hover {
   color: #3a69aa;
   text-decoration: none;
 }
-.mrf-webLateralMenu li:after {
+.mrf-webLateralMenu li:after, .mbl-webLateralMenu li:after {
   content: '';
   opacity: 0
 }
-.mrf-webLateralMenu li.mrf-current:after {
+.mrf-webLateralMenu li.mrf-current:after, .mbl-webLateralMenu li.mrf-current:after {
   content: '';
   width: 4px;
   height: 100%;
@@ -243,35 +259,35 @@ h6 {
   transition-property: bottom, transform;
   transition-property: bottom, transform, -webkit-transform
 }
-.c-hamburger--htx.is-active span {
+.c-hamburger--htx.is-active span,  .c-hamburger--htx.toggle-is-active span{
   height: 0;
   -webkit-transition: background 0s .3s, height 0s 0s;
   transition: background 0s .3s, height 0s 0s
 }
-.c-hamburger--htx.is-active span::before {
+.c-hamburger--htx.is-active span::before, .c-hamburger--htx.toggle-is-active span::before {
   top: 0;
   -webkit-transform: rotate(44deg);
   transform: rotate(44deg);
   margin-bottom: 1px
 }
-.c-hamburger--htx.is-active span::after {
+.c-hamburger--htx.is-active span::after, .c-hamburger--htx.toggle-is-active span::after {
   bottom: 0;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   margin-top: 1px
 }
 .c-hamburger--htx.is-active span::after,
-.c-hamburger--htx.is-active span::before {
+.c-hamburger--htx.is-active span::before, .c-hamburger--htx.toggle-is-active span::after, .c-hamburger--htx.toggle-is-active span::before {
   -webkit-transition-delay: 0s, .3s;
   transition-delay: 0s, .3s;
   background-color: #ffc043;
 }
 .mrf-webLateralMenu,
-.mrf-webLateralMenuOverlay.active {
+.mrf-webLateralMenuOverlay.active, .mbl-webLateralMenu, .mbl-webLateralMenuOverlay.active {
   position: fixed;
   top: 0
 }
-.mrf-webLateralMenuOverlay.active {
+.mrf-webLateralMenuOverlay.active, .mbl-webLateralMenuOverlay.active {
   width: 100%;
   height: 100%;
   left: 0;
@@ -508,12 +524,6 @@ body {
     height: 28px;
     transition: all 0.5s ease-out 0s;
 }
-/*#mainNav .mrf-menuContainer {
-  float: right;
-  height: auto;
-  text-align: right;
-  width: calc(80% - 40px);
-}*/
 #mainNav.affix ul, #moveNav ul {
   text-align: right;
   transition: transform 0.5s ease-out 0s, -webkit-transform 0.5s ease-out 0s;

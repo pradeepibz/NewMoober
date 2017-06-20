@@ -6,15 +6,26 @@
   <div class="new-mrf-logo"><a href="/"><img class="mobile-logo" src="assets/logo2.png" alt="Moober"/></a></div>
   <div class="mrf-menuContainer">
     <ul>
-      <li><button class="c-hamburger c-hamburger--htx"><span>toggle menu</span></button></li>
+      <li><button class="dsktop-toggle c-hamburger c-hamburger--htx"><span>toggle menu</span></button></li>
       <li class="mrf-contactAction"><a href="/contact"><b>Contact Us</b></a></li>
     </ul>
   </div>
 </nav>
 
+<nav id="mblNav" class="navbar navbar-fixed-top mbl_nav hide">
+  <div class="mrf-gradient"></div>
+  <div class="mrf-logo"><object class="header__logo" data="/assets/logo-new.svg" type="image/svg+xml"></object></div>
+  <div class="mbl-menuContainer">
+    <ul>
+      <li><button class="mbl-toggle c-hamburger c-hamburger--htx"><span>toggle menu</span></button></li>
+    </ul>
+  </div>
+</nav>
+
+
 
 <div class="m_nav opacity0">
-  <p class="text-center ms_logo"><img src="/assets/logo2.png" width="128px"></p>
+  <!-- <p class="text-center ms_logo"><img src="/assets/logo2.png" width="128px"></p> -->
   <div class="for_small" id="m_nav_wrapper">
     <div id="m_nav_scroller">
       <ul class="">
@@ -130,6 +141,18 @@
 <%= render 'download_app' %>
 
 <%= render 'shared/scrollify' %>
+<div class="mbl-webLateralMenuOverlay"></div>
+<div class="mbl-webLateralMenu home-mbl-webLateralMenu">
+  <ul>
+    <li class="user_moves <%= active_class('/moves') %>"><a href="/moves">Moves</a></li>
+    <li><span class="user-login-logut"></span></li>
+    <div class="side_image_section">
+      <a href="apply">
+        <img src="/assets/menu-image.png" align="center" class="side_image">
+      </a>
+    </div>
+  </ul>
+</div>
 <script>
   document.getElementById('shareBtn').onclick = function() {
     FB.ui({

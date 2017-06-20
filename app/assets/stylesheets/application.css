@@ -136,15 +136,18 @@ body {
     transition: all 0.5s ease-out 0s;
 }
 #mainNav .mrf-menuContainer {
-/*  float: right;
+  float: right;
   height: auto;
   text-align: right;
   width: calc(80% - 40px);
-*/
-  float: left;
-  height: 100px;
-  text-align: center;
-  width: 100%;
+}
+#mblNav .mbl-menuContainer ul{
+  list-style-type: none;
+  margin-top: 21%;
+}
+#mblNav .mbl-menuContainer {
+  width: 30%;
+  float: right;
 }
 #mainNav.affix ul, #moveNav ul {
   text-align: right;
@@ -1259,6 +1262,17 @@ input:focus {
 }
 .no-move-data {
   text-align: center;
+}
+.header__logo {
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  margin-left: -10px !important;
+  /*-webkit-transform: translate(-46%, -50%);*/
+  transform: translate(-46%, -50%);
+  height: 30px;
+  max-height: none !important;
+  max-width: none !important;
 }
 /*responsive code*/
 
