@@ -15,10 +15,12 @@ $(function(){
     if (window.location.pathname == "/signin" || window.location.pathname == "/signup") {
       window.location.href = "/";
     }
+    $(".mbl-side-menu").show();
   }else {
     $('.user-login-logut').html("<a href='/signin'>Signin</a>")
     $('.user-signup').html("<a href='/signup'>Signup</a>")
     $('.user_moves').hide();
+    $(".mbl-side-menu").hide();
   }
   $(document).on('click', '.user-logout', function(){
     localStorage.setItem('user_id', "");
