@@ -60,11 +60,10 @@
 		        $.scrollify.current().find('#bottom-bar').animate({ "left": "100%" },1500);
 			},
 			after:function() {
-				console.log("$.scrollify.current()");
-				console.log($.scrollify.current());
 			},
 			afterResize:function() {},
 			afterRender:function() {
+				console.log("after render")
 				if($($.scrollify.current()[0]).hasClass("bg_video")){
 					// $(".m_nav").addClass("opacity0")
 					$(".m_nav").fadeOut()

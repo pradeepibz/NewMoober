@@ -1,4 +1,4 @@
-<nav id="moveNav" class="navbar navbar-default navbar-fixed-top">
+<nav id="moveNav" class="navbar navbar-default navbar-fixed-top d_nav hide">
   <div class="mrf-gradient"></div>
   <div class="mrf-logo"> <a href="/"> <img src="assets/logo.png" alt="Moober"/> </a> </div>
   <div class="mrf-menuContainer">
@@ -8,3 +8,25 @@
     </ul>
   </div>
 </nav>
+
+
+<div class="m_nav">
+  <p class="text-center ms_logo"><img src="/assets/logo2.png" width="128px"></p>
+  <div class="for_small" id="m_nav_wrapper">
+    <div id="m_nav_scroller">
+      <ul class="">
+        <li class="mnav_slide_left_right <%= active_class('/') %>"> <a href="/">Home</a></li>
+        <li class="mnav_slide_left_right <%= active_class('/how-it-works') %>">
+        	<!-- <a href="/how-it-works" data-no_turbolink="true">How it Works</a> -->
+        	<%=link_to "How it Works", "/how-it-works", data: { no_turbolink: true } %>
+        </li>
+        <li class="mnav_slide_left_right <%= active_class('/moves') %>"><a href="/moves">Moves</a></li>
+        <li class="mnav_slide_left_right <%= active_class('/apply') %>"> <a href="/apply">Moving Companies</a></li>
+        <li class="mnav_slide_left_right <%= active_class('/contact') %>"> <a href="/contact">Contact</a></li>
+        <li class="mnav_slide_left_right <%= active_class('/download') %>"> <a href="/download">Download App</a></li>
+        <li class="mnav_slide_left_right "><span class="user-login-logut"></span></li>
+        <li class="mnav_slide_left_right " ><span class="user-signup"></span></li>
+      </ul>
+    </div>  
+  </div>
+</div>

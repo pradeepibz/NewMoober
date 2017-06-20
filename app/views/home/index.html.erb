@@ -1,34 +1,6 @@
 <!-- Navigation -->
 <%#= render 'nav'%>
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top d_nav hide">
-  <div class="mrf-gradient"></div>
-  <div class="mrf-logo"> <a href="/"> <img src="assets/logo.png" alt="Moober"/> </a> </div>
-  <div class="mrf-menuContainer">
-    <ul>
-      <li> <button class="c-hamburger c-hamburger--htx"> <span>toggle menu</span> </button> </li>
-      <li class=" mrf-contactAction"> <a href="/contact"><b>Contact Us</b></a></li>
-    </ul>
-  </div>
-</nav>
-
-
-<div class="m_nav opacity0">
-  <p class="text-center ms_logo"><img src="/assets/logo2.png" width="128px"></p>
-  <div class="for_small" id="m_nav_wrapper">
-    <div id="m_nav_scroller">
-      <ul class="">
-        <li class="<%= active_class('/') %>"> <a href="/">Home</a></li>
-        <li class="<%= active_class('/how-it-works') %>"> <a href="/how-it-works">How it Works</a></li>
-        <li class="<%= active_class('/moves') %>"><a href="/moves">Moves</a></li>
-        <li class="<%= active_class('/apply') %>"> <a href="/apply">Moving Companies</a></li>
-        <li class="<%= active_class('/contact') %>"> <a href="/contact">Contact</a></li>
-        <li class="<%= active_class('/download') %>"> <a href="/download">Download App</a></li>
-        <li><span class="user-login-logut"></span></li>
-        <li><span class="user-signup"></span></li>
-      </ul>
-    </div>  
-  </div>
-</div>
+<%= render 'shared/static_header' %>
 
 <!-- Header section home video -->
 <%= render 'home'%>
