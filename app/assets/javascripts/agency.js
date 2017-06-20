@@ -1,6 +1,6 @@
 $(function() {
     // side nav
-    $(document).on('click', '.c-hamburger', function(){
+    $(document).on('click', '.dsktop-toggle', function(){
       $(this).addClass( "is-active" );
       $('.mrf-webLateralMenuOverlay').addClass( "active" );
       $('.mrf-webLateralMenu').addClass( "active" );
@@ -43,6 +43,7 @@ $(function() {
           top: 6
         }
     });
+
     // $(document).ready(function(){
     //   $(document).scrollTop(0);
     // });
