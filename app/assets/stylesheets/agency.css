@@ -909,10 +909,10 @@ a {
   padding: 15px 38px;
   text-transform: uppercase;
 }
-.applay_left img{
+.apply_left img{
   max-width: 100%;
 }
-.applay_right .slide__title{
+.apply_right .slide__title{
   margin-left: 20px;
   margin-top: 15%;
 }
@@ -989,9 +989,18 @@ a {
   transition: transform .1s ease-in;
   transition: transform .1s ease-in, -webkit-transform .1s ease-in
 }
-/*.home_popup {
+.new-mrf-logo{
+  display: none;
+  float: left;
+  position: absolute;
+  width: 60%;
+  left: 20%;
   text-align: center;
-}*/
+  top: 10px;
+}
+.mobile-logo {
+    height: 28px !important;
+}
 
 /*responsive code*/
 /*iPhone 5, 5s*/
@@ -1180,12 +1189,12 @@ a {
     font-size: 24px;
     text-align: center;
   }
-  .applay_right .slide__title{
+  .apply_right .slide__title{
     margin-top: 0;
     font-size: 24px;
     text-align: center;
   }
-  .applay_left .apply_section_image{
+  .apply_left .apply_section_image{
     margin-top: 10%;
   }
   .share_facebook_right .slide__title{
@@ -1196,7 +1205,7 @@ a {
   .apply_section{
     margin-bottom: 10%;
   }
-  .applay_right .apply_section{
+  .apply_right .apply_section{
     margin-bottom: 10%;
     margin-top: 25%;
   }
@@ -1352,15 +1361,15 @@ a {
     font-size: 24px;
     text-align: center;
   }
-  .applay_right .slide__title{
+  .apply_right .slide__title{
     margin-top: 0;
     font-size: 24px;
     text-align: center;
   }
-  .applay_left .apply_section_image{
-    margin-top: 0%;
-    max-width: 80%;
-    margin-left: 10%;
+  .apply_left .apply_section_image{
+    margin-top: -12%;
+    max-width: 120%;
+    margin-left: -20%;
   }
   .share_facebook_right .slide__title{
     margin-top: 20%;
@@ -1370,9 +1379,9 @@ a {
   .apply_section{
     margin-bottom: 10%;
   }
-  .applay_right .apply_section{
+  .apply_right .apply_section{
     margin-bottom: 10%;
-    margin-top: 25%;
+    margin-top: 20%;
   }
   .hero__title{
     font-size: 30px;
@@ -1444,5 +1453,18 @@ a {
   #mrf-contactBubbles{
     display: block;
     cursor: pointer;
+  }
+  .realtime_section_left img {
+    margin-top: 19%;
+    width: 76%;
+  }
+  .mrf-logo{
+    display: none;
+  }
+  .new-mrf-logo{
+    display: block;
+  }
+  #mainNav .mrf-gradient {
+    display: none;
   }
 }
