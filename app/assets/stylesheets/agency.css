@@ -1103,7 +1103,7 @@ a {
     margin: 14px auto 0;
   }
   .mt-10 {
-    margin-top: 20%;
+    margin-top: 25%;
   }
   .loop_image_left{
     float: left;
@@ -1133,12 +1133,12 @@ a {
     margin-top: 5%;
   }
   .loop_image_section .mt-10{
-    margin-top: 15%;
+    margin-top: 19%;
   }
   .loop_image img {
     margin-top: -8%;
-    max-width: 80%;
-    margin-left: 10%;
+    max-width: 60%;
+    margin-left: 20%;
   }
   .welcome_section_right .slide__title{
     font-size: 20px;
@@ -1150,7 +1150,7 @@ a {
     margin-left: 15px;
   }
   .realtime_section_right .slide__title {
-    margin-top: 10%;
+    margin-top: 15%;
     font-size: 24px;
     text-align: center;
   }
@@ -1195,10 +1195,11 @@ a {
     text-align: center;
   }
   .apply_left .apply_section_image{
-    margin-top: 10%;
+    margin-top: -5%;
+    /*margin-left: -5%;*/
   }
   .share_facebook_right .slide__title{
-    margin-top: 20%;
+    margin-top: 25%;
     font-size: 24px;
     text-align: center;
   }
@@ -1207,7 +1208,7 @@ a {
   }
   .apply_right .apply_section{
     margin-bottom: 10%;
-    margin-top: 25%;
+    margin-top: 10%;
   }
   .hero__title{
     font-size: 30px;
@@ -1247,12 +1248,56 @@ a {
     display: list-item;
   }
   .share_facebook_left img {
-    margin-left: -30%;
+    margin-left: 0%;
     margin-top: 10%;
-    height: 400px;
+    height: 270px;
   }
   .footer__followUs .data {
     margin-left: 0;
+  }
+  .logos__item:nth-child(3)::after{
+    width: 1px;
+    background-color: #e6e6e6;
+    content: "";
+    height: 70%;
+    position: absolute;
+    right: -22%;
+    top: -10px;
+  }
+  .logos__item:nth-child(2)::after, .logos__item:nth-child(4)::after{
+    width: 0px;
+  }
+  .home_popup img{
+    max-width: 54%;
+    margin: auto;
+  }
+  .popup-content {
+    font-size: 10px;
+  }
+  #subscribe_email {
+    margin-left: 0px;
+  }
+  #mrf-contactBubbles{
+    display: block;
+    cursor: pointer;
+  }
+  .realtime_section_left img {
+    margin-top: 19%;
+    width: 76%;
+  }
+  .mrf-logo{
+    display: none;
+  }
+  .new-mrf-logo{
+    display: block;
+  }
+  #mainNav .mrf-gradient {
+    display: none;
+  }
+  .saving_section_left .chartLegend {
+    font-size: 15px;
+    margin-bottom: -15px;
+    margin-top: 20px;
   }
 }
 
