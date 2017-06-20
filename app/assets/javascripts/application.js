@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require agency
 //= require bootstrap.min
 //= require jquery.easing.min
@@ -28,7 +27,7 @@
 
 $(document).ready(function(){
 
-	// Finding Desktop/Mobile and hide appropriate navigation
+	// Finding Desktop or Mobile and hide appropriate navigation
 	if($(window).width()>640){
 		// Desktop
 		$(".d_nav").removeClass("hide");
