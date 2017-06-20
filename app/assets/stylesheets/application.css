@@ -1137,7 +1137,7 @@ input:focus {
 }
 
 .new_slide__image{
-      width: 150%;
+    width: 150%;
     left: -25%;
     margin-top: -20%;
 }
@@ -1285,5 +1285,31 @@ input:focus {
   }
   .pd-15 {
   	margin-right: 0px !important;
+  }
+  .slide__image--left {
+  	margin-left: 0%;
+  }
+  .slide__image--right {
+  	margin-left: -5%;
+  }
+  .notified_slide__image{
+  	width: 180%;
+  	margin-top: 0%;
+  }
+  .welcome_section_left .new_slide__media{
+  	width: 600px;
+  	height: 250px;
+  	float: left;
+  }
+  .new_slide__image{
+  	width: 100%;
+  	left: -19%;
+  	margin-top: -10%;
+  }
+  .welcome_section_right{
+  	float: left;
+  }
+  .welcome_section_right .slide__text{
+  	line-height: 1.40;
   }
 }
