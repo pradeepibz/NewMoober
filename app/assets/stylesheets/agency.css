@@ -505,12 +505,12 @@ body {
     height: 28px;
     transition: all 0.5s ease-out 0s;
 }
-#mainNav .mrf-menuContainer {
+/*#mainNav .mrf-menuContainer {
   float: right;
   height: auto;
   text-align: right;
   width: calc(80% - 40px);
-}
+}*/
 #mainNav.affix ul, #moveNav ul {
   text-align: right;
   transition: transform 0.5s ease-out 0s, -webkit-transform 0.5s ease-out 0s;

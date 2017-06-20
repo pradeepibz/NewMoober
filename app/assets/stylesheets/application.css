@@ -18,11 +18,17 @@
  *= require font-awesome.min
  *= require home
  *= require mobiscroll.javascript.min
+ *= require mobile_nav
  */
 $main-color: #fff;
 $highlight-color: #66bb6a;
 $section-bgcolor__dark: #424242;
 $section-bgcolor__light: #a5d6a7;
+
+
+.hide{
+  display: none !important;
+}
 
 body    {overflow-y:scroll;}
 
@@ -130,10 +136,15 @@ body {
     transition: all 0.5s ease-out 0s;
 }
 #mainNav .mrf-menuContainer {
-  float: right;
+/*  float: right;
   height: auto;
   text-align: right;
   width: calc(80% - 40px);
+*/
+  float: left;
+  height: 100px;
+  text-align: center;
+  width: 100%;
 }
 #mainNav.affix ul, #moveNav ul {
   text-align: right;
