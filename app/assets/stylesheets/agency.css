@@ -530,8 +530,8 @@ body {
   display: inline-block;
   float: right;
   font-size: 14px;
-  margin-left: 4%;
-  padding: 18px 14px;
+  margin-left: 3%;
+  padding: 18px 10px;
   position: relative;
   top: -11px;
 }
@@ -544,7 +544,7 @@ body {
   display: inline-block;
   float: right;
   font-size: 14px;
-  margin-left: 6%;
+  margin-left: 3%;
   background-color: transparent;
   padding-bottom: 15px;
   position: relative;
@@ -596,14 +596,14 @@ body {
   border-radius: 40px;
   box-shadow: 0 1px 0 0 #428219;
   /*margin-top: -11px;*/
-  padding: 9px 20px;
+  padding: 8px 10px;
   transition: all 0.5s ease 0s;
   color: #3a69aa;
 }
 #mainNav li.mrf-contactAction {
   border-radius: 40px;
   /*margin-top: -11px;*/
-  padding: 9px 20px;
+  padding: 8px 10px;
   transition: all 0.5s ease 0s;
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   box-shadow: none;
