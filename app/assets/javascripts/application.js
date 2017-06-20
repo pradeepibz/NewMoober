@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require agency
 //= require bootstrap.min
 //= require jquery.easing.min

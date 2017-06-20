@@ -34,7 +34,7 @@ function isPassive() {
 function horizontal_smooth_scroll(myScroll){
   // Get the center X position
   var center_pos = $(window).width() / 2 - $("#m_nav_scroller ul li.active").width() / 2;
-  var move_left = center_pos - ($("#m_nav_scroller ul li.active").position().left-13);
+  var move_left = center_pos - ($("#m_nav_scroller ul li.active").position().left);
 
   // with animation (smooth scroll) set the active link at center of screen
   $("#m_nav_scroller ul").animate({
@@ -43,7 +43,7 @@ function horizontal_smooth_scroll(myScroll){
     var scroller = $("#m_nav_scroller")
     $(scroller).css({'transform': 'translate('+move_left+'px, 0px) translateZ(0px)'});
     $("#m_nav_scroller ul").css("left", 0)
-  }, duration: 1500, easing: 'easeInOutQuart'});
+  }, duration: 1500, easing: 'easeOutExpo'});
   myScroll.x = move_left;
   
   // without any animation (smooth scroll) set the active link at center of screen
