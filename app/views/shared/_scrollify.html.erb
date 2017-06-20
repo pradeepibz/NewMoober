@@ -17,6 +17,11 @@
 			updateHash: false,
 			touchScroll:true,
 			before:function() {
+				if($($.scrollify.current()[0]).hasClass("bg_video")){
+					$(".m_nav").addClass("opacity0")
+				}else{
+					$(".m_nav").removeClass("opacity0")
+				}
 				// gif animation
 				$.scrollify.current().find('#loop_image_left').css("top","160px");
 				$.scrollify.current().find('#loop_image_left').animate({ "top": "-=140px" },1000);
@@ -47,17 +52,23 @@
 				$.scrollify.current().find('#applay_left').css("right","50%")
 				$.scrollify.current().find('#applay_left').animate({ "right": "0%" },1000);
 
-        $.scrollify.current().find('#top-bar').css("left", "0px");
-        $.scrollify.current().find('#top-bar').animate({ "left": "45px" },1000);
-        $.scrollify.current().find('#bottom-bar').css("left", "0px");
-        $.scrollify.current().find('#bottom-bar').animate({ "left": "100%" },1500);
+		        $.scrollify.current().find('#top-bar').css("left", "0px");
+		        $.scrollify.current().find('#top-bar').animate({ "left": "45px" },1000);
+		        $.scrollify.current().find('#bottom-bar').css("left", "0px");
+		        $.scrollify.current().find('#bottom-bar').animate({ "left": "100%" },1500);
 			},
 			after:function() {
 				console.log("$.scrollify.current()");
 				console.log($.scrollify.current());
 			},
 			afterResize:function() {},
-			afterRender:function() {}
+			afterRender:function() {
+				if($($.scrollify.current()[0]).hasClass("bg_video")){
+					$(".m_nav").addClass("opacity0")
+				}else{
+					$(".m_nav").removeClass("opacity0")
+				}
+			}
 		});
 	});
 </script>

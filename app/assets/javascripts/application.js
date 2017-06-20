@@ -37,7 +37,6 @@ $(document).ready(function(){
 		// Mobile
 		$(".m_nav").removeClass("hide");
 		$(".d_nav").addClass("hide");
-
 	}
 
 });
