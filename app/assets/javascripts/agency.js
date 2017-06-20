@@ -34,7 +34,7 @@ $(function() {
     // Offset for Main Navigation
     $('#mainNav').affix({
       offset: {
-        top: 600
+        top: 550
       }
     });
 
@@ -42,6 +42,13 @@ $(function() {
         offset: {
             top: 6
         }
+    });
+    // click phone-icon
+    $(document).on('click', '.phone-open', function(){
+      $(this).addClass( "mrf-open" );
+    });
+    $(document).on('click', '.mrf-open', function(){
+      $(this).removeClass( "mrf-open" );
     });
     
 })

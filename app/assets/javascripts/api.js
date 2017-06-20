@@ -8,7 +8,6 @@ $(function(){
   var current_user = localStorage.getItem('user_id');
   localStorage.setItem('statmov_signin', "");
   var homepageShare = localStorage.getItem('homapage_share');
-
   var current_user = localStorage.getItem('user_id');
   if (current_user != "" && current_user != null && current_user != undefined) {
     $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>");
@@ -23,6 +22,7 @@ $(function(){
   }
   $(document).on('click', '.user-logout', function(){
     localStorage.setItem('user_id', "");
+    localStorage.setItem('homapage_share', "")
     window.location.href = "/";
   });
   //session check
@@ -646,6 +646,9 @@ $(document).on('click', '#move-size', function(){
   var msize = $('input[name=movesize]:checked');
   localStorage.setItem('move_size', msize.val());
   localStorage.setItem('move_size_id', msize.data('value'));
+  if (msize.val() != "A single item") {
+    localStorage.setItem('size_of_move', '');
+  }
   // var move_size = localStorage.getItem('move_size');
 });
 
@@ -704,19 +707,46 @@ $(document).on('click', '#contact_continue', function(){
 
   localStorage.setItem('name', name);
   localStorage.setItem('phone', phone);
+  var size_of_move = localStorage.getItem('size_of_move')
   var move_size = localStorage.getItem('move_size')
-  if (move_size != "" && move_size != null && move_size != "undefined") $('.result-size').text(move_size);
+  if (move_size != "" && move_size != null && move_size != "undefined") {
+    $('.room_type_label').css('display', 'block');
+    $('.result-size').text(move_size);
+    if (size_of_move != "" && size_of_move != null && size_of_move != "undefined") {
+      $('.size_of_move_text').text('(' + size_of_move + ')')
+    }
+    else {
+      $('.size_of_move_text').text("");
+    }
+  }
+  else {
+    $('.room_type_label').css('display', 'none');
+  }
   var items = JSON.parse(localStorage.getItem("items"))
   if (items != "" && items != null && items != undefined) {
+    $('.items_label').css('display', 'block');
     $('.result_extra_large').text(items);
   }
   else {
     $('.result_extra_large').text("")
+    $('.items_label').css('display', 'none');
   }
   var pickup = localStorage.getItem('pickup')
-  if (pickup != "" && pickup != null && pickup != "undefined") $('.result_pickup').text(pickup);
+  if (pickup != "" && pickup != null && pickup != "undefined") {
+    $('.pickup_label').css('display', 'block');
+    $('.result_pickup').text(pickup);
+  }
+  else {
+    $('.pickup_label').css('display', 'none');
+  }
   var destination = localStorage.getItem('destination')
-  if (destination != "" && destination != null && destination != "undefined") $('.result_destination').text(destination);
+  if (destination != "" && destination != null && destination != "undefined") {
+    $('.destination_label').css('display', 'block');
+    $('.result_destination').text(destination);
+  }
+  else {
+    $('.destination_label').css('display', 'none');
+  }
   var pickuparray = JSON.parse(localStorage.getItem("pickuparray"))
   if (pickuparray.length > 0 && pickuparray != null && pickuparray != undefined) {
     $('.result_pickup_walk').text('(' + pickuparray + ')');
@@ -732,11 +762,29 @@ $(document).on('click', '#contact_continue', function(){
     $('.result_destination_walk').text("");
   }
   var move_date = localStorage.getItem("move_date")
-  if (move_date != "" && move_date != null && move_date != undefined) $('.moving_date').text(move_date + " EST");
+  if (move_date != "" && move_date != null && move_date != undefined) {
+    $('.moving_date_label').css('display', 'block');
+    $('.moving_date').text(move_date + " EST");
+  }
+  else {
+    $('.moving_date_label').css('display', 'none');
+  }
   var move_from = localStorage.getItem("move_from")
-  if (move_from != "" && move_from != null && move_from != undefined) $('.pickup_address').text(move_from);
+  if (move_from != "" && move_from != null && move_from != undefined) {
+    $('.pickup_address_label').css('display', 'block');
+    $('.pickup_address').text(move_from);
+  }
+  else {
+    $('.pickup_address_label').css('display', 'none');
+  }
   var move_end = localStorage.getItem("move_end")
-  if (move_end != "" && move_end != null && move_end != undefined) $('.destination_address').text(move_end);
+  if (move_end != "" && move_end != null && move_end != undefined) {
+    $('.destination_address_label').css('display', 'block');
+    $('.destination_address').text(move_end);
+  }
+  else {
+    $('.destination_address_label').css('display', 'none');
+  }
   var name = localStorage.getItem("name")
   if (name != "" && name != null && name != undefined) $('.contact_name').text(name);
   var phone = localStorage.getItem("phone")
@@ -1040,4 +1088,7 @@ function userRegistration(email, password, password_confirmation) {
 
 $(document).on('click', '.all_request_page', function(){
   window.location.href = "/moves"
+});
+  $(document).on('click', '.cancel-btn', function(){
+  location.reload();
 });

@@ -67,6 +67,7 @@ $(function (){
     $('#size-of-your-move').modal('hide');
     var success_value = $('.size_of_move_value').val();
     if (success_value != '') {
+      localStorage.setItem('size_of_move', success_value)
       $('.item1').prop('checked', true);
       $('.size-of-move-val-check-link').html('');
       var append_value = "<a href='#building-type-setion' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
@@ -82,6 +83,7 @@ $(function (){
 
   $(document).on('click', '.size_of_move_cancel', function(){
     if ( $('.item1').is(':checked') ) {
+      localStorage.setItem('size_of_move', '')
       $('.item1').prop('checked', false);
       $('.size-of-move-val-check-link').html('');
       var append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";

@@ -1,0 +1,1 @@
+AdminUser.create!(email: 'developnow@yopmail.com', password: 'password', password_confirmation: 'password')

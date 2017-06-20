@@ -3,10 +3,11 @@
   <head>
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0, user-scalable = 1.0, shrink-to-fit=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>NewMoober</title>
+    <title>Welcome to Moober</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -16,6 +17,14 @@
 
   <body>
     <%= yield %>
+    <!-- mobile phone icon -->
+    <div id="mrf-contactBubbles" class="phone-open">
+      <ul>
+        <li><a class="mrf-bubble mrf-bubble--mail north" data-contactbubble="true" href="mailto:support@moober.com"></a></li>
+        <li><a class="mrf-bubble--phone west" data-contactbubble="true" href="tel:+16467334446"></a></li>
+      </ul>
+      <a class="mrf-trigger mrf-bubble--close"></a> 
+    </div>
     <!-- sidemenu -->
     <%= render 'home/side_nav'%>
   </body>

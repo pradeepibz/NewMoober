@@ -16,8 +16,46 @@
 			overflowScroll: true,
 			updateHash: false,
 			touchScroll:true,
-			before:function() {},
-			after:function() {},
+			before:function() {
+				// gif animation
+				$.scrollify.current().find('#loop_image_left').css("top","160px");
+				$.scrollify.current().find('#loop_image_left').animate({ "top": "-=140px" },1000);
+
+				// mobile
+				$.scrollify.current().find('#realtime_section_left').css("top","160px");
+				$.scrollify.current().find('#realtime_section_left').animate({ "top": "-=140px" },1000);
+
+				// slider
+				$.scrollify.current().find('#welcome_section_left').find('#welcome_section_1').css("top","-160px");
+				$.scrollify.current().find('#welcome_section_left').find('#welcome_section_1').animate({ "top": "+=150px" },600);
+
+				$.scrollify.current().find('#welcome_section_left').find('#welcome_section_2').css("top","-200px");
+				$.scrollify.current().find('#welcome_section_left').find('#welcome_section_2').animate({ "top": "+=190px" },950);
+
+				$.scrollify.current().find('#welcome_section_left').find('#welcome_section_3').css("top","-220px");
+				$.scrollify.current().find('#welcome_section_left').find('#welcome_section_3').animate({ "top": "+=210px" },1450);
+
+				// double image left
+				$.scrollify.current().find('#notified_left').find('#notified_left_1').css("left","-380px")
+				$.scrollify.current().find('#notified_left').find('#notified_left_1').animate({ "left": "+=200px" },1000);
+
+				// double image right
+				$.scrollify.current().find('#notified_left').find('#notified_left_2').css("left","0px")
+				$.scrollify.current().find('#notified_left').find('#notified_left_2').animate({ "left": "-=140px" },1000);
+
+				// last image
+				$.scrollify.current().find('#applay_left').css("right","50%")
+				$.scrollify.current().find('#applay_left').animate({ "right": "0%" },1000);
+
+        $.scrollify.current().find('#top-bar').css("left", "0px");
+        $.scrollify.current().find('#top-bar').animate({ "left": "45px" },1000);
+        $.scrollify.current().find('#bottom-bar').css("left", "0px");
+        $.scrollify.current().find('#bottom-bar').animate({ "left": "100%" },1500);
+			},
+			after:function() {
+				console.log("$.scrollify.current()");
+				console.log($.scrollify.current());
+			},
 			afterResize:function() {},
 			afterRender:function() {}
 		});

@@ -50,6 +50,25 @@
         <div class="col-md-6 saving_section_right">
           <div class="slide__title"> Save cash by comparing quotes. Users who use Moober save an average of 25-35% on their entire move. </div>
         </div>
+        <div class="col-md-6 saving_section_left">
+          <div class="fasterBrand"> <img src="assets/tentimesfaster.svg" alt="10x Faster"> </div>
+          <div class="chartContainer">
+            <div class="chartLegend"> $700 for a 1br apartment move </div>
+            <div class="chart mrf">
+              <div class="greyBar">
+                <div class="colorBar mrf-animable" id="top-bar" data-slide="4" data-animationIn="translate({x:0, y: 0, z:0}, '%')" data-animationOut="translate({x:-100, y: 0, z:0}, '%')"></div>
+              </div>
+            </div>
+            <div class="source"> Moober </div>
+            <div class="chartLegend"> $1,100 for a 1br apartment move </div>
+            <div class="chart others">
+              <div class="greyBar">
+                <div class="colorBar mrf-animable" id="bottom-bar" data-slide="4" data-animationIn="translate({x:0, y: 0, z:0}, '%')" data-animationOut="translate({x:-100, y: 0, z:0}, '%')"></div>
+              </div>
+            </div>
+            <div class="source"> Average NYC Moving Company </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -63,8 +82,13 @@
         <div class="col-md-6 notified_right">
           <div class="slide__title"> Be notified throughout the entire process of your Moober moving experience. </div>
         </div>
-        <div class="col-md-6 notified_left">
-          
+        <div class="col-md-6 notified_left" id="notified_left">
+          <div class="notified_slide__media" style="margin-top:100px;">
+            <img src="assets/01-screen11.png" class="mrf-animable notified_slide__image slide__image--left" data-slide="5" data-animationIn="translate({x:35, y: 0, z:0}, '%', .8)" id="notified_left_1" style="position:absolute" />
+            <img src="assets/02-screen1-shadow.png" class="mrf-animable notified_slide__image slide__image--left" data-slide="5" data-animationIn="translate({x:35, y: 0, z:0}, '%', .8)"  style="position:absolute"/>
+            <img src="assets/03-screen21.png" class="mrf-animable notified_slide__image slide__image--right" data-slide="5" data-animationIn="translate({x:-35, y: 0, z:0}, '%', .8)" id="notified_left_2" style="position:absolute"/>
+            <img src="assets/04-screen2-shadow.png" class="mrf-animable notified_slide__image slide__image--right" data-slide="5" data-animationIn="translate({x:-35, y: 0, z:0}, '%', .8)"  style="position:absolute"/>
+          </div>
         </div>
       </div>
     </div>
@@ -82,8 +106,8 @@
             <a class="apply_now" href="apply">Apply</a>
           </div>
         </div>
-        <div class="col-md-6 applay_left">
-          <img class="apply_section_image" src="assets/dynamic-ad-placement.png">
+        <div class="col-md-6 applay_left" id="applay_left">
+          <img class="apply_section_image" src="assets/dynamic-ad-placement.png" id="applay_left_1">
         </div>
       </div>
     </div>
@@ -107,18 +131,20 @@
 <%= render 'shared/scrollify' %>
 <script>
   document.getElementById('shareBtn').onclick = function() {
-    localStorage.setItem('homapage_share', "true")
     FB.ui({
       method: 'share',
       display: 'popup',
       scope: 'email,user_birthday',
       href: 'http://50.116.5.156/',
     }, function(response){ 
-        "<%= session[:sharebutton] = true %>"
-        // window.location.href = "http://stage.moober.com/auth/facebook";
-        // window.location.href = "http://50.116.5.156/auth/facebook";
-        window.location.href = "http://localhost:3000/auth/facebook";
-      // };
+        if (response != undefined) {
+          "<%= session[:sharebutton] = true %>"
+          localStorage.setItem('homapage_share', "true");
+          // window.location.href = "http://stage.moober.com/auth/facebook";
+          // window.location.href = "http://50.116.5.156/auth/facebook";
+          window.location.href = "http://localhost:3000/auth/facebook";
+        // };
+        }
     });
   }
   $(document).ready(function(){

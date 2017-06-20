@@ -27,6 +27,8 @@
 
 
 $(document).ready(function(){
+
+	// Finding Desktop/Mobile and hide appropriate navigation
 	if($(window).width()>640){
 		// Desktop
 		$(".d_nav").removeClass("hide");
@@ -37,4 +39,5 @@ $(document).ready(function(){
 		$(".d_nav").addClass("hide");
 
 	}
+
 });
