@@ -22,3 +22,21 @@
 //= require api
 //= require mobiscroll.javascript.min
 //= require jquery.scrollify
+//= require mobile_nav
+//= require iscroll
+
+
+$(document).ready(function(){
+
+	// Finding Desktop/Mobile and hide appropriate navigation
+	if($(window).width()>640){
+		// Desktop
+		$(".d_nav").removeClass("hide");
+		$(".m_nav").addClass("hide");
+	}else{
+		// Mobile
+		$(".m_nav").removeClass("hide");
+		$(".d_nav").addClass("hide");
+	}
+
+});

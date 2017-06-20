@@ -17,6 +17,14 @@
 
   <body>
     <%= yield %>
+    <!-- mobile phone icon -->
+    <div id="mrf-contactBubbles" class="phone-open">
+      <ul>
+        <li><a class="mrf-bubble mrf-bubble--mail north" data-contactbubble="true" href="mailto:support@moober.com"></a></li>
+        <li><a class="mrf-bubble--phone west" data-contactbubble="true" href="tel:+16467334446"></a></li>
+      </ul>
+      <a class="mrf-trigger mrf-bubble--close"></a> 
+    </div>
     <!-- sidemenu -->
     <%= render 'home/side_nav'%>
   </body>

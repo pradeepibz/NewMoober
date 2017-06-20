@@ -508,12 +508,12 @@ body {
     height: 28px;
     transition: all 0.5s ease-out 0s;
 }
-#mainNav .mrf-menuContainer {
+/*#mainNav .mrf-menuContainer {
   float: right;
   height: auto;
   text-align: right;
   width: calc(80% - 40px);
-}
+}*/
 #mainNav.affix ul, #moveNav ul {
   text-align: right;
   transition: transform 0.5s ease-out 0s, -webkit-transform 0.5s ease-out 0s;
@@ -909,10 +909,10 @@ a {
   padding: 15px 38px;
   text-transform: uppercase;
 }
-.applay_left img{
+.apply_left img{
   max-width: 100%;
 }
-.applay_right .slide__title{
+.apply_right .slide__title{
   margin-left: 20px;
   margin-top: 15%;
 }
@@ -926,9 +926,81 @@ a {
   display: none;
   margin-left: -20%;
 }
-/*.home_popup {
+
+/*mobile phone icon*/
+#mrf-contactBubbles {
+  display: none;
+  bottom: 0;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  transition: transform 0.4s ease-in 0s, -webkit-transform 0.4s ease-in 0s;
+  width: 50px;
+}
+.mrf-bubble--mail {
+    background-image: url("../assets/mail.svg");
+}
+.mrf-open .mrf-bubble--close {
+    background-position: 15px;
+    background-size: 20px;
+    background-image: url("../assets/close.svg");
+}
+.mrf-bubble--close, .mrf-bubble--mail, .mrf-bubble--phone {
+    background-color: #ffc043;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px auto;
+    border-radius: 50%;
+    bottom: 10px;
+    color: #fff;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    transform: translate(0px, 0px);
+    transition: transform 0.1s ease-in 0s, -webkit-transform 0.1s ease-in 0s;
+    width: 50px;
+}
+.mrf-bubble--close, .mrf-bubble--phone {
+    background-image: url("../assets/phone.svg");
+}
+#mrf-contactBubbles.mrf-open .north {
+  -webkit-transform: translateY(-120%);
+  transform: translateY(-120%)
+}
+#mrf-contactBubbles.mrf-open .north,
+#mrf-contactBubbles.mrf-open .west {
+  -webkit-transition: -webkit-transform .1s ease-in;
+  transition: -webkit-transform .1s ease-in;
+  transition: transform .1s ease-in;
+  transition: transform .1s ease-in, -webkit-transform .1s ease-in
+}
+#mrf-contactBubbles.mrf-open .west {
+  -webkit-transform: translateX(-120%);
+  transform: translateX(-120%)
+}
+#mrf-contactBubbles.mrf-open .north-west {
+  -webkit-transform: translate(-120%, -120%);
+  transform: translate(-120%, -120%);
+  -webkit-transition: -webkit-transform .1s ease-in;
+  transition: -webkit-transform .1s ease-in;
+  transition: transform .1s ease-in;
+  transition: transform .1s ease-in, -webkit-transform .1s ease-in
+}
+.new-mrf-logo{
+  display: none;
+  float: left;
+  position: absolute;
+  width: 60%;
+  left: 20%;
   text-align: center;
-}*/
+  top: 10px;
+}
+.mobile-logo {
+    height: 28px !important;
+}
 
 /*responsive code*/
 /*iPhone 5, 5s*/
@@ -1117,12 +1189,12 @@ a {
     font-size: 24px;
     text-align: center;
   }
-  .applay_right .slide__title{
+  .apply_right .slide__title{
     margin-top: 0;
     font-size: 24px;
     text-align: center;
   }
-  .applay_left .apply_section_image{
+  .apply_left .apply_section_image{
     margin-top: 10%;
   }
   .share_facebook_right .slide__title{
@@ -1133,7 +1205,7 @@ a {
   .apply_section{
     margin-bottom: 10%;
   }
-  .applay_right .apply_section{
+  .apply_right .apply_section{
     margin-bottom: 10%;
     margin-top: 25%;
   }
@@ -1212,6 +1284,11 @@ a {
     float: left;
     margin-top: 5%;
   }
+  .loop_image img {
+    margin-top: -15%;
+    max-width: 80%;
+    margin-left: 10%;
+  }
   .loop_image_right{
     float: left;
   }
@@ -1284,15 +1361,15 @@ a {
     font-size: 24px;
     text-align: center;
   }
-  .applay_right .slide__title{
+  .apply_right .slide__title{
     margin-top: 0;
     font-size: 24px;
     text-align: center;
   }
-  .applay_left .apply_section_image{
-    margin-top: 0%;
-    max-width: 80%;
-    margin-left: 10%;
+  .apply_left .apply_section_image{
+    margin-top: -12%;
+    max-width: 120%;
+    margin-left: -20%;
   }
   .share_facebook_right .slide__title{
     margin-top: 20%;
@@ -1302,9 +1379,9 @@ a {
   .apply_section{
     margin-bottom: 10%;
   }
-  .applay_right .apply_section{
+  .apply_right .apply_section{
     margin-bottom: 10%;
-    margin-top: 25%;
+    margin-top: 20%;
   }
   .hero__title{
     font-size: 30px;
@@ -1372,5 +1449,22 @@ a {
   }
   #subscribe_email {
     margin-left: 0px;
+  }
+  #mrf-contactBubbles{
+    display: block;
+    cursor: pointer;
+  }
+  .realtime_section_left img {
+    margin-top: 19%;
+    width: 76%;
+  }
+  .mrf-logo{
+    display: none;
+  }
+  .new-mrf-logo{
+    display: block;
+  }
+  #mainNav .mrf-gradient {
+    display: none;
   }
 }

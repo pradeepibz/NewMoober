@@ -1,0 +1,80 @@
+#m_nav_wrapper {
+  position: fixed !important;
+  top: 45px;
+  left: 0;
+  z-index: 1;
+  bottom: 48px;
+  width: 100%;
+  height: 40px;
+  display: block !important;
+  border-bottom: 1px solid lightgray;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+}
+
+#m_nav_wrapper ul li:hover, #m_nav_wrapper ul li.active{
+  border-bottom: 1px solid #FFC043;
+  opacity: 1;
+}
+
+#m_nav_scroller {
+  position: relative;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  width: 880px;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+#m_nav_scroller ul {
+  width: 100%;
+  height: 38px;
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+#m_nav_scroller li {
+  float: left;
+  opacity: 0.5;
+  padding-bottom: 13px;
+  display: inline-block;
+  margin: 5px;
+  font-size: 13px;
+}
+
+#m_nav_scroller ul li a {
+  padding: 0 15px;
+}
+
+.ms_logo{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+}
+.ms_logo img{
+  padding: 10px 0;
+}
+
+.opacity0{
+  opacity: 0;
+}
