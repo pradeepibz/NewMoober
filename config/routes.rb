@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/signup', to: "customers#sign_up", as: :user_sign_up
   get '/forget_password', to: "customers#forget_password", as: :forget_password
   match 'auth/:provider/callback', :to => 'home#get_facebook_auth_token', via: [:get, :post]
+  get '/moves', to: "home#list_of_moves", as: :list_of_moves
   # End url
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -40,9 +40,18 @@ $(function() {
 
     $('#moveNav').affix({
         offset: {
-            top: 6
+          top: 6
         }
     });
+    // $(document).ready(function(){
+    //   $(document).scrollTop(0);
+    // });
+    $(window).bind('beforeunload', function(){
+      $(window).scrollTop(0);
+    });
+    // $(window).on('beforeunload', function() {
+    //   $(window).scrollTop(0);
+    // });
     // click phone-icon
     $(document).on('click', '.phone-open', function(){
       $(this).addClass( "mrf-open" );
