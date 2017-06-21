@@ -20,11 +20,15 @@
 				if($($.scrollify.current()[0]).hasClass("bg_video")){
 					// $(".m_nav").addClass("opacity0")
 					$(".m_nav").fadeOut()
-					// $("#mrf-contactBubbles").css("display","none");
+					if ($(window).width() < 750) {
+						$("#mrf-contactBubbles").css("display","none");
+					}
 				}else{
 					$(".m_nav").removeClass("opacity0")
 					$(".m_nav").fadeIn()
-					// $("#mrf-contactBubbles").css("display","block");
+					if ($(window).width() < 750) {
+						$("#mrf-contactBubbles").css("display","block");
+					}
 				}
 				// gif animation
 				$.scrollify.current().find('#loop_image_left').css("top","160px");

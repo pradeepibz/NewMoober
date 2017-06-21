@@ -1274,7 +1274,7 @@ a {
     margin-left: 0px;
   }
   #mrf-contactBubbles{
-    display: block;
+    /*display: block;*/
     cursor: pointer;
   }
   .realtime_section_left img {
@@ -1509,7 +1509,7 @@ a {
     margin-left: 0px;
   }
   #mrf-contactBubbles{
-    display: block;
+    /*display: block;*/
     cursor: pointer;
   }
   .realtime_section_left img {
