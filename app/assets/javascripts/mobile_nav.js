@@ -17,7 +17,11 @@ $(document).ready(function(){
   // });
 
 
-  $(document).on('click', ".mnav_slide_left_right a", function(){
+  $(document).on('click', ".mnav_slide_left_right", function(event){
+    // alert("dddd");
+    event.preventDefault();
+    $("#m_nav_scroller ul li").removeClass("active")
+    $(this).addClass("active")
     location.href = $(this).data("href")
   });
 

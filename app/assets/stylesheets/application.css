@@ -1183,7 +1183,7 @@ input:focus {
   background: rgba(0, 0, 0, 0) linear-gradient(to right, #74bdfc 0px, #ffc043 100%) repeat scroll 0 0;
   transition-duration: 1s;
   width: 10%;
-  margin-left: -45px;
+  /*margin-left: -45px;*/
 }
 .saving_section_left .colorBar {
   border-radius: 80px;
@@ -1206,7 +1206,7 @@ input:focus {
   background: rgba(0, 0, 0, 0) linear-gradient(to right, #fad961 0px, #ffd600 100%) repeat scroll 0 0;
   transition-duration: 6s;
   width: 100%;
-  margin-left: -100%;
+  /*margin-left: -100%;*/
 }
 .list_of_moves_page {
   margin-top: 10%;

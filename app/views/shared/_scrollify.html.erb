@@ -54,10 +54,18 @@
 				$.scrollify.current().find('#apply_left').css("right","50%")
 				$.scrollify.current().find('#apply_left').animate({ "right": "0%" },1000);
 
-		        $.scrollify.current().find('#top-bar').css("left", "0px");
-		        $.scrollify.current().find('#top-bar').animate({ "left": "45px" },1000);
-		        $.scrollify.current().find('#bottom-bar').css("left", "0px");
-		        $.scrollify.current().find('#bottom-bar').animate({ "left": "100%" },1500);
+		        // $.scrollify.current().find('#top-bar').css("left", "0px");
+		        // $.scrollify.current().find('#top-bar').animate({ "left": "45px" },1000);
+		        // $.scrollify.current().find('#bottom-bar').css("left", "0px");
+		        // $.scrollify.current().find('#bottom-bar').animate({ "left": "100%" },1500);
+
+
+				$.scrollify.current().find('#top-bar').css("width", "0");
+				$.scrollify.current().find('#top-bar').animate({width: "10%"},2000, "easeInOutSine");
+				$.scrollify.current().find('#bottom-bar').css("width", "0");
+				$.scrollify.current().find('#bottom-bar').animate({width: "100%"},4000, "easeInOutSine");
+
+
 			},
 			after:function() {
 			},
