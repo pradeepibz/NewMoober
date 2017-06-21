@@ -1054,7 +1054,7 @@ button.close {
 .modal_loading{
   display:    none;
   position:   fixed;
-  z-index:    1000;
+  z-index: 1030;
   top:        0;
   left:       0;
   height:     100%;
@@ -1421,6 +1421,9 @@ input:focus {
     margin-left: -15%;
     text-align: center;
   }
+  .modal_loading img {
+    margin-top: 50%;
+  }
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -1497,10 +1500,10 @@ input:focus {
   .size-of-move-val-check-div{
     margin: 10px;
   }
- /* .page_valid_align {
-    top: 30%;
+  .modal .new_page_valid_align {
+    top: 30% !important;
     margin: 50px !important;
-  }*/
+  }
   .pd-15 {
   	margin-right: 0px !important;
   }
@@ -1555,5 +1558,8 @@ input:focus {
   .saving_section_left .chartLegend {
   	font-size: 25px;
   	margin-top: 40px;
+  }
+  .modal_loading img {
+    margin-top: 50%;
   }
 }

@@ -8,10 +8,10 @@ $(document).ready(function(){
     horizontal_smooth_scroll(myScroll)
   }
 
-  document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
-    capture: false,
-    passive: false
-  } : false);
+  // document.addEventListener('touchmove', function (e) { e.preventDefault(); }, isPassive() ? {
+  //   capture: false,
+  //   passive: false
+  // } : false);
 
   // $(document).on("click", ".mnav_slide_left_right a", function(){
   // });
