@@ -870,7 +870,7 @@ $(document).on('click', '#start_mov_btn', function(){
         $.ajax({
           url: 'move_success',
           method: 'POST',
-          data: {move_params: mail_move_params, email: email}
+          data: {move_params: mail_move_params, email: email, date: d}
         })
         .done(function() {
           console.log("success");

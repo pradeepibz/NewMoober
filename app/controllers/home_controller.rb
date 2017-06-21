@@ -41,7 +41,7 @@ class HomeController < ApplicationController
           caps_promo_code = promo_code.upcase
           @promo_code = @facebook_user.build_promo_code(promo_code: caps_promo_code, is_used: false)
           if @promo_code.save
-            # CustomerMailer.promo_code(@facebook_user,caps_promo_code).deliver
+            CustomerMailer.promo_code(@facebook_user,caps_promo_code).deliver
           end
         end
       else
@@ -50,7 +50,7 @@ class HomeController < ApplicationController
         caps_promo_code = promo_code.upcase
         @promo_code = @facebook_user.build_promo_code(promo_code: caps_promo_code, is_used: false)
         if @promo_code.save
-          # CustomerMailer.promo_code(@facebook_user,caps_promo_code).deliver
+          CustomerMailer.promo_code(@facebook_user,caps_promo_code).deliver
         end
       end
       session[:sharebutton] = nil
@@ -68,6 +68,13 @@ class HomeController < ApplicationController
                       :email => @user.email, password: @user.uid }}
     end
     # get auth token
+  end
+
+  def move_success
+    @move_params = params[:move_params]
+    @email = params[:email]
+    @date = params[:date]
+    CustomerMailer.move_success_mail(@move_params, @email, @date).deliver_now
   end
 
 end

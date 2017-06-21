@@ -1,13 +1,4 @@
-<nav id="moveNav" class="navbar navbar-default navbar-fixed-top affix">
-  <div class="mrf-gradient"></div>
-  <div class="mrf-logo"> <a href="/"> <img src="assets/logo.png" alt="Moober"> </a> </div>
-  <div class="mrf-menuContainer">
-    <ul>
-      <li> <button class="c-hamburger c-hamburger--htx"> <span>toggle menu</span> </button> </li>
-      <li class=" mrf-contactAction"> <a href="/contact"><b>Contact Us</b></a></li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/static_header' %>
 <div class='modal_loading'><img src="/assets/ajax_loader.gif" alt=""></div>
   <section class="slide" id="map">
     
@@ -25,6 +16,7 @@
   <div class="forget_pswd_body">
     <%= render 'customers/forgetpassword' %>
   </div>
+  <%= render 'home/top_mbl_side_nav' %>
 
   
 <script>
@@ -86,7 +78,7 @@
 
 
 <!-- size of your move -->
-<div id="size-of-your-move" class="modal fade" role="dialog">
+<div id="size-of-your-move" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
     <!-- Modal content-->
     <div class="modal-content">
@@ -106,7 +98,7 @@
   </div>
 </div>
 <!-- moving-extra -->
-<div id="moving-extra" class="modal fade" role="dialog">
+<div id="moving-extra" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
@@ -128,7 +120,7 @@
   </div>
 </div>
 <!-- edit moving-extra -->
-<div id="edit-moving-extra" class="modal fade" role="dialog">
+<div id="edit-moving-extra" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
@@ -152,7 +144,7 @@
   </div>
 </div>
 <!-- building-type -->
-<div id="building-type-pickup" class="modal fade" role="dialog">
+<div id="building-type-pickup" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
@@ -174,7 +166,7 @@
   </div>
 </div>
 <!-- edit pickup -->
-<div id="edit-building-type-pickup" class="modal fade" role="dialog">
+<div id="edit-building-type-pickup" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
@@ -196,7 +188,7 @@
   </div>
 </div>
 <!-- edit-building-type-destination -->
-<div id="edit-building-type-destination" class="modal fade" role="dialog">
+<div id="edit-building-type-destination" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
@@ -217,7 +209,7 @@
 
   </div>
 </div>
-<div id="building-type-destination" class="modal fade" role="dialog">
+<div id="building-type-destination" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
@@ -239,7 +231,7 @@
   </div>
 </div>
 <!-- request-received -->
-<div id="request-received" class="modal fade" role="dialog">
+<div id="request-received" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
@@ -260,7 +252,7 @@
   </div>
 </div>
 <!-- sign-in -->
-<div id="sign-in" class="modal fade" role="dialog">
+<div id="sign-in" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50">
 
     <!-- Modal content-->
@@ -282,7 +274,7 @@
   </div>
 </div>
 <!-- sign-up -->
-<div id="sign-up" class="modal fade" role="dialog">
+<div id="sign-up" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50">
 
     <!-- Modal content-->
@@ -346,7 +338,7 @@
   </div>
 </div>
 <!-- start a Move error -->
-<div id="start-move-error" class="modal fade" role="dialog">
+<div id="start-move-error" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-sm mt-50 page_valid_align">
 
     <!-- Modal content-->
