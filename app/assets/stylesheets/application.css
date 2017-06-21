@@ -596,7 +596,7 @@ input[type=checkbox], input[type=radio] {
   transform: scale(1);
 }
 .page_valid_align {
-  top: 6%;
+  top: 30%;
 }
 .popup_image {
   max-width: 75%;
@@ -1365,7 +1365,7 @@ input:focus {
     margin: 10px;
   }
   .page_valid_align {
-    top: 30%;
+    top: 40% !important;
     margin: 50px !important;
   }
   .pd-15 {
@@ -1496,10 +1496,10 @@ input:focus {
   .size-of-move-val-check-div{
     margin: 10px;
   }
-  .page_valid_align {
+ /* .page_valid_align {
     top: 30%;
     margin: 50px !important;
-  }
+  }*/
   .pd-15 {
   	margin-right: 0px !important;
   }

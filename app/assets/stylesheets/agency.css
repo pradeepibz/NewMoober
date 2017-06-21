@@ -951,25 +951,25 @@ a {
     background-image: url("../assets/close.svg");
 }
 .mrf-bubble--close, .mrf-bubble--mail, .mrf-bubble--phone {
-    background-color: #ffc043;
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    background-size: 30px auto;
-    border-radius: 50%;
-    bottom: 10px;
-    color: #fff;
-    font-size: 20px;
-    height: 50px;
-    line-height: 50px;
-    position: absolute;
-    right: 10px;
-    text-align: center;
-    transform: translate(0px, 0px);
-    transition: transform 0.1s ease-in 0s, -webkit-transform 0.1s ease-in 0s;
-    width: 50px;
+  background-color: #ffc043;
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  background-size: 30px auto;
+  border-radius: 50%;
+  bottom: 10px;
+  color: #fff;
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  right: 10px;
+  text-align: center;
+  transform: translate(0px, 0px);
+  transition: transform 0.1s ease-in 0s, -webkit-transform 0.1s ease-in 0s;
+  width: 50px;
 }
 .mrf-bubble--close, .mrf-bubble--phone {
-    background-image: url("../assets/phone.svg");
+  background-image: url("../assets/phone.svg");
 }
 #mrf-contactBubbles.mrf-open .north {
   -webkit-transform: translateY(-120%);
@@ -1004,7 +1004,7 @@ a {
   top: 10px;
 }
 .mobile-logo {
-    height: 28px !important;
+  height: 28px !important;
 }
 
 /*responsive code*/
@@ -1215,8 +1215,9 @@ a {
     margin-bottom: 10%;
     margin-top: 10%;
   }
-  .hero__title{
-    font-size: 30px;
+  .hero__title {
+    font-size: 20px;
+    margin-top: 10%;
   }
   .logos__item{
     width: 40%;
@@ -1306,6 +1307,9 @@ a {
   }
   .footer__followUs .data .footer__item {
     width: auto;
+  }
+  .join .logos {
+    margin-top: 25px;
   }
 }
 
