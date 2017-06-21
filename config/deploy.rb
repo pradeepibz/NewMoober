@@ -3,7 +3,7 @@ lock "3.8.1"
 
 set :application, 'Moober'
 set :deploy_user, 'moober'
-set :repo_url, 'https://pradeepibz:Pradeep123!@github.com/IBZBS/Moober.git'
+set :repo_url, 'https://pradeepibz:Pradeep123!@github.com/IBZBS/Moober-Scratch.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
