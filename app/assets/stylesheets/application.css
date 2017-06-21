@@ -1340,7 +1340,7 @@ input:focus {
     width: 90%;
   }
   .mt-40 {
-    margin-top: 13%;
+    margin-top: 17%;
   }
   .image-div-submit{
     width: auto;
@@ -1356,11 +1356,11 @@ input:focus {
   }
   .scroll_div{
     margin-top: 20px;
-    max-height: 350px;
+    max-height: 340px;
   }
   .scroll_div_new{
     margin-top: 20px;
-    max-height: 340px;
+    max-height: 330px;
   }
   .size-of-move-val-check-div{
     margin: 10px;
@@ -1472,7 +1472,7 @@ input:focus {
     width: 90%;
   }
   .mt-40 {
-    margin-top: 13%;
+    margin-top: 17%;
   }
   .image-div-submit{
     width: auto;
@@ -1488,11 +1488,11 @@ input:focus {
   }
   .scroll_div{
     margin-top: 20px;
-    max-height: 380px;
+    max-height: 370px;
   }
   .scroll_div_new{
     margin-top: 20px;
-    max-height: 370px;
+    max-height: 360px;
   }
   .size-of-move-val-check-div{
     margin: 10px;
