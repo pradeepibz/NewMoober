@@ -264,17 +264,17 @@ h6 {
   -webkit-transition: background 0s .3s, height 0s 0s;
   transition: background 0s .3s, height 0s 0s
 }
-.c-hamburger--htx.is-active span::before, .c-hamburger--htx.toggle-is-active span::before {
+.c-hamburger--htx.is-active span::before{
   top: 0;
   -webkit-transform: rotate(44deg);
   transform: rotate(44deg);
   margin-bottom: 1px
 }
-.c-hamburger--htx.is-active span::after, .c-hamburger--htx.toggle-is-active span::after {
+.c-hamburger--htx.is-active span::after{
   bottom: 0;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  margin-top: 1px
+  margin-top: 1px;
 }
 .c-hamburger--htx.is-active span::after,
 .c-hamburger--htx.is-active span::before, .c-hamburger--htx.toggle-is-active span::after, .c-hamburger--htx.toggle-is-active span::before {
@@ -1084,6 +1084,19 @@ a {
   .realtime_section {
     background-color: #fff;
   }
+  .c-hamburger--htx.toggle-is-active span::before{
+    top: -1px;
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    margin-bottom: 1px;
+  }
+  .c-hamburger--htx.toggle-is-active span::after{
+    bottom: 0px;
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    margin-top: 1px;
+    left: 0px;
+  }
 }
 
 /*iPhone 6, 6s, 7*/
@@ -1310,6 +1323,19 @@ a {
   }
   .join .logos {
     margin-top: 25px;
+  }
+  .c-hamburger--htx.toggle-is-active span::before{
+    top: -1px;
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    margin-bottom: 1px;
+  }
+  .c-hamburger--htx.toggle-is-active span::after{
+    bottom: 0px;
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    margin-top: 1px;
+    left: 0px;
   }
 }
 
@@ -1540,5 +1566,18 @@ a {
   }
   .footer__followUs .data .footer__item {
     width: auto;
+  }
+  .c-hamburger--htx.toggle-is-active span::before{
+    top: -1px;
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    margin-bottom: 1px;
+  }
+  .c-hamburger--htx.toggle-is-active span::after{
+    bottom: 0px;
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    margin-top: 1px;
+    left: 0px;
   }
 }
