@@ -1225,18 +1225,6 @@ input:focus {
 .mbl-logo {
   width: 70%;
 }
-.mbl-side-menu {
-  width: 30%;
-  position: absolute;
-  top: 40%;
-  left: 100%;
-  margin-left: -10px !important;
-  transform: translate(-46%, -50%);
-  height: 30px;
-  max-height: none!important;
-  max-width: none!important;
-  display: none;
-}
 
 .upcoming_moves, .past_moves {
   background: #ffc043 none repeat scroll 0 0;

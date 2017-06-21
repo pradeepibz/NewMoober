@@ -17,6 +17,10 @@ $(document).ready(function(){
   // });
 
 
+  $(document).on('click', ".mnav_slide_left_right a", function(){
+    location.href = $(this).data("href")
+  });
+
 });
 
 function isPassive() {
@@ -33,8 +37,16 @@ function isPassive() {
 
 function horizontal_smooth_scroll(myScroll){
   // Get the center X position
-  var center_pos = $(window).width() / 2 - $("#m_nav_scroller ul li.active").width() / 2;
-  var move_left = center_pos - ($("#m_nav_scroller ul li.active").position().left);
+  var center_pos = 0;
+  if($("#m_nav_scroller ul li.active").length>0){
+    center_pos = $(window).width() / 2 - $("#m_nav_scroller ul li.active").width() / 2;
+  }
+  if($("#m_nav_scroller ul li.active").length>0){
+    var li_active_pos = $("#m_nav_scroller ul li.active").position().left;
+  }else{
+    var li_active_pos = 0;
+  }
+  var move_left = center_pos - (li_active_pos);
 
   // with animation (smooth scroll) set the active link at center of screen
   $("#m_nav_scroller ul").animate({
