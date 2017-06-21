@@ -1182,7 +1182,7 @@ input:focus {
 .saving_section_left .mrf .colorBar {
   background: rgba(0, 0, 0, 0) linear-gradient(to right, #74bdfc 0px, #ffc043 100%) repeat scroll 0 0;
   transition-duration: 1s;
-  width: 10%;
+  width: 30%;
   margin-left: -45px;
 }
 .saving_section_left .colorBar {
