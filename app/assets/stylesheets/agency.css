@@ -336,18 +336,20 @@ h6 {
 .slide__title {
   font-family: Source Sans Pro, sans-serif;
   color: #222;
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 300;
   line-height: 1;
   margin-top: 0;
+  text-transform: none;
 }
 .slide__text {
   font-family: Source Sans Pro,sans-serif;
-  font-size: 20px;
-  font-weight: lighter;
-  color: #000;
+  font-size: 23px;
+  font-weight: 300;
+  color: #222;
   text-align: left;
   width: 90%;
+  line-height: 1.54
 }
 .slide__media {
   float: left;
@@ -364,12 +366,12 @@ h6 {
 }
 .list_type .slide__text {
   margin-left: 15px;
-  line-height: 20px;
-    margin-bottom: 10px;
+  line-height: 27px;
+  margin-bottom: 10px;
 }
 .list_type .new-text {
-  font-size: 20px;
-  font-weight: lighter;
+  font-size: 22px;
+  font-weight: 300;
   margin-left: -25px;
   margin-top: 10px;
   font-family: Source Sans Pro,sans-serif;
@@ -399,7 +401,8 @@ h6 {
   background-color: #f2f2f2;
 }
 .realtime_section_right .slide__title{
-  margin-top: 20%;
+  margin-top: 25%;
+  width: 85%
 }
 .realtime_section_right{
   float: right !important;
@@ -408,7 +411,7 @@ h6 {
   text-align: center;
 }
 .realtime_section_left img{
-  margin-top: 10%;
+  /*margin-top: 10%;*/
   width: 60%;
 }
 .saving_section_right .slide__title{
@@ -777,7 +780,7 @@ a {
 }
 .share_facebook_right .slide__title{
   margin-top: 30%;
-  width: 80%;
+  width: 85%;
   margin-left: 10%;
 }
 .connect_facebook {
@@ -1005,6 +1008,9 @@ a {
 }
 .mobile-logo {
   height: 28px !important;
+}
+.fb-share {
+  background-color: #f2f2f2;
 }
 
 /*responsive code*/
