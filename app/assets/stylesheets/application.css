@@ -1355,11 +1355,11 @@ input:focus {
   }
   .scroll_div{
     margin-top: 20px;
-    max-height: 380px;
+    max-height: 350px;
   }
   .scroll_div_new{
     margin-top: 20px;
-    max-height: 370px;
+    max-height: 340px;
   }
   .size-of-move-val-check-div{
     margin: 10px;
@@ -1407,6 +1407,18 @@ input:focus {
   .list_of_moves_page .up-col-md-12 {
     padding-right: 0px !important;
     padding-left: 0px !important;
+  }
+  .footer_devise_content ul{
+    text-align: center;
+    margin-left: -25%;
+  }
+  .footer__followUs .emails{
+    margin-left: -25%;
+    text-align: center;
+  }
+  .footer__followUs .date{
+    margin-left: -15%;
+    text-align: center;
   }
 }
 
