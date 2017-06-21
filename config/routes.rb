@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get '/forget_password', to: "customers#forget_password", as: :forget_password
   match 'auth/:provider/callback', :to => 'home#get_facebook_auth_token', via: [:get, :post]
   get '/moves', to: "home#list_of_moves", as: :list_of_moves
+  post '/move_success', to: "home#move_success"
   # End url
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

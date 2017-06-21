@@ -24,8 +24,12 @@ class CustomerMailer < ApplicationMailer
     mail(to: @subscriber.email, subject: 'Subscriber Mail')
   end
 
-  def move_success_mail(move_params, email)
+  def move_success_mail(move_params, email, date)
     @move_params = move_params
+    @date = date
+    from = Geocoder.coordinates(move_params['from_address'])
+    to = Geocoder.coordinates(move_params['to_address'])
+    @distance = Geocoder::Calculations.distance_between(from, to)
     mail(from: email, to: 'support@moober.com', subject: "New Order for Moving")
   end
 
