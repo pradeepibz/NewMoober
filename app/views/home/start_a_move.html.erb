@@ -1,13 +1,4 @@
-<nav id="moveNav" class="navbar navbar-default navbar-fixed-top affix">
-  <div class="mrf-gradient"></div>
-  <div class="mrf-logo"> <a href="/"> <img src="assets/logo.png" alt="Moober"> </a> </div>
-  <div class="mrf-menuContainer">
-    <ul>
-      <li> <button class="c-hamburger c-hamburger--htx"> <span>toggle menu</span> </button> </li>
-      <li class=" mrf-contactAction"> <a href="/contact"><b>Contact Us</b></a></li>
-    </ul>
-  </div>
-</nav>
+<%= render 'shared/static_header' %>
 <div class='modal_loading'><img src="/assets/ajax_loader.gif" alt=""></div>
   <section class="slide" id="map">
     
@@ -25,6 +16,7 @@
   <div class="forget_pswd_body">
     <%= render 'customers/forgetpassword' %>
   </div>
+  <%= render 'home/top_mbl_side_nav' %>
 
   
 <script>
