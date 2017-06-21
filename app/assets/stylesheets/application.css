@@ -1365,10 +1365,6 @@ input:focus {
   .size-of-move-val-check-div{
     margin: 10px;
   }
-  .page_valid_align {
-    top: 40% !important;
-    margin: 50px !important;
-  }
   .pd-15 {
   	margin-right: 0px !important;
   }
@@ -1500,8 +1496,7 @@ input:focus {
   .size-of-move-val-check-div{
     margin: 10px;
   }
-  .modal .new_page_valid_align {
-    top: 30% !important;
+  .page_valid_align {
     margin: 50px !important;
   }
   .pd-15 {
