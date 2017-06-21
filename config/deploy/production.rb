@@ -9,7 +9,7 @@
 
 
 server '50.116.5.156', user: 'moober', roles: %w{app db web}
-set :deploy_to, '~/projects/production'
+set :deploy_to, '~/projects/development'
 set :branch, 'master'
 
 
