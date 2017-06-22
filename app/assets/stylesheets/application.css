@@ -1420,6 +1420,12 @@ input:focus {
   .modal_loading img {
     margin-top: 50%;
   }
+  #m_nav_wrapper {
+    height: 75px !important;
+  }
+  #m_nav_scroller li{
+    height: 19px !important
+  }
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -1556,5 +1562,11 @@ input:focus {
   }
   .modal_loading img {
     margin-top: 50%;
+  }
+  #m_nav_wrapper {
+    height: 75px !important;
+  }
+  #m_nav_scroller li{
+    height: 19px !important
   }
 }

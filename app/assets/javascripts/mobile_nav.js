@@ -4,7 +4,7 @@ $(document).ready(function(){
   var myScroll;
 
   function loaded () {
-    myScroll = new IScroll('#m_nav_wrapper', { scrollX: true, scrollY: false, mouseWheel: true });
+    myScroll = new IScroll('#m_nav_wrapper', { scrollX: true, scrollY: false, mouseWheel: true, click: true });
     horizontal_smooth_scroll(myScroll)
   }
 
@@ -18,7 +18,6 @@ $(document).ready(function(){
 
 
   $(document).on('click', ".mnav_slide_left_right", function(event){
-    // alert("dddd");
     event.preventDefault();
     $("#m_nav_scroller ul li").removeClass("active")
     $(this).addClass("active")
