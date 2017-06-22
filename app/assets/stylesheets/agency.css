@@ -961,6 +961,10 @@ a {
     background-position: 15px;
     background-size: 20px;
     background-image: url("../assets/close.svg");
+    cursor: pointer;
+}
+.mrf-open{
+  cursor: pointer;
 }
 .mrf-bubble--close, .mrf-bubble--mail, .mrf-bubble--phone {
   background-color: #ffc043;
