@@ -402,7 +402,9 @@ h6 {
 }
 .realtime_section_right .slide__title{
   margin-top: 25%;
-  width: 85%
+  /*width: 85%*/
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .realtime_section_right{
   float: right !important;
@@ -1143,6 +1145,8 @@ a {
   .list_type .slide__text {
     margin-left: 20px;
     font-size: 17px;
+    line-height: 25px;
+    margin-top: -15px;
   }
   .list_type{
     margin-left: 30px;
@@ -1165,7 +1169,7 @@ a {
     margin-left: 20%;
   }
   .welcome_section_right .slide__title{
-    font-size: 20px;
+    font-size: 23px;
     text-align: center;
     text-transform: none;
   }
