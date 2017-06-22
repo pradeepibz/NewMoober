@@ -532,9 +532,26 @@ input[type=checkbox], input[type=radio] {
   width: 23px;
   z-index: 1;
 }
-.add_new_btn {
+.add_new_btn{
   display: none;
   float: left;
+}
+.add_new_btn a{
+  margin: 15px;
+  float: left;
+  cursor: pointer;
+}
+.popup_success_cancel_btn{
+  cursor: pointer;
+}
+.image-cancel{
+  cursor: pointer;
+}
+.pickup_cancel_btn{
+  cursor: pointer;
+}
+.destination_cancel_btn{
+  cursor: pointer;
 }
 .new-content-div {
   height: 580px;
@@ -555,14 +572,31 @@ input[type=checkbox], input[type=radio] {
   background: #84c7e0 none repeat scroll 0 0;
   height: 45px;
   padding: 10px;
-  width: 100%;
+  width: 90%;
+}
+.edit_moving_extra_hidden{
+  display: none;
 }
 .walkup_full_content {
+ cursor: pointer;
+ height: 35px;
+ left: 43px;
+ position: absolute;
+ width: 70%;
+}
+.destination_full_content{
+  cursor: pointer;
+ height: 35px;
+ left: 43px;
+ position: absolute;
+ width: 70%;
+}
+.full_content {
   cursor: pointer;
   height: 35px;
-  left: 45px;
+  left: 40px;
   position: absolute;
-  width: 80%;
+  width: 70%;
 }
 .pickup_cancel_btn {
   cursor: pointer;
@@ -1424,6 +1458,9 @@ input:focus {
     margin-top: 30px;
     margin-bottom: 10px;
   }
+  .page_valid_align {
+    margin: 50px !important;
+  }
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -1491,11 +1528,11 @@ input:focus {
   }
   .scroll_div{
     margin-top: 20px;
-    max-height: 370px;
+    max-height: 405px;
   }
   .scroll_div_new{
     margin-top: 20px;
-    max-height: 360px;
+    max-height: 395px;
   }
   .size-of-move-val-check-div{
     margin: 10px;
