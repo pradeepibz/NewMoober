@@ -16,11 +16,15 @@ $(function(){
       window.location.href = "/";
     }
     $(".mbl-side-menu").show();
+    $(".nav-signin").hide();
+    $(".nav-signup").hide();
   }else {
     $('.user-login-logut').html("<a href='/signin'>Signin</a>")
     $('.user-signup').html("<a href='/signup'>Signup</a>")
     $('.user_moves').hide();
     $(".mbl-side-menu").hide();
+    $(".nav-signin").show();
+    $(".nav-signup").show();
   }
   $(document).on('click', '.user-logout', function(){
     localStorage.setItem('user_id', "");

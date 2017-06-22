@@ -151,8 +151,8 @@ h6 {
   transition: .3s transform ease-in-out
 }
 .mbl-webLateralMenu {
-  min-height: 60vh;
-  width: 300px;
+  min-height: 100vh;
+  width: 250px;
   right: 0;
   z-index: 2;
   background-color: #FFF;
