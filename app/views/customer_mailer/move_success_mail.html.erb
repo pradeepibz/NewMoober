@@ -1,41 +1,28 @@
 <link rel="stylesheet" href="/assets/email.css">
-<div id="mrf-desktopHeader" style="display: block;height: 57px;background-color: #3a69aa;">
+<div id="moo-header">
   <div class="mrf-gradient"></div>
-  <div class="mrf-logo" style="float: none; margin: auto; text-align: center;"> 
+  <div class="moo-logo"> 
     <a href="/">
-      <img src="http://stage.moober.com/assets/logo.png" alt="Moober" style="height: 28px; margin-top: 15px;"/>
+      <img src="http://stage.moober.com/assets/logo.png" alt="Moober"/>
     </a>
   </div> 
 </div>
-<div style="width: 90%; font-size: 20px;">
-  <div style="margin: 15px;">A new user has submitted a moving request on moober. Login to your Moober dashboard to view the move details and submit yoour bid to win the job!</div>
+<div class="moo-body">
+  <div class="moo-content">A new user has submitted a moving request on moober. Login to your Moober dashboard to view the move details and submit your bid to win the job!</div>
 
-  <div style="width: 100%; font-size: 18px; margin: 15px;">
-    <div>
-      <p><b>Pickup Address:</b> <%= @move_params['from_address'] %></p>
-    </div>
-
-    <div>
-      <p><b>Destination Address:</b> <%= @move_params['to_address'] %></p>
-    </div>
-
-    <div>
-      <p><b>Distance:</b> <%= @distance.round(2) %> Miles</p>
-    </div>
-
-    <div>
-      <p><b>Move Date:</b> <%= DateTime.parse(@date).strftime("%d-%m-%Y") %></p>
-    </div>
-
-    <div>
-      <p><b>Move Time:</b> <%= DateTime.parse(@date).strftime("%l:%M %p") %></p>
-    </div>
+  <div class="moo-move-details">
+    <div><b>Pickup Address:</b> <u><%= @move_params['from_address'] %></u></div>
+    <div><b>Destination Address:</b> <%= @move_params['to_address'] %></div>
+    <div><b>Distance:</b> <%= @distance.round(2) %> Miles</div>
+    <div><b>Move Date:</b> <%= DateTime.parse(@date).strftime("%d-%m-%Y") %></div>
+    <div><b>Move Time:</b> <u><%= DateTime.parse(@date).strftime("%l:%M %p") %></u></div>
+  </div>
+  <div class="moo-move-view">
+    <span>View Details</span>
   </div>
 </div>
 
-<button style="width: 90%;margin: 15px; background-color: #3a69aa; height: 57px; text-align: center; color: #fff; font-size: 18px;">View Details</button>
-
  <footer class="footer">
-  <div class="skyline mail_footer" style="margin-bottom: -5px !important;"><img style="margin-bottom: -5px !important;" src="http://stage.moober.com/assets/footer.png" width="100%" alt="Moober Solutions">
+  <div class="skyline mail_footer"><img src="http://stage.moober.com/assets/footer.png" width="100%" alt="Moober Solutions">
   </div>
 </footer>

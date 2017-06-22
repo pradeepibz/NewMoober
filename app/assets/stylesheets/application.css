@@ -1451,6 +1451,12 @@ input:focus {
   .modal_loading img {
     margin-top: 50%;
   }
+  #m_nav_wrapper {
+    height: 75px !important;
+  }
+  #m_nav_scroller li{
+    height: 19px !important;
+  }
   .contact-form {
     margin-top: -40px;
   }
@@ -1597,6 +1603,12 @@ input:focus {
   }
   .modal_loading img {
     margin-top: 50%;
+  }
+  #m_nav_wrapper {
+    height: 75px !important;
+  }
+  #m_nav_scroller li{
+    height: 19px !important
   }
   .contact-form {
     margin-top: -40px;
