@@ -1060,15 +1060,12 @@ button.close {
 }
 .sign_in_body {
   display: none;
-  height: 100vh;
 }
 .sign_up_body {
   display: none;
-  height: 100vh;
 }
 .forget_pswd_body {
   display: none;
-  height: 100vh;
 }
 .website-signup-btn {
  background: #ffc043 none repeat scroll 0 0;
