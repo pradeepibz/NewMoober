@@ -19,8 +19,8 @@ $(function(){
     $(".nav-signin").hide();
     $(".nav-signup").hide();
   }else {
-    $('.user-login-logut').html("<a href='/signin'>Signin</a>")
-    $('.user-signup').html("<a href='/signup'>Signup</a>")
+    $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
+    $('.user-signup').html("<a href='/signup'>Sign Up</a>")
     $('.user_moves').hide();
     $(".mbl-side-menu").hide();
     $(".nav-signin").show();
@@ -1022,8 +1022,8 @@ function userLogin(email, password){
                 var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                 $('.check_user_session').html(submit_move_btn );
               }else {
-                $('.user-login-logut').html("<a href='/signin'>Signin</a>")
-                $('.user-signup').html("<a href='/signup'>Signup</a>")
+                $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
+                $('.user-signup').html("<a href='/signup'>Sign Up</a>")
               }
               // window.location.href = '/start-a-move'
             }else {
@@ -1070,8 +1070,8 @@ function userRegistration(email, password, password_confirmation) {
                   var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                   $('.check_user_session').html(submit_move_btn );
                 }else {
-                  $('.user-login-logut').html("<a href='/signin'>Signin</a>")
-                  $('.user-signup').html("<a href='/signup'>Signup</a>")
+                  $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
+                  $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                 }
               }else {
                 window.location.href = "/"

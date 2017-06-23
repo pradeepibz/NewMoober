@@ -24,13 +24,19 @@ function initMap() {
   var onChangeHandler = function() {
     calculateAndDisplayRoute(directionsService, directionsDisplay, markerArray, map);
   };
+  var southWest = new google.maps.LatLng(37.09024, -95.71289);
+  var northEast = new google.maps.LatLng(37.09024, -95.71289);
+  var bounds = new google.maps.LatLngBounds(southWest,northEast);
+
   var start_value = new google.maps.places.Autocomplete(
     (document.getElementById('start')),
-    {types: ['geocode']
+    {types: ['geocode'],
+    bounds: bounds
   });
   var end_value = new google.maps.places.Autocomplete(
     (document.getElementById('end')),
-    {types: ['geocode']
+    {types: ['geocode'],
+    bounds: bounds
   });
 
   google.maps.event.addListener(start_value, 'place_changed', function() {
