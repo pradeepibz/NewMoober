@@ -115,7 +115,7 @@ $(function(){
     var item4 = $('.destination-walk-up').is(':checked');
     var item5 = $('.destination-elevator').is(':checked');
     var item6 = $('.destination-residential').is(':checked');
-    if (item1 == true || item2 == true || item3 == true || item4 == true || item5 == true || item6 == true ) {
+    if (item1 == true || item2 == true || item3 == true && item4 == true || item5 == true || item6 == true ) {
       $('#walk_up_section').click();
     }else{
       $('#page_valid').modal();
@@ -593,47 +593,47 @@ $(function(){
     d.getElementsByTagName('head')[0].appendChild(js);
   }(document));
 
-  // $(function() {
-    $(document).on('click', '#fb_sign_in', function(e){
-      e.preventDefault();
+// $(function() {
+  $(document).on('click', '#fb_sign_in', function(e){
+    e.preventDefault();
 
 
-      FB.login(function(response) {
-        if (response.authResponse) {
-          $.getJSON('auth/facebook/callback', function(json) {
-            console.log(JSON.stringify(json))
-            console.log("JSON.stringify(json)")
-            var email = json.email
-            var password = json.password;
-            var check_user_params = '{"email":"'+email+'"}'
-              if (email != '') {  
-                $.ajax({
-                  url: API_URL+'checkEmail',
-                  method: 'POST',
-                  data: check_user_params,
-                  success: function (data) {
-                    if (data.status == true) {
-                      console.log(data.message)
-                      console.log("data")
-                      if (data.message == "user is not registered"){
-                        userRegistration(email, password, password)
-                      }
+    FB.login(function(response) {
+      if (response.authResponse) {
+        $.getJSON('auth/facebook/callback', function(json) {
+          console.log(JSON.stringify(json))
+          console.log("JSON.stringify(json)")
+          var email = json.email
+          var password = json.password;
+          var check_user_params = '{"email":"'+email+'"}'
+            if (email != '') {  
+              $.ajax({
+                url: API_URL+'checkEmail',
+                method: 'POST',
+                data: check_user_params,
+                success: function (data) {
+                  if (data.status == true) {
+                    console.log(data.message)
+                    console.log("data")
+                    if (data.message == "user is not registered"){
+                      userRegistration(email, password, password)
                     }
-                  },
-                  error: function (o) {
-                    console.log(o)
-                    userLogin(email, password)
                   }
-                });
-              }
-              else{
-                alert('Please Enter Email');
-              }
-          });
-        }
-      }, { scope: 'email,user_birthday, manage_pages, publish_pages, publish_actions' }); // These are the permissions you are requesting
-    });
-  // });
+                },
+                error: function (o) {
+                  console.log(o)
+                  userLogin(email, password)
+                }
+              });
+            }
+            else{
+              alert('Please Enter Email');
+            }
+        });
+      }
+    }, { scope: 'email,user_birthday, manage_pages, publish_pages, publish_actions' }); // These are the permissions you are requesting
+  });
+// });
 
 
 });
@@ -1095,6 +1095,16 @@ function userRegistration(email, password, password_confirmation) {
 $(document).on('click', '.all_request_page', function(){
   window.location.href = "/moves"
 });
-  $(document).on('click', '.cancel-btn', function(){
-  location.reload();
+$(document).on('click', '.open_subscripe_popup', function(){
+  $('#moober_popup').modal();
+});
+$(document).on('click', '.cancel-btn', function(){
+  $('#moober_popup').modal('toggle');
+});
+$(document).on('click', '.new-cancel-btn', function(){
+  $('.subscribe-content').html('');
+  function delay_div(){
+    $('.new-subscribe-content').css('display', 'block');
+  };
+  window.setTimeout( delay_div, 200);
 });
