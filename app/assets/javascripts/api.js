@@ -1095,6 +1095,16 @@ function userRegistration(email, password, password_confirmation) {
 $(document).on('click', '.all_request_page', function(){
   window.location.href = "/moves"
 });
-  $(document).on('click', '.cancel-btn', function(){
-  location.reload();
+$(document).on('click', '.open_subscripe_popup', function(){
+  $('#moober_popup').modal();
+});
+$(document).on('click', '.cancel-btn', function(){
+  $('#moober_popup').modal('toggle');
+});
+$(document).on('click', '.new-cancel-btn', function(){
+  $('.subscribe-content').html('');
+  function delay_div(){
+    $('.new-subscribe-content').css('display', 'block');
+  };
+  window.setTimeout( delay_div, 200);
 });
