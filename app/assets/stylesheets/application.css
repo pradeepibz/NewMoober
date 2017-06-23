@@ -1293,6 +1293,16 @@ input:focus {
   max-height: none !important;
   max-width: none !important;
 }
+.new-app-label {
+  font-weight: 700;
+  margin-bottom: 5px;
+  max-width: 100%;
+}
+.details-heading {
+  border-bottom: 2px solid #d6d6c2;
+  padding-bottom: 0;
+  width: 100%;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -1472,6 +1482,9 @@ input:focus {
   }
   .signin {
     margin-top: 100px !important;
+  }
+  .mbl-webLateralMenu {
+    width: 260px !important;
   }
 }
 

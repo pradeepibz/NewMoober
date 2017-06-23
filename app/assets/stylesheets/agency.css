@@ -152,7 +152,7 @@ h6 {
 }
 .mbl-webLateralMenu {
   min-height: 100vh;
-  width: 270px;
+  width: 280px;
   right: 0;
   z-index: 2;
   background-color: #FFF;
@@ -272,7 +272,7 @@ h6 {
   transition: background 0s .3s, height 0s 0s
 }
 .c-hamburger--htx.is-active span::before{
-  top: 0;
+  top: -1px;
   -webkit-transform: rotate(44deg);
   transform: rotate(44deg);
   margin-bottom: 1px

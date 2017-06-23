@@ -115,7 +115,7 @@ $(function(){
     var item4 = $('.destination-walk-up').is(':checked');
     var item5 = $('.destination-elevator').is(':checked');
     var item6 = $('.destination-residential').is(':checked');
-    if (item1 == true || item2 == true || item3 == true && item4 == true || item5 == true || item6 == true ) {
+    if ((item1 == true || item2 == true || item3 == true) && (item4 == true || item5 == true || item6 == true) ) {
       $('#walk_up_section').click();
     }else{
       $('#page_valid').modal();
@@ -716,7 +716,7 @@ $(document).on('click', '#contact_continue', function(){
   var size_of_move = localStorage.getItem('size_of_move')
   var move_size = localStorage.getItem('move_size')
   if (move_size != "" && move_size != null && move_size != "undefined") {
-    $('.room_type_label').css('display', 'block');
+    $('.room_type_label-head').css('display', 'block');
     $('.result-size').text(move_size);
     if (size_of_move != "" && size_of_move != null && size_of_move != "undefined") {
       $('.size_of_move_text').text('(' + size_of_move + ')')
@@ -726,32 +726,32 @@ $(document).on('click', '#contact_continue', function(){
     }
   }
   else {
-    $('.room_type_label').css('display', 'none');
+    $('.room_type_label-head').css('display', 'none');
   }
   var items = JSON.parse(localStorage.getItem("items"))
   if (items != "" && items != null && items != undefined) {
-    $('.items_label').css('display', 'block');
+    $('.items_label-head').css('display', 'block');
     $('.result_extra_large').text(items);
   }
   else {
     $('.result_extra_large').text("")
-    $('.items_label').css('display', 'none');
+    $('.items_label-head').css('display', 'none');
   }
   var pickup = localStorage.getItem('pickup')
   if (pickup != "" && pickup != null && pickup != "undefined") {
-    $('.pickup_label').css('display', 'block');
+    $('.pickup_label-head').css('display', 'block');
     $('.result_pickup').text(pickup);
   }
   else {
-    $('.pickup_label').css('display', 'none');
+    $('.pickup_label-head').css('display', 'none');
   }
   var destination = localStorage.getItem('destination')
   if (destination != "" && destination != null && destination != "undefined") {
-    $('.destination_label').css('display', 'block');
+    $('.destination_label-head').css('display', 'block');
     $('.result_destination').text(destination);
   }
   else {
-    $('.destination_label').css('display', 'none');
+    $('.destination_label-head').css('display', 'none');
   }
   var pickuparray = JSON.parse(localStorage.getItem("pickuparray"))
   if (pickuparray.length > 0 && pickuparray != null && pickuparray != undefined) {
@@ -1019,6 +1019,7 @@ function userLogin(email, password){
                 $('.sign_in_body').css('display', 'none');
                 $('.start_move_body').css('display', 'block');
                 $('.user-signup').css('display', 'none');
+                $('#sign-in').modal();
                 var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                 $('.check_user_session').html(submit_move_btn );
               }else {
@@ -1067,6 +1068,7 @@ function userRegistration(email, password, password_confirmation) {
                   $('.sign_up_body').css('display', 'none');
                   $('.start_move_body').css('display', 'block');
                   $('.user-signup').css('display', 'none');
+                  $('#sign-up').modal();
                   var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                   $('.check_user_session').html(submit_move_btn );
                 }else {
@@ -1107,4 +1109,10 @@ $(document).on('click', '.new-cancel-btn', function(){
     $('.new-subscribe-content').css('display', 'block');
   };
   window.setTimeout( delay_div, 200);
+});
+$(document).on('click', '.signin-continue', function(){
+  $("#sign-in").modal('hide');
+});
+$(document).on('click', '.signup-continue', function(){
+  $("#sign-up").modal('hide');
 });
