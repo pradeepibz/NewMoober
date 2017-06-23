@@ -1116,3 +1116,13 @@ $(document).on('click', '.signin-continue', function(){
 $(document).on('click', '.signup-continue', function(){
   $("#sign-up").modal('hide');
 });
+
+$(document).on('focus', '.sign-app-input', function() 
+{
+  $(".devise-footer").hide();
+});
+
+$(document).on('blur', '.sign-app-input', function() 
+{
+  $(".devise-footer").show();
+});

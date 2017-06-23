@@ -1,6 +1,5 @@
 .devise-section,.devise-forget-section{
   width: 100%;
-  /*height: 60%;*/
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
@@ -10,8 +9,7 @@
 	}
 .devise-footer{
   width: 100%;
-  height: 45%;
-  position: relative;
+  position: absolute;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -37,7 +35,7 @@
 
 .d_footer {
   bottom: 0;
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 .skyline {
