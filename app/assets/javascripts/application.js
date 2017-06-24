@@ -24,6 +24,7 @@
 //= require mobile_nav
 //= require iscroll
 //= require jquery.remotipart
+//= require jquery.ajaxQueue.min
 
 // disable double tab to zoom 
 (function($) {

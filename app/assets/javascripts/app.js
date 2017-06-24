@@ -131,7 +131,7 @@ $(function (){
             var formData = new FormData();
             formData.append('file', aa);
             // setTimeout(function () {
-              $.ajax({
+              jQuery.ajaxQueue({
                 url: 'take_photos',
                 type: 'POST',
                 data: formData,
