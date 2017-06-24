@@ -1,9 +1,18 @@
-<h3>Hi <%= @customer.email %></h3>
+<link rel="stylesheet" href="/assets/email.css">
+<div id="moo-header">
+  <div class="mrf-gradient"></div>
+  <div class="moo-logo"> 
+    <a href="/">
+      <img src="http://stage.moober.com/assets/logo.png" alt="Moober"/>
+    </a>
+  </div> 
+</div>
+<div class="moo-body">
+  <div class="moo-content">Thanks for sharing Moober on Facebook. Here is a promo code to receive 10% off your next move on Moober!</div>
+  <div class="promocode-font"><%= @promo_code %></div>
+</div>
 
-<p>You are successfully shared on facebook</p>
-<p>
-  <b>Promo code detail</b>
-</p>
-<p>
-  Your promo code: <b><%= @promo_code %></b>
-</p>
+ <footer class="footer">
+  <div class="skyline mail_footer"><img src="http://stage.moober.com/assets/footer.png" width="100%" alt="Moober Solutions">
+  </div>
+</footer>

@@ -795,6 +795,16 @@ $(document).on('click', '#contact_continue', function(){
   if (name != "" && name != null && name != undefined) $('.contact_name').text(name);
   var phone = localStorage.getItem("phone")
   if (phone != "" && phone != null && phone != undefined) $('.contact_phone').text(phone);
+  var images = JSON.parse(localStorage.getItem("images"));
+  if (images != "" && images != null && images != undefined) {
+    $('.moving_image_label').css('display', 'block');
+    $.each(images, function(key, img){
+      $('.moving_images').append("<div class='col-md-6 final-step-images'><img src="+ img +" alt='' width='150px' height='120px'></div>");
+    });
+  }
+  else {
+    $('.moving_image_label').css('display', 'none');
+  }
 });
 
 $(document).on('click', '#start_mov_btn', function(){
@@ -864,6 +874,7 @@ $(document).on('click', '#start_mov_btn', function(){
     var move_params = '{"contact_phone":"' +phone+ '","room_type_id":'+move_size_id+',"extra_large_item":'+JSON.stringify(items)+',"to_address":"'+move_end+'","from_longitude":"'+from_lon+'","to_latitude":"'+to_lat+'","building_type":'+pickup_id+',"dest_building_type":'+destination_id+',"single_item":"","from_latitude":"'+from_lat+'","dest_building_floor":"'+destarray+'","building_floor":"'+pickuparray+'","from_address":"'+move_from+'","move_date_time":"'+ moving_date +'","image":'+ JSON.stringify(images) +',"to_longitude":"'+to_lon+'","user_id":"'+current_user+'","contact_name":"'+name+'"}'
     var mail_move_params = {contact_phone: phone, room_type: move_size,extra_large_item: items,to_address: move_end,building_type: pickup,dest_building_type: destination, dest_building_floor: destarray, building_floor: pickuparray, from_address: move_from, move_date_time: move_date, user_id: current_user, contact_name: name }
     var email = localStorage.getItem('email');
+    console.log(move_params)
     $.ajax({
       url: API_URL+'submitMovingRequest',
       method: 'POST',
@@ -941,7 +952,6 @@ $(document).on('click', '.web-forget-btn', function(){
         },
         error: function (o) {
           console.log(o);
-          alert("Invalid Email")
         }
       });
     }
@@ -1117,23 +1127,3 @@ $(document).on('click', '.signup-continue', function(){
   $("#sign-up").modal('hide');
 });
 
-$(document).on('focus', '.sign-app-input', function() 
-{
-  $(".devise-footer").hide();
-});
-
-$(document).on('blur', '.sign-app-input', function() 
-{
-  $(".devise-footer").show();
-});
-
-$(document).on('focus', '.contact-input', function(){
-  $(".apply-contact-form").css("margin-top", "0px");
-  $(".contact-company-logo").hide();
-  $(".contact-footer").hide();
-});
-$(document).on('blur', '.contact-input', function(){
-  $(".apply-contact-form").css("margin-top", "-35px");
-  $(".contact-company-logo").show();
-  $(".contact-footer").show();
-});

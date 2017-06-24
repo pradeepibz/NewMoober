@@ -77,4 +77,10 @@ class HomeController < ApplicationController
     CustomerMailer.move_success_mail(@move_params, @email, @date).deliver_now
   end
 
+  def take_photos
+    img = params[:file]
+    @images = MovePhoto.create(avatar: img)
+    render json: {image: @images.avatar.url}
+  end
+
 end

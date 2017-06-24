@@ -1300,6 +1300,10 @@ input:focus {
   padding-bottom: 0;
   width: 100%;
 }
+.final-step-images {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){

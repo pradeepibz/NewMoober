@@ -23,6 +23,7 @@
 //= require jquery.scrollify
 //= require mobile_nav
 //= require iscroll
+//= require jquery.remotipart
 
 // disable double tab to zoom 
 (function($) {
@@ -57,6 +58,26 @@ $(document).ready(function(){
 		$(".m_nav").removeClass("hide");
     $(".d_nav").addClass("hide");
 		$(".mbl_nav").removeClass("hide");
+    $(document).on('focus', '.sign-app-input', function() 
+    {
+      $(".devise-footer").hide();
+    });
+
+    $(document).on('blur', '.sign-app-input', function() 
+    {
+      $(".devise-footer").show();
+    });
+
+    $(document).on('focus', '.contact-input', function(){
+      $(".apply-contact-form").css("margin-top", "0px");
+      $(".contact-company-logo").hide();
+      $(".contact-footer").hide();
+    });
+    $(document).on('blur', '.contact-input', function(){
+      $(".apply-contact-form").css("margin-top", "-35px");
+      $(".contact-company-logo").show();
+      $(".contact-footer").show();
+    });
 	}
 
 });

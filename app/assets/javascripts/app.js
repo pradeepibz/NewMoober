@@ -116,7 +116,10 @@ $(function (){
     var image_count = $('.image-content').find('.hide_image_div').length;
     var len = this.files.length;
     var limit = image_count+len;
+    var files = $(this).val();
+    console.log(aa);
     if (len != '') {
+      $('.modal_loading').show();
       if (limit > 20) {
         // alert('Maximum of 20 images only can able to upload');
         $('#page_valid').modal();
@@ -125,15 +128,28 @@ $(function (){
         $('.validation_popup_content').html(validation_content);  
       }else{
         for (var i=0, len; i < len; i++) {
-          (function (j, self) {
-            var reader = new FileReader()
-            reader.onload = function (e) { 
-              $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ e.target.result +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
-            }
-            reader.readAsDataURL(self.files[j])
-          })(i, this);
+          var aa = e.target.files[i]
+          var formData = new FormData();
+          formData.append('file', aa);
+          $.ajax({
+            url: 'take_photos',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            timeout: 3000,
+          })
+          .done(function(data) {
+            $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + data.image +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
+            console.log("success");
+            console.log(data)
+          })
+          .fail(function() {
+            alert("Timeout your session. Please Upload again")
+          });
         }
       }
+      $('.modal_loading').hide();
     }else{
       $('.image-content').html('');
     }
