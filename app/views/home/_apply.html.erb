@@ -33,13 +33,13 @@
                 </ul>
               </div>
             <% end %>
-             <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
-             <%= f.text_field :company, placeholder: "Company Name", required: true %>
-             <%= f.text_field :site_url, placeholder: "Site Url", required: true %>
-             <%= f.email_field :email, placeholder: "Email", required: true %>
-             <%= f.text_field :city, placeholder: "City", required: true %>
-             <%= f.select :state, options_for_select(Customer.const_get('STATES')), {prompt: 'Select the State'} %>
-             <%= f.text_field :phone, placeholder: "Phone Number", required: true,"data-errorMsg"=> "Please, provide a valid phone number", "data-pattern" => "^\d+$" %>
+             <%= f.text_field :full_name, placeholder: "Full Name", required: true, class: "contact-input" %>
+             <%= f.text_field :company, placeholder: "Company Name", required: true, class: "contact-input" %>
+             <%= f.text_field :site_url, placeholder: "Site Url", required: true, class: "contact-input" %>
+             <%= f.email_field :email, placeholder: "Email", required: true, class: "contact-input" %>
+             <%= f.text_field :city, placeholder: "City", required: true, class: "contact-input" %>
+             <%= f.select :state, options_for_select(Customer.const_get('STATES')), {prompt: 'Select the State'}, class: "contact-input" %>
+             <%= f.text_field :phone, placeholder: "Phone Number", required: true,"data-errorMsg"=> "Please, provide a valid phone number", "data-pattern" => "^\d+$", class: "contact-input" %>
 
              <%#= f.select :find_through, options_for_select(Customer.const_get('FIND_THROUGH')), {prompt: 'How did you hear about us?'} %>
              <%= f.submit "Submit", class: 'submit_btn'%>
@@ -50,7 +50,7 @@
   </div>
 </section>
 
-<section class="slide">
+<section class="slide contact-company-logo">
   <div class="mt-10">
     <div class="row">
       <%= render "shared/company_logos" %>
@@ -58,7 +58,7 @@
   </div>
 </section>
 
-<section class="slide">
+<section class="slide contact-footer">
   <%= render 'shared/footer' %>
 </section>
 

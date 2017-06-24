@@ -32,10 +32,10 @@
                 </ul>
               </div>
             <% end %>
-            <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
-            <%= f.email_field :email, placeholder: "Email", required: true %>
-            <%= f.text_field :mobile, placeholder: "Mobile Number", required: true %>
-            <%= f.text_area :message, placeholder: "Message", cols: "2", rows: "3" %>
+            <%= f.text_field :full_name, placeholder: "Full Name", required: true, class: "contact-input" %>
+            <%= f.email_field :email, placeholder: "Email", required: true, class: "contact-input" %>
+            <%= f.text_field :mobile, placeholder: "Mobile Number", required: true, class: "contact-input" %>
+            <%= f.text_area :message, placeholder: "Message", cols: "2", rows: "3", class: "contact-input" %>
             <%= f.submit "Submit" %>
           <%end%>
     		</div>
@@ -43,7 +43,7 @@
     </div>
   </div>
 </section>
-<section class="slide">
+<section class="slide contact-company-logo">
   <div class="mt-10">
     <div class="row">
       <%= render "shared/company_logos" %>
@@ -51,7 +51,7 @@
   </div>
 </section>
 
-<section class="slide">
+<section class="slide contact-footer">
   <%= render 'shared/footer' %>
 </section>
 

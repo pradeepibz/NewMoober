@@ -1126,3 +1126,14 @@ $(document).on('blur', '.sign-app-input', function()
 {
   $(".devise-footer").show();
 });
+
+$(document).on('focus', '.contact-input', function(){
+  $(".apply-contact-form").css("margin-top", "0px");
+  $(".contact-company-logo").hide();
+  $(".contact-footer").hide();
+});
+$(document).on('blur', '.contact-input', function(){
+  $(".apply-contact-form").css("margin-top", "-35px");
+  $(".contact-company-logo").show();
+  $(".contact-footer").show();
+});
