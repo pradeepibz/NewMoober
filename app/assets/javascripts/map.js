@@ -24,20 +24,43 @@ function initMap() {
   var onChangeHandler = function() {
     calculateAndDisplayRoute(directionsService, directionsDisplay, markerArray, map);
   };
-  var southWest = new google.maps.LatLng(37.09024, -95.71289);
-  var northEast = new google.maps.LatLng(37.09024, -95.71289);
-  var bounds = new google.maps.LatLngBounds(southWest,northEast);
 
-  var start_value = new google.maps.places.Autocomplete(
-    (document.getElementById('start')),
-    {types: ['geocode'],
-    bounds: bounds
-  });
-  var end_value = new google.maps.places.Autocomplete(
-    (document.getElementById('end')),
-    {types: ['geocode'],
-    bounds: bounds
-  });
+  if ("geolocation" in navigator){ //check geolocation available
+    //try to get user current location using getCurrentPosition() method
+    navigator.geolocation.getCurrentPosition(function(position){
+      var lat = position.coords.latitude
+      var lang = position.coords.longitude
+      var southWest = new google.maps.LatLng(lat, lang);
+      var northEast = new google.maps.LatLng(lat, lang);
+      var bounds = new google.maps.LatLngBounds(southWest,northEast);
+      var start_value = new google.maps.places.Autocomplete(
+        (document.getElementById('start')),
+        {types: ['geocode'],
+        bounds: bounds
+      });
+      var end_value = new google.maps.places.Autocomplete(
+        (document.getElementById('end')),
+        {types: ['geocode'],
+        bounds: bounds
+      });
+    });
+  }else{
+    var lat = 40.750357
+    var lang = -73.983657
+    var southWest = new google.maps.LatLng(lat, lang);
+    var northEast = new google.maps.LatLng(lat, lang);
+    var bounds = new google.maps.LatLngBounds(southWest,northEast);
+    var start_value = new google.maps.places.Autocomplete(
+      (document.getElementById('start')),
+      {types: ['geocode'],
+      bounds: bounds
+    });
+    var end_value = new google.maps.places.Autocomplete(
+      (document.getElementById('end')),
+      {types: ['geocode'],
+      bounds: bounds
+    });
+  }
 
   google.maps.event.addListener(start_value, 'place_changed', function() {
     $('#map_search_btn').click();
