@@ -1127,3 +1127,42 @@ $(document).on('click', '.signup-continue', function(){
   $("#sign-up").modal('hide');
 });
 
+$(document).on('click', '.moving-requests', function(){
+  var request_id = $(this).data('request-id');
+  var from_add = $(this).data('from-add');
+  localStorage.setItem('proposal_request', request_id);
+  localStorage.setItem('request_from_add', from_add);
+  window.location.href = "/moves/proposals"
+});
+
+function movingProposals(request_id, lat, lang){
+  var API_URL = "http://45.56.72.52/api/userapi/";
+  var current_user = localStorage.getItem('user_id');
+  var proposal_params = '{"moving_request_id":'+ request_id +',"user_id": '+ current_user +'}'
+  if (current_user != "" && current_user != null && current_user != undefined){
+    if (request_id != "" && request_id != null && request_id != undefined){
+      $.ajax({
+        url: API_URL+"getMovingRequestProposal",
+        type: 'POST',
+        data: proposal_params,
+      })
+      .done(function(data) {
+        console.log(data)
+        $.each(data.data ,function(key, res){  
+          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-6 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-4 pull-right'><div class='text-center accept-btn'> Accept </div></div></div><div class='col-md-12'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div><div class='col-md-12'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div><div class='col-md-12'><hr></div>");
+          $("#proposal_map").show();
+        });
+      })
+      .fail(function(data) {
+        $("#proposal_map").hide();
+        $(".proposal_results").append("<div class='no-proposal'></div>")
+      });      
+    }
+    else{
+      $("#proposal_map").hide();
+      $(".proposal_results").append("<div class='no-proposal'></div>")
+    }
+  }else{
+    window.location.href = "/"
+  }
+}

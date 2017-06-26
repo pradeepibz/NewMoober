@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/moves', to: "home#list_of_moves", as: :list_of_moves
   post '/move_success', to: "home#move_success"
   post '/take_photos', to: "home#take_photos"
+  get '/moves/proposals', to: "home#moving_proposals", as: :moving_proposals
   # End url
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

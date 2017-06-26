@@ -1,0 +1,45 @@
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGt1cDImemwSjXZt5hYsCWnDPiC7cQkSE&libraries=places&callback=initProposalMap"></script>
+<%= render 'shared/static_header' %>
+<section class="slide map-prop">
+  <div id='proposal_map'></div>
+</section>
+<section class="slide moving_proposals_results">
+  <div class='col-md-4'></div>
+  <div class='col-md-4'>
+    <div class="proposal_results">
+
+    </div>
+  </div>
+  <div class='col-md-4'></div>
+</section>
+<%= render 'footer' %>
+<%= render 'home/top_mbl_side_nav' %>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var request_id = localStorage.getItem('proposal_request');
+    
+    var lat = localStorage.getItem('proposal_lat');
+    var lang = localStorage.getItem('proposal_lang');
+    movingProposals(request_id, lat, lang);
+    // function initialize() {
+    //   var from_add = localStorage.getItem('request_from_add');
+    //   address = from_add
+    //   // Initialize the Geocoder
+    //   geocoder = new google.maps.Geocoder();
+    //   console.log(geocoder)
+    //   if (geocoder) {
+    //     geocoder.geocode({
+    //         'address': address
+    //     }, function (results, status) {
+    //         if (status == google.maps.GeocoderStatus.OK) {
+    //             var from_lat = results[0].geometry.location.lat();
+    //             localStorage.setItem('proposal_lat', from_lat);
+    //             var from_lon = results[0].geometry.location.lng();
+    //             localStorage.setItem('proposal_lang', from_lon);
+    //         }
+    //     });
+    //   }
+    // }
+  });
+</script>

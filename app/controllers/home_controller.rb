@@ -83,4 +83,7 @@ class HomeController < ApplicationController
     render json: {image: @images.avatar.url}
   end
 
+  def moving_proposals
+    
+  end
 end

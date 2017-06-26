@@ -129,27 +129,21 @@ $(function (){
           for (var i=0, len; i < len; i++) {
             var aa = e.target.files[i]
             var formData = new FormData();
-            formData.append('file', aa);
-            // setTimeout(function () {
-              jQuery.ajaxQueue({
-                url: 'take_photos',
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                timeout: 10000,
-              })
-              .done(function(data) {
-                console.log(data);
-                $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + data.image +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
-                console.log("success");
-                console.log(data)
-              })
-              .fail(function(data) {
-                console.log(data)
-                alert("Timeout your session. Please Upload again")
-              });
-            // }, 1101);
+            var dataForm = formData.append('file', aa);
+            jQuery.ajaxQueue({
+              url: 'take_photos',
+              type: 'POST',
+              data: formData,
+              contentType: false,
+              processData: false,
+              timeout: 10000,
+            })
+            .done(function(data) {
+              $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + data.image +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
+            })
+            .fail(function(data) {
+              alert("Timeout your session. Please Upload again")
+            });
           }
       }
     }else{

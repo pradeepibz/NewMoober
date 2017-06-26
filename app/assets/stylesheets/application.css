@@ -1304,6 +1304,38 @@ input:focus {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.moving-requests {
+  cursor: pointer;
+  color: #3a69aa;
+}
+.moving_proposals_results {
+  margin-top: 5%;
+}
+.accept-btn {
+  background-color: #3a69aa;
+  padding: 4px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 15px;
+  margin-left: 12px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+.col-md-6.pro-cmpny-name {
+  padding-left: 0px;
+  padding-right: 0px;
+  cursor: pointer;
+}
+.slide.map-prop {
+  height: 75%;
+}
+#proposal_map {
+  height: 100%;
+}
+.slide.moving_proposals_results {
+  height: auto;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -1494,6 +1526,10 @@ input:focus {
   }
   .contact-form.apply-contact-form {
     margin-top: -47px;
+  }
+  .accept-btn {
+    margin-left: 2px;
+    margin-right: 2px;
   }
 
 }

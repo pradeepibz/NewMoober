@@ -43,6 +43,15 @@ function initMap() {
         {types: ['geocode'],
         bounds: bounds
       });
+      google.maps.event.addListener(start_value, 'place_changed', function() {
+        $('#map_search_btn').click();
+      });
+
+      google.maps.event.addListener(end_value, 'place_changed', function() {
+        $('#map_search_btn').click();
+      });
+
+      document.getElementById('map_search_btn').addEventListener('click', onChangeHandler);
     });
   }else{
     var lat = 40.750357
@@ -60,17 +69,64 @@ function initMap() {
       {types: ['geocode'],
       bounds: bounds
     });
+    google.maps.event.addListener(start_value, 'place_changed', function() {
+      $('#map_search_btn').click();
+    });
+
+    google.maps.event.addListener(end_value, 'place_changed', function() {
+      $('#map_search_btn').click();
+    });
+
+    document.getElementById('map_search_btn').addEventListener('click', onChangeHandler);
   }
 
-  google.maps.event.addListener(start_value, 'place_changed', function() {
-    $('#map_search_btn').click();
-  });
+}
 
-  google.maps.event.addListener(end_value, 'place_changed', function() {
-    $('#map_search_btn').click();
+function initProposalMap() {
+  var from_add = localStorage.getItem('request_from_add');
+  var lat = localStorage.getItem('proposal_lat');
+  var lang = localStorage.getItem('proposal_lang');
+  address = from_add
+  // Initialize the Geocoder
+  geocoder = new google.maps.Geocoder();
+  console.log(geocoder)
+  if (geocoder) {
+    geocoder.geocode({
+        'address': address
+    }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var from_lat = results[0].geometry.location.lat();
+            localStorage.setItem('proposal_lat', from_lat);
+            var from_lon = results[0].geometry.location.lng();
+            localStorage.setItem('proposal_lang', from_lon);
+        }
+    });
+  }
+  var map = new google.maps.Map(document.getElementById('proposal_map'), {
+    center: {lat: parseFloat(lat), lng: parseFloat(lang)},
+    zoom: 14,
+    scrollwheel: false,
+    zoomControl: true,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.SMALL,
+      position: google.maps.ControlPosition.RIGHT_CENTER
+    },
+    disableDefaultUI: true
   });
-
-  document.getElementById('map_search_btn').addEventListener('click', onChangeHandler);
+  var image = '/assets/map-icon2.png';
+  var beachMarker = new google.maps.Marker({
+    position: map.getCenter(),
+    title: "Moved from here :)",
+    map: map,
+    icon: image
+  });
+  var infowindow = new google.maps.InfoWindow({
+    content: "<div id='marker-content'><h6>Moved from here :)</h6></div>"
+  });
+  google.maps.event.addListener(beachMarker, 'click', function() {
+    infowindow.open(map,beachMarker);
+  });
+  infowindow.open(map,beachMarker);
 }
 
   function geolocate() {
