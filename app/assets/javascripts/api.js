@@ -1133,6 +1133,7 @@ $(document).on('click', '.moving-requests', function(){
   localStorage.setItem('proposal_request', request_id);
   localStorage.setItem('request_from_add', from_add);
   window.location.href = "/moves/proposals"
+  history.go(0);
 });
 
 function movingProposals(request_id, lat, lang){
@@ -1150,11 +1151,11 @@ function movingProposals(request_id, lat, lang){
         console.log(data)
         $.each(data.data ,function(key, res){  
           $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-6 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-4 pull-right'><div class='text-center accept-btn'> Accept </div></div></div><div class='col-md-12'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div><div class='col-md-12'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div><div class='col-md-12'><hr></div>");
-          $("#proposal_map").show();
+          $(".map-prop").show();
         });
       })
       .fail(function(data) {
-        $("#proposal_map").hide();
+        $(".map-prop").hide();
         $(".proposal_results").append("<div class='no-proposal'></div>")
       });      
     }
