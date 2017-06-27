@@ -12,6 +12,8 @@ $(function(){
   if (current_user != "" && current_user != null && current_user != undefined) {
     $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>");
     $('.user_moves').show();
+    var moves_count = localStorage.getItem('moves_count');
+    $('.moves-count mark').text(moves_count)
     if (window.location.pathname == "/signin" || window.location.pathname == "/signup") {
       window.location.href = "/";
     }
@@ -1030,14 +1032,19 @@ function userLogin(email, password){
                 $('.start_move_body').css('display', 'block');
                 $('.user-signup').css('display', 'none');
                 $('#sign-in').modal();
+                $('.user_moves').show();
                 var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                 $('.check_user_session').html(submit_move_btn );
+                userMovesRequest(current_user)
               }else {
+                $('.user_moves').hide();
                 $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                 $('.user-signup').html("<a href='/signup'>Sign Up</a>")
               }
               // window.location.href = '/start-a-move'
             }else {
+              $('.user_moves').show();
+              userMovesRequest(current_user)
               window.location.href = "/"
             }
           }
@@ -1081,14 +1088,19 @@ function userRegistration(email, password, password_confirmation) {
                   $('#sign-up').modal();
                   var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                   $('.check_user_session').html(submit_move_btn );
+                  userMovesRequest(current_user)
                 }else {
+                  $('.user_moves').hide();
                   $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                   $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                 }
               }else {
+                $('.user_moves').show();
+                userMovesRequest(current_user)
                 window.location.href = "/"
               }
             }
+            $('.moves-count mark').text(0);
           },
           error: function (o) {
             console.log(o);
@@ -1165,5 +1177,25 @@ function movingProposals(request_id, lat, lang){
     }
   }else{
     window.location.href = "/"
+  }
+}
+
+function userMovesRequest(current_user){
+  var API_URL = "http://45.56.72.52/api/userapi/";
+  if (current_user != "" && current_user != null && current_user != undefined) {
+    var user_params = '{"user_id": '+ current_user +'}'
+    $.ajax({
+      url: API_URL+'getMovingRequestList',
+      type: 'POST',
+      data: user_params,
+    })
+    .done(function(data) {
+      var count = data.data.upcoming.length
+      localStorage.setItem('moves_count', count);
+      $('.moves-count mark').text(count)
+    })
+    .fail(function(data) {
+      $('.moves-count mark').text(0)
+    });
   }
 }

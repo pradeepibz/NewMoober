@@ -64,7 +64,7 @@
 <div class="mbl-webLateralMenuOverlay"></div>
 <div class="mbl-webLateralMenu home-mbl-webLateralMenu">
   <ul>
-    <li class="user_moves <%= active_class('/moves') %>"><a href="/moves">Moves</a></li>
+    <li class="user_moves <%= active_class('/moves') %>"><span class="moves-count"><mark>0</mark></span><a href="/moves">Moves</a></li>
     <li><span class="user-login-logut"></span></li>
   </ul>
 </div>
@@ -135,7 +135,10 @@
                 $('.user-signup').html("");
                 $('.fb-promocode').show();
                 $('#shareBtn').hide();
+                $('.user_moves').show();
+                userMovesRequest(current_user)
               }else {
+                $('.user_moves').hide();
                 $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                 $('.user-signup').html("<a href='/signup'>Sign Up</a>")
               }
@@ -178,7 +181,10 @@
                 $('.user-signup').html("");
                 $('.fb-promocode').show();
                 $('#shareBtn').hide();
+                $('.user_moves').show();
+                userMovesRequest(current_user)
               }else {
+                $('.user_moves').hide();
                 $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                 $('.user-signup').html("<a href='/signup'>Sign Up</a>")
               }
