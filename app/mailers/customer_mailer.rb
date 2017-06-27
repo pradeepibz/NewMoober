@@ -30,7 +30,7 @@ class CustomerMailer < ApplicationMailer
     from = Geocoder.coordinates(move_params['from_address'])
     to = Geocoder.coordinates(move_params['to_address'])
     @distance = Geocoder::Calculations.distance_between(from, to)
-    mail(from: email, to: 'support@moober.com', subject: "New Order for Moving")
+    # mail(from: email, to: 'support@moober.com', subject: "New Order for Moving")
   end
 
 end
