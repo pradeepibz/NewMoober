@@ -203,6 +203,9 @@ function initProposalMap() {
           marker.setMap(map);
           marker.setPosition(result.geometry.location);
           marker.setIcon(image2);
+          if($(window).width()<640){
+            map.setZoom(10);
+          }
         }
     });
     service.getDetails({

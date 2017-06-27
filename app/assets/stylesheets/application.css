@@ -1339,6 +1339,11 @@ input:focus {
 .map-prop {
   display: none;
 }
+.search-map-div span img {
+  height: 20px;
+  margin-left: 10px;
+}
+
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -1533,6 +1538,9 @@ input:focus {
   .accept-btn {
     margin-left: 2px;
     margin-right: 2px;
+  }
+  .slide#map {
+    height: 60%;
   }
 
 }
