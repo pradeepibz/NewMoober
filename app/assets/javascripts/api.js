@@ -1044,8 +1044,22 @@ function userLogin(email, password){
               // window.location.href = '/start-a-move'
             }else {
               $('.user_moves').show();
-              userMovesRequest(current_user)
-              window.location.href = "/"
+              var user_params = '{"user_id": '+ current_user +'}'
+              $.ajax({
+                url: API_URL+'getMovingRequestList',
+                type: 'POST',
+                data: user_params,
+              })
+              .done(function(data) {
+                var count = data.data.upcoming.length
+                localStorage.setItem('moves_count', count);
+                $('.moves-count mark').text(count)
+              })
+              .fail(function(data) {
+                localStorage.setItem('moves_count', 0);
+                $('.moves-count mark').text(0)
+              });
+              setTimeout(function(){window.location.href = "/"}, 3000);
             }
           }
         },
@@ -1195,6 +1209,7 @@ function userMovesRequest(current_user){
       $('.moves-count mark').text(count)
     })
     .fail(function(data) {
+      localStorage.setItem('moves_count', 0);
       $('.moves-count mark').text(0)
     });
   }
