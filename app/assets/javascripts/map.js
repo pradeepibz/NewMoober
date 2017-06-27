@@ -32,7 +32,6 @@ function initMap() {
 }
 
 function show_location(position){
-  alert(position)
   var lat = position.coords.latitude
   var lang = position.coords.longitude
   getChangeEvent(lat, lang)
@@ -40,7 +39,6 @@ function show_location(position){
 
 
 function show_error(error){
-  alert(error)
   var lat = 40.750357
   var lang = -73.983657
   getChangeEvent(lat, lang)
