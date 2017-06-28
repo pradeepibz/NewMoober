@@ -133,7 +133,7 @@ $(function (){
         formData.append('file['+i+']', aa);
         console.log(e.target.files[i].name)
         }
-        jQuery.ajaxQueue({
+        $.ajax({
           url: 'take_photos',
           type: 'POST',
           data: formData,
