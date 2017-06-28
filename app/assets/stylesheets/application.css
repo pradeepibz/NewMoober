@@ -726,7 +726,7 @@ input[type=checkbox], input[type=radio] {
     height: 50px;
     box-sizing: border-box;
     padding: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border: 1px solid #E6E6E6;
     border-radius: 8px;
     background-color: transparent;
@@ -1723,7 +1723,7 @@ ul li.user_moves .moves-count mark {
   }
   .contact-form.apply-contact-form input, .contact-form.apply-contact-form select {
     height: 50px;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
     padding: 15px;
   }
   .contact-form.apply-contact-form {
