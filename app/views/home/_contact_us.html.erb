@@ -1,59 +1,74 @@
 <%= render "shared/static_header" %>
 
-<section class="slide" style="background:#f2f2f2;">
+<div class="contact-us">
   <div class="contact">
-    <div class="row">
-    	<div class="col-md-12">
-    		<div class="contact-cover" style="width:100%;background-image:url(/assets/moober_background_image.jpg);"></div>
-        <div class="contact-title">We want to hear from you</div>
-    	</div>
-    	<div class="col-md-12">
-    		<div class="contact-description">
-    			Have a question for us? Send us a message by filling out the form below and we'll get back to you within 24 hours.
-    		</div>
-    	</div>
+    <div class="col-md-12 contact-head">
+      <div class="contact-cover" style="width:100%;background-image:url(/assets/moober_background_image.jpg);"></div>
+      <div class="contact-title">We want to hear from you</div>
+    </div>
+    <div class="col-md-12 contact-head">
+      <div class="contact-description">
+        Have a question for us? Send us a message by filling out the form below and we'll get back to you within 24 hours.
+      </div>
+    </div>
   </div>
-</section>
-<section class="slide">
-  <div class="mt-10">
-    <div class="row">
-    	<div class="col-md-6 col-md-offset-3">
-    		<div class="contact-form text-center">
-    			<h1>Send us a Message</h1>
-          <%= form_for @contact, url: contacts_path, method: :post do |f| %>
-            <% if @contact.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+  <div class="contact-mt-10">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="contact-form text-center">
+        <h1>Send us a Message</h1>
+        <%= form_for @contact, url: contacts_path, method: :post do |f| %>
+        <% if @contact.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
-                <ul>
-                <% @contact.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-                </ul>
-              </div>
+          <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
             <% end %>
-            <%= f.text_field :full_name, placeholder: "Full Name", required: true, class: "contact-input" %>
-            <%= f.email_field :email, placeholder: "Email", required: true, class: "contact-input" %>
-            <%= f.text_field :mobile, placeholder: "Mobile Number", required: true, class: "contact-input" %>
-            <%= f.text_area :message, placeholder: "Message", cols: "2", rows: "3", class: "contact-input" %>
-            <%= f.submit "Submit" %>
-          <%end%>
-    		</div>
-    	</div>
+          </ul>
+        </div>
+        <% end %>
+        <%= f.text_field :full_name, placeholder: "Full Name", required: true, class: "contact-input" %>
+        <%= f.email_field :email, placeholder: "Email", required: true, class: "contact-input" %>
+        <%= f.text_field :mobile, placeholder: "Mobile Number", required: true, class: "contact-input" %>
+        <%= f.text_area :message, placeholder: "Message", cols: "2", rowws: "3", class: "contact-input" %>
+        <%= f.submit "Submit" %>
+        <%end%>
+      </div>
     </div>
   </div>
-</section>
-<section class="slide contact-company-logo">
-  <div class="mt-10">
-    <div class="row">
-      <%= render "shared/company_logos" %>
-    </div>
+  <div class="contact-mt-10">
+    <%= render "shared/company_logos" %>
   </div>
-</section>
+  <footer class="contact footer">
+    <div class="skyline"><img src="assets/footer.png" width="100%" alt="Moober Solutions"></div>
+    <ul class="footer__content">
+      <li>
+        <ul>
+          <li class="footer__item footer__item--address">
+            <p><a href="https://www.google.com/maps/place/404+5th+Ave+%237055,+New+York,+NY+10018,+USA/@40.7503617,-73.9858434,17z/data=!3m1!4b1!4m5!3m4!1s0x89c259aa02e83efb:0x8952d4490e23ed2a!8m2!3d40.7503577!4d-73.9836494?hl=en" target="_blank" data-mrf-ignoreLink="true">404 5th Avenue #7055<br>New York, NY 10018</a></p>
+            <p>us: <a target="_blank" href="tel:+16467334446" data-mrf-ignoreLink="true">+1 646 733 4446</a></p>
+            <p>M-F 9AM-6PM EST</p>
+          </li>
+        </ul>
+      </li>
+      <li class="footer__followUs">
+        <ul class="emails">
+          <li class="footer__item"><a target="_blank" data-mrf-ignoreLink="true" href="mailto:support@moober.com">support@moober.com</a></li>
+          <li class="footer__item"><a target="_blank" data-mrf-ignoreLink="true" href="mailto:"></a></li>
+        </ul>
+        <ul class="data">
+          <li class="footer__item"><a href="https://www.instagram.com/moober/" target="_blank"><img src="assets/social/instagram.svg" alt="instagram" data-mrf-ignoreLink="true" target="_blank"></a></li>
+          <li class="footer__item"><a href="https://plus.google.com/100353954115280668104" target="_blank"><img src="assets/social/google.svg" alt="google" data-mrf-ignoreLink="true" target="_blank"></a></li>
+          <li class="footer__item"><a href="https://www.pinterest.com/moobernyc/?eq=goober&etslf=6100" target="_blank"><img src="assets/social/pinterest.svg" alt="pinterest" data-mrf-ignoreLink="true" target="_blank"></a></li>
+          <li class="footer__item"><a href="https://www.facebook.com/pg/Moober-406494646416367/" target="_blank"><img src="assets/social/facebook.svg" alt="facebook" data-mrf-ignoreLink="true"></a></li>
+          <li class="footer__item twitter-icon"><a href="https://twitter.com/MooberNYC" target="_blank"><img src="assets/social/twitter.svg" alt="twitter" target="_blank" data-mrf-ignoreLink="true"></a></li>
+        </ul>
+      </li>
+    </ul>
+  </footer>
+</div>
 
-<section class="slide contact-footer">
-  <%= render 'shared/footer' %>
-</section>
 
 <%= render 'shared/scrollify' %>
 <%= render 'home/top_mbl_side_nav' %>

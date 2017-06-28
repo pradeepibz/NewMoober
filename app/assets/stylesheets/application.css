@@ -697,7 +697,7 @@ input[type=checkbox], input[type=radio] {
   text-align: center;
   font-weight: 200;
   margin-bottom: 70px;
-  padding: 6%;
+  padding: 10%;
   font-size: 22px;
   line-height: 34px;
   background-color: rgb(242, 242, 242);
@@ -1303,6 +1303,8 @@ input:focus {
 .final-step-images {
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-right: 5px;
+  padding-left: 5px
 }
 .moving-requests {
   cursor: pointer;
@@ -1360,6 +1362,16 @@ ul li.user_moves .moves-count mark {
   text-align: center;
 }
 
+.contact.footer {
+  position: relative;
+}
+.contact-us .contact-head {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.contact-mt-10 .contact-form {
+  height: 425px;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){

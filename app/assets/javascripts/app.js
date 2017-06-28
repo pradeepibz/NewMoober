@@ -152,7 +152,6 @@ $(function (){
             alert("Timeout")
           }
         });
-        $('.modal_loading').hide();
       }
     }else{
       $('.image-content').html('');

@@ -801,7 +801,7 @@ $(document).on('click', '#contact_continue', function(){
   if (images != "" && images != null && images != undefined) {
     $('.moving_image_label').css('display', 'block');
     $.each(images, function(key, img){
-      $('.moving_images').append("<div class='col-md-6 final-step-images'><img src="+ img +" alt='' width='150px' height='120px'></div>");
+      $('.moving_images').append("<div class='col-md-6 final-step-images'><img src="+ img +" alt='' width='100%' height='100px'></div>");
     });
   }
   else {
