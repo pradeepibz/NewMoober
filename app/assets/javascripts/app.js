@@ -144,11 +144,11 @@ $(function (){
             $.each(data.image, function(index, el) {
               $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + el +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
             });
-            $('.modal_loading').css("display", "none");
+            $('.modal_loading').hide();
           },
           error: function (o) {
             console.log(o);
-            $('.modal_loading').css("display", "none");
+            $('.modal_loading').hide();
             alert("Timeout")
           }
         });
