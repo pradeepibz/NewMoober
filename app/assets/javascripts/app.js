@@ -132,7 +132,7 @@ $(function (){
         formData.append('file['+i+']', aa);
         console.log(e.target.files[i].name)
         }
-
+        $('.modal_loading').css("display", "block");
         $.ajax({
           url: 'take_photos',
           type: 'POST',
@@ -140,9 +140,6 @@ $(function (){
           contentType: false,
           processData: false,
           timeout: 100000,
-          beforeSend: function() {
-            $('.modal_loading').css("display", "block");
-          },
           success: function (data) {
             $.each(data.image, function(index, el) {
               $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + el +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
