@@ -139,7 +139,7 @@ $(function (){
           data: formData,
           contentType: false,
           processData: false,
-          timeout: 10000,
+          timeout: 100000,
           beforeSend: function() {
             $('.modal_loading').css("display", "block");
           }
