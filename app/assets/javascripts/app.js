@@ -126,13 +126,13 @@ $(function (){
         var validation_content = "Maximum of 20 images only can able to upload.";
         $('.validation_popup_content').html(validation_content);
       }else{
-        $('.modal_loading').show();
         var formData = new FormData();
         for (var i=0, len; i < len; i++) {
         var aa = e.target.files[i]
         formData.append('file['+i+']', aa);
         console.log(e.target.files[i].name)
         }
+
         $.ajax({
           url: 'take_photos',
           type: 'POST',
@@ -140,13 +140,18 @@ $(function (){
           contentType: false,
           processData: false,
           timeout: 10000,
+          beforeSend: function() {
+            $('.modal_loading').css("display", "block");
+          }
           success: function (data) {
             $.each(data.image, function(index, el) {
               $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + el +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
             });
+            $('.modal_loading').css("display", "none");
           },
           error: function (o) {
             console.log(o);
+            $('.modal_loading').css("display", "none");
             alert("Timeout")
           }
         });
