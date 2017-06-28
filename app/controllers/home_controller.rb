@@ -84,7 +84,7 @@ class HomeController < ApplicationController
       photo = MovePhoto.create(avatar: img)
       @images << photo.avatar.url
     end
-    # render json: {image: @images}
+    render json: {image: @images}
   end
 
   def moving_proposals

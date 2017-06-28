@@ -124,30 +124,33 @@ $(function (){
         $('#page_valid').modal();
         $('.validation_popup_content').html('');
         var validation_content = "Maximum of 20 images only can able to upload.";
-        $('.validation_popup_content').html(validation_content);  
+        $('.validation_popup_content').html(validation_content);
       }else{
-          var formData = new FormData();
-          for (var i=0, len; i < len; i++) {
-          var aa = e.target.files[i]
-          formData.append('file['+i+']', aa);
+        $('.modal_loading').show();
+        var formData = new FormData();
+        for (var i=0, len; i < len; i++) {
+        var aa = e.target.files[i]
+        formData.append('file['+i+']', aa);
+        console.log(e.target.files[i].name)
+        }
+        jQuery.ajaxQueue({
+          url: 'take_photos',
+          type: 'POST',
+          data: formData,
+          contentType: false,
+          processData: false,
+          timeout: 10000,
+          success: function (data) {
+            $.each(data.image, function(index, el) {
+              $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + el +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
+            });
+          },
+          error: function (o) {
+            console.log(o);
+            alert("Timeout")
           }
-          jQuery.ajaxQueue({
-            url: 'take_photos',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            timeout: 10000,
-          });
-          // .done(function(data) {
-          //   console.log(data.image);
-          //   $.each(data.image, function(index, el) {
-          //     $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + el +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
-          //   });
-          // })
-          // .fail(function(data) {
-          //   alert("Timeout your session. Please Upload again")
-          // });
+        });
+        $('.modal_loading').hide();
       }
     }else{
       $('.image-content').html('');
