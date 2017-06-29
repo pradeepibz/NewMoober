@@ -129,29 +129,30 @@ $(function (){
         var formData = new FormData();
         for (var i=0, len; i < len; i++) {
         var aa = e.target.files[i]
-        formData.append('file['+i+']', aa);
+        formData.append('move_photo[avatar]['+i+']', aa);
         console.log(e.target.files[i].name)
         }
         $('.modal_loading').css("display", "block");
-        $.ajax({
-          url: 'take_photos',
-          type: 'POST',
-          data: formData,
-          contentType: false,
-          processData: false,
-          timeout: 100000,
-          success: function (data) {
-            $.each(data.image, function(index, el) {
-              $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + el +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
-            });
-            $('.modal_loading').hide();
-          },
-          error: function (o) {
-            console.log(o);
-            $('.modal_loading').hide();
-            alert("Timeout")
-          }
-        });
+        $(".file-upload-btn").click();
+        // $.ajax({
+        //   url: 'take_photos',
+        //   type: 'POST',
+        //   data: formData,
+        //   contentType: false,
+        //   processData: false,
+        //   timeout: 100000,
+        //   success: function (data) {
+        //     $.each(data.image, function(index, el) {
+        //       $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src="+ location.protocol + "//"+ location.host + el +" alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
+        //     });
+        //     $('.modal_loading').hide();
+        //   },
+        //   error: function (o) {
+        //     console.log(o);
+        //     $('.modal_loading').hide();
+        //     alert("Timeout")
+        //   }
+        // });
       }
     }else{
       $('.image-content').html('');

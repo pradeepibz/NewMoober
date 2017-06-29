@@ -1,11 +1,11 @@
 <div class="search-map">
     <div class="row pd-15">
       <div class="col-md-4 search-map-div new-form">
-        <p>Moving from<span><img src="/assets/map-icon2.png"></span></p>
+        <p><span><img src="/assets/map-icon2.png"></span>Moving from</p>
         <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()" >
       </div>
       <div class="col-md-4 search-map-div new-form">
-        <p>Moving to<span><img src="/assets/map-icon1.png"></span></p>
+        <p><span><img src="/assets/map-icon1.png"></span>Moving to</p>
         <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()">
       </div>
       <div class="col-md-4 search-map-div" align="center">
@@ -84,8 +84,12 @@
       <div class="row">
         <div class="col-md-12" align="center">
           <div class="start-heading1">
-            <h4><span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span><span class="span2">Take photos of your space.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span><span class="size-of-move-val-check-link"><a href='#moving-extra-section' data-section_id="#photos-section" class="smooth_scroll">Skip</a></span></h4>
-            <input type="file" class="hidden-btn" name="" id="image_upload" multiple>
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span><span class="span2">Take photos of your space.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span><span class="size-of-move-val-check-link"><a href='#moving-extra-section' data-section_id="#photos-section" class="smooth_scroll" id="skip-upload-images">Skip</a></span></h4>
+            <!-- <input type="file" class="hidden-btn" name="" id="image_upload" multiple> -->
+            <%= form_for MovePhoto.new, url: take_photos_path, html: { multipart: true, class: "file-form" }, remote: true do |f| %>
+              <%= f.file_field :avatar, multiple: true, id: "image_upload" %>
+              <%= f.submit "Submit", class: "file-upload-btn" %>
+            <% end %>
             <!-- <p>(20 max)</p> -->
           </div>
         </div>

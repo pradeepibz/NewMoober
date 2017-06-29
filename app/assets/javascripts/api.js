@@ -672,6 +672,12 @@ $(document).on('click', '#move-images', function(){
   // var storedNames = JSON.parse(localStorage.getItem("images"));
 });
 
+$(document).on('click', '#skip-upload-images', function(){
+  var photos = []
+  localStorage.setItem("images", JSON.stringify(photos));
+  var storedNames = JSON.parse(localStorage.getItem("images"));
+});
+
 $(document).on('click', '#extra-large', function(){
   var items = []
   $('.popup_success p').each(function(index){
@@ -892,7 +898,7 @@ $(document).on('click', '#start_mov_btn', function(){
         .done(function() {
           console.log("success");
         });
-        
+        userMovesRequest(current_user);
         $('#start-move-done').modal();
         $('.modal_loading').hide();
       },

@@ -78,16 +78,13 @@ class HomeController < ApplicationController
   end
 
   def take_photos
-    imgages = params[:file]
-    @images = []
-    imgages.each do |index, img|
-      photo = MovePhoto.create(avatar: img)
-      @images << photo.avatar.url
-    end
-    render json: {image: @images}
+    images = params[:move_photo][:avatar].map { |img| {avatar: img} }
+    @image = MovePhoto.create(images)
+    @images = @image.map{|img| img.avatar.url}
   end
 
   def moving_proposals
     
   end
+
 end

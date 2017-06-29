@@ -193,6 +193,9 @@ body {
     transition: all 0.5s ease 0s;
     color: #3a69aa;
 }
+#mainNav.affix li.mrf-contactAction, #moveNav li.mrf-contactAction.startmove {
+  display: block !important;
+}
 #mainNav li.mrf-contactAction {
     border-radius: 40px;
     /*margin-top: -11px;*/
@@ -209,6 +212,9 @@ body {
     color: #fff;
     font-weight: 700;
     padding: 10px;
+}
+#mainNav li.mrf-contactAction.startmove {
+  display: none;
 }
 #mainNav a:hover {
   color: #3a69aa !important;
@@ -1343,7 +1349,7 @@ input:focus {
 }
 .search-map-div span img {
   height: 20px;
-  margin-left: 10px;
+  padding-right: 8px;
 }
 ul li.user_moves .moves-count mark {
   background-color: #ffc043;
@@ -1371,6 +1377,9 @@ ul li.user_moves .moves-count mark {
 }
 .contact-mt-10 .contact-form {
   height: 425px;
+}
+.file-form {
+  display: none;
 }
 /*responsive code*/
 /*iPhone 5, 5s*/
