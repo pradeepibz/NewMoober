@@ -13,7 +13,12 @@ $(function(){
     $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>");
     $('.user_moves').show();
     var moves_count = localStorage.getItem('moves_count');
-    $('.moves-count mark').text(moves_count)
+    if (moves_count == 0) {
+      $('.moves-count').hide();
+    }else {
+      $('.moves-count mark').text(moves_count)
+      $('.moves-count').show();
+    }
     if (window.location.pathname == "/signin" || window.location.pathname == "/signup") {
       window.location.href = "/";
     }
@@ -1059,11 +1064,13 @@ function userLogin(email, password){
               .done(function(data) {
                 var count = data.data.upcoming.length
                 localStorage.setItem('moves_count', count);
-                $('.moves-count mark').text(count)
+                $('.moves-count mark').text(count);
+                 $('.moves-count').show();
               })
               .fail(function(data) {
                 localStorage.setItem('moves_count', 0);
-                $('.moves-count mark').text(0)
+                $('.moves-count mark').text(0);
+                 $('.moves-count').hide();
               });
               setTimeout(function(){window.location.href = "/"}, 3000);
             }
@@ -1120,7 +1127,7 @@ function userRegistration(email, password, password_confirmation) {
                 window.location.href = "/"
               }
             }
-            $('.moves-count mark').text(0);
+            $('.moves-count').hide();
           },
           error: function (o) {
             console.log(o);
@@ -1212,11 +1219,13 @@ function userMovesRequest(current_user){
     .done(function(data) {
       var count = data.data.upcoming.length
       localStorage.setItem('moves_count', count);
-      $('.moves-count mark').text(count)
+      $('.moves-count mark').text(count);
+      $('.moves-count').show();
     })
     .fail(function(data) {
       localStorage.setItem('moves_count', 0);
       $('.moves-count mark').text(0)
+      $('.moves-count').hide();
     });
   }
 }
