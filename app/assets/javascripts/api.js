@@ -679,8 +679,13 @@ $(document).on('click', '#move-images', function(){
 
 $(document).on('click', '#skip-upload-images', function(){
   var photos = []
+  // if($('.image-content').is(".mphotos")) {
+    $('.mphotos').each(function(index){
+      // console.log($(this).attr('src'));
+      photos[index] = $(this).attr('src')
+    });
+  // }
   localStorage.setItem("images", JSON.stringify(photos));
-  var storedNames = JSON.parse(localStorage.getItem("images"));
 });
 
 $(document).on('click', '#extra-large', function(){
@@ -1172,7 +1177,6 @@ $(document).on('click', '.moving-requests', function(){
   localStorage.setItem('proposal_request', request_id);
   localStorage.setItem('request_from_add', from_add);
   window.location.href = "/moves/proposals"
-  history.go(0);
 });
 
 function movingProposals(request_id, lat, lang){

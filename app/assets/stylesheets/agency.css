@@ -1176,9 +1176,12 @@ a {
     margin-top: 19%;
   }
   .loop_image img {
-    margin-top: -5%;
+    margin-top: -11%;
     max-width: 70%;
     margin-left: 20%;
+  }
+  .hw_it_works.loop_image img{
+    margin-top: -5%;
   }
   .welcome_section_right .slide__title{
     font-size: 23px;
@@ -1394,6 +1397,9 @@ a {
     margin-top: -8%;
     max-width: 80%;
     margin-left: 10%;
+  }
+  .hw_it_works.loop_image img{
+    margin-top: -5%;
   }
   .loop_image_right{
     float: left;
