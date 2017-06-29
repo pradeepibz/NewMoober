@@ -817,7 +817,7 @@ $(document).on('click', '#contact_continue', function(){
   if (images != "" && images != null && images != undefined) {
     $('.moving_image_label').css('display', 'block');
     $.each(images, function(key, img){
-      $('.moving_images').append("<div class='col-md-6 final-step-images'><img src="+ img +" alt='' width='100%' height='130px'></div>");
+      $('.moving_images').append("<div class='col-md-6 final-step-images'><img src="+ img +" alt='' width='170px' height='130px'></div>");
     });
   }
   else {
@@ -1166,9 +1166,14 @@ $(document).on('click', '.new-cancel-btn', function(){
 });
 $(document).on('click', '.signin-continue', function(){
   $("#sign-in").modal('hide');
+  setTimeout(function(){ $("#startamove-confirm").modal(); }, 2000);
 });
 $(document).on('click', '.signup-continue', function(){
   $("#sign-up").modal('hide');
+});
+
+$(document).on("click", ".startmove_continue", function(){
+  $("#startamove-confirm").modal('hide');
 });
 
 $(document).on('click', '.moving-requests', function(){
