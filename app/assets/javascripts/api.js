@@ -1072,7 +1072,7 @@ function userLogin(email, password){
                 $('.moves-count mark').text(0);
                  $('.moves-count').hide();
               });
-              setTimeout(function(){window.location.href = "/"}, 3000);
+              window.location.href = "/";
             }
           }
         },
