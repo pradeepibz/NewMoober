@@ -39,12 +39,14 @@
         // alert(data.data)
         // if (data.data.upcoming)
         $.each(data.data.upcoming ,function(key, res){
-          var upcoming = '<div class="um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'"><h4>'+res.moving_code+'</h4></div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+'</p></div><hr>'
+          console.log(res)
+          console.log("res")
+          var upcoming = '<div class="um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+''+yellowNotification(res)+'</p></div><hr>'
           $('.upcoming_values').append(upcoming)
         });
 
         $.each(data.data.past ,function(key, res){
-          var upcoming = '<div class="um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'"><h4>'+res.moving_code+'</h4></div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+'</p></div><hr>'
+          var upcoming = '<div class="um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+''+yellowNotification(res)+'</p></div><hr>'
           $('.past_values').append(upcoming)
         });
 
@@ -55,4 +57,17 @@
       });
     }
   });
+  function redNotification(res){
+    if (res.notification_count > 0){
+      return '<span class="upcoming-pro-count"><mark>'+res.notification_count+'</mark></span><span class="upcoming-title">'+res.moving_code+'</span>'
+    }
+    else {
+     return '<span class="upcoming-title">'+res.moving_code+'</span>' 
+    }
+  }
+  function yellowNotification(res){
+    if (res.notification_count > 0){
+      return '<span class="up-pro-count"><mark>'+res.notification_count+'</mark></span>'
+    }
+  }
 </script>

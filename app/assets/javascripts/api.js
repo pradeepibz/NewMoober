@@ -1070,14 +1070,15 @@ function userLogin(email, password){
                 var count = data.data.upcoming.length
                 localStorage.setItem('moves_count', count);
                 $('.moves-count mark').text(count);
-                 $('.moves-count').show();
+                $('.moves-count').show();
+                window.location.href = "/";
               })
               .fail(function(data) {
                 localStorage.setItem('moves_count', 0);
                 $('.moves-count mark').text(0);
-                 $('.moves-count').hide();
+                $('.moves-count').hide();
+                window.location.href = "/";
               });
-              window.location.href = "/";
             }
           }
         },

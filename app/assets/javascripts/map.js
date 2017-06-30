@@ -114,6 +114,8 @@ function initProposalMap() {
         }
     });
   }
+  var lat = localStorage.getItem('proposal_lat');
+  var lang = localStorage.getItem('proposal_lang');
   var map = new google.maps.Map(document.getElementById('proposal_map'), {
     center: {lat: parseFloat(lat), lng: parseFloat(lang)},
     zoom: 14,
