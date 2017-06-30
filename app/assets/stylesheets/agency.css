@@ -1259,7 +1259,8 @@ a {
   }
   .hero__title {
     font-size: 20px;
-    margin-top: 10%;
+    margin-top: 0%;
+    padding-top: 165px;
   }
   .logos__item{
     width: 40%;
@@ -1500,8 +1501,9 @@ a {
     margin-top: 20%;
   }
   .hero__title{
-    margin-top: 10%;
+    margin-top: 0%;
     font-size: 30px;
+    padding-top: 165px;
   }
   .logos__item{
     width: 40%;
