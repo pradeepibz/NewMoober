@@ -1342,7 +1342,7 @@ input:focus {
   padding-right: 0px;
   cursor: pointer;
 }
-.slide.map-prop {
+.map-prop {
   height: 75%;
 }
 #proposal_map {
@@ -1351,9 +1351,9 @@ input:focus {
 .slide.moving_proposals_results {
   height: auto;
 }
-.map-prop {
+/*.map-prop {
   display: none;
-}
+}*/
 .search-map-div span img {
   height: 20px;
   padding-right: 8px;
@@ -1437,6 +1437,12 @@ ul li.user_moves .moves-count mark {
 .upcoming-title {
   font-size: 18px;
   margin-left: 15px;
+}
+.no-proposal {
+  font-size: 24px;
+  margin-top: 60%;
+  text-align: center;
+  width: 100%;
 }
 /*responsive code*/
 /*iPhone 5, 5s*/

@@ -1,16 +1,18 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGt1cDImemwSjXZt5hYsCWnDPiC7cQkSE&libraries=places&callback=initProposalMap"></script>
 <%= render 'shared/static_header' %>
-<section class="slide map-prop">
-  <div id='proposal_map'></div>
-</section>
-<section class="slide moving_proposals_results">
-  <div class='col-md-4'></div>
-  <div class='col-md-4'>
-    <div class="proposal_results">
-
-    </div>
+<section class="slide">
+  <div class="map-prop">
+    <div id='proposal_map'></div>
   </div>
-  <div class='col-md-4'></div>
+  <div class="moving_proposals_results">
+    <div class='col-md-4'></div>
+    <div class='col-md-4'>
+      <div class="proposal_results">
+
+      </div>
+    </div>
+    <div class='col-md-4'></div>
+  </div>
 </section>
 <%= render 'footer' %>
 <%= render 'home/top_mbl_side_nav' %>

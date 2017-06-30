@@ -1198,19 +1198,20 @@ function movingProposals(request_id, lat, lang){
       })
       .done(function(data) {
         console.log(data)
+        $(".map-prop").show();
         $.each(data.data ,function(key, res){  
           $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-6 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-4 pull-right'><div class='text-center accept-btn'> Accept </div></div></div><div class='col-md-12'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div><div class='col-md-12'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div><div class='col-md-12'><hr></div>");
-          $(".map-prop").show();
         });
+      
       })
       .fail(function(data) {
         $(".map-prop").hide();
-        $(".proposal_results").append("<div class='no-proposal'></div>")
+        $(".proposal_results").append("<div class='no-proposal'>Proposals are on their way</div>")
       });      
     }
     else{
-      $("#proposal_map").hide();
-      $(".proposal_results").append("<div class='no-proposal'></div>")
+      $(".map-prop").hide();
+      $(".proposal_results").append("<div class='no-proposal'>Proposals are on their way</div>")
     }
   }else{
     window.location.href = "/"
