@@ -1481,6 +1481,9 @@ ul li.user_moves .moves-count mark {
   -webkit-transition: .3s -webkit-transform ease-in-out;
   transition: .3s transform ease-in-out
 }
+.side-menu-moves-count {
+  cursor: pointer;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -1913,7 +1916,7 @@ ul li.user_moves .moves-count mark {
     margin-top: 6px;
   }
   .side-menu-moves-count mark {
-    left: 333px;
+    left: 348px;
     margin-top: 12px;
   }
   .mbl-webLateralMenu {

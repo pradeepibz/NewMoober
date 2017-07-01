@@ -531,3 +531,6 @@ $(function (){
     }
   });
 });
+$(document).on('click', '.side-menu-moves-count', function(){
+  $(this).next().click()
+});
