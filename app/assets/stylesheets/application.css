@@ -1425,7 +1425,7 @@ ul li.user_moves .moves-count mark {
   text-align: center;
   width: 20px;
 }
-.affix-top .side-menu-moves-count mark{
+#mainNav.affix-top .side-menu-moves-count mark{
   left: 5px;
   margin-top: 19px;
 }
