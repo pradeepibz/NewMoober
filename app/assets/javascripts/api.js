@@ -15,9 +15,12 @@ $(function(){
     var moves_count = localStorage.getItem('moves_count');
     if (moves_count == 0) {
       $('.moves-count').hide();
+      $('.side-menu-moves-count').hide();
     }else {
       $('.moves-count mark').text(moves_count)
+      $('.side-menu-moves-count mark').text(moves_count)
       $('.moves-count').show();
+      $('.side-menu-moves-count').show();
     }
     if (window.location.pathname == "/signin" || window.location.pathname == "/signup") {
       window.location.href = "/";
@@ -29,6 +32,7 @@ $(function(){
     $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
     $('.user-signup').html("<a href='/signup'>Sign Up</a>")
     $('.user_moves').hide();
+    $('.side-menu-moves-count').hide();
     $(".mbl-side-menu").hide();
     $(".nav-signin").show();
     $(".nav-signup").show();
@@ -1070,13 +1074,17 @@ function userLogin(email, password){
                 var count = data.data.upcoming.length
                 localStorage.setItem('moves_count', count);
                 $('.moves-count mark').text(count);
+                $('.side-menu-moves-count mark').text(count);
                 $('.moves-count').show();
+                $('.side-menu-moves-count').show();
                 window.location.href = "/";
               })
               .fail(function(data) {
                 localStorage.setItem('moves_count', 0);
                 $('.moves-count mark').text(0);
+                $('.side-menu-moves-count mark').text(0);
                 $('.moves-count').hide();
+                $('.side-menu-moves-count').hide();
                 window.location.href = "/";
               });
             }
@@ -1124,11 +1132,13 @@ function userRegistration(email, password, password_confirmation) {
                   userMovesRequest(current_user)
                 }else {
                   $('.user_moves').hide();
+                  $('.side-menu-moves-count').hide();
                   $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                   $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                 }
               }else {
                 $('.user_moves').show();
+                $('.side-menu-moves-count').show();
                 userMovesRequest(current_user)
                 window.location.href = "/"
               }
@@ -1167,7 +1177,8 @@ $(document).on('click', '.new-cancel-btn', function(){
 });
 $(document).on('click', '.signin-continue', function(){
   $("#sign-in").modal('hide');
-  setTimeout(function(){ $("#startamove-confirm").modal(); }, 2000);
+  $("#startamove-confirm").modal();
+  // setTimeout(function(){ $("#startamove-confirm").modal(); }, 2000);
 });
 $(document).on('click', '.signup-continue', function(){
   $("#sign-up").modal('hide');
@@ -1231,12 +1242,38 @@ function userMovesRequest(current_user){
       var count = data.data.upcoming.length
       localStorage.setItem('moves_count', count);
       $('.moves-count mark').text(count);
-      $('.moves-count').show();
+      $('.side-menu-moves-count mark').text(count);
+      $('.side-menu-moves-count').show();
     })
     .fail(function(data) {
       localStorage.setItem('moves_count', 0);
       $('.moves-count mark').text(0)
+      $('.side-menu-moves-count mark').text(0)
       $('.moves-count').hide();
+      $('.side-menu-moves-count').hide();
     });
   }
 }
+$(document).on('click', '.dsktop-toggle', function(){
+  var current_user = localStorage.getItem('user_id');
+  var moves_count = localStorage.getItem('moves_count');
+  if ($(this).hasClass("is-active") && current_user != "" && current_user != null && current_user != undefined && moves_count != 0){
+    $('.side-menu-moves-count').show();
+
+  }
+  else {
+    $('.side-menu-moves-count').hide();
+  }
+});
+
+$(document).on('click', '.mbl-toggle', function(){
+  var current_user = localStorage.getItem('user_id');
+  var moves_count = localStorage.getItem('moves_count');
+  if ($(this).hasClass("toggle-is-active") && current_user != "" && current_user != null && current_user != undefined && moves_count != 0){
+    $('.side-menu-moves-count').show();
+
+  }
+  else {
+    $('.side-menu-moves-count').hide();
+  }
+});

@@ -219,6 +219,9 @@ function initProposalMap() {
           marker.setMap(map);
           marker.setPosition(result.geometry.location);
           marker.setIcon(image);
+          // if($(window).width()>640){
+            map.setZoom(13);
+          // }
         }
     });
 

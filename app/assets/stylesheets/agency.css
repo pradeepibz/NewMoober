@@ -150,17 +150,6 @@ h6 {
   -webkit-transition: .3s -webkit-transform ease-in-out;
   transition: .3s transform ease-in-out
 }
-.mbl-webLateralMenu {
-  min-height: 100vh;
-  width: 280px;
-  right: 0;
-  z-index: 2;
-  background-color: #FFF;
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
-  -webkit-transition: .3s -webkit-transform ease-in-out;
-  transition: .3s transform ease-in-out
-}
  
 .mrf-webLateralMenu ul, .mbl-webLateralMenu ul{
   padding-top: 90px;

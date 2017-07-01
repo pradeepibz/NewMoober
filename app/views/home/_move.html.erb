@@ -84,7 +84,7 @@
       <div class="row">
         <div class="col-md-12" align="center">
           <div class="start-heading1">
-            <h4><span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span><span class="span2">Take photos of your space.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span><span class="size-of-move-val-check-link"><a href='#moving-extra-section' data-section_id="#photos-section" class="smooth_scroll" id="skip-upload-images">Skip</a></span></h4>
+            <h4><span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span><span class="span2">Take photos of your space.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span></h4>
             <!-- <input type="file" class="hidden-btn" name="" id="image_upload" multiple> -->
             <%= form_for MovePhoto.new, url: take_photos_path, html: { multipart: true, class: "file-form" }, remote: true do |f| %>
               <%= f.file_field :avatar, multiple: true, id: "image_upload" %>
@@ -113,6 +113,7 @@
                 <a href='#moving-extra-section' id="add_images" data-section_id="#photos-section" class="hidden-btn smooth_scroll">CONTINUE</a>
                 <a class="image-div-submit add_images_section" id="move-images">CONTINUE</a>
               </div>
+              <div class="size-of-move-val-check-link"><a href='#moving-extra-section' data-section_id="#photos-section" class="smooth_scroll" id="skip-upload-images">Skip</a></div>
             </div>
             <div class="col-md-4"></div>
           </div>
