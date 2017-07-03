@@ -114,7 +114,7 @@ $(function(){
     }else{
       $('#page_valid').modal();
       $('.validation_popup_content').html('');
-      var validation_content = "Add at least one picture or click skip on top right.";
+      var validation_content = "Add at least one picture or click skip on bottom continue.";
       $('.validation_popup_content').html(validation_content);
     }
   });
