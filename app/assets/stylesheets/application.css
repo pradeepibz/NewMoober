@@ -1326,6 +1326,12 @@ input:focus {
 .moving_proposals_results {
   margin-top: 5%;
 }
+.moving_proposals_accept {
+  margin-top: 7%;
+}
+.acpt-label {
+  font-weight: 600;
+}
 .accept-btn {
   background-color: #3a69aa;
   padding: 4px;
@@ -1483,6 +1489,52 @@ ul li.user_moves .moves-count mark {
 }
 .side-menu-moves-count {
   cursor: pointer;
+}
+.apply-promocode {
+  margin-top: 4%;
+}
+.promo-apply-btn {
+  background-color: #3a69aa;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 8px;
+}
+.estimate-cost {
+  margin-top: 4%;
+}
+.estimated_cost_text{
+  color: #3a69aa;
+  font-size: 16px;
+}
+.card-details {
+  margin-top: 4%;
+}
+.approve-details {
+  margin-top: 1%;
+}
+.approve-btn {
+  background-color: #ffc043;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px;
+}
+.acpt-footer {
+  height: 60%;
+}
+.col-md-8.acpt-form {
+  padding-left: 0px;
+}
+.col-md-4.acpt-apply{
+  padding-right: 0px;
+}
+.acpt-apply a {
+  float: right;
+}
+.card-section {
+  margin-top: 10%;
 }
 /*responsive code*/
 /*iPhone 5, 5s*/
@@ -1721,6 +1773,34 @@ ul li.user_moves .moves-count mark {
     width: 27%;
     float: right;
   }
+  .moving_proposals_accept {
+    margin-top: 30%;
+    margin-right: -5px !important;
+    margin-left: -5px !important;
+  }
+  .col-md-8.acpt-form {
+    width: 70%;
+    padding-left: 10px;
+  }
+  .col-md-4.acpt-apply {
+    width: 28%;
+    padding-right: 10px;
+  }
+  .accept-slide {
+    margin-bottom: 0px;
+  }
+  .apply-promocode {
+    margin-top: 10%;
+  }
+  .estimate-cost {
+    margin-top: 18%;
+  }
+  .card-details {
+    margin-top: 21%;
+  }
+  .card-section {
+    margin-top: 40%;
+  }
 
 }
 
@@ -1921,5 +2001,33 @@ ul li.user_moves .moves-count mark {
   }
   .mbl-webLateralMenu {
     width: 280px !important;
+  }
+  .moving_proposals_accept {
+    margin-top: 30%;
+    margin-right: -5px !important;
+    margin-left: -5px !important;
+  }
+  .col-md-8.acpt-form {
+    width: 70%;
+    padding-left: 10px;
+  }
+  .col-md-4.acpt-apply {
+    width: 28%;
+    padding-right: 10px;
+  }
+  .accept-slide {
+    margin-bottom: 0px;
+  }
+  .apply-promocode {
+    margin-top: 10%;
+  }
+  .estimate-cost {
+    margin-top: 18%;
+  }
+  .card-details {
+    margin-top: 30%;
+  }
+  .card-section {
+    margin-top: 40%;
   }
 }

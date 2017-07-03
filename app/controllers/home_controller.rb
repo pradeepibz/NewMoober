@@ -58,6 +58,7 @@ class HomeController < ApplicationController
 
     if request.env['omniauth.auth']
       @user = User.create_with_omniauth(request.env['omniauth.auth'])
+      session[:current_email] = @user.email
       session[:email] = @user.email
       session[:password] = @user.uid
     end
@@ -85,6 +86,24 @@ class HomeController < ApplicationController
 
   def moving_proposals
     
+  end
+
+  def check_promo
+    @fb_user = FacebookUser.find_by(email: session[:current_email])
+    if @fb_user.present?
+      @check_code = @fb_user.check_promocode(params[:code])
+      if @check_code == true
+        render json: {success: "Accepted", message: true}
+      else
+
+        render json: {failure: "Not permitted", message: false}
+      end
+    else
+      render json: {failure: "Not permitted", message: false}
+    end
+  end
+
+  def card_details
   end
 
 end

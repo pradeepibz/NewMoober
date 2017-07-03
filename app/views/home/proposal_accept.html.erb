@@ -1,0 +1,102 @@
+<%= render 'shared/static_header' %>
+<section class="slide accept-slide">
+  <div class="row moving_proposals_accept">
+    <div class='col-md-4'></div>
+    <div class='col-md-4'>
+      <div class="proposal_accept">
+        <p>
+          <span>
+            Moving Company:
+          </span>
+          <span class="acpt-label acpt-company">Pradeep</span>
+        </p>
+        <p>
+          <span>Moving From:</span>
+          <span class="acpt-label acpt-company-from">Chennai</span>
+        </p>
+        <p>
+          <span>Moving To</span>
+          <span class="acpt-label acpt-company-to">Avadi</span>
+        </p>
+        <p>
+          <span>Moving Date:</span>
+          <span class="acpt-label acpt-company-date">07-03-2017</span>
+        </p>
+      </div>
+    </div>
+    <div class='col-md-4'></div>
+  </div>
+  <div class="row apply-promocode">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="col-md-8 pull-left acpt-form">
+        <input type="texgt" name="promo-code" class="promo-code form-control" placeholder="Promo Code">
+      </div>
+      <div class="col-md-4 pull-right acpt-apply">
+        <div class="text-center promo-apply-btn">Apply</div>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row estimate-cost">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="text-center estimated_cost_text">Estimated Cost: $300.00</div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row card-details">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="col-md-8 pull-left acpt-form">
+        No Payment method available.
+      </div>
+      <div class="col-md-4 acpt-apply pull-right">
+        <a href="javascript:;">Add card</a>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row approve-details">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="text-center approve-btn">Approve Payment</div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</section>
+
+<div id="promo-code-popup" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align new_page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title pc-head"></h4>
+          <div class="promocode-body">
+          </div>
+          <button class="new-popup-btn" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // acceptCompany();
+  });
+</script>

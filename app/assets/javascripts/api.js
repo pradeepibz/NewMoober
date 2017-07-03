@@ -37,11 +37,6 @@ $(function(){
     $(".nav-signin").show();
     $(".nav-signup").show();
   }
-  $(document).on('click', '.user-logout', function(){
-    localStorage.setItem('user_id', "");
-    localStorage.setItem('homapage_share', "")
-    window.location.href = "/";
-  });
   //session check
   if (current_user != "" && current_user != null && current_user != undefined) {
     $('.check_user_session').html('');
@@ -1210,8 +1205,9 @@ function movingProposals(request_id, lat, lang){
       .done(function(data) {
         console.log(data)
         $(".map-prop").show();
-        $.each(data.data ,function(key, res){  
-          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-6 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-4 pull-right'><div class='text-center accept-btn'> Accept </div></div></div><div class='col-md-12'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div><div class='col-md-12'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div><div class='col-md-12'><hr></div>");
+        $.each(data.data ,function(key, res){ 
+          console.log(res) ;
+          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-6 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-4 pull-right'><div class='text-center accept-btn' data-request-id="+res.moving_request_id+"> Accept </div></div></div><div class='col-md-12'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div><div class='col-md-12'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div><div class='col-md-12'><hr></div>");
         });
       
       })
@@ -1275,5 +1271,72 @@ $(document).on('click', '.mbl-toggle', function(){
   }
   else {
     $('.side-menu-moves-count').hide();
+  }
+});
+$(document).on('click', '.accept-btn', function(){
+  var request_id = $(this).data('request-id');
+  var from_add = $(this).data('from-add');
+  localStorage.setItem('proposal_accept_request', request_id);
+  window.location.href = "/moves/proposal/accept"
+});
+
+// function acceptCompany(){
+//   var API_URL = "http://45.56.72.52/api/userapi/";
+//   var current_user = localStorage.getItem('user_id');
+//   var request_id = localStorage.getItem('proposal_accept_request');
+//   var proposal_params = '{"moving_request_id":'+ request_id +',"user_id": '+ current_user +'}'
+//   if (current_user != "" && current_user != null && current_user != undefined){
+//     if (request_id != "" && request_id != null && request_id != undefined){
+//       $.ajax({
+//         url: API_URL+"getMovingRequestProposal",
+//         type: 'POST',
+//         data: proposal_params,
+//       })
+//       .done(function(data) {
+//         var res = data.data;
+//         console.log(res.company_name) ;
+//         $(".acpt-company").text(res.company_name);
+//         $(".acpt-company-from").text(res.from_address);
+//         $(".acpt-company-to").text(res.to_address);
+//         $(".acpt-company-date").text(res.move_date_time);
+//         // });
+      
+//       })
+//       .fail(function(data) {
+//         $(".acpt-company").text("");
+//         $(".acpt-company-from").text("");
+//         $(".acpt-company-to").text("");
+//         $(".acpt-company-date").text("");
+//       });      
+//     }
+//     else{
+//       $(".acpt-company").text("");
+//       $(".acpt-company-from").text("");
+//       $(".acpt-company-to").text("");
+//       $(".acpt-company-date").text("");
+//     }
+//   }else{
+//     window.location.href = "/"
+//   }
+// }
+$(document).on('click', '.promo-apply-btn', function(){
+  var code = $('.promo-code').val();
+  var current_user = localStorage.getItem('user_id');
+  if (current_user != "" && current_user != null && current_user != undefined){
+    $.ajax({
+      url: '/check_promocode',
+      data: {code: code},
+      success: function(data){
+        if (data.message == true){
+          $('#promo-code-popup').modal();
+          $('.pc-head').text("Success");
+          $('.promocode-body').html("<p>Your Promocode applied successfully</p>")
+        }else{
+          $('#promo-code-popup').modal();
+          $('.pc-head').text("Oops");
+          $('.promocode-body').html("<p>server error! Please try again later.</p>")
+        }
+      },
+    });
   }
 });
