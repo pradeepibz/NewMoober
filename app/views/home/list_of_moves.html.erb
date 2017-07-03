@@ -38,6 +38,10 @@
         console.log(data);
         // alert(data.data)
         // if (data.data.upcoming)
+        var count = data.data.upcoming.length
+        localStorage.setItem('moves_count', count);
+        $('.moves-count mark').text(count);
+        $('.side-menu-moves-count mark').text(count);
         $.each(data.data.upcoming ,function(key, res){
           console.log(res)
           console.log("res")
