@@ -610,7 +610,7 @@ $(function(){
 
     FB.login(function(response) {
       if (response.authResponse) {
-        $.getJSON('auth/facebook/callback', function(json) {
+        $.getJSON('auth/facebook/callback?fb=true', function(json) {
           console.log(JSON.stringify(json))
           console.log("JSON.stringify(json)")
           var email = json.email

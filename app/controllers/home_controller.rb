@@ -33,7 +33,7 @@ class HomeController < ApplicationController
     session[:fb_token] = auth['uid']
     facebook_user_access_token = token
     facebook_user_uid = auth['uid']
-    if facebook_user_uid.present? && session[:sharebutton].present?
+    if facebook_user_uid.present? && session[:sharebutton].present? && params[:fb].nil?
       if FacebookUser.find_by(uid: auth['uid']).nil?
         @facebook_user = FacebookUser.create(name: @facebook_user_data.name, email: @facebook_user_data.email, fb_access_token: facebook_user_access_token, provider: auth['provider'], uid: auth['uid'])
         if @facebook_user.save
