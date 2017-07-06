@@ -148,6 +148,8 @@ $(function(){
           console.log('success');
           console.log(data);
           if (data.status == true) {
+            localStorage.setItem('full_name', data.data.fullname)
+            localStorage.setItem('phone_number', data.data.phone)
             $('#sign-in').modal('hide');
             console.log(data.data.user_id);
             console.log(localStorage.setItem('user_id', data.data.user_id));
@@ -194,6 +196,8 @@ $(function(){
             console.log('success');
             console.log(data);
             if (data.status == true) {
+              localStorage.setItem('full_name', data.data.fullname)
+              localStorage.setItem('phone_number', data.data.phone)
               $('#sign-up').modal('hide');
               console.log(data.data.user_id);
               console.log(localStorage.setItem('user_id', data.data.user_id));
@@ -722,6 +726,12 @@ $(document).on('click', '#pickup-destination', function(){
 $(document).on('click', '#date_move', function(){
   var movetime = $('#demo').val();
   localStorage.setItem('move_date', movetime);
+  // localStorage.setItem('full_name', data.data.fullname)
+  // localStorage.setItem('phone_number', data.data.phone) 
+  var full_name = localStorage.getItem("full_name");
+  var phone_number = localStorage.getItem("phone_number");
+  $("#name").val(full_name);
+  $("#phone").val(phone_number);
 });
 
 $(document).on('click', '#contact_continue', function(){
@@ -1036,6 +1046,10 @@ function userLogin(email, password){
         data: login_params,
         success: function (data) {
           if (data.status == true) {
+            console.log(data);
+            console.log("user details");
+            localStorage.setItem('full_name', data.data.fullname)
+            localStorage.setItem('phone_number', data.data.phone)
             localStorage.setItem('user_id', data.data.user_id)
             localStorage.setItem('email', data.data.email);
             var current_user = localStorage.getItem('user_id');
@@ -1111,6 +1125,8 @@ function userRegistration(email, password, password_confirmation) {
             console.log('success');
             console.log(data);
             if (data.status == true) {
+              localStorage.setItem('full_name', data.data.fullname)
+              localStorage.setItem('phone_number', data.data.phone)
               localStorage.setItem('user_id', data.data.user_id);
               localStorage.setItem('email', data.data.email)
               var current_user = localStorage.getItem('user_id');
