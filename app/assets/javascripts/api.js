@@ -1177,6 +1177,7 @@ $(document).on('click', '.signin-continue', function(){
 });
 $(document).on('click', '.signup-continue', function(){
   $("#sign-up").modal('hide');
+  $("#startamove-confirm").modal();
 });
 
 $(document).on("click", ".startmove_continue", function(){
