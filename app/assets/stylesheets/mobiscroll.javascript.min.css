@@ -16,3 +16,6 @@
 .mbsc-sc-itm.mbsc-btn-e div{
   display: none;
 }
+.mbsc-sc-whl-w {
+  min-width: 53px !important;
+}

@@ -1205,8 +1205,8 @@ function movingProposals(request_id, lat, lang){
       .done(function(data) {
         console.log(data)
         $(".map-prop").show();
-        $.each(data.data ,function(key, res){ 
-          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-6 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-4 pull-right'><div class='text-center accept-btn' data-request-id="+res.moving_request_id+" data-id="+res.id+"> Accept </div></div></div><div class='col-md-12'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div><div class='col-md-12'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div><div class='col-md-12'><hr></div>");
+        $.each(data.data ,function(key, res){
+          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-6 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-4 pull-right'><div class='text-center accept-btn' data-request-id="+res.moving_request_id+" data-id="+res.id+" data-company="+res.company_name+" data-price="+res.price+"> Accept </div></div></div><div class='col-md-12'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div><div class='col-md-12'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div><div class='col-md-12'><hr></div>");
         });
       
       })
@@ -1275,8 +1275,12 @@ $(document).on('click', '.mbl-toggle', function(){
 $(document).on('click', '.accept-btn', function(){
   var request_id = $(this).data('request-id');
   var dataId = $(this).data('id');
+  var cmp_name = $(this).data('company');
+  var price = $(this).data('price');
   localStorage.setItem('proposal_accept_request', request_id);
   localStorage.setItem('proposal_id', dataId);
+  localStorage.setItem('company_name', cmp_name);
+  localStorage.setItem('price', price);
   window.location.href = "/moves/proposal/accept"
 });
 
@@ -1284,7 +1288,10 @@ function acceptCompany(){
   var API_URL = "http://45.56.72.52/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   var request_id = localStorage.getItem('proposal_accept_request');
+  var company_name = localStorage.getItem('company_name');
+  var price = localStorage.getItem('price');
   var proposal_params = '{"user_id": '+ current_user +'}'
+  $(".acpt-price").text(price)
   if (current_user != "" && current_user != null && current_user != undefined){
     $.ajax({
       url: API_URL+"getMovingRequestList",
@@ -1293,10 +1300,10 @@ function acceptCompany(){
     })
     .done(function(data) {
       var res = data.data;
-      console.log(res.company_name) ;
+      console.log(res) ;
       $.each(data.data.upcoming ,function(key, res){
         if (res.moving_request_id === request_id){
-          $(".acpt-company").text(res.company_name);
+          $(".acpt-company").text(company_name);
           $(".acpt-company-from").text(res.from_address);
           $(".acpt-company-to").text(res.to_address);
           $(".acpt-company-date").text(res.move_date_time);
@@ -1304,7 +1311,7 @@ function acceptCompany(){
       });
       $.each(data.data.past ,function(key, res){
         if (res.moving_request_id === request_id){
-          $(".acpt-company").text(res.company_name);
+          $(".acpt-company").text(company_name);
           $(".acpt-company-from").text(res.from_address);
           $(".acpt-company-to").text(res.to_address);
           $(".acpt-company-date").text(res.move_date_time);
@@ -1341,4 +1348,7 @@ $(document).on('click', '.promo-apply-btn', function(){
       },
     });
   }
+});
+$(document).on('click', '.add_card_details', function(){
+  $('#card_details').modal();
 });

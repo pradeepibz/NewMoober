@@ -449,7 +449,7 @@ input[type=checkbox], input[type=radio] {
 .start-heading1 {
   border-bottom: 2px solid #d6d6c2;
   color: #000;
-  padding-bottom: 33px;
+  padding-bottom: 43px;
   width: 100%;
 }
 .start-heading1 h4 {
@@ -636,7 +636,10 @@ input[type=checkbox], input[type=radio] {
   transform: scale(1);
 }
 .page_valid_align {
-  top: 30%;
+  margin-top: 20% !important;
+}
+#card_details .page_valid_align {
+  margin-top: 12% !important;
 }
 .popup_image {
   max-width: 75%;
@@ -647,7 +650,7 @@ input[type=checkbox], input[type=radio] {
   top: -50px;
 }
 .popup_content {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 .new-popup-ins {
   border: 1px solid #3a69aa;
@@ -1534,7 +1537,12 @@ ul li.user_moves .moves-count mark {
   float: right;
 }
 .card-section {
-  margin-top: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#card_details .new-popup-btn {
+  width: 30%;
+  background: #ffc043 none repeat scroll 0 0;
 }
 /*responsive code*/
 /*iPhone 5, 5s*/
