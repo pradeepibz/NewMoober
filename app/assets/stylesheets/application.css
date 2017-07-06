@@ -1807,7 +1807,13 @@ ul li.user_moves .moves-count mark {
     margin-top: 21%;
   }
   .card-section {
-    margin-top: 40%;
+    margin-top: 7%;
+  }
+  #card_details .page_valid_align {
+    margin-top: 20% !important;
+  }
+  .popup_content {
+    margin-top: 26px;
   }
 
 }
@@ -2036,6 +2042,12 @@ ul li.user_moves .moves-count mark {
     margin-top: 30%;
   }
   .card-section {
-    margin-top: 40%;
+    margin-top: 7%;
+  }
+  #card_details .page_valid_align {
+    margin-top: 20% !important;
+  }
+  .popup_content {
+    margin-top: 26px;
   }
 }
