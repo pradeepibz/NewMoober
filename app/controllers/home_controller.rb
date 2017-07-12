@@ -97,13 +97,13 @@ class HomeController < ApplicationController
     if @fb_user.present?
       @check_code = @fb_user.check_promocode(params[:code])
       if @check_code == true
-        render json: {success: "Accepted", message: true}
+        session[:promocode] = @fb_user.promo_code.promo_code
+        render json: {success: "Accepted", message: true, promocode: @fb_user.promo_code.promo_code}
       else
-
-        render json: {failure: "Not permitted", message: false}
+        render json: {success: "Not permitted", message: true, promocode: params[:code]}
       end
     else
-      render json: {failure: "Not permitted", message: false}
+      render json: {success: "Not permitted", message: true, promocode: params[:code]}
     end
   end
 

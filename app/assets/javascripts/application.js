@@ -25,6 +25,7 @@
 //= require iscroll
 //= require jquery.remotipart
 //= require jquery.ajaxQueue.min
+//= require charges
 
 // disable double tab to zoom 
 (function($) {

@@ -5,10 +5,16 @@ class CustomersController < ApplicationController
 
 	def sign_in
     session[:sharebutton] = nil
+    session[:stripe_customer_id] = ""
+    session[:card_id] = ""
+    session[:last_4]  = ""
   end
 
   def sign_up
     session[:sharebutton] = nil
+    session[:stripe_customer_id] = ""
+    session[:card_id] = ""
+    session[:last_4]  = ""
   end
 
   def forget_password

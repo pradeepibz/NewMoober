@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'moves/proposal/accept', to: "home#proposal_accept", as: :proposal_accept
   get 'check_promocode', to: "home#check_promo"
   get 'moves/proposal/accept/card_details', to: "home#card_details", as: :card_details
+  resources :charges
   # End url
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

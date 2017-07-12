@@ -1400,13 +1400,19 @@ $(document).on('click', '.promo-apply-btn', function(){
       data: {code: code},
       success: function(data){
         if (data.message == true){
+          console.log(data)
+          $(".hidden-promocode").text(data.promocode);
+          var prePrice = $(".acpt-price").text();
+          var finPrice = prePrice - ((prePrice * 10)/100)
+          $('.final-amount').css("display", "block");
+          $(".final-price").text(finPrice);
           $('#promo-code-popup').modal();
           $('.pc-head').text("Success");
           $('.promocode-body').html("<p>Your Promocode applied successfully</p>")
         }else{
           $('#promo-code-popup').modal();
           $('.pc-head').text("Oops");
-          $('.promocode-body').html("<p>server error! Please try again later.</p>")
+          $('.promocode-body').html("<p>Invalid Promocode. Please try again later.</p>")
         }
       },
     });
