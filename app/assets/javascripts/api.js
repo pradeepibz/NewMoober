@@ -958,6 +958,7 @@ $(document).on('click', '.web-forget-btn', function(){
   var API_URL = "http://45.56.72.52/api/userapi/";
   var email = $('.forget_email').val();
   var forget_params = '{"email":"'+email+'"}'
+  console.log(forget_params)
   if (email != '') { 
       $.ajax({
         url: API_URL+'forgotPassword',
