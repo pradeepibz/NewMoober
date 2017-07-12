@@ -61,12 +61,16 @@ class HomeController < ApplicationController
       session[:current_email] = @user.email
       session[:email] = @user.email
       session[:password] = @user.uid
+      session[:name] = @facebook_user_data.name
+      session[:image] = auth['info']['image']
+      session[:token] = auth['credentials']['token']
+      session[:uid] = auth['uid']
     end
 
     respond_to do |format|
       format.html {redirect_to root_path}
       format.json {render :json => { :success => (@user.present? ? true : false), 
-                      :email => @user.email, password: @user.uid }}
+                      :email => @user.email, name: @facebook_user_data.name, image: auth['info']['image'], token: auth['credentials']['token'], uid: auth['uid'] }}
     end
     # get auth token
   end

@@ -613,26 +613,71 @@ $(function(){
         $.getJSON('auth/facebook/callback?fb=true', function(json) {
           console.log(JSON.stringify(json))
           console.log("JSON.stringify(json)")
-          var email = json.email
-          var password = json.password;
-          var check_user_params = '{"email":"'+email+'"}'
+          var email = json.email;
+          var name = json.name;
+          var image = json.image;
+          var token = json.token;
+          var uid = json.uid;
+          fb_signin_params = '{"fullname":"'+name+'","profile_pic":"'+image+'","email":"'+email+'","device_id":"","token":"'+token+'","social_id":"'+uid+'"}'
             if (email != '') {  
               $.ajax({
-                url: API_URL+'checkEmail',
+                url: API_URL+'socialLogin',
                 method: 'POST',
-                data: check_user_params,
+                data: fb_signin_params,
                 success: function (data) {
-                  if (data.status == true) {
-                    console.log(data.message)
-                    console.log("data")
-                    if (data.message == "user is not registered"){
-                      userRegistration(email, password, password)
+                  console.log(data);
+                  localStorage.setItem('full_name', data.data.fullname)
+                  localStorage.setItem('phone_number', data.data.phone)
+                  localStorage.setItem('user_id', data.data.user_id)
+                  localStorage.setItem('email', data.data.email);
+                  var current_user = localStorage.getItem('user_id');
+                  var startmov_login = localStorage.getItem('statmov_signin');
+                  if (startmov_login != "" && startmov_login != null && startmov_login != undefined) {
+                    if (current_user != "" && current_user != null && current_user != undefined) {
+                      $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>")
+                      $('.sign_in_body').css('display', 'none');
+                      $('.start_move_body').css('display', 'block');
+                      $('.user-signup').css('display', 'none');
+                      $('#sign-in').modal();
+                      $('.user_moves').show();
+                      var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
+                      $('.check_user_session').html(submit_move_btn );
+                      userMovesRequest(current_user)
+                    }else {
+                      $('.user_moves').hide();
+                      $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
+                      $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                     }
+                    // window.location.href = '/start-a-move'
+                  }else {
+                    $('.user_moves').show();
+                    var user_params = '{"user_id": '+ current_user +'}'
+                    $.ajax({
+                      url: API_URL+'getMovingRequestList',
+                      type: 'POST',
+                      data: user_params,
+                    })
+                    .done(function(data) {
+                      var count = data.data.upcoming.length
+                      localStorage.setItem('moves_count', count);
+                      $('.moves-count mark').text(count);
+                      $('.side-menu-moves-count mark').text(count);
+                      $('.moves-count').show();
+                      $('.side-menu-moves-count').show();
+                      window.location.href = "/";
+                    })
+                    .fail(function(data) {
+                      localStorage.setItem('moves_count', 0);
+                      $('.moves-count mark').text(0);
+                      $('.side-menu-moves-count mark').text(0);
+                      $('.moves-count').hide();
+                      $('.side-menu-moves-count').hide();
+                      window.location.href = "/";
+                    });
                   }
                 },
                 error: function (o) {
                   console.log(o)
-                  userLogin(email, password)
                 }
               });
             }
