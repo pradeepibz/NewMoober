@@ -721,7 +721,7 @@ input[type=checkbox], input[type=radio] {
 .contact-us-desc {
   padding: 10%;
 }
-.contact-form{
+.contact-form, .edit-profile{
   height:590px;
   margin-top: -50px;
 }
@@ -737,7 +737,7 @@ input[type=checkbox], input[type=radio] {
   margin: 40px auto;
 }
 
-.contact-form input{
+.contact-form input, .edit-profile input{
       width: calc(100% - 40px);
     height: 50px;
     box-sizing: border-box;
@@ -753,7 +753,7 @@ input[type=checkbox], input[type=radio] {
 
 }
 
-.contact-form input[type=submit] {
+.contact-form input[type=submit], .edit-profile .edit-profile-btn, .edit-password-btn{
     width: 30%;
     min-width: 175px;
     margin-top: 40px;
@@ -1446,7 +1446,7 @@ ul li.user_moves .moves-count mark {
   padding-left: 0px;
   padding-right: 0px;
 }
-.contact-mt-10 .contact-form {
+.contact-mt-10 .contact-form, .contact-mt-10 .edit-profile {
   height: 425px;
 }
 .file-form {
@@ -1560,6 +1560,9 @@ ul li.user_moves .moves-count mark {
   color: #3a69aa;
   font-size: 16px;
 }
+.account_settings {
+  display: none;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -1599,7 +1602,7 @@ ul li.user_moves .moves-count mark {
     padding-right: 20px;
     padding-left: 20px;
   }
-  .contact-form h1{
+  .contact-form h1, .edit-profile h1{
     font-size: 25px;
     margin-bottom: 25px;
     text-transform: none;
@@ -1729,10 +1732,10 @@ ul li.user_moves .moves-count mark {
   #m_nav_scroller li{
     height: 19px !important;
   }
-  .contact-form {
+  .contact-form, .edit-profile {
     margin-top: -30px;
   }
-  .contact-form h1{
+  .contact-form h1, .edit-profile h1{
     margin-top: 30px;
     margin-bottom: 10px;
   }
@@ -1856,7 +1859,7 @@ ul li.user_moves .moves-count mark {
     font-size: 30px;
     padding-top: 110px;
   }
-  .contact-form h1{
+  .contact-form h1, .edit-profile h1{
     font-size: 25px;
     margin-bottom: 25px;
     text-transform: none;
@@ -1976,13 +1979,13 @@ ul li.user_moves .moves-count mark {
   #m_nav_scroller li{
     height: 19px !important
   }
-  .contact-form {
+  .contact-form, .edit-profile {
     margin-top: 0px;
   }
   .contact-form.apply-contact-form{
     margin-top: 0px;
   }
-  .contact-form h1{
+  .contact-form h1, .edit-profile h1{
     margin-top: 30px;
   }
   .contact-form.apply-contact-form input {

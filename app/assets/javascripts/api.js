@@ -11,7 +11,9 @@ $(function(){
   var current_user = localStorage.getItem('user_id');
   if (current_user != "" && current_user != null && current_user != undefined) {
     $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>");
+    $('.account_settings').show();
     $('.user_moves').show();
+    var user_email = localStorage.getItem('email');
     var moves_count = localStorage.getItem('moves_count');
     if (moves_count == 0) {
       $('.moves-count').hide();
@@ -36,6 +38,7 @@ $(function(){
     $(".mbl-side-menu").hide();
     $(".nav-signin").show();
     $(".nav-signup").show();
+    $('.account_settings').hide();
   }
   //session check
   if (current_user != "" && current_user != null && current_user != undefined) {
@@ -640,6 +643,7 @@ $(function(){
                       $('.user-signup').css('display', 'none');
                       $('#sign-in').modal();
                       $('.user_moves').show();
+                      $('.account_settings').show();
                       var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                       $('.check_user_session').html(submit_move_btn );
                       userMovesRequest(current_user)
@@ -647,6 +651,7 @@ $(function(){
                       $('.user_moves').hide();
                       $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                       $('.user-signup').html("<a href='/signup'>Sign Up</a>")
+                      $('.account_settings').hide();
                     }
                     // window.location.href = '/start-a-move'
                   }else {
@@ -1108,6 +1113,7 @@ function userLogin(email, password){
                 $('.user-signup').css('display', 'none');
                 $('#sign-in').modal();
                 $('.user_moves').show();
+                $('.account_settings').show();
                 var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                 $('.check_user_session').html(submit_move_btn );
                 userMovesRequest(current_user)
@@ -1115,6 +1121,7 @@ function userLogin(email, password){
                 $('.user_moves').hide();
                 $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                 $('.user-signup').html("<a href='/signup'>Sign Up</a>")
+                $('.account_settings').hide();
               }
               // window.location.href = '/start-a-move'
             }else {
@@ -1184,6 +1191,7 @@ function userRegistration(email, password, password_confirmation) {
                   $('.start_move_body').css('display', 'block');
                   $('.user-signup').css('display', 'none');
                   $('#sign-up').modal();
+                  $('.account_settings').show();
                   var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                   $('.check_user_session').html(submit_move_btn );
                   userMovesRequest(current_user)
@@ -1192,6 +1200,7 @@ function userRegistration(email, password, password_confirmation) {
                   $('.side-menu-moves-count').hide();
                   $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                   $('.user-signup').html("<a href='/signup'>Sign Up</a>")
+                  $('.account_settings').hide();
                 }
               }else {
                 $('.user_moves').show();
@@ -1420,4 +1429,63 @@ $(document).on('click', '.promo-apply-btn', function(){
 });
 $(document).on('click', '.add_card_details', function(){
   $('#card_details').modal();
+});
+
+$(document).on('click', '.edit-profile-btn', function(){
+  var API_URL = "http://45.56.72.52/api/userapi/";
+  var current_user = localStorage.getItem('user_id');
+  var name = $('.edit-name').val();
+  var phone = $('.edit-number').val();
+  var email = $('.edit-email').val();
+  var update_params = '{"phone":"'+phone+'","fullname":"'+name+'","user_id":"'+current_user+'","email":"'+email+'"}'
+  // return false
+  if (current_user != "" && current_user != null && current_user != undefined) {
+    $.ajax({
+      url: API_URL+"updateProfile",
+      type: 'POST',
+      data: update_params,
+      success: function(data) {
+        console.log(data);
+        $(".edit-name").val(name);
+        $(".edit-number").val(phone);
+        $(".edit-email").val(email);
+        localStorage.setItem('full_name', name);
+        localStorage.setItem('phone_number', phone);
+        localStorage.setItem('email', email);
+        window.location.href = "/"
+      },
+      error: function(data){
+        console.log(data)
+        alert("something went wrong. Please try again");
+        return false;
+      }
+    });
+  }
+});
+
+$(document).on('click', '.edit-password-btn', function(){
+  var API_URL = "http://45.56.72.52/api/userapi/";
+  var current_user = localStorage.getItem('user_id');
+  var current_password = $(".edit-current-pswd").val();
+  var new_password = $(".edit-new-pswd").val();
+  var confirm_password = $(".edit-confirm-pswd").val();
+  var update_params = '{"current_password":"'+current_password+'","confirm_password":"'+confirm_password+'","user_id":"'+current_user+'","new_password":"'+new_password+'"}'
+  console.log(update_params)
+  if (current_user != "" && current_user != null && current_user != undefined) {
+    $.ajax({
+      url: API_URL+"changePassword",
+      type: 'POST',
+      data: update_params,
+      success: function(data) {
+        console.log(data);
+        window.location.href = "/"
+      },
+      error: function(data){
+        alert(data.responseJSON.message);
+        $(".edit-current-pswd").val("");
+        $(".edit-new-pswd").val("");
+        $(".edit-confirm-pswd").val("");
+      }
+    });
+  }
 });

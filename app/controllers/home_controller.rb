@@ -110,4 +110,7 @@ class HomeController < ApplicationController
   def card_details
   end
 
+  def account_settings
+  end
+
 end

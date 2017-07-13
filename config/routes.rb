@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get '/start-a-move', to: "home#start_a_move"
   get '/how-it-works', to: "home#how_it_works", as: :how_it_works
+  get '/account-settings', to: "home#account_settings", as: :account_settings
 
   # Strat url
   get '/contact' => 'home#contact_us', as: :contact_us

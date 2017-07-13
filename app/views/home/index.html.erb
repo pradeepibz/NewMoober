@@ -123,11 +123,13 @@
                 $('.fb-promocode').show();
                 $('#shareBtn').hide();
                 $('.user_moves').show();
+                $('.account_settings').show();
                 userMovesRequest(current_user)
               }else {
                 $('.user_moves').hide();
                 $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                 $('.user-signup').html("<a href='/signup'>Sign Up</a>")
+                $('.account_settings').hide();
               }
             },
             error: function (o) {

@@ -1,44 +1,32 @@
-<%= render "shared/static_header" %>
-
-<div class="contact-us">
-  <div class="contact">
-    <div class="col-md-12 contact-head">
-      <div class="contact-cover" style="width:100%;background-image:url(/assets/moober_background_image.jpg);"></div>
-      <div class="contact-title">We want to hear from you</div>
-    </div>
-    <div class="col-md-12 contact-head">
-      <div class="contact-description contact-us-desc">
-        Have a question for us? Send us a message by filling out the form below and we'll get back to you within 24 hours.
-      </div>
-    </div>
-  </div>
-  <div class="contact-mt-10">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="contact-form text-center">
-        <h1>Send us a Message</h1>
-        <%= form_for @contact, url: contacts_path, method: :post do |f| %>
-        <% if @contact.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
-
-          <ul>
-            <% @contact.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-            <% end %>
-          </ul>
+<%= render 'shared/static_header' %>
+<div class="ac-settings">
+  <div class="mt-10">
+    <div class="contact-mt-10">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="edit-profile text-center">
+          <h1>Edit Profile</h1>
+          <form>
+            <input type="text" name="fullname" placeholder="Full Name" class="edit-name">
+            <input type="text" name="phone_number" placeholder="Phone Number" class="edit-number">
+            <input type="email" name="email" placeholder="Email" class="edit-email">
+            <a href='javascript:;' class="edit-profile-btn">Submit</a>
+          </form>
         </div>
-        <% end %>
-        <%= f.text_field :full_name, placeholder: "Full Name", required: true, class: "contact-input" %>
-        <%= f.email_field :email, placeholder: "Email", required: true, class: "contact-input" %>
-        <%= f.text_field :mobile, placeholder: "Mobile Number", required: true, class: "contact-input" %>
-        <%= f.text_area :message, placeholder: "Message", cols: "2", rowws: "3", class: "contact-input" %>
-        <%= f.submit "Submit" %>
-        <%end%>
       </div>
     </div>
-  </div>
-  <div class="contact-mt-10">
-    <%= render "shared/company_logos" %>
+    <div class="contact-mt-10">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="edit-profile text-center">
+          <h1>Reset Password</h1>
+          <form>
+            <input type="password" name="current_password" placeholder="Current Password" class="edit-current-pswd">
+            <input type="password" name="new_password" placeholder="New Password" class="edit-new-pswd">
+            <input type="password" name="confirm_password" placeholder="Confirm Password" class="edit-confirm-pswd">
+            <a href='javascript:;' class="edit-password-btn">Submit</a>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
   <footer class="contactfooter">
     <div class="skyline"><img src="assets/footer.png" width="100%" alt="Moober Solutions"></div>
@@ -69,6 +57,16 @@
   </footer>
 </div>
 
-
-<%= render 'shared/scrollify' %>
-<%= render 'home/top_mbl_side_nav' %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var user_email = localStorage.getItem('email');
+    var current_user = localStorage.getItem('user_id');
+    var full_name = localStorage.getItem('full_name');
+    var phone_number = localStorage.getItem('phone_number');
+    if (current_user != "" && current_user != null && current_user != undefined) {
+      $(".edit-name").val(full_name);
+      $(".edit-number").val(phone_number);
+      $(".edit-email").val(user_email);
+    }
+  });
+</script>
