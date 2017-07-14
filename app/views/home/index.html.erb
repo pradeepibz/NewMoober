@@ -73,6 +73,7 @@
   <ul>
     <li class="user_moves <%= active_class('/moves') %>"><span class="moves-count"><mark>0</mark></span><a href="/moves">Moves</a></li>
     <li class="<%= active_class('/account-settings') %> account_settings"><a href="/account-settings">Account Setting</a></li>
+    <li class="<%= active_class('/payment-methods') %> payment_methods"><a href="/payment-methods">Payment Methods</a></li>
     <li><span class="user-login-logut"></span></li>
   </ul>
 </div>
@@ -125,12 +126,14 @@
                 $('#shareBtn').hide();
                 $('.user_moves').show();
                 $('.account_settings').show();
+                $('.payment_methods').show();
                 userMovesRequest(current_user)
               }else {
                 $('.user_moves').hide();
                 $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                 $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                 $('.account_settings').hide();
+                $('.payment_methods').hide();
               }
             },
             error: function (o) {

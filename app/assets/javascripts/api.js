@@ -12,6 +12,7 @@ $(function(){
   if (current_user != "" && current_user != null && current_user != undefined) {
     $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>");
     $('.account_settings').show();
+    $('.payment_methods').show();
     $('.user_moves').show();
     var user_email = localStorage.getItem('email');
     var moves_count = localStorage.getItem('moves_count');
@@ -39,6 +40,7 @@ $(function(){
     $(".nav-signin").show();
     $(".nav-signup").show();
     $('.account_settings').hide();
+    $('.payment_methods').hide();
   }
   //session check
   if (current_user != "" && current_user != null && current_user != undefined) {
@@ -644,6 +646,7 @@ $(function(){
                       $('#sign-in').modal();
                       $('.user_moves').show();
                       $('.account_settings').show();
+                      $('.payment_methods').show();
                       var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                       $('.check_user_session').html(submit_move_btn );
                       userMovesRequest(current_user)
@@ -652,6 +655,7 @@ $(function(){
                       $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                       $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                       $('.account_settings').hide();
+                      $('.payment_methods').hide();
                     }
                     // window.location.href = '/start-a-move'
                   }else {
@@ -1114,6 +1118,7 @@ function userLogin(email, password){
                 $('#sign-in').modal();
                 $('.user_moves').show();
                 $('.account_settings').show();
+                $('.payment_methods').show();
                 var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                 $('.check_user_session').html(submit_move_btn );
                 userMovesRequest(current_user)
@@ -1122,6 +1127,7 @@ function userLogin(email, password){
                 $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                 $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                 $('.account_settings').hide();
+                $('.payment_methods').hide();
               }
               // window.location.href = '/start-a-move'
             }else {
@@ -1192,6 +1198,7 @@ function userRegistration(email, password, password_confirmation) {
                   $('.user-signup').css('display', 'none');
                   $('#sign-up').modal();
                   $('.account_settings').show();
+                  $('.payment_methods').show();
                   var submit_move_btn = "<button class='image-div-submit' id='start_mov_btn'>Start your move</button>";
                   $('.check_user_session').html(submit_move_btn );
                   userMovesRequest(current_user)
@@ -1201,6 +1208,7 @@ function userRegistration(email, password, password_confirmation) {
                   $('.user-login-logut').html("<a href='/signin'>Sign In</a>")
                   $('.user-signup').html("<a href='/signup'>Sign Up</a>")
                   $('.account_settings').hide();
+                  $('.payment_methods').hide();
                 }
               }else {
                 $('.user_moves').show();
@@ -1413,8 +1421,15 @@ $(document).on('click', '.promo-apply-btn', function(){
           $(".hidden-promocode").text(data.promocode);
           var prePrice = $(".acpt-price").text();
           var finPrice = prePrice - ((prePrice * 10)/100)
+          var dis_price = (prePrice * 10)/100
           $('.final-amount').css("display", "block");
           $(".final-price").text(finPrice);
+          $(".promo-apply-btn").css("pointer-events", "none");
+          $(".promo-apply-btn").css("background-color", "rgba(200, 208, 208, 0.87)");
+          $(".promo-code").val("");
+          localStorage.setItem("final_price", finPrice);
+          localStorage.setItem("dis_price", dis_price);
+          localStorage.setItem("promo_code", data.promocode);
           $('#promo-code-popup').modal();
           $('.pc-head').text("Success");
           $('.promocode-body').html("<p>Your Promocode applied successfully</p>")
@@ -1427,7 +1442,7 @@ $(document).on('click', '.promo-apply-btn', function(){
     });
   }
 });
-$(document).on('click', '.add_card_details', function(){
+$(document).on('click', '.add-card-payment', function(){
   $('#card_details').modal();
 });
 
@@ -1488,4 +1503,51 @@ $(document).on('click', '.edit-password-btn', function(){
       }
     });
   }
+});
+
+$(document).on('click', '.payment-updated', function(){
+  var referrer =  document.referrer;
+  if (referrer === "http://localhost:3000/moves/proposal/accept" || referrer === "http://stage.moober.com/moves/proposal/accept") {
+    window.location.href = "/moves/proposal/accept"
+  }else {
+    $("#card-changed").modal("hide");
+  }
+});
+
+$(document).on('click', '.approve-btn', function(){
+  var API_URL = "http://45.56.72.52/api/userapi/";
+  var current_user = localStorage.getItem('user_id');
+  var proposal_id = localStorage.getItem("proposal_id");
+  var promo_code = localStorage.getItem("promo_code");
+  var card_id = localStorage.getItem("card_id");
+  var final_price = localStorage.getItem("final_price");
+  if (final_price == "" || final_price == null && final_price == undefined){
+    final_price = $('.acpt-price').text();
+  }
+  if (card_id == "" || card_id == null && card_id == undefined){
+    $('.card-page-error-body').html("<p>Please Add Card Details</p>")
+    $("#card-page-error").modal();
+    return false;
+  }
+  var dis_price = localStorage.getItem("dis_price");
+  var accept_params = '{"promo_code":"'+promo_code+'","card_id":"'+card_id+'","user_id":"'+current_user+'","proposal_id":"'+proposal_id+'","discounted_price":"'+final_price+'","discount":"'+dis_price+'"}'
+  console.log(accept_params)
+  if (current_user != "" && current_user != null && current_user != undefined) {
+    $.ajax({
+      url: API_URL+"acceptProposal",
+      type: 'POST',
+      data: accept_params,
+    })
+    .done(function(data) {
+      $("#booking-confirm").modal();
+    })
+    .fail(function(data) {
+      $('.card-page-error-body').html("<p>"+data.statusText+"</p>")
+      $("#card-page-error").modal();
+    });
+  }
+});
+
+$(document).on('click', '.booking-updated', function(){
+  window.location.href = "/"
 });
