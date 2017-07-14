@@ -672,6 +672,7 @@ a {
   float: left;
   width: 33.33%;
   list-style: none;
+  text-align: center;
 }
 .footer__item {
   line-height: 20px;

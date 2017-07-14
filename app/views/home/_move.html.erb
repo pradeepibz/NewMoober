@@ -1,20 +1,24 @@
+
 <div class="search-map">
-    <div class="row pd-15">
-      <div class="col-md-4 search-map-div new-form">
-        <p><span><img src="/assets/map-icon2.png"></span>Moving from</p>
-        <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()" >
-      </div>
-      <div class="col-md-4 search-map-div new-form">
-        <p><span><img src="/assets/map-icon1.png"></span>Moving to</p>
-        <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()">
-      </div>
-      <div class="col-md-4 search-map-div" align="center">
-        <button class="hidden-btn" id="map_search_btn"></button>
-        <a href='#room-type-section' id="size_of_move" data-section_id="#map" class="hidden-btn smooth_scroll">CONTINUE</a>
-        <a class="image-div-submit map-section-btn" id="start-end">CONTINUE</a>
-      </div>
+  <div class="row pd-5">
+    <p>Schedule a move for you apartment, home or office</p>
+  </div>
+  <div class="row pd-15">
+    <div class="col-md-4 search-map-div new-form">
+      <p><span><img src="/assets/map-icon2.png"></span>Moving from</p>
+      <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()" >
+    </div>
+    <div class="col-md-4 search-map-div new-form">
+      <p><span><img src="/assets/map-icon1.png"></span>Moving to</p>
+      <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()">
+    </div>
+    <div class="col-md-4 search-map-div" align="center">
+      <button class="hidden-btn" id="map_search_btn"></button>
+      <a href='#room-type-section' id="size_of_move" data-section_id="#map" class="hidden-btn smooth_scroll">CONTINUE</a>
+      <a class="image-div-submit map-section-btn" id="start-end">CONTINUE</a>
     </div>
   </div>
+</div>
 <!-- </section> -->
 <section class="slide" id="room-type-section">
   <div class="row">
@@ -23,7 +27,11 @@
         <div class="row">
           <div class="col-md-12 mt-20" align="center">
             <div class="start-heading">
-              <h4><span class="span1"><img class="icon-image" src="/assets/icon1.jpg"></span><span class="span2"> What's the size of your move? </span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#map" data-current_section="#room-type-section"></span></h4>
+              <h4>
+              <span class="span1"><img class="icon-image" src="/assets/icon1.jpg"></span>
+              <span class="span2"><p class="span2-p">What's the size of your move? </p><p class="span2-p-p">The following steps will help us understand the type of move you're looking for.</p></span>
+              <span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#map" data-current_section="#room-type-section"></span>
+            </h4>
             </div>
           </div>
           <div class="scroll_div">
@@ -84,7 +92,13 @@
       <div class="row">
         <div class="col-md-12" align="center">
           <div class="start-heading1">
-            <h4><span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span><span class="span2">Take photos of your space.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span></h4>
+            <h4>
+              <span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span>
+              <span class="span2">
+                <p class="span2-p">Take photos of your space.</p>
+                <p class="span2-p-p">Upload photos of your space with particular focus on larger items involved in the move.  You can add up to 20 photos.  You can optionally skip this step by tapping "Skip" below.</p>
+              </span>
+              <span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#room-type-section" data-current_section="#photos-section"></span></h4>
             <!-- <input type="file" class="hidden-btn" name="" id="image_upload" multiple> -->
             <%= form_for MovePhoto.new, url: take_photos_path, html: { multipart: true, class: "file-form" }, remote: true do |f| %>
               <%= f.file_field :avatar, multiple: true, id: "image_upload" %>
@@ -128,8 +142,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12" align="center">
-          <div class="start-heading">
-            <h4><span class="span1"><img class="icon-image" src="/assets/icon3.jpg"></span><span class="span2">Will there be any extra large items?</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#photos-section" data-current_section="#moving-extra-section"></span></h4>
+          <div class="start-heading1">
+            <h4>
+              <span class="span1"><img class="icon-image" src="/assets/icon3.jpg"></span>
+              <span class="span2">
+                <p class="span2-p">Will there be any extra large items?</p>
+                <p class="span2-p-p">Certain items, such as a piano require special equipment and preparation to move for.  Make sure to cite all large items involved below.</p>
+              </span>
+              <span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#photos-section" data-current_section="#moving-extra-section"></span></h4>
             <!-- <p>(e.g Piano)</p> -->
           </div>
         </div>
@@ -176,8 +196,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12" align="center">
-          <div class="start-heading">
-            <h4><span class="span1"><img class="icon-image" src="/assets/icon6.jpg"></span><span class="span2">Elelvator, Walk up or Residential home?</span><span class="span3 size-of-move-val-check-img"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-extra-section" data-current_section="#building-type-setion"></span></h4>
+          <div class="start-heading1 start-heading2">
+            <h4>
+              <span class="span1"><img class="icon-image" src="/assets/icon6.jpg"></span>
+              <span class="span2">
+                <p class="span2-p">Elelvator, Walk up or Residential home?</p>
+                <p class="span2-p-p">Moving items with an elevator compared to 5 flights of stairs is a different level of effort.  Let us know what we're in for so we can provide you with accurate and fair quotes for your move.</p>
+              </span>
+              <span class="span3 size-of-move-val-check-img"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-extra-section" data-current_section="#building-type-setion"></span></h4>
           </div>
         </div>
         <div class="scroll_div">
@@ -250,8 +276,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12" align="center">
-          <div class="start-heading">
-            <h4><span class="span1"><img class="icon-image" src="/assets/icon4.jpg"></span><span class="span2">When do you need to move?</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#building-type-setion" data-current_section="#moving-date-section"></span></h4>
+          <div class="start-heading start-heading3">
+            <h4>
+              <span class="span1"><img class="icon-image" src="/assets/icon4.jpg"></span>
+              <span class="span2">
+                <p class="span2-p">When do you need to move?</p>
+                <p class="span2-p-p">Enter the desired date and time that you'd like the movers to arrive for your move.</p>
+              </span>
+              <span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#building-type-setion" data-current_section="#moving-date-section"></span></h4>
           </div>
         </div>
         <div class="scroll_div">
@@ -294,7 +326,13 @@
       <div class="row">
         <div class="col-md-12" align="center">
           <div class="start-heading">
-            <h4><span class="span1"><img class="icon-image" src="/assets/icon5.jpg"></span><span class="span2">Enter your contact information.</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-date-section" data-current_section="#contact-details-section"></span></h4>
+            <h4>
+              <span class="span1"><img class="icon-image" src="/assets/icon5.jpg"></span>
+              <span class="span2">
+                <p class="span2-p">Enter your contact information.</p>
+                <p class="span2-p-p">We'll need to know who you are and how to contact you for communication related to your move.</p>
+              </span>
+              <span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-date-section" data-current_section="#contact-details-section"></span></h4>
           </div>
         </div>
         <div class="scroll_div">
@@ -331,8 +369,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12" align="center">
-          <div class="start-heading">
-            <h4><span class="span1"><img class="icon-image" src="/assets/detail_3.jpg"></span><span class="span2">Moving Details</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#contact-details-section" data-current_section="#review-request-section"></span></h4>
+          <div class="start-heading start-heading0">
+            <h4><span class="span1"><img class="icon-image" src="/assets/detail_3.jpg"></span><span class="span2">Moving Summary</span><span class="span3"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#contact-details-section" data-current_section="#review-request-section"></span></h4>
           </div>
         </div>
         <div class="scroll_div">
