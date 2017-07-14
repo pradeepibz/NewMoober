@@ -17,6 +17,6 @@ class ChargesController < ApplicationController
     session[:card_id] = @customer.sources.data.first.id
     session[:last_4] = @customer.sources.data.first.last4
     session[:cus_id_created] = true
-    redirect_to proposal_accept_path
+    redirect_to payment_methods_path
   end
 end

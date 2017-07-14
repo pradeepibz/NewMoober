@@ -67,7 +67,7 @@
         No Payment method available.
       </div>
       <div class="col-md-4 acpt-apply pull-right">
-        <a href="javascript:;" class="add_card_details">Add card</a>
+        <a href="/payment-methods" class="add_card_details">Add card</a>
       </div>
     </div>
     <div class="col-md-4">
@@ -105,55 +105,20 @@
   </div>
 </div>
 
-<div id="card_details" class="modal fade" role="dialog">
-  <div class="modal-dialog mt-50 page_valid_align new_page_valid_align">
+<div id="card-page-error" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align new_page_valid_align">
 
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-body" align="center">
-        <div align="center">
-          <img class="new_popup_image" src="/assets/logo2.png">
+        <div class="popup_image">
+          <img src="/assets/popup_logo.png">
         </div>
         <div class="popup_content">
-          <div class="card-section">
-            <div class='row'>
-                <div class='col-md-12'>
-                  <%= form_tag charges_path, remote: true, authenticity_token: true, method: 'post', id: 'payment-form' do %>
-                    <span class="payment-errors"></span>
-
-                    <div class="form-row">
-                      <div class='col-xs-12 form-group card required'>
-                        <label class='control-label'>Card Number</label>
-                        <input class='form-control card-number'type="text" size="20" maxlength="16" data-stripe="number"/ onkeypress='return validateQty(event);'>
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class='col-xs-4 form-group cvc required'>
-                        <label class='control-label'>CVC</label>
-                        <input class='form-control card-cvc'type="text" size="4" maxlength="4" data-stripe="cvc"/ onkeypress='return validateQty(event);'>
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class='col-xs-4 form-group expiration required'>
-                        <label class='control-label'>Expiration</label>
-                        <input class='form-control card-expiry-month' type="text" size="2" maxlength="2" data-stripe="exp-month"/ onkeypress='return validateQty(event);'>
-                      </div>
-                    </div>
-                    <div class="form-row">
-                      <div class='col-xs-4 form-group expiration required'>
-                        <label class='control-label'> </label>
-                        <input class='form-control card-expiry-year' type="text" size="4" maxlength="4" data-stripe="exp-year"/ onkeypress='return validateQty(event);'>
-                      </div>
-                    </div>
-
-                    <button class="new-popup-btn stripe-submit-btn" type="submit">Add</button>
-                  <% end %>
-                </div>
-            </div>
-        </div>
-          <!-- <button class="new-popup-btn card_detail_save" data-dismiss="modal">Save</button> -->
+          <h4 class="modal-title pc-head"></h4>
+          <div class="card-page-error-body">
+          </div>
+          <button class="new-popup-btn" data-dismiss="modal">Cancel</button>
         </div>
       </div>
     </div>
@@ -161,34 +126,39 @@
   </div>
 </div>
 
+<%= render 'add_new_card' %>
+
 <script type="text/javascript">
   $(document).ready(function(){
     acceptCompany();
     var API_URL = "http://45.56.72.52/api/userapi/";
     var current_user = localStorage.getItem('user_id');
-    var card_id = "<%= session[:card_id]%>"
-    var customer_id = "<%= session[:stripe_customer_id]%>"
-    var last_4 = "<%= session[:last_4]%>"
-    var stripe_params = '{"card_detail":[{"id":"'+card_id+'","last4":"'+last_4+'"}],"stripe_customer_id":"'+customer_id+'","user_id":"'+current_user+'"}'
-    <% if session[:stripe_customer_id].present? && session[:card_id].present? && session[:last_4].present? && session[:cus_id_created].present? %>
+    var card_params = '{"user_id":"'+current_user+'"}'
+    var card_id = localStorage.getItem("card_id")
+    var card_number = localStorage.getItem("card_number")
+    var final_price = localStorage.getItem("final_price");
+    if (current_user != "" && current_user != null && current_user != undefined) {
       $.ajax({
-        url: API_URL+"captureCardDetail",
+        url: API_URL+"getUserCards",
         type: 'POST',
-        data: stripe_params,
-        success: function(data){
-          console.log(data);
+        data: card_params,
+      })
+      .done(function(data) {
+        if (card_id != "" && card_id != null && card_id != undefined) {
           $('.add_card_details').text("Change Card");
+          $(".payment-message").text("XXXX XXXX XXXX "+card_number+"")
+        }else{
+          $('.add_card_details').text("Add Card");
           $(".payment-message").text("Card Available")
-        },
-        error: function(data){
-          console.log(data);
         }
-        <%= session[:cus_id_created] = nil %>
       });
-    <% end %>
-    <% if session[:stripe_customer_id].present? %>
-      $('.add_card_details').text("Change Card");
-      $(".payment-message").text("Card Available")
-    <% end %>
+    }
+    if (final_price != "" && final_price != null && final_price != undefined) {
+      $('.final-amount').css("display", "block");
+      $(".final-price").text(final_price);
+      $(".promo-apply-btn").css("pointer-events", "none");
+      $(".promo-apply-btn").css("background-color", "rgba(200, 208, 208, 0.87)");
+      $(".promo-code").val("");
+    }
   });
 </script>

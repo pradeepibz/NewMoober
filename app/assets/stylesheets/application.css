@@ -1560,7 +1560,7 @@ ul li.user_moves .moves-count mark {
   color: #3a69aa;
   font-size: 16px;
 }
-.account_settings {
+.account_settings, .payment_methods {
   display: none;
 }
 
@@ -1585,6 +1585,19 @@ ul li.user_moves .moves-count mark {
 
 .pd-5 p{
   font-size: 20px;
+}
+
+.card-methods input[type="radio"]{
+  margin: 25px 0 0;
+}
+.add-payment-method {
+  margin-top: 7%;
+}
+.add-card-payment {
+  cursor: pointer;
+}
+.card-body {
+  margin-bottom: 10%;
 }
 
 /*responsive code*/

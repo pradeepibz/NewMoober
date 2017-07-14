@@ -1,0 +1,56 @@
+
+<div id="card_details" class="modal fade" role="dialog">
+  <div class="modal-dialog mt-50 page_valid_align new_page_valid_align">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div align="center">
+          <img class="new_popup_image" src="/assets/logo2.png">
+        </div>
+        <div class="popup_content">
+          <div class="card-section">
+            <div class='row'>
+                <div class='col-md-12'>
+                  <%= form_tag charges_path, remote: true, authenticity_token: true, method: 'post', id: 'payment-form' do %>
+                    <span class="payment-errors"></span>
+
+                    <div class="form-row">
+                      <div class='col-xs-12 form-group card required'>
+                        <label class='control-label'>Card Number</label>
+                        <input class='form-control card-number'type="text" size="20" maxlength="16" data-stripe="number"/ onkeypress='return validateQty(event);'>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class='col-xs-4 form-group cvc required'>
+                        <label class='control-label'>CVC</label>
+                        <input class='form-control card-cvc'type="text" size="4" maxlength="4" data-stripe="cvc"/ onkeypress='return validateQty(event);'>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class='col-xs-4 form-group expiration required'>
+                        <label class='control-label'>Expiration</label>
+                        <input class='form-control card-expiry-month' type="text" size="2" maxlength="2" data-stripe="exp-month"/ onkeypress='return validateQty(event);'>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class='col-xs-4 form-group expiration required'>
+                        <label class='control-label'> </label>
+                        <input class='form-control card-expiry-year' type="text" size="4" maxlength="4" data-stripe="exp-year"/ onkeypress='return validateQty(event);'>
+                      </div>
+                    </div>
+
+                    <button class="new-popup-btn stripe-submit-btn" type="submit">Add</button>
+                  <% end %>
+                </div>
+            </div>
+        </div>
+          <!-- <button class="new-popup-btn card_detail_save" data-dismiss="modal">Save</button> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

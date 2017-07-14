@@ -8,6 +8,10 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 
+server '45.56.86.193', user: 'moober', roles: %w{app db web}
+set :deploy_to, '~/projects/development'
+set :branch, 'master'
+
 
 # role-based syntax
 # ==================
@@ -41,6 +45,9 @@
 #
 # Global options
 # --------------
+
+set :enable_ssl, false
+
 #  set :ssh_options, {
 #    keys: %w(/home/rlisowski/.ssh/id_rsa),
 #    forward_agent: false,

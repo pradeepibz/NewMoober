@@ -7,7 +7,7 @@
           <h1>Edit Profile</h1>
           <form>
             <input type="text" name="fullname" placeholder="Full Name" class="edit-name">
-            <input type="text" name="phone_number" placeholder="Phone Number" class="edit-number">
+            <input type="text" name="phone_number" placeholder="Phone Number" class="edit-number" onkeypress='return validateQty(event);'>
             <input type="email" name="email" placeholder="Email" class="edit-email">
             <a href='javascript:;' class="edit-profile-btn">Submit</a>
           </form>
