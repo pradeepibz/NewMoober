@@ -449,7 +449,7 @@ input[type=checkbox], input[type=radio] {
 .start-heading1 {
   border-bottom: 2px solid #d6d6c2;
   color: #000;
-  padding-bottom: 81px;
+  padding-bottom: 15px;
   width: 100%;
 }
 .start-heading1 h4 {
@@ -1123,7 +1123,7 @@ body.loading .modal_loading {
 }
 
 .new_popup_image {
-  max-width: 60%;
+  max-width: 35%;
 }
 
 .new_contact #error_explanation {
@@ -1447,7 +1447,7 @@ ul li.user_moves .moves-count mark {
   padding-right: 0px;
 }
 .contact-mt-10 .contact-form, .contact-mt-10 .edit-profile {
-  height: 425px;
+  height: 330px;
 }
 .file-form {
   display: none;
@@ -1579,12 +1579,17 @@ ul li.user_moves .moves-count mark {
   line-height: 14px;
   padding-top: 6px;
   padding-bottom: 0px;
-  background: rgba(255, 255, 255, 0.6) none repeat scroll 0 0;
+  background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;  
   margin-bottom: 5px;
 }
 
 .pd-5 p{
   font-size: 20px;
+  margin: 0 0 6px;
+}
+
+a:focus, a:hover {
+  text-decoration: none !important; 
 }
 
 .card-methods input[type="radio"]{
@@ -1600,6 +1605,13 @@ ul li.user_moves .moves-count mark {
   margin-bottom: 10%;
 }
 
+.requst-title-top {
+  padding-top: 8px;
+}
+
+.modal-title {
+  padding-top: 8px !important;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -2139,4 +2151,6 @@ ul li.user_moves .moves-count mark {
     height: 55px;
   }
 
+  .pd-5 p {
+    font-size: 12px;
 }

@@ -666,6 +666,7 @@ a {
   overflow: auto;
   padding-bottom: 40px;
   padding-top: 40px;
+  margin-left: -38px;
 }
 .footer__content > li {
   align-self: flex-end;
@@ -681,6 +682,7 @@ a {
 .footer__item--address {
   margin-bottom: 1em;
   margin-top: 1em;
+  margin-left: -19px;
 }
 .footer, .footer a {
   letter-spacing: 1px;
@@ -690,6 +692,7 @@ a {
 }
 .footer__followUs .emails {
   margin-bottom: 20px;
+  padding: 0 15px;
 }
 .footer__followUs .emails .footer__item {
   display: block;
@@ -1281,9 +1284,9 @@ a {
     margin-top: 10%;
     height: 270px;
   }
-  .footer__followUs .data {
+ /* .footer__followUs .data {
     margin-left: 0;
-  }
+  }*/
   .logos__item:nth-child(3)::after{
     width: 1px;
     background-color: #e6e6e6;
@@ -1333,7 +1336,7 @@ a {
   }
   .footer ul{
     text-align: center;
-    margin-left: -40px;
+    /*margin-left: -40px;*/
   }
   .footer__content{
     display: list-item;
