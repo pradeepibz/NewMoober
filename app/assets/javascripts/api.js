@@ -78,6 +78,10 @@ $(function(){
             var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='"+image.image_thumb+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
             $('.room_image').append(get_room_image);
           });
+          var fifth = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='/assets/add-image.jpg'><label for='room_image5' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image5' type='checkbox' class='new-app-ins item5' name='movesize' value='Small Office' data-value='5' ><label>Small Office</label></div></div></div></div>"
+          var sixth = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='/assets/add-image.jpg'><label for='room_image6' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image6' type='checkbox' class='new-app-ins item6' name='movesize' value='Large Office' data-value='6' ><label>Large Office</label></div></div></div></div>"
+          $('.room_image').append(fifth);
+          $('.room_image').append(sixth);
         }
       },
       error: function (o) {
@@ -97,7 +101,9 @@ $(function(){
     var item2 = $('.item2').is(':checked');
     var item3 = $('.item3').is(':checked');
     var item4 = $('.item4').is(':checked');
-    if (item1 == true || item2 == true || item3 == true || item4 == true) {
+    var item5 = $('.item5').is(':checked');
+    var item6 = $('.item6').is(':checked');
+    if (item1 == true || item2 == true || item3 == true || item4 == true || item5 == true || item6 == true) {
       $('#room_type').click();
     }else{
       $('#page_valid').modal();
@@ -719,6 +725,12 @@ $(document).on('click', '#move-size', function(){
   if (msize.val() != "A single item") {
     localStorage.setItem('size_of_move', '');
   }
+  if (msize.val() != "Small Office"){
+    localStorage.setItem('size_of_small_move', '');
+  }
+  if (msize.val() != "Small Office"){
+    localStorage.setItem('size_of_large_move', '');
+  }
   // var move_size = localStorage.getItem('move_size');
 });
 
@@ -795,6 +807,8 @@ $(document).on('click', '#contact_continue', function(){
   localStorage.setItem('name', name);
   localStorage.setItem('phone', phone);
   var size_of_move = localStorage.getItem('size_of_move')
+  var size_of_small_move = localStorage.getItem('size_of_small_move')
+  var size_of_large_move = localStorage.getItem('size_of_large_move')
   var move_size = localStorage.getItem('move_size')
   if (move_size != "" && move_size != null && move_size != "undefined") {
     $('.room_type_label-head').css('display', 'block');
@@ -802,8 +816,11 @@ $(document).on('click', '#contact_continue', function(){
     if (size_of_move != "" && size_of_move != null && size_of_move != "undefined") {
       $('.size_of_move_text').text('(' + size_of_move + ')')
     }
-    else {
-      $('.size_of_move_text').text("");
+    if (size_of_small_move != "" && size_of_small_move != null && size_of_small_move != "undefined") {
+      $('.size_of_move_text').text('(' + size_of_small_move + ' sq ft)')
+    }
+    if (size_of_large_move != "" && size_of_large_move != null && size_of_large_move != "undefined") {
+      $('.size_of_move_text').text('(' + size_of_large_move + ' sq ft)')
     }
   }
   else {

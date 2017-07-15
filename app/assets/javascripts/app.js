@@ -81,10 +81,81 @@ $(function (){
     }
   });
 
+  $(document).on('click', '.size_of_move_small_ok', function(){
+    $('#size-of-small-office').modal('hide');
+    var success_value = $('.size_of_move_small_value').val();
+    if (success_value != '') {
+      localStorage.setItem('size_of_small_move', success_value)
+      $('.item5').prop('checked', true);
+      $('.size-of-move-val-check-link').html('');
+      var append_value = "<a href='#building-type-setion' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
+      $('.size-of-move-val-check-link').html(append_value);
+      $('.size-of-move-val-check-img').html('');
+      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#photos-section' data-current_section='#building-type-setion'>";
+      $('.size-of-move-val-check-img').html(img_append_value);
+      $('.size-of-move-val-check-div').html('');
+      var div_append_value = "<a href='#building-type-setion' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
+      $('.size-of-move-val-check-div').html(div_append_value);
+    }
+  });
+
+  $(document).on('click', '.size_of_move_large_ok', function(){
+    var success_value = $('.size_of_move_large_value').val();
+    if (success_value.length < 4){
+      return false;
+    }
+    $('#size-of-large-office').modal('hide');
+    if (success_value != '') {
+      localStorage.setItem('size_of_large_move', success_value)
+      $('.item6').prop('checked', true);
+      $('.size-of-move-val-check-link').html('');
+      var append_value = "<a href='#building-type-setion' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
+      $('.size-of-move-val-check-link').html(append_value);
+      $('.size-of-move-val-check-img').html('');
+      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#photos-section' data-current_section='#building-type-setion'>";
+      $('.size-of-move-val-check-img').html(img_append_value);
+      $('.size-of-move-val-check-div').html('');
+      var div_append_value = "<a href='#building-type-setion' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
+      $('.size-of-move-val-check-div').html(div_append_value);
+    }
+  });
+
   $(document).on('click', '.size_of_move_cancel', function(){
     if ( $('.item1').is(':checked') ) {
       localStorage.setItem('size_of_move', '')
       $('.item1').prop('checked', false);
+      $('.size-of-move-val-check-link').html('');
+      var append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
+      $('.size-of-move-val-check-link').html(append_value);
+      $('.size-of-move-val-check-img').html('');
+      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#moving-extra-section' data-current_section='#building-type-setion'>";
+      $('.size-of-move-val-check-img').html(img_append_value);
+      $('.size-of-move-val-check-div').html('');
+      var div_append_value = "<a href='#moving-extra-section' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
+      $('.size-of-move-val-check-div').html(div_append_value);
+    }
+  });
+
+  $(document).on('click', '.size_of_move_small_cancel', function(){
+    if ( $('.item5').is(':checked') ) {
+      localStorage.setItem('size_of_small_move', '')
+      $('.item5').prop('checked', false);
+      $('.size-of-move-val-check-link').html('');
+      var append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
+      $('.size-of-move-val-check-link').html(append_value);
+      $('.size-of-move-val-check-img').html('');
+      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#moving-extra-section' data-current_section='#building-type-setion'>";
+      $('.size-of-move-val-check-img').html(img_append_value);
+      $('.size-of-move-val-check-div').html('');
+      var div_append_value = "<a href='#moving-extra-section' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
+      $('.size-of-move-val-check-div').html(div_append_value);
+    }
+  });
+
+  $(document).on('click', '.size_of_move_large_cancel', function(){
+    if ( $('.item5').is(':checked') ) {
+      localStorage.setItem('size_of_large_move', '')
+      $('.item5').prop('checked', false);
       $('.size-of-move-val-check-link').html('');
       var append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
       $('.size-of-move-val-check-link').html(append_value);
@@ -277,9 +348,59 @@ $(function (){
     if ( $('.item4').is(':checked') ) {
       $('.item4').prop('checked', false)
     }
+    if ( $('.item5').is(':checked') ) {
+      $('.item5').prop('checked', false)
+    }
+    if ( $('.item6').is(':checked') ) {
+      $('.item6').prop('checked', false)
+    }
     if(e.target.checked){
       $('.size_of_move_value').val('');
       $('#size-of-your-move').modal();
+    }
+  });
+
+  $(document).on('change', '.item5', function(e){
+    if ( $('.item1').is(':checked') ) {
+      $('.item1').prop('checked', false)
+    }
+    if ( $('.item2').is(':checked') ) {
+      $('.item2').prop('checked', false)
+    }
+    if ( $('.item3').is(':checked') ) {
+      $('.item3').prop('checked', false)
+    }
+    if ( $('.item4').is(':checked') ) {
+      $('.item4').prop('checked', false)
+    }
+    if ( $('.item6').is(':checked') ) {
+      $('.item6').prop('checked', false)
+    }
+    if(e.target.checked){
+      $('.size_of_move_small_value').val('');
+      $('#size-of-small-office').modal();
+    }
+  });
+
+  $(document).on('change', '.item6', function(e){
+    if ( $('.item1').is(':checked') ) {
+      $('.item1').prop('checked', false)
+    }
+    if ( $('.item2').is(':checked') ) {
+      $('.item2').prop('checked', false)
+    }
+    if ( $('.item3').is(':checked') ) {
+      $('.item3').prop('checked', false)
+    }
+    if ( $('.item4').is(':checked') ) {
+      $('.item4').prop('checked', false)
+    }
+    if ( $('.item5').is(':checked') ) {
+      $('.item5').prop('checked', false)
+    }
+    if(e.target.checked){
+      $('.size_of_move_large_value').val('');
+      $('#size-of-large-office').modal();
     }
   });
 
@@ -302,6 +423,13 @@ $(function (){
     if ( $('.item4').is(':checked') ) {
       $('.item4').prop('checked', false)
     }
+    if ( $('.item5').is(':checked') ) {
+      $('.item5').prop('checked', false)
+    }
+    if ( $('.item6').is(':checked') ) {
+      $('.item6').prop('checked', false)
+    }
+
   });
 
   $(document).on('change', '.item3', function(){
@@ -323,6 +451,12 @@ $(function (){
     if ( $('.item4').is(':checked') ) {
       $('.item4').prop('checked', false)
     }
+    if ( $('.item5').is(':checked') ) {
+      $('.item5').prop('checked', false)
+    }
+    if ( $('.item6').is(':checked') ) {
+      $('.item6').prop('checked', false)
+    }
   });
 
   $(document).on('change', '.item4', function(){
@@ -343,6 +477,12 @@ $(function (){
     }
     if ( $('.item3').is(':checked') ) {
       $('.item3').prop('checked', false)
+    }
+    if ( $('.item5').is(':checked') ) {
+      $('.item5').prop('checked', false)
+    }
+    if ( $('.item6').is(':checked') ) {
+      $('.item6').prop('checked', false)
     }
   });
 
