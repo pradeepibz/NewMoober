@@ -91,6 +91,11 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+    if ($(window).width() < 750) {
+      $("#mrf-contactBubbles").css("display","block");
+      $("#mrf-contactBubbles").css("z-index","2");
+      $(".page_valid_align").css("top","150px");
+    }
     var API_URL = "http://45.56.72.52/api/userapi/";
     var current_user = localStorage.getItem('user_id');
     var card_id = "<%= session[:card_id]%>"

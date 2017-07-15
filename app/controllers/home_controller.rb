@@ -100,10 +100,10 @@ class HomeController < ApplicationController
         session[:promocode] = @fb_user.promo_code.promo_code
         render json: {success: "Accepted", message: true, promocode: @fb_user.promo_code.promo_code}
       else
-        render json: {success: "Not permitted", message: true, promocode: "sdfsd"}
+        render json: {error: "Not permitted", message: false}
       end
     else
-      render json: {success: "Not permitted", message: true, promocode: "resdf"}
+      render json: {error: "Not permitted", message: false}
     end
   end
 
