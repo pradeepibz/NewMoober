@@ -1064,7 +1064,7 @@ button.close {
     color: #3a69aa !important;
     display: inline-block;
     width: 40px !important;
-    padding: 5px !important;
+    padding: 5px 14px !important;
     font-size: 25px !important;
     font-weight: 700;
     line-height: 1;
@@ -1712,7 +1712,7 @@ a:focus, a:hover {
    border-radius: 15px;
   }
   .start-heading{
-    height: 70px;
+    height: 57px;
     width: 90%;
   }
 
@@ -1858,16 +1858,8 @@ a:focus, a:hover {
     left: 325px;
   }
   .start-heading1{
-    /*padding-bottom: 46px;*/
-    height: 107px;
-  }
-
-  .start-heading2 {
-    height: 210px;
-  }
-
-  .start-heading3 {
-    height: 145px;
+    padding-bottom: 46px;
+    height: 55px;
   }
 
   .size-of-move-val-check-link  {
@@ -2153,52 +2145,32 @@ a:focus, a:hover {
 }
 
 @media (max-width: 768px) {
-  .start-heading {
-    height: 83px;
-  }
-  .start-heading1{
-    height: 61px;
-  }
-
-  .start-heading2 {
-    height: 83px;
-  }
-
-  .start-heading3 {
-    height: 83px;
-  }
-
-  .start-heading0 {
-    height: 55px;
-  }
-
   .pd-5 p {
     font-size: 12px;
   }
   .span2-p-p {
     display: none;
   }
-  .toltip-icon {
-    display: block !important;
-  }
 
   .back-one-step {
     display: none;
   }
+
+  .span2-p .fa {
+    opacity: 1 !important;
+   }
+
 }
 
-.toltip-icon {
-  display: none;
-}
 
-.toltip-icon .fa-info-circle{
+.fa-info-circle{
   color: #3a69aa;
   font-size: 18px;
   font-weight: bold;
 }
 
-abbr[data-original-title], abbr[title] {
-  border-bottom: none !important;
+.span2-p .fa {
+  opacity: 0;
 }
 
 #tooltip
@@ -2247,9 +2219,6 @@ abbr[data-original-title], abbr[title] {
   margin: 0;
 }  
 
-.payment-method-close-icon {
-  color: #FFC107 !important;
-  top: 3px;
-  right: 10px;
-  text-shadow: none;
+.back-one-step {
+  font-size: 12px;
 }
