@@ -6,6 +6,7 @@
     <div class="modal-content">
       <div class="modal-body" align="center">
         <div align="center">
+          <button type="button" class="close payment-method-close-icon" data-dismiss="modal">&times;</button>
           <img class="new_popup_image" src="/assets/logo2.png">
         </div>
         <div class="popup_content">
@@ -14,7 +15,6 @@
                 <div class='col-md-12'>
                   <%= form_tag charges_path, remote: true, authenticity_token: true, method: 'post', id: 'payment-form' do %>
                     <span class="payment-errors"></span>
-
                     <div class="form-row">
                       <div class='col-xs-12 form-group card required'>
                         <label class='control-label'>Card Number</label>

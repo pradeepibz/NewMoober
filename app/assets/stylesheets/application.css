@@ -1691,7 +1691,7 @@ a:focus, a:hover {
    border-radius: 15px;
   }
   .start-heading{
-    height: 125px;
+    height: 70px;
     width: 90%;
   }
 
@@ -2133,18 +2133,18 @@ a:focus, a:hover {
 
 @media (max-width: 768px) {
   .start-heading {
-    height: 125px;
+    height: 83px;
   }
   .start-heading1{
-    height: 168px;
+    height: 61px;
   }
 
   .start-heading2 {
-    height: 210px;
+    height: 83px;
   }
 
   .start-heading3 {
-    height: 145px;
+    height: 83px;
   }
 
   .start-heading0 {
@@ -2154,4 +2154,81 @@ a:focus, a:hover {
   .pd-5 p {
     font-size: 12px;
   }
+  .span2-p-p {
+    display: none;
+  }
+  .toltip-icon {
+    display: block !important;
+  }
+
+  .back-one-step {
+    display: none;
+  }
+}
+
+.toltip-icon {
+  display: none;
+}
+
+.toltip-icon .fa-info-circle{
+  color: #3a69aa;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+abbr[data-original-title], abbr[title] {
+  border-bottom: none !important;
+}
+
+#tooltip
+{
+  text-align: center;
+  color: #fff;
+  background: #FFC107;
+  position: absolute;
+  z-index: 100;
+  padding: 6px;
+  font-size: 13px;
+}
+
+#tooltip:after /* triangle decoration */
+{
+  width: 0;
+  height: 0;
+  /*border-left: 10px solid transparent;*/
+  /*border-right: 10px solid transparent;*/
+  /*border-top: 10px solid #FFC107;*/
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  margin-left: -10px;
+}
+
+#tooltip.top:after
+{
+  border-top-color: transparent;
+  /*border-top: 10px solid #FFC107;*/
+  top: -20px;
+  bottom: auto;
+}
+
+#tooltip.left:after
+{
+  left: 10px;
+  margin: 0;
+}
+
+#tooltip.right:after
+{
+  right: 10px;
+  left: auto;
+  margin: 0;
+}  
+
+.payment-method-close-icon {
+  color: #FFC107 !important;
+  top: 3px;
+  right: 10px;
+  text-shadow: none;
 }
