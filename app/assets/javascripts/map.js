@@ -177,3 +177,38 @@ function getChangeEvent(lat, lang){
     });
 
   }
+
+function initProposalMap() {
+    var from_add = localStorage.getItem('request_from_add');
+    // var lat = localStorage.getItem('proposal_lat');
+    // var lang = localStorage.getItem('proposal_lang');
+    address = from_add
+    // Initialize the Geocoder
+    geocoder = new google.maps.Geocoder();
+    console.log(geocoder)
+    if (geocoder) {
+      geocoder.geocode({
+          'address': address
+      }, function (results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+              var from_lat = results[0].geometry.location.lat();
+              localStorage.setItem('proposal_lat', from_lat);
+              var from_lon = results[0].geometry.location.lng();
+              localStorage.setItem('proposal_lang', from_lon);
+              var lat = localStorage.getItem('proposal_lat');
+              var lang = localStorage.getItem('proposal_lang');
+              defaultMarker(lat, lang)  
+          }
+          else{
+            var lat = 40.750358
+            var lang = -73.983649
+            defaultMarker(lat, lang)
+          }
+      });
+    }
+    else{
+      var lat = 40.750358
+      var lang = -73.983649
+      defaultMarker(lat, lang)
+    }
+  }
