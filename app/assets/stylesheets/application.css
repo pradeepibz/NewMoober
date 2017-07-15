@@ -1671,6 +1671,15 @@ a:focus, a:hover {
   .moober_popup_sm{
     margin: 30px !important;
   }
+
+  .mt-40{
+    margin-top: 21%;
+  }
+
+  .start-heading2 {
+     height: 57px;
+  }
+
   .contact-title {
     font-size: 30px;
     padding-right: 20px;
