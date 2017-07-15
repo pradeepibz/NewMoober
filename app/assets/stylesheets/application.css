@@ -354,6 +354,10 @@ a {
   overflow-y: auto;
   margin-bottom: 65px;
 }
+
+.new-scrol-div {
+  margin-bottom: 50px !important;
+}
 .scroll_div .row, #room-type-section.row, .move_row.row {
     margin-right: 3px;
     margin-left: 3px;
@@ -1700,7 +1704,7 @@ a:focus, a:hover {
   }
 
   .mt-40 {
-    margin-top: 17%;
+    margin-top: 21%;
   }
   .image-div-submit{
     width: auto;
@@ -1842,7 +1846,11 @@ a:focus, a:hover {
   }
   .start-heading1{
     padding-bottom: 46px;
-    height: 55px;
+    height: 57px;
+  }
+
+  .start-heading2 {
+    height: 49px !important;
   }
 
   .size-of-move-val-check-link  {
@@ -1939,7 +1947,7 @@ a:focus, a:hover {
    border-radius: 15px;
   }
   .start-heading{
-    height: 55px;
+    height: 57px;
     width: 90%;
   }
   .mt-40 {
@@ -2141,15 +2149,16 @@ a:focus, a:hover {
 
   .span2-p .fa {
     opacity: 1 !important;
+    margin-left:  7px;
    }
 
 }
-
 
 .fa-info-circle{
   color: #3a69aa;
   font-size: 18px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .span2-p .fa {
@@ -2165,6 +2174,7 @@ a:focus, a:hover {
   z-index: 100;
   padding: 6px;
   font-size: 13px;
+  top: 162.2344px !important;
 }
 
 #tooltip:after /* triangle decoration */
@@ -2204,4 +2214,9 @@ a:focus, a:hover {
 
 .back-one-step {
   font-size: 12px;
+}
+
+.poup-videos audio, canvas, progress, video {
+  vertical-align: baseline;
+  display: block !important;
 }
