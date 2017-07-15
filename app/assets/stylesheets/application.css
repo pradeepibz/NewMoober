@@ -2178,6 +2178,10 @@ a:focus, a:hover {
     margin-left:  7px;
    }
 
+  .mt-40 {
+    margin-top: 21% !important;
+  }
+
 }
 
 .fa-info-circle{
