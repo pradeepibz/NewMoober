@@ -1356,7 +1356,7 @@ input:focus {
   cursor: pointer;
 }
 .map-prop {
-  height: 75%;
+  height: 60%;
 }
 #proposal_map {
   height: 100%;
@@ -1472,11 +1472,12 @@ ul li.user_moves .moves-count mark {
   font-size: 18px;
   margin-left: 15px;
 }
-.no-proposal {
+.no-proposal p{
   font-size: 24px;
-  margin-top: 60%;
+  /*margin-top: 60%;*/
   text-align: center;
   width: 100%;
+  margin-bottom: 28px;
 }
 .size-of-move-val-check-link {
   margin-top: 6px;
@@ -1619,6 +1620,22 @@ a:focus, a:hover {
 
 .sq-ft-tips {
   font-size: 12px;
+}
+.moving-results-container {
+  height: 100%;
+}
+
+.go-back-btn {
+  background-color: #ffc043;
+  border: 0 none;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 7px 14px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
 }
 /*responsive code*/
 /*iPhone 5, 5s*/

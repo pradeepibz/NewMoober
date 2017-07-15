@@ -1308,13 +1308,42 @@ function movingProposals(request_id, lat, lang){
       
       })
       .fail(function(data) {
-        $(".map-prop").hide();
-        $(".proposal_results").append("<div class='no-proposal'>Proposals are on their way</div>")
+        console.log(request_id)
+        // $(".map-prop").hide();
+        var proposal_params = '{"user_id": '+ current_user +'}'
+        $.ajax({
+          url: API_URL+"getMovingRequestList",
+          type: 'POST',
+          data: proposal_params,
+        })
+        .done(function(data) {
+          var res = data.data;
+          console.log(res) ;
+          $.each(data.data.upcoming ,function(key, res){
+            if (res.moving_request_id === request_id){
+              var no_proposals = '<div class="no-proposal"><p>Proposals are on their way</p></div><div class="row"><div class="col-md-12"><div class="new-left"><p class="room_type_label-head"><span class="new-app-label room_type_label">Room Type: </span><span class="result-size">'+res.room_type_name+'</span><span class="size_of_move_text"></span></p></div><div class="new-left"><div class="details-heading moving_date_label"><span class="new-app-label">Moving Date</span></div><p class="moving_date">'+res.move_date_time+'</p></div><div class="new-left"><div class="details-heading pickup_address_label"><span class="new-app-label">Pickup Address</span></div><p class="pickup_address">'+res.from_address+'</p></div><div class="new-left"><div class="details-heading destination_address_label"><span class="new-app-label">Destination Address</span></div><p class="destination_address">'+res.to_address+'</p></div><div class="new-left"><div class="details-heading"><span class="new-app-label">Contact Details</span></div><p><span class="new-app-label">Full Name: </span><span class="contact_name">'+res.contact_name+'</span></p><p><span class="new-app-label">Mobile Number: </span><span class="contact_phone">'+res.contact_phone+'</span></p></div></div></div><div class="row"><div class="col-md-4"></div><div class="col-md-4"><div class="go-back-btn">Go Back</div></div><div class="col-md-4"></div></div>'
+              $(".proposal_results").append(no_proposals)
+            }
+          });
+          $.each(data.data.past ,function(key, res){
+            if (res.moving_request_id === request_id){
+              var no_proposals = '<div class="no-proposal"><p>Proposals are on their way</p></div><div class="row"><div class="col-md-12"><div class="new-left"><p class="room_type_label-head"><span class="new-app-label room_type_label">Room Type: </span><span class="result-size">'+res.room_type_name+'</span><span class="size_of_move_text"></span></p></div><div class="new-left"><div class="details-heading moving_date_label"><span class="new-app-label">Moving Date</span></div><p class="moving_date">'+res.move_date_time+'</p></div><div class="new-left"><div class="details-heading pickup_address_label"><span class="new-app-label">Pickup Address</span></div><p class="pickup_address">'+res.from_address+'</p></div><div class="new-left"><div class="details-heading destination_address_label"><span class="new-app-label">Destination Address</span></div><p class="destination_address">'+res.to_address+'</p></div><div class="new-left"><div class="details-heading"><span class="new-app-label">Contact Details</span></div><p><span class="new-app-label">Full Name: </span><span class="contact_name">'+res.contact_name+'</span></p><p><span class="new-app-label">Mobile Number: </span><span class="contact_phone">'+res.contact_phone+'</span></p></div></div></div><div class="row"><div class="col-md-4"></div><div class="col-md-4"><div class="go-back-btn">Go Back</div></div><div class="col-md-4"></div></div>'
+              $(".proposal_results").append(no_proposals)
+            }
+          });
+        })
+        // .fail(function(data) {
+        //   $(".acpt-company").text("");
+        //   $(".acpt-company-from").text("");
+        //   $(".acpt-company-to").text("");
+        //   $(".acpt-company-date").text("");
+        // });
+        // $(".proposal_results").append("<div class='no-proposal'>Proposals are on their way</div>")
       });      
     }
     else{
-      $(".map-prop").hide();
-      $(".proposal_results").append("<div class='no-proposal'>Proposals are on their way</div>")
+      // $(".map-prop").hide();
+      // $(".proposal_results").append("<div class='no-proposal'>Proposals are on their way</div>")
     }
   }else{
     window.location.href = "/"
@@ -1567,4 +1596,7 @@ $(document).on('click', '.approve-btn', function(){
 
 $(document).on('click', '.booking-updated', function(){
   window.location.href = "/"
+});
+$(document).on('click', '.go-back-btn', function(){
+  window.location.href = "/moves"
 });

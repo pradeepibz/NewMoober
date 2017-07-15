@@ -49,6 +49,10 @@
 
 $(document).ready(function(){
 
+  if ($(window).width() < 750) {
+    $(".page_valid_align").css("top","150px");
+  }
+
 	// Finding Desktop or Mobile and hide appropriate navigation
 	if($(window).width()>640){
 		// Desktop
