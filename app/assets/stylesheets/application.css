@@ -1612,6 +1612,10 @@ a:focus, a:hover {
 .modal-title {
   padding-top: 8px !important;
 }
+
+.sq-ft-tips {
+  font-size: 12px;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
