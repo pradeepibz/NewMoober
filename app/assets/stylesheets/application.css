@@ -312,7 +312,7 @@ a {
   display: none;
 }
 .mt-40{
-  margin-top: 5%;
+  margin-top: 20%;
 }
 .start-heading {
   border-bottom: 2px solid #d6d6c2;
@@ -1876,7 +1876,7 @@ a:focus, a:hover {
   }
 
   .start-heading2 {
-    height: 49px !important;
+    height: 60px !important;
   }
 
   .size-of-move-val-check-link  {
