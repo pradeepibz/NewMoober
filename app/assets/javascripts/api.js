@@ -679,6 +679,7 @@ $(function(){
                       data: user_params,
                     })
                     .done(function(data) {
+                      console.log(data)
                       var count = data.data.upcoming.length
                       localStorage.setItem('moves_count', count);
                       $('.moves-count mark').text(count);
@@ -1009,7 +1010,7 @@ $(document).on('click', '#start_mov_btn', function(){
 
 $(document).on('click', '.start-move-done-ok', function(){
   $('#start-move-done').modal('hide');
-  window.location.href = "http://stage.moober.com/"
+  window.location.href = "https://stage.moober.com/"
 });
 
 $(document).on('click', '.start-move-error-ok', function(){
@@ -1559,7 +1560,7 @@ $(document).on('click', '.edit-password-btn', function(){
 
 $(document).on('click', '.payment-updated', function(){
   var referrer =  document.referrer;
-  if (referrer === "http://localhost:3000/moves/proposal/accept" || referrer === "http://stage.moober.com/moves/proposal/accept") {
+  if (referrer === "http://localhost:3000/moves/proposal/accept" || referrer === "https://stage.moober.com/moves/proposal/accept") {
     window.location.href = "/moves/proposal/accept"
   }else {
     $("#card-changed").modal("hide");
