@@ -1725,7 +1725,7 @@ a:focus, a:hover {
    border-radius: 15px;
   }
   .start-heading{
-    height: 65px;
+    height: 57px;
     width: 90%;
   }
 
@@ -2225,9 +2225,6 @@ a:focus, a:hover {
 {
   width: 0;
   height: 0;
-  /*border-left: 10px solid transparent;*/
-  /*border-right: 10px solid transparent;*/
-  /*border-top: 10px solid #FFC107;*/
   content: '';
   position: absolute;
   left: 50%;
@@ -2238,7 +2235,6 @@ a:focus, a:hover {
 #tooltip.top:after
 {
   border-top-color: transparent;
-  /*border-top: 10px solid #FFC107;*/
   top: -20px;
   bottom: auto;
 }
@@ -2262,5 +2258,8 @@ a:focus, a:hover {
 
 .poup-videos audio, canvas, progress, video {
   vertical-align: baseline;
-  display: block !important;
+}
+
+.video-modal-body {
+  padding-bottom: 10px !important;
 }
