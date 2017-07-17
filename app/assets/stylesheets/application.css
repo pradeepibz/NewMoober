@@ -2247,5 +2247,5 @@ a:focus, a:hover {
 }
 
 .video-modal-body {
-  padding-bottom: 10px;
+  padding-bottom: 10px !important;
 }
