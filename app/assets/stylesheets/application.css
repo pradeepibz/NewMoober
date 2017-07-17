@@ -1745,7 +1745,7 @@ a:focus, a:hover {
     width: 150px;
   }
   .scroll_div{
-    margin-top: 20px;
+    margin-top: 10px;
     max-height: 340px;
   }
   .scroll_div_new{
@@ -1923,6 +1923,13 @@ a:focus, a:hover {
   }
   .popup_content {
     margin-top: 26px;
+  }
+  .pd-15{
+    padding: 8px;
+  }
+  .new-form input {
+    height: 45px;
+    margin-bottom: 5px;
   }
 
 }
@@ -2158,6 +2165,13 @@ a:focus, a:hover {
   }
   .popup_content {
     margin-top: 26px;
+  }
+  .pd-15{
+    padding: 15px;
+  }
+  .new-form input {
+    height: 45px;
+    margin-bottom: 5px;
   }
 }
 
