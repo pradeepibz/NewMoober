@@ -14,7 +14,7 @@
     </div>
     <div class="slide__content home">
       <h1 class="slide__content__title"> MOVING.</br> MADE.</br> SIMPLE. </h1>
-      <div class="play videoPlayer" data-video="#welcomeVideo" data-toggle="modal" data-target="#myModal-play-videos"> <img src="assets/play-mobile.svg" alt="Play Moober Video"> </div>
+      <div class="play videoPlayer" data-video="#welcomeVideo" data-toggle="modal" data-target="#myModal"> <img src="assets/play-mobile.svg" alt="Play Moober Video"> </div>
       <div class="home_btn_align">
         <button class="contactUs btn-left open_subscripe_popup">Download App</button>
         <button class="contactUs btn-right start_a_move_btn">Start a Move</button>
@@ -23,18 +23,26 @@
   </div>
 </section>
 
-<div class="modal fade" id="myModal-play-videos" role="dialog">
-  <div class="modal-dialog">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top:100px;">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-body poup-videos">
-        <button type="button" class="close " data-dismiss="modal"><span class="badge">x</span></button>
-          <!-- <video autoplay loop muted id="" style="width:100%" controls >  -->
-            <!-- <source src="/assets/videos/Moober_Promo_Video.mp4" type="video/webm" width="100%"> -->
-
-         <video src="/assets/videos/Moober_Promo_Video.mp4" controls style="width:100%;">
-      <p>Your browser doesn't support HTML5 video. Here is a <a href="/assets/videos/Moober_Promo_Video.mp4.webm">link to the video</a> instead.</p> 
-    </video>
+      <div class="modal-body video-modal-body">
+        <button type="button" class="close close-popup" data-dismiss="modal"><span class="badge">x</span></button>
+        <video loop controls id="video1" style="width: 100%; height: auto; margin:0 auto; frameborder:0;">
+          <source src="http://stage.moober.com/assets/videos/Moober_Promo_Video.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#video1')[0].play();
+    })
+    $('#myModal').on('hidden.bs.modal', function () {
+      $('#video1')[0].pause();
+    })
+  });
+</script>
