@@ -65,29 +65,34 @@ $(function(){
     var destionation_address = $('#end').val();
     if (pickup_address != '' && destionation_address != '') {
       $('#size_of_move').click();
-      $.ajax({
-      url: API_URL+'getRoomType',
-      method: 'GET',
-      success: function (data) {
-        console.log('success');
-        console.log(data);
-        console.log(data.data);
-        if (data.data != '') {
-          $('.room_image').html('');
-          $.each(data.data ,function(key, image) {
-            var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='"+image.image_thumb+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
-            $('.room_image').append(get_room_image);
-          });
-          var fifth = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='/assets/add-image.jpg'><label for='room_image5' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image5' type='checkbox' class='new-app-ins item5' name='movesize' value='Small Office' data-value='5' ><label>Small Office</label></div></div></div></div>"
-          var sixth = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='/assets/add-image.jpg'><label for='room_image6' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image6' type='checkbox' class='new-app-ins item6' name='movesize' value='Large Office' data-value='6' ><label>Large Office</label></div></div></div></div>"
-          $('.room_image').append(fifth);
-          $('.room_image').append(sixth);
+      var item1 = $('.item1').is(':checked');
+      var item2 = $('.item2').is(':checked');
+      var item3 = $('.item3').is(':checked');
+      var item4 = $('.item4').is(':checked');
+      var item5 = $('.item5').is(':checked');
+      var item6 = $('.item6').is(':checked');
+      var item7 = $('.item7').is(':checked');
+      if (item1 != true && item2 != true && item3 != true && item4 != true && item5 != true && item6 != true && item7 != true) {
+        $.ajax({
+        url: API_URL+'getRoomType',
+        method: 'GET',
+        success: function (data) {
+          console.log('success');
+          console.log(data);
+          console.log(data.data);
+          if (data.data != '') {
+            $('.room_image').html('');
+            $.each(data.data ,function(key, image) {
+              var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='"+image.image_thumb+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
+              $('.room_image').append(get_room_image);
+            });
+          }
+        },
+        error: function (o) {
+          console.log(o);
         }
-      },
-      error: function (o) {
-        console.log(o);
+        });
       }
-    });
     }else{
       $('#page_valid').modal();
       $('.validation_popup_content').html('');
@@ -103,7 +108,8 @@ $(function(){
     var item4 = $('.item4').is(':checked');
     var item5 = $('.item5').is(':checked');
     var item6 = $('.item6').is(':checked');
-    if (item1 == true || item2 == true || item3 == true || item4 == true || item5 == true || item6 == true) {
+    var item7 = $('.item7').is(':checked');
+    if (item1 == true || item2 == true || item3 == true || item4 == true || item5 == true || item6 == true || item7 == true) {
       $('#room_type').click();
     }else{
       $('#page_valid').modal();
@@ -673,6 +679,7 @@ $(function(){
                       data: user_params,
                     })
                     .done(function(data) {
+                      console.log(data)
                       var count = data.data.upcoming.length
                       localStorage.setItem('moves_count', count);
                       $('.moves-count mark').text(count);
@@ -1003,7 +1010,7 @@ $(document).on('click', '#start_mov_btn', function(){
 
 $(document).on('click', '.start-move-done-ok', function(){
   $('#start-move-done').modal('hide');
-  window.location.href = "http://stage.moober.com/"
+  window.location.href = "https://stage.moober.com/"
 });
 
 $(document).on('click', '.start-move-error-ok', function(){
@@ -1553,7 +1560,7 @@ $(document).on('click', '.edit-password-btn', function(){
 
 $(document).on('click', '.payment-updated', function(){
   var referrer =  document.referrer;
-  if (referrer === "http://localhost:3000/moves/proposal/accept" || referrer === "http://stage.moober.com/moves/proposal/accept") {
+  if (referrer === "http://localhost:3000/moves/proposal/accept" || referrer === "https://stage.moober.com/moves/proposal/accept") {
     window.location.href = "/moves/proposal/accept"
   }else {
     $("#card-changed").modal("hide");

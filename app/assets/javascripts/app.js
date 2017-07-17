@@ -86,7 +86,7 @@ $(function (){
     var success_value = $('.size_of_move_small_value').val();
     if (success_value != '') {
       localStorage.setItem('size_of_small_move', success_value)
-      $('.item5').prop('checked', true);
+      $('.item6').prop('checked', true);
       $('.size-of-move-val-check-link').html('');
       var append_value = "<a href='#building-type-setion' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
       $('.size-of-move-val-check-link').html(append_value);
@@ -107,7 +107,7 @@ $(function (){
     $('#size-of-large-office').modal('hide');
     if (success_value != '') {
       localStorage.setItem('size_of_large_move', success_value)
-      $('.item6').prop('checked', true);
+      $('.item7').prop('checked', true);
       $('.size-of-move-val-check-link').html('');
       var append_value = "<a href='#building-type-setion' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
       $('.size-of-move-val-check-link').html(append_value);
@@ -137,9 +137,9 @@ $(function (){
   });
 
   $(document).on('click', '.size_of_move_small_cancel', function(){
-    if ( $('.item5').is(':checked') ) {
+    if ( $('.item6').is(':checked') ) {
       localStorage.setItem('size_of_small_move', '')
-      $('.item5').prop('checked', false);
+      $('.item6').prop('checked', false);
       $('.size-of-move-val-check-link').html('');
       var append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
       $('.size-of-move-val-check-link').html(append_value);
@@ -153,9 +153,9 @@ $(function (){
   });
 
   $(document).on('click', '.size_of_move_large_cancel', function(){
-    if ( $('.item5').is(':checked') ) {
+    if ( $('.item7').is(':checked') ) {
       localStorage.setItem('size_of_large_move', '')
-      $('.item5').prop('checked', false);
+      $('.item7').prop('checked', false);
       $('.size-of-move-val-check-link').html('');
       var append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
       $('.size-of-move-val-check-link').html(append_value);
@@ -354,31 +354,12 @@ $(function (){
     if ( $('.item6').is(':checked') ) {
       $('.item6').prop('checked', false)
     }
-    if(e.target.checked){
-      $('.size_of_move_value').val('');
-      $('#size-of-your-move').modal();
-    }
-  });
-
-  $(document).on('change', '.item5', function(e){
-    if ( $('.item1').is(':checked') ) {
-      $('.item1').prop('checked', false)
-    }
-    if ( $('.item2').is(':checked') ) {
-      $('.item2').prop('checked', false)
-    }
-    if ( $('.item3').is(':checked') ) {
-      $('.item3').prop('checked', false)
-    }
-    if ( $('.item4').is(':checked') ) {
-      $('.item4').prop('checked', false)
-    }
-    if ( $('.item6').is(':checked') ) {
+    if ( $('.item7').is(':checked') ) {
       $('.item6').prop('checked', false)
     }
     if(e.target.checked){
-      $('.size_of_move_small_value').val('');
-      $('#size-of-small-office').modal();
+      $('.size_of_move_value').val('');
+      $('#size-of-your-move').modal();
     }
   });
 
@@ -397,6 +378,34 @@ $(function (){
     }
     if ( $('.item5').is(':checked') ) {
       $('.item5').prop('checked', false)
+    }
+    if ( $('.item7').is(':checked') ) {
+      $('.item7').prop('checked', false)
+    }
+    if(e.target.checked){
+      $('.size_of_move_small_value').val('');
+      $('#size-of-small-office').modal();
+    }
+  });
+
+  $(document).on('change', '.item7', function(e){
+    if ( $('.item1').is(':checked') ) {
+      $('.item1').prop('checked', false)
+    }
+    if ( $('.item2').is(':checked') ) {
+      $('.item2').prop('checked', false)
+    }
+    if ( $('.item3').is(':checked') ) {
+      $('.item3').prop('checked', false)
+    }
+    if ( $('.item4').is(':checked') ) {
+      $('.item4').prop('checked', false)
+    }
+    if ( $('.item5').is(':checked') ) {
+      $('.item5').prop('checked', false)
+    }
+    if ( $('.item6').is(':checked') ) {
+      $('.item6').prop('checked', false)
     }
     if(e.target.checked){
       $('.size_of_move_large_value').val('');
@@ -429,6 +438,9 @@ $(function (){
     if ( $('.item6').is(':checked') ) {
       $('.item6').prop('checked', false)
     }
+    if ( $('.item7').is(':checked') ) {
+      $('.item7').prop('checked', false)
+    }
 
   });
 
@@ -457,6 +469,9 @@ $(function (){
     if ( $('.item6').is(':checked') ) {
       $('.item6').prop('checked', false)
     }
+    if ( $('.item7').is(':checked') ) {
+      $('.item7').prop('checked', false)
+    }
   });
 
   $(document).on('change', '.item4', function(){
@@ -483,6 +498,9 @@ $(function (){
     }
     if ( $('.item6').is(':checked') ) {
       $('.item6').prop('checked', false)
+    }
+    if ( $('.item7').is(':checked') ) {
+      $('.item7').prop('checked', false)
     }
   });
 
