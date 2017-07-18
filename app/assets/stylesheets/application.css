@@ -1654,6 +1654,9 @@ a:focus, a:hover {
   .edit-profile .edit-title {
     margin-top: 150px !important;
   }
+  .mr-to-20 {
+    margin-top: -30px !important; 
+  }
 }
 
 /*iPhone 6, 6s, 7*/
@@ -1758,6 +1761,11 @@ a:focus, a:hover {
     margin-top: 20px;
     max-height: 323px;
   }
+
+  .mr-to-20 {
+    margin-top: -30px !important; 
+  }
+
   .size-of-move-val-check-div{
     margin: 5px;
   }
