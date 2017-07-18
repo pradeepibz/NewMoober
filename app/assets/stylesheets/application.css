@@ -1657,6 +1657,10 @@ a:focus, a:hover {
   .mr-to-20 {
     margin-top: -25px !important; 
   }
+  .search-map-div p {
+    margin: 0px;
+    margin-left: 20px !important
+  }
 }
 
 /*iPhone 6, 6s, 7*/
@@ -1944,7 +1948,11 @@ a:focus, a:hover {
   }
   .new-form input {
     height: 45px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
+  }
+  .search-map-div p {
+    margin: 0px;
+    margin-left: 20px !important
   }
 
 }
@@ -2188,7 +2196,11 @@ a:focus, a:hover {
   }
   .new-form input {
     height: 45px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
+  }
+  .search-map-div p {
+    margin: 0px;
+    margin-left: 20px !important
   }
 }
 
