@@ -1651,10 +1651,16 @@ a:focus, a:hover {
     padding-right: 0px !important;
     padding-left: 0px !important;
   }
+  .edit-profile .edit-title {
+    margin-top: 150px !important;
+  }
 }
 
 /*iPhone 6, 6s, 7*/
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px){
+  .edit-profile .edit-title {
+    margin-top: 150px !important;
+  }
   .new_popup_image {
     margin: 10px;
     margin-top: 0;
@@ -1750,7 +1756,7 @@ a:focus, a:hover {
   }
   .scroll_div_new{
     margin-top: 20px;
-    max-height: 341px;
+    max-height: 323px;
   }
   .size-of-move-val-check-div{
     margin: 5px;
@@ -1885,6 +1891,7 @@ a:focus, a:hover {
   .side-menu-moves-count mark {
     left: 320px;
     margin-top: 10px;
+    z-index: 1;
   }
   #mblNav .mbl-menuContainer {
     width: 27%;
@@ -2128,6 +2135,8 @@ a:focus, a:hover {
   .side-menu-moves-count mark {
     left: 348px;
     margin-top: 12px;
+    z-index: 1;
+
   }
   .mbl-webLateralMenu {
     width: 280px !important;
@@ -2262,4 +2271,23 @@ a:focus, a:hover {
 
 .video-modal-body {
   padding-bottom: 10px !important;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body h2 {
+  font-size: 25px;
+}
+
+.add-payment-method a {
+  padding: 10px 10px;
+  background: #fed136;
+  color: #fff;
+
+}
+
+.add-payment-method a:hover {
+  color: #fff !important;
 }
