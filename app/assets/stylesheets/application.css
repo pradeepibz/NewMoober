@@ -1651,10 +1651,23 @@ a:focus, a:hover {
     padding-right: 0px !important;
     padding-left: 0px !important;
   }
+  .edit-profile .edit-title {
+    margin-top: 150px !important;
+  }
+  .mr-to-20 {
+    margin-top: -25px !important; 
+  }
+  .search-map-div p {
+    margin: 0px;
+    margin-left: 20px !important
+  }
 }
 
 /*iPhone 6, 6s, 7*/
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px){
+  .edit-profile .edit-title {
+    margin-top: 150px !important;
+  }
   .new_popup_image {
     margin: 10px;
     margin-top: 0;
@@ -1750,8 +1763,13 @@ a:focus, a:hover {
   }
   .scroll_div_new{
     margin-top: 20px;
-    max-height: 341px;
+    max-height: 323px;
   }
+
+  .mr-to-20 {
+    margin-top: -25px !important; 
+  }
+
   .size-of-move-val-check-div{
     margin: 5px;
   }
@@ -1885,6 +1903,7 @@ a:focus, a:hover {
   .side-menu-moves-count mark {
     left: 320px;
     margin-top: 10px;
+    z-index: 1;
   }
   #mblNav .mbl-menuContainer {
     width: 27%;
@@ -1929,7 +1948,11 @@ a:focus, a:hover {
   }
   .new-form input {
     height: 45px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
+  }
+  .search-map-div p {
+    margin: 0px;
+    margin-left: 20px !important
   }
 
 }
@@ -2128,6 +2151,8 @@ a:focus, a:hover {
   .side-menu-moves-count mark {
     left: 348px;
     margin-top: 12px;
+    z-index: 1;
+
   }
   .mbl-webLateralMenu {
     width: 280px !important;
@@ -2171,8 +2196,13 @@ a:focus, a:hover {
   }
   .new-form input {
     height: 45px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
   }
+  .search-map-div p {
+    margin: 0px;
+    margin-left: 20px !important
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -2196,6 +2226,10 @@ a:focus, a:hover {
     margin-top: 21% !important;
   }
 
+  .join .logos {
+    margin-top: 31px !important;
+}
+
 }
 
 .fa-info-circle{
@@ -2209,48 +2243,6 @@ a:focus, a:hover {
   opacity: 0;
 }
 
-#tooltip
-{
-  text-align: center;
-  color: #fff;
-  background: #FFC107;
-  position: absolute;
-  z-index: 100;
-  padding: 6px;
-  font-size: 13px;
-  top: 162.2344px !important;
-}
-
-#tooltip:after /* triangle decoration */
-{
-  width: 0;
-  height: 0;
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  margin-left: -10px;
-}
-
-#tooltip.top:after
-{
-  border-top-color: transparent;
-  top: -20px;
-  bottom: auto;
-}
-
-#tooltip.left:after
-{
-  left: 10px;
-  margin: 0;
-}
-
-#tooltip.right:after
-{
-  right: 10px;
-  left: auto;
-  margin: 0;
-}  
 
 .back-one-step {
   font-size: 12px;
@@ -2262,4 +2254,48 @@ a:focus, a:hover {
 
 .video-modal-body {
   padding-bottom: 10px !important;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body h2 {
+  font-size: 25px;
+}
+
+.add-payment-method a {
+  padding: 10px 10px;
+  background: #fed136;
+  color: #fff;
+
+}
+
+.add-payment-method a:hover {
+  color: #fff !important;
+}
+
+
+.more_info {
+  position: relative;
+}
+
+.more_info .title {
+  position: absolute;
+  top: 20px;
+  background: #FFC107;
+  padding: 4px;
+  left: 0;
+  width: 267px;
+  margin-left: -148px;
+  z-index: 1;
+  font-size: 13px;
+  color: #fff;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }

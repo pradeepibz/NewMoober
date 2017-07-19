@@ -30,7 +30,7 @@
               <h4>
               <span class="span1"><img class="icon-image" src="/assets/icon1.jpg"></span>
               <span class="span2">
-                <p class="span2-p">What's the size of your move? <span title="The following steps will help us understand the type of move you're looking for." rel="tooltip" placement: 'bottom'><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <p class="span2-p">What's the size of your move? <span title="The following steps will help us understand the type of move you're looking for." class="more_info"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
                 </p>
                 <p class="span2-p-p">The following steps will help us understand the type of move you're looking for.</p>
               </span>
@@ -99,7 +99,7 @@
             <h4>
               <span class="span1"><img class="icon-image" src="/assets/icon2.jpg"></span>
               <span class="span2">
-                <p class="span2-p">Take photos of your space.<span title="Upload photos of your space with particular focus on larger items involved in the move.  You can add up to 20 photos.  You can optionally skip this step by tapping "Skip" below." rel="tooltip" class="toltip-icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <p class="span2-p">Take photos of your space.<span title="Upload photos of your space with particular focus on larger items involved in the move.  You can add up to 20 photos.  You can optionally skip this step by tapping "Skip" below." class="more_info"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
                 </p>
                 <p class="span2-p-p">Upload photos of your space with particular focus on larger items involved in the move.  You can add up to 20 photos.  You can optionally skip this step by tapping "Skip" below.</p>
               </span>
@@ -127,7 +127,7 @@
         <div class="bottom_div">
           <div class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4">
+            <div class="col-md-4 mr-to-20">
               <div align="center" class="size-of-move-val-check-div">
                 <a href='#moving-extra-section' id="add_images" data-section_id="#photos-section" class="hidden-btn smooth_scroll">CONTINUE</a>
                 <a class="image-div-submit add_images_section" id="move-images">CONTINUE</a>
@@ -151,7 +151,7 @@
             <h4>
               <span class="span1"><img class="icon-image" src="/assets/icon3.jpg"></span>
               <span class="span2">
-                <p class="span2-p">Will there be any extra large items?<span title="Certain items, such as a piano require special equipment and preparation to move for.  Make sure to cite all large items involved below." rel="tooltip"><i class="fa fa-info-circle" aria-hidden="true" class="toltip-icon"></i></span>
+                <p class="span2-p">Will there be any extra large items?<span title="Certain items, such as a piano require special equipment and preparation to move for.  Make sure to cite all large items involved below." class="more_info"><i class="fa fa-info-circle" aria-hidden="true" class="toltip-icon"></i></span>
                 </p>
                 <p class="span2-p-p">Certain items, such as a piano require special equipment and preparation to move for.  Make sure to cite all large items involved below.</p>
               </span>
@@ -206,7 +206,7 @@
             <h4>
               <span class="span1"><img class="icon-image" src="/assets/icon6.jpg"></span>
               <span class="span2">
-                <p class="span2-p">Elelvator, Walk up or Residential home?<span title="Moving items with an elevator compared to 5 flights of stairs is a different level of effort.  Let us know what we're in for so we can provide you with accurate and fair quotes for your move." rel="tooltip" class="toltip-icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <p class="span2-p">Elelvator, Walk up or Residential home?<span title="Moving items with an elevator compared to 5 flights of stairs is a different level of effort.  Let us know what we're in for so we can provide you with accurate and fair quotes for your move." class="more_info"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
                 </p>
                 <p class="span2-p-p">Moving items with an elevator compared to 5 flights of stairs is a different level of effort.  Let us know what we're in for so we can provide you with accurate and fair quotes for your move.</p>
               </span>
@@ -287,7 +287,7 @@
             <h4>
               <span class="span1"><img class="icon-image" src="/assets/icon4.jpg"></span>
               <span class="span2">
-                <p class="span2-p">When do you need to move?<span title="Enter the desired date and time that you'd like the movers to arrive for your move." rel="tooltip" class="toltip-icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <p class="span2-p">When do you need to move?<span title="Enter the desired date and time that you'd like the movers to arrive for your move." class="more_info"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
                 </p>
                 <p class="span2-p-p">Enter the desired date and time that you'd like the movers to arrive for your move.</p>
               </span>
@@ -337,7 +337,7 @@
             <h4>
               <span class="span1"><img class="icon-image" src="/assets/icon5.jpg"></span>
               <span class="span2">
-                <p class="span2-p">Enter your contact information.<span title="We'll need to know who you are and how to contact you for communication related to your move." rel="tooltip" class="toltip-icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <p class="span2-p">Enter your contact information.<span title="We'll need to know who you are and how to contact you for communication related to your move." class="more_info"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
                 </p>
                 <p class="span2-p-p">We'll need to know who you are and how to contact you for communication related to your move.</p>
               </span>
@@ -350,7 +350,7 @@
             <div class="col-md-4">
               <div class="new-left">
                 <input id="name" type="text" class="new-app-input" placeholder="Name" name="" autocomplete="on">
-                <input id="phone" type="text" class="new-app-input" placeholder="Phone" autocomplete="off" onkeypress='return validateQty(event);'>
+                <input id="phone" type="number" class="new-app-input" placeholder="Phone" autocomplete="off" onkeypress='return validateQty(event);' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number">
               </div>
             </div>
             <div class="col-md-4"></div>
@@ -458,81 +458,20 @@
   </div>
 </section>
 
+
 <script type="text/javascript">
-  $( function()
-{
-    var targets = $( '[rel~=tooltip]' ),
-        target  = false,
-        tooltip = false,
-        title   = false;
- 
-    targets.bind( 'mouseenter', function()
-    {
-        target  = $( this );
-        tip     = target.attr( 'title' );
-        tooltip = $( '<div id="tooltip"></div>' );
- 
-        if( !tip || tip == '' )
-            return false;
- 
-        target.removeAttr( 'title' );
-        tooltip.css( 'opacity', 0 )
-               .html( tip )
-               .appendTo( 'body' );
- 
-        var init_tooltip = function()
-        {
-            if( $( window ).width() < tooltip.outerWidth() * 1.5 )
-                tooltip.css( 'max-width', $( window ).width() / 2 );
-            else
-                tooltip.css( 'max-width', 340 );
- 
-            var pos_left = target.offset().left + ( target.outerWidth() / 2 ) - ( tooltip.outerWidth() / 2 ),
-                pos_top  = target.offset().top - tooltip.outerHeight() - 20;
- 
-            if( pos_left < 0 )
-            {
-                pos_left = target.offset().left + target.outerWidth() / 2 - 20;
-                tooltip.addClass( 'left' );
-            }
-            else
-                tooltip.removeClass( 'left' );
- 
-            if( pos_left + tooltip.outerWidth() > $( window ).width() )
-            {
-                pos_left = target.offset().left - tooltip.outerWidth() + target.outerWidth() / 2 + 20;
-                tooltip.addClass( 'right' );
-            }
-            else
-                tooltip.removeClass( 'right' );
- 
-            if( pos_top < 0 )
-            {
-                var pos_top  = target.offset().top + target.outerHeight();
-                tooltip.addClass( 'top' );
-            }
-            else
-                tooltip.removeClass( 'top' );
- 
-            tooltip.css( { left: pos_left, top: pos_top } )
-                   .animate( { top: '+=10', opacity: 1 }, 50 );
-        };
- 
-        init_tooltip();
-        $( window ).resize( init_tooltip );
- 
-        var remove_tooltip = function()
-        {
-            tooltip.animate( { top: '-=10', opacity: 0 }, 50, function()
-            {
-                $( this ).remove();
-            });
- 
-            target.attr( 'title', tip );
-        };
- 
-        target.bind( 'mouseleave', remove_tooltip );
-        tooltip.bind( 'click', remove_tooltip );
-    });
-});
+  $(".more_info").click(function () {
+    var $title = $(this).find(".title");
+    if (!$title.length) {
+        $(this).append('<span class="title">' + $(this).attr("title") + '</span>');
+    } else {
+        $title.remove();
+    }
+  });
+  $(document).bind('click', function(e) {
+    if($(e.target).closest('p').length == 0) {
+      $(".title").remove();
+    }
+  });
 </script>
+
