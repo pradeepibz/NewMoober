@@ -349,8 +349,10 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
               <div class="new-left">
-                <input id="name" type="text" class="new-app-input" placeholder="Name" name="" autocomplete="on">
-                <input id="phone" type="number" class="new-app-input" placeholder="Phone" autocomplete="off" onkeypress='return validateQty(event);' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number">
+                <form autocomplete="on">
+                  <input id="name" type="text" class="new-app-input" placeholder="Name" name="name">
+                  <input id="phone" type="number" class="new-app-input" placeholder="Phone" autocomplete="off" onkeypress='return validateQty(event);' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number">
+                </form>
               </div>
             </div>
             <div class="col-md-4"></div>
