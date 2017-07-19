@@ -2242,48 +2242,6 @@ a:focus, a:hover {
   opacity: 0;
 }
 
-#tooltip
-{
-  text-align: center;
-  color: #fff;
-  background: #FFC107;
-  position: absolute;
-  z-index: 100;
-  padding: 6px;
-  font-size: 13px;
-  /*top: 162.2344px !important;*/
-}
-
-#tooltip:after /* triangle decoration */
-{
-  width: 0;
-  height: 0;
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -10px;
-  margin-left: -10px;
-}
-
-#tooltip.top:after
-{
-  border-top-color: transparent;
-  top: -20px;
-  bottom: auto;
-}
-
-#tooltip.left:after
-{
-  left: 10px;
-  margin: 0;
-}
-
-#tooltip.right:after
-{
-  right: 10px;
-  left: auto;
-  margin: 0;
-}  
 
 .back-one-step {
   font-size: 12px;
@@ -2318,17 +2276,19 @@ a:focus, a:hover {
 
 
 .more_info {
-  border-bottom: 1px dotted;
   position: relative;
 }
 
 .more_info .title {
   position: absolute;
   top: 20px;
-  background: silver;
+  background: #FFC107;
   padding: 4px;
   left: 0;
   width: 267px;
   margin-left: -148px;
   z-index: 1;
+  font-size: 13px;
+  color: #fff;
 }
+
