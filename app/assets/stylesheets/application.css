@@ -429,6 +429,10 @@ input[type=checkbox], input[type=radio] {
   height: 100%
 }
 
+.search-map {
+  height: 266px;
+}
+
 .bottom_div {
   position: absolute;
   width: 100%;
@@ -1442,7 +1446,7 @@ ul li.user_moves .moves-count mark {
   position: absolute;
   text-align: center;
   width: 20px;
-  z-index: 1;
+  z-index: 
 }
 #mainNav.affix-top .side-menu-moves-count mark{
   left: 5px;
