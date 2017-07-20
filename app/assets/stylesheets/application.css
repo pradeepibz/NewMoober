@@ -425,13 +425,17 @@ input[type=checkbox], input[type=radio] {
   z-index: 1;
 }
 .bottom_div {
-  position: absolute;
-  width: 100%;
+  /*position: absolute;*/
+  width: 20%;
   left: 0;
   bottom: 0;
   height: 65px;
   background: #fff;
+  display: table-cell;
+  vertical-align: bottom;
+  margin: auto;
 }
+
 .new-next-btn {
   background: #ffc043 none repeat scroll 0 0;
   border: 0 none;
@@ -1662,7 +1666,7 @@ input, input:before, input:after {
     margin-top: 150px !important;
   }
   .mr-to-20 {
-    margin-top: -25px !important; 
+    margin-top: -15px !important; 
   }
   .search-map-div p {
     margin: 0px;
@@ -1774,7 +1778,7 @@ input, input:before, input:after {
   }
 
   .mr-to-20 {
-    margin-top: -25px !important; 
+    margin-top: -15px !important; 
   }
 
   .size-of-move-val-check-div{
