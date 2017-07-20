@@ -425,13 +425,17 @@ input[type=checkbox], input[type=radio] {
   z-index: 1;
 }
 .bottom_div {
-  position: absolute;
-  width: 100%;
+  /*position: absolute;*/
+  width: 20%;
   left: 0;
   bottom: 0;
   height: 65px;
   background: #fff;
+  display: table-cell;
+  vertical-align: bottom;
+  margin: auto;
 }
+
 .new-next-btn {
   background: #ffc043 none repeat scroll 0 0;
   border: 0 none;
