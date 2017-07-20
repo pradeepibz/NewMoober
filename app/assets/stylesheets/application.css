@@ -2228,6 +2228,10 @@ a:focus, a:hover {
     margin-left:  7px;
    }
 
+  .fav-icon-img {
+    display: block;
+  }
+
   .mt-40 {
     margin-top: 21% !important;
   }
@@ -2248,7 +2252,9 @@ a:focus, a:hover {
 .span2-p .fa {
   opacity: 0;
 }
-
+.fav-icon-img {
+  display: none;
+}
 
 .back-one-step {
   font-size: 12px;
