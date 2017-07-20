@@ -424,18 +424,19 @@ input[type=checkbox], input[type=radio] {
   width: 23px;
   z-index: 1;
 }
+
+.start_move_body {
+  height: 100%
+}
+
 .bottom_div {
-  /*position: absolute;*/
-  width: 20%;
+  position: absolute;
+  width: 100%;
   left: 0;
   bottom: 0;
   height: 65px;
   background: #fff;
-  display: table-cell;
-  vertical-align: bottom;
-  margin: auto;
 }
-
 .new-next-btn {
   background: #ffc043 none repeat scroll 0 0;
   border: 0 none;
@@ -1641,13 +1642,6 @@ a:focus, a:hover {
   text-align: center;
   cursor: pointer;
 }
-input, input:before, input:after {
-  -webkit-user-select: initial;
-  -khtml-user-select: initial;
-  -moz-user-select: initial;
-  -ms-user-select: initial;
-  user-select: initial;
- }
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -1666,7 +1660,7 @@ input, input:before, input:after {
     margin-top: 150px !important;
   }
   .mr-to-20 {
-    margin-top: -15px !important; 
+    margin-top: -25px !important; 
   }
   .search-map-div p {
     margin: 0px;
@@ -1778,7 +1772,7 @@ input, input:before, input:after {
   }
 
   .mr-to-20 {
-    margin-top: -15px !important; 
+    margin-top: -25px !important; 
   }
 
   .size-of-move-val-check-div{
