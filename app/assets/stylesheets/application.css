@@ -1442,6 +1442,7 @@ ul li.user_moves .moves-count mark {
   position: absolute;
   text-align: center;
   width: 20px;
+  z-index: 1;
 }
 #mainNav.affix-top .side-menu-moves-count mark{
   left: 5px;
