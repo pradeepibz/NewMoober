@@ -425,10 +425,6 @@ input[type=checkbox], input[type=radio] {
   z-index: 1;
 }
 
-.start_move_body {
-  height: 100%;
-}
-
 .search-map {
   height: 266px;
 }
