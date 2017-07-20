@@ -84,8 +84,13 @@ $(function(){
             $('.room_image').html('');
             $.each(data.data ,function(key, image) {
               console.log(image)
-              var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='"+image.image+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
-              $('.room_image').append(get_room_image);
+              if (key == 0){
+                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='/assets/add-image.jpg'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
+                $('.room_image').append(get_room_image);
+              }else {
+                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='"+image.image+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
+                $('.room_image').append(get_room_image);
+              }
             });
           }
         },
