@@ -1336,7 +1336,7 @@ input:focus {
   color: #3a69aa;
 }
 .moving_proposals_results {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .moving_proposals_accept {
   margin-top: 7%;
@@ -1478,10 +1478,9 @@ ul li.user_moves .moves-count mark {
   font-size: 18px;
   margin-left: 15px;
 }
-.no-proposal p{
+.no-proposal-message{
   font-size: 24px;
   /*margin-top: 60%;*/
-  text-align: center;
   width: 100%;
   margin-bottom: 28px;
 }
@@ -1637,14 +1636,34 @@ a:focus, a:hover {
   border-radius: 5px;
   color: #fff;
   display: inline-block;
-  margin-top: 20px;
   padding: 7px 14px;
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
+.acpt-go-back-btn {
+  background-color: #ffc043;
+  border: 0 none;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  padding: 7px 14px;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
 .video-popup {
   margin-top: 45%;
+}
+.flexible {
+  margin-top: 5%;
+}
+.flexible .ins-align {
+  margin-left: 93px;
+}
+.success-go-back {
+  margin-bottom: 20px;
 }
 /*responsive code*/
 /*iPhone 5, 5s*/

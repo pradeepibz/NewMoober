@@ -337,6 +337,23 @@ $(function (){
     }
   });
 
+  $(document).on('change', '.date-flexible', function(){
+    if ( $(this).is(':checked') ) {
+      $(this).prop('checked', true)
+    }else{
+      $(this).prop('checked', false)
+    }
+  });
+
+  $(document).on('change', '.time-flexible', function(){
+    if ( $(this).is(':checked') ) {
+      $(this).prop('checked', true)
+    }else{
+      $(this).prop('checked', false)
+    }
+  });
+
+
   // room-type-section
   $(document).on('change', '.item1', function(e){
     if ( $('.item2').is(':checked') ) {

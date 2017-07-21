@@ -11,6 +11,8 @@ $(function(){
   var current_user = localStorage.getItem('user_id');
   if (current_user != "" && current_user != null && current_user != undefined) {
     $('.user-login-logut').html("<a href='javascript:;' class='user-logout'>Sign Out</a>");
+    localStorage.setItem('name', "")
+    localStorage.setItem('phone', "")
     $('.account_settings').show();
     $('.payment_methods').show();
     $('.user_moves').show();
@@ -749,6 +751,7 @@ $(document).on('click', '#move-size', function(){
 
 $(document).on('click', '#move-images', function(){
   var photos = []
+  localStorage.setItem("images", "");
   // if($('.image-content').is(".mphotos")) {
     $('.mphotos').each(function(index){
       // console.log($(this).attr('src'));
@@ -805,12 +808,23 @@ $(document).on('click', '#pickup-destination', function(){
 $(document).on('click', '#date_move', function(){
   var movetime = $('#demo').val();
   localStorage.setItem('move_date', movetime);
+  var flexDate = $('#date-flexible').is(':checked')
+  var flextime = $('#time-flexible').is(':checked')
+  localStorage.setItem('flexible_date', flexDate);
+  localStorage.setItem('flexible_time', flextime);
   // localStorage.setItem('full_name', data.data.fullname)
   // localStorage.setItem('phone_number', data.data.phone) 
   var full_name = localStorage.getItem("full_name");
   var phone_number = localStorage.getItem("phone_number");
-  $("#name").val(full_name);
-  $("#phone").val(phone_number);
+  var name = localStorage.getItem("name");
+  var phone = localStorage.getItem("phone");
+  if ((phone != "" && phone != null && phone != "undefined") && (name != "" && name != null && name != "undefined")){
+    $("#name").val(name);
+    $("#phone").val(phone);
+  }else{
+    $("#name").val(full_name);
+    $("#phone").val(phone_number);
+  }
 });
 
 $(document).on('click', '#contact_continue', function(){
@@ -907,6 +921,8 @@ $(document).on('click', '#contact_continue', function(){
   var phone = localStorage.getItem("phone")
   if (phone != "" && phone != null && phone != undefined) $('.contact_phone').text(phone);
   var images = JSON.parse(localStorage.getItem("images"));
+
+  $('.moving_images').html(" ")
   if (images != "" && images != null && images != undefined) {
     $('.moving_image_label').css('display', 'block');
     $.each(images, function(key, img){
@@ -938,6 +954,8 @@ $(document).on('click', '#start_mov_btn', function(){
   var phone = localStorage.getItem("phone")
   var current_user = localStorage.getItem('user_id');
   var images = JSON.parse(localStorage.getItem("images"));
+  var flex_date = localStorage.getItem("flexible_date") === "true" ? 1 : 0
+  var flex_time = localStorage.getItem("flexible_time") === "true" ? 1 : 0
 
   var d = new Date(Date.parse(move_date.replace(/-/g, "/")));
 
@@ -982,7 +1000,18 @@ $(document).on('click', '#start_mov_btn', function(){
     var from_lon = localStorage.getItem('from_lon');
     var to_lat = localStorage.getItem('to_lat');
     var to_lon = localStorage.getItem('to_lon');
-    var move_params = '{"contact_phone":"' +phone+ '","room_type_id":'+move_size_id+',"extra_large_item":'+JSON.stringify(items)+',"to_address":"'+move_end+'","from_longitude":"'+from_lon+'","to_latitude":"'+to_lat+'","building_type":'+pickup_id+',"dest_building_type":'+destination_id+',"single_item":"","from_latitude":"'+from_lat+'","dest_building_floor":"'+destarray+'","building_floor":"'+pickuparray+'","from_address":"'+move_from+'","move_date_time":"'+ moving_date +'","image":'+ JSON.stringify(images) +',"to_longitude":"'+to_lon+'","user_id":"'+current_user+'","contact_name":"'+name+'"}'
+    var size_of_small_move = localStorage.getItem('size_of_small_move')
+    var size_of_large_move = localStorage.getItem('size_of_large_move')
+    if (size_of_small_move != "" && size_of_small_move != null && size_of_small_move != "undefined") {
+      var size_move = size_of_small_move
+    }
+    if (size_of_large_move != "" && size_of_large_move != null && size_of_large_move != "undefined") {
+      var size_move = size_of_large_move
+    }else{
+      var size_move = ""
+    }
+
+    var move_params = '{"contact_phone":"' +phone+ '","room_type_id":'+move_size_id+',"extra_large_item":'+JSON.stringify(items)+',"to_address":"'+move_end+'","from_longitude":"'+from_lon+'","to_latitude":"'+to_lat+'","building_type":'+pickup_id+',"dest_building_type":'+destination_id+',"single_item":"","from_latitude":"'+from_lat+'","dest_building_floor":"'+destarray+'","building_floor":"'+pickuparray+'","from_address":"'+move_from+'","move_date_time":"'+ moving_date +'","image":'+ JSON.stringify(images) +',"to_longitude":"'+to_lon+'","user_id":"'+current_user+'","contact_name":"'+name+'", "is_date_flexible":"'+flex_date+'", "is_time_flexible":"'+flex_time+'", "office_size": "'+size_move+'"}'
     var mail_move_params = {contact_phone: phone, room_type: move_size,extra_large_item: items,to_address: move_end,building_type: pickup,dest_building_type: destination, dest_building_floor: destarray, building_floor: pickuparray, from_address: move_from, move_date_time: move_date, user_id: current_user, contact_name: name }
     var email = localStorage.getItem('email');
     console.log(move_params)
@@ -1004,6 +1033,8 @@ $(document).on('click', '#start_mov_btn', function(){
         userMovesRequest(current_user);
         $('#start-move-done').modal();
         $('.modal_loading').hide();
+        localStorage.setItem('name', "")
+        localStorage.setItem('phone', "")
       },
       error: function(data) {
         console.log(data.message)
@@ -1316,7 +1347,7 @@ function movingProposals(request_id, lat, lang){
         console.log(data)
         $(".map-prop").show();
         $.each(data.data ,function(key, res){
-          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-9 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-3 pull-right'><div class='text-center accept-btn' data-request-id="+res.moving_request_id+" data-id="+res.id+" data-company="+res.company_name+" data-price="+res.price+"> Accept </div></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div></div><div class='col-md-12'><hr></div>");
+          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12 success-go-back'><div class='col-md-3'><div class='go-back-btn'>Go Back</div></div></div><div class='col-md-12'> <div class='col-md-9 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-3 pull-right'><div class='text-center accept-btn' data-request-id="+res.moving_request_id+" data-id="+res.id+" data-company="+res.company_name+" data-price="+res.price+"> Accept </div></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div></div><div class='col-md-12'><hr></div>");
         });
       
       })
@@ -1334,13 +1365,14 @@ function movingProposals(request_id, lat, lang){
           console.log(res) ;
           $.each(data.data.upcoming ,function(key, res){
             if (res.moving_request_id === request_id){
-              var no_proposals = '<div class="no-proposal"><p>Proposals are on their way</p></div><div class="row"><div class="col-md-12"><div class="new-left"><p class="room_type_label-head"><span class="new-app-label room_type_label">Room Type: </span><span class="result-size">'+res.room_type_name+'</span><span class="size_of_move_text"></span></p></div><div class="new-left"><div class="details-heading moving_date_label"><span class="new-app-label">Moving Date</span></div><p class="moving_date">'+res.move_date_time+'</p></div><div class="new-left"><div class="details-heading pickup_address_label"><span class="new-app-label">Pickup Address</span></div><p class="pickup_address">'+res.from_address+'</p></div><div class="new-left"><div class="details-heading destination_address_label"><span class="new-app-label">Destination Address</span></div><p class="destination_address">'+res.to_address+'</p></div><div class="new-left"><div class="details-heading"><span class="new-app-label">Contact Details</span></div><p><span class="new-app-label">Full Name: </span><span class="contact_name">'+res.contact_name+'</span></p><p><span class="new-app-label">Mobile Number: </span><span class="contact_phone">'+res.contact_phone+'</span></p></div></div></div><div class="row"><div class="col-md-4"></div><div class="col-md-4"><div class="go-back-btn">Go Back</div></div><div class="col-md-4"></div></div>'
-              $(".proposal_results").append(no_proposals)
+              var no_proposals = '<div class="no-proposal"><div class="row"><div class="col-md-3"><div class="go-back-btn">Go Back</div></div><div class="col-md-9 no-proposal-message">Proposals are on their way</div></div></div><div class="row"><div class="col-md-12"><div class="new-left"><p class="room_type_label-head"><span class="new-app-label room_type_label">Room Type: </span><span class="result-size">'+res.room_type_name+'</span><span class="size_of_move_text"></span></p></div><div class="new-left"><div class="details-heading moving_date_label"><span class="new-app-label">Moving Date</span></div><p class="moving_date">'+res.move_date_time+'</p></div><div class="new-left"><div class="details-heading pickup_address_label"><span class="new-app-label">Pickup Address</span></div><p class="pickup_address">'+res.from_address+'</p></div><div class="new-left"><div class="details-heading destination_address_label"><span class="new-app-label">Destination Address</span></div><p class="destination_address">'+res.to_address+'</p></div><div class="new-left"><div class="details-heading"><span class="new-app-label">Contact Details</span></div><p><span class="new-app-label">Full Name: </span><span class="contact_name">'+res.contact_name+'</span></p><p><span class="new-app-label">Mobile Number: </span><span class="contact_phone">'+res.contact_phone+'</span></p></div></div></div>'
+              $(".proposal_results").append(no_proposals);
+
             }
           });
           $.each(data.data.past ,function(key, res){
             if (res.moving_request_id === request_id){
-              var no_proposals = '<div class="no-proposal"><p>Proposals are on their way</p></div><div class="row"><div class="col-md-12"><div class="new-left"><p class="room_type_label-head"><span class="new-app-label room_type_label">Room Type: </span><span class="result-size">'+res.room_type_name+'</span><span class="size_of_move_text"></span></p></div><div class="new-left"><div class="details-heading moving_date_label"><span class="new-app-label">Moving Date</span></div><p class="moving_date">'+res.move_date_time+'</p></div><div class="new-left"><div class="details-heading pickup_address_label"><span class="new-app-label">Pickup Address</span></div><p class="pickup_address">'+res.from_address+'</p></div><div class="new-left"><div class="details-heading destination_address_label"><span class="new-app-label">Destination Address</span></div><p class="destination_address">'+res.to_address+'</p></div><div class="new-left"><div class="details-heading"><span class="new-app-label">Contact Details</span></div><p><span class="new-app-label">Full Name: </span><span class="contact_name">'+res.contact_name+'</span></p><p><span class="new-app-label">Mobile Number: </span><span class="contact_phone">'+res.contact_phone+'</span></p></div></div></div><div class="row"><div class="col-md-4"></div><div class="col-md-4"><div class="go-back-btn">Go Back</div></div><div class="col-md-4"></div></div>'
+              var no_proposals = '<div class="no-proposal"><div class="row"><div class="col-md-3"><div class="go-back-btn">Go Back</div></div><div class="col-md-9 no-proposal-message">Proposals are on their way</div></div></div><div class="row"><div class="col-md-12"><div class="new-left"><p class="room_type_label-head"><span class="new-app-label room_type_label">Room Type: </span><span class="result-size">'+res.room_type_name+'</span><span class="size_of_move_text"></span></p></div><div class="new-left"><div class="details-heading moving_date_label"><span class="new-app-label">Moving Date</span></div><p class="moving_date">'+res.move_date_time+'</p></div><div class="new-left"><div class="details-heading pickup_address_label"><span class="new-app-label">Pickup Address</span></div><p class="pickup_address">'+res.from_address+'</p></div><div class="new-left"><div class="details-heading destination_address_label"><span class="new-app-label">Destination Address</span></div><p class="destination_address">'+res.to_address+'</p></div><div class="new-left"><div class="details-heading"><span class="new-app-label">Contact Details</span></div><p><span class="new-app-label">Full Name: </span><span class="contact_name">'+res.contact_name+'</span></p><p><span class="new-app-label">Mobile Number: </span><span class="contact_phone">'+res.contact_phone+'</span></p></div></div></div>'
               $(".proposal_results").append(no_proposals)
             }
           });
@@ -1611,6 +1643,9 @@ $(document).on('click', '.booking-updated', function(){
   window.location.href = "/"
 });
 $(document).on('click', '.go-back-btn', function(){
+  window.location.href = "/moves"
+});
+$(document).on('click', '.acpt-go-back-btn', function(){
   window.location.href = "/moves"
 });
 
