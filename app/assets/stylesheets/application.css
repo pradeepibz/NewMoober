@@ -1966,7 +1966,7 @@ a:focus, a:hover {
     margin-top: 7%;
   }
   #card_details .page_valid_align {
-    margin-top: 20% !important;
+    margin-top: 0% !important;
   }
   .popup_content {
     margin-top: 26px;
@@ -1981,6 +1981,12 @@ a:focus, a:hover {
   .search-map-div p {
     margin: 0px;
     margin-left: 20px !important
+  }
+  .flexible .ins-align {
+    margin-left: 20px;
+  }
+  #card_details .mt-50 {
+    margin-top: 0%;
   }
 
 }
@@ -2213,9 +2219,6 @@ a:focus, a:hover {
   .card-section {
     margin-top: 7%;
   }
-  #card_details .page_valid_align {
-    margin-top: 20% !important;
-  }
   .popup_content {
     margin-top: 26px;
   }
@@ -2229,6 +2232,12 @@ a:focus, a:hover {
   .search-map-div p {
     margin: 0px;
     margin-left: 20px !important
+  }
+  .flexible .ins-align {
+    margin-left: 20px;
+  }
+  #card_details .page_valid_align {
+    margin-top: 0% !important;
   }
 
 }
