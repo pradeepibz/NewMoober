@@ -1613,3 +1613,7 @@ $(document).on('click', '.booking-updated', function(){
 $(document).on('click', '.go-back-btn', function(){
   window.location.href = "/moves"
 });
+
+$(document).on('click', '.close-popup', function(){
+  $(window).scrollTop();
+});
