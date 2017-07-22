@@ -14,7 +14,6 @@ $(document).ready(function(){
       var API_URL = "http://45.56.72.52/api/userapi/";
       var proposal_params = '{"user_id": '+ current_user +'}'
       if (current_user != "" && current_user != null && current_user != undefined){
-         console.log("sdsdfsdffffffffffffffffffffffff")
         $.ajax({
           url: API_URL+"getMovingRequestList",
           type: 'POST',
