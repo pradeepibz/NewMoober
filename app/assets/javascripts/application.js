@@ -24,8 +24,8 @@
 //= require mobile_nav
 //= require iscroll
 //= require jquery.remotipart
-//= require jquery.ajaxQueue.min
 //= require charges
+//= require cable
 
 // disable double tab to zoom 
 (function($) {
