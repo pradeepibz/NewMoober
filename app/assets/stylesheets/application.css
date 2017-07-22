@@ -379,6 +379,23 @@ a {
   position: absolute;
   width: 91%;
 }
+.edit-icon {
+  background: rgba(0, 0, 0, 0.32) none repeat scroll 0 0;
+  bottom: 119px;
+  height: 30px;
+  margin-left: 81%;
+  position: absolute;
+  width: 10%;
+  display: none;
+}
+.edit-icon img {
+  background-size: 100% 100%;
+  cursor: pointer;
+  float: right;
+  height: 30px;
+  padding: 5px;
+  width: 97%;
+}
 .ins-image-align {
   float: left;
   margin-left: 15px;
@@ -1665,6 +1682,7 @@ a:focus, a:hover {
 .success-go-back {
   margin-bottom: 20px;
 }
+
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){
@@ -1986,7 +2004,7 @@ a:focus, a:hover {
     margin-left: 20px;
   }
   #card_details .mt-50 {
-    margin-top: 0%;
+    margin-top: 0% !important;
   }
 
 }
