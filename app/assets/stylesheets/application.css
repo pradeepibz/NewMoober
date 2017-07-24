@@ -2024,6 +2024,10 @@ a:focus, a:hover {
   #card_details .mt-50 {
     margin-top: 0% !important;
   }
+  .payment-header h2{
+    margin-top: 10px;
+    text-align: center;
+  }
 
 }
 
@@ -2274,6 +2278,10 @@ a:focus, a:hover {
   }
   #card_details .page_valid_align {
     margin-top: 0% !important;
+  }
+  .payment-header h2{
+    margin-top: 10px;
+    text-align: center;
   }
 
 }
