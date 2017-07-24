@@ -1647,7 +1647,7 @@ a:focus, a:hover {
   height: 100%;
 }
 
-.go-back-btn {
+.go-back-btn, .prop-acpt-go-back-btn {
   background-color: #ffc043;
   border: 0 none;
   border-radius: 5px;
@@ -1657,6 +1657,24 @@ a:focus, a:hover {
   width: 100%;
   text-align: center;
   cursor: pointer;
+}
+.prop-acpt-go-back-btn {
+  width: 25%;
+}
+.payment-go-back-btn {
+  background-color: #ffc043;
+  border: 0 none;
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  padding: 7px 14px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.payment-header h2{
+  margin-top: 3px;
+  text-align: left;
 }
 .acpt-go-back-btn {
   background-color: #ffc043;

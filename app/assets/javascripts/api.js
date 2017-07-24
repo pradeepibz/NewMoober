@@ -1657,3 +1657,11 @@ $(document).on('click', '.acpt-go-back-btn', function(){
 $(document).on('click', '.close-popup', function(){
   $(window).scrollTop();
 });
+
+$(document).on('click', '.prop-acpt-go-back-btn', function(){
+  window.location.href = "/moves/proposals"
+});
+
+$(document).on('click', '.payment-go-back-btn', function(){
+  window.location.href = "/moves/proposal/accept"
+})
