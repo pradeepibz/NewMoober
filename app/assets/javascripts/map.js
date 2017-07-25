@@ -4,12 +4,11 @@ function initMap() {
   }else{
     console.log("Browser doesn't support geolocation!");
   }
-
   function show_location(position){
     var lat = position.coords.latitude
     var lang = position.coords.longitude
     getChangeEvent(lat, lang)
-    mapinitialize(lat, lang)
+    // mapinitialize(lat, lang)
   }
 
 
@@ -17,32 +16,55 @@ function initMap() {
     var lat = 40.750357
     var lang = -73.983657
     getChangeEvent(lat, lang)
-    mapinitialize(lat, lang)
+    // mapinitialize(lat, lang)
   }
-  function mapinitialize(lat, lang){
-    var markerArray = [];
-    var directionsService = new google.maps.DirectionsService;
-    var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: lat, lng: lang},
-      zoom: 14,
-      scrollwheel: false,
-      zoomControl: true,
-      zoomControlOptions: {
-        style: google.maps.ZoomControlStyle.SMALL,
-        position: google.maps.ControlPosition.RIGHT_CENTER
-      },
-      disableDefaultUI: true
-    });
-    var image = '/assets/map-icon.png';
-    var beachMarker = new google.maps.Marker({
-      position: map.getCenter(),
-      map: map,
-      icon: image
-    });
-    var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    directionsDisplay.setOptions( { suppressMarkers: true } );
 
-  }
+  var markerArray = [];
+  var directionsService = new google.maps.DirectionsService;
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 40.750357, lng: -73.983657},
+    zoom: 14,
+    scrollwheel: false,
+    zoomControl: true,
+    zoomControlOptions: {
+      style: google.maps.ZoomControlStyle.SMALL,
+      position: google.maps.ControlPosition.RIGHT_CENTER
+    },
+    disableDefaultUI: true
+  });
+  var image = '/assets/map-icon.png';
+  var beachMarker = new google.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+    icon: image
+  });
+  var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+  directionsDisplay.setOptions( { suppressMarkers: true } );
+
+  // function mapinitialize(lat, lang){
+  //   var markerArray = [];
+  //   var directionsService = new google.maps.DirectionsService;
+  //   var map = new google.maps.Map(document.getElementById('map'), {
+  //     center: {lat: lat, lng: lang},
+  //     zoom: 14,
+  //     scrollwheel: false,
+  //     zoomControl: true,
+  //     zoomControlOptions: {
+  //       style: google.maps.ZoomControlStyle.SMALL,
+  //       position: google.maps.ControlPosition.RIGHT_CENTER
+  //     },
+  //     disableDefaultUI: true
+  //   });
+  //   var image = '/assets/map-icon.png';
+  //   var beachMarker = new google.maps.Marker({
+  //     position: map.getCenter(),
+  //     map: map,
+  //     icon: image
+  //   });
+  //   var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+  //   directionsDisplay.setOptions( { suppressMarkers: true } );
+
+  // }
   var onChangeHandler = function() {
     calculateAndDisplayRoute(directionsService, directionsDisplay, markerArray, map);
   };
