@@ -2,10 +2,15 @@
 <div class="ac-settings">
   <div class="mt-10">
     <div class="contact-mt-10">
-      <div class="col-md-4"></div>
-      <div class="card-body col-md-4 text-center">
-        <div>
-          <h2>Payment Methods</h2>
+      <div class="col-md-3"></div>
+      <div class="card-body col-md-6 text-center">
+        <div class="col-md-12">
+          <div class="col-md-4">
+            <div class='col-md-12'><div class='col-md-12'><div class='payment-go-back-btn'>Go Back</div></div></div>
+          </div>
+          <div class="col-md-8 payment-header">
+            <h2>Payment Methods</h2>
+          </div>
         </div>
         <div class="card-methods">
         </div>
@@ -13,7 +18,7 @@
           <a href="javascript:;" class="add-card-payment">Add Payment Method</a>
         </div>
       </div>
-      <div class="col-md-4"></div>
+      <div class="col-md-3"></div>
     </div>
   </div>
   <footer class="contactfooter">
@@ -96,7 +101,7 @@
     if ($(window).width() < 750) {
       $("#mrf-contactBubbles").css("display","block");
       $("#mrf-contactBubbles").css("z-index","2");
-      $(".page_valid_align").css("top","150px");
+      $(".page_valid_align").css("top","95px");
     }
     var API_URL = "http://45.56.72.52/api/userapi/";
     var current_user = localStorage.getItem('user_id');

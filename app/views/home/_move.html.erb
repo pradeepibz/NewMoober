@@ -1,16 +1,16 @@
 
 <div class="search-map">
   <div class="row pd-5">
-    <p>Schedule a move for you apartment, home or office</p>
+    <p>Schedule a move for you apartment, home or office.</p>
   </div>
   <div class="row pd-15">
     <div class="col-md-4 search-map-div new-form">
       <p><span><img src="/assets/map-icon2.png"></span>Moving from</p>
-      <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()" value="chennai" >
+      <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()">
     </div>
     <div class="col-md-4 search-map-div new-form">
       <p><span><img src="/assets/map-icon1.png"></span>Moving to</p>
-      <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()" value="madurai">
+      <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()">
     </div>
     <div class="col-md-4 search-map-div" align="center">
       <button class="hidden-btn" id="map_search_btn"></button>
@@ -312,6 +312,28 @@
             </div>
             <div class="col-md-3"></div>
           </div>
+          <div class="flexible">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+              <!-- <p>
+                <input type="checkbox" name="vehicle" class="date-flexible"><span>Is your moving date flexible?</span>
+              </p>
+              <p>
+                <input type="checkbox" name="vehicle" class="time-flexible">Is your moving time flexible?
+              </p> -->
+              <div class="ins-align">
+                <input id="date-flexible" type="checkbox" class="new-app-ins date-flexible datetime" name="dateflexible" value="1">
+                <label for="date-flexible">Is your moving date flexible?</label>
+              </div>
+              <div class="ins-align">
+                <input id="time-flexible" type="checkbox" class="new-app-ins time-flexible" name="timeflexible" value="0">
+                <label for="time-flexible">Is your moving time flexible?</label>
+              </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+          </div>
         </div>
         <div class="bottom_div">
           <div class="row">
@@ -352,7 +374,7 @@
               <div class="new-left">
                 <form autocomplete="on">
                   <input id="name" type="text" class="new-app-input" placeholder="Name" name="name">
-                  <input id="phone" type="number" class="new-app-input" placeholder="Phone" autocomplete="off" onkeypress='return validateQty(event);' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number">
+                  <input id="phone" type="text" class="new-app-input" placeholder="Phone" autocomplete="off" onkeypress='return validateQty(event);' min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number">
                 </form>
               </div>
             </div>

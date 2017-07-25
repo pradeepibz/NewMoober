@@ -1,73 +1,77 @@
 function initMap() {
-  var markerArray = [];
-  var directionsService = new google.maps.DirectionsService;
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.750358, lng: -73.983649},
-    zoom: 14,
-    scrollwheel: false,
-    zoomControl: true,
-    zoomControlOptions: {
-      style: google.maps.ZoomControlStyle.SMALL,
-      position: google.maps.ControlPosition.RIGHT_CENTER
-    },
-    disableDefaultUI: true
-  });
-  var image = '/assets/map-icon.png';
-  var beachMarker = new google.maps.Marker({
-    position: map.getCenter(),
-    map: map,
-    icon: image
-  });
-  var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-  directionsDisplay.setOptions( { suppressMarkers: true } );
+  if ("geolocation" in navigator){
+    navigator.geolocation.getCurrentPosition(show_location, show_error, {timeout:1000, enableHighAccuracy: true}); //position request
+  }else{
+    console.log("Browser doesn't support geolocation!");
+  }
 
+  function show_location(position){
+    var lat = position.coords.latitude
+    var lang = position.coords.longitude
+    getChangeEvent(lat, lang)
+    mapinitialize(lat, lang)
+  }
+
+
+  function show_error(error){
+    var lat = 40.750357
+    var lang = -73.983657
+    getChangeEvent(lat, lang)
+    mapinitialize(lat, lang)
+  }
+  function mapinitialize(lat, lang){
+    var markerArray = [];
+    var directionsService = new google.maps.DirectionsService;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: lat, lng: lang},
+      zoom: 14,
+      scrollwheel: false,
+      zoomControl: true,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.RIGHT_CENTER
+      },
+      disableDefaultUI: true
+    });
+    var image = '/assets/map-icon.png';
+    var beachMarker = new google.maps.Marker({
+      position: map.getCenter(),
+      map: map,
+      icon: image
+    });
+    var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+    directionsDisplay.setOptions( { suppressMarkers: true } );
+
+  }
   var onChangeHandler = function() {
     calculateAndDisplayRoute(directionsService, directionsDisplay, markerArray, map);
   };
 
-  if ("geolocation" in navigator){
-  navigator.geolocation.getCurrentPosition(show_location, show_error, {timeout:1000, enableHighAccuracy: true}); //position request
-}else{
-      console.log("Browser doesn't support geolocation!");
-}
 
-function show_location(position){
-  var lat = position.coords.latitude
-  var lang = position.coords.longitude
-  getChangeEvent(lat, lang)
-}
+  function getChangeEvent(lat, lang){
+    var southWest = new google.maps.LatLng(lat, lang);
+    var northEast = new google.maps.LatLng(lat, lang);
+    var bounds = new google.maps.LatLngBounds(southWest,northEast);
+    var start_value = new google.maps.places.Autocomplete(
+      (document.getElementById('start')),
+      {types: ['geocode'],
+      bounds: bounds
+    });
+    var end_value = new google.maps.places.Autocomplete(
+      (document.getElementById('end')),
+      {types: ['geocode'],
+      bounds: bounds
+    });
+    google.maps.event.addListener(start_value, 'place_changed', function() {
+      $('#map_search_btn').click();
+    });
 
+    google.maps.event.addListener(end_value, 'place_changed', function() {
+      $('#map_search_btn').click();
+    });
 
-function show_error(error){
-  var lat = 40.750357
-  var lang = -73.983657
-  getChangeEvent(lat, lang)
-}
-
-function getChangeEvent(lat, lang){
-  var southWest = new google.maps.LatLng(lat, lang);
-  var northEast = new google.maps.LatLng(lat, lang);
-  var bounds = new google.maps.LatLngBounds(southWest,northEast);
-  var start_value = new google.maps.places.Autocomplete(
-    (document.getElementById('start')),
-    {types: ['geocode'],
-    bounds: bounds
-  });
-  var end_value = new google.maps.places.Autocomplete(
-    (document.getElementById('end')),
-    {types: ['geocode'],
-    bounds: bounds
-  });
-  google.maps.event.addListener(start_value, 'place_changed', function() {
-    $('#map_search_btn').click();
-  });
-
-  google.maps.event.addListener(end_value, 'place_changed', function() {
-    $('#map_search_btn').click();
-  });
-
-  document.getElementById('map_search_btn').addEventListener('click', onChangeHandler);
-}
+    document.getElementById('map_search_btn').addEventListener('click', onChangeHandler);
+  }
 
     // var southWest = new google.maps.LatLng(40.750357, -73.983657);
     // var northEast = new google.maps.LatLng(40.750357, -73.983657);

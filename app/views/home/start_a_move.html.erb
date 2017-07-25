@@ -46,7 +46,7 @@
     //     lang: 'en'
     // };
 
-    var current_date = ((minDate.getMonth()+1)+'-'+minDate.getDate()+'-'+minDate.getFullYear() + ' '+(getHour<12 ? getHour : getHour - 12)+':'+ (minDate.getMinutes()<30 ? '30' : "00") +' ' + (minDate.getHours()<12 ? 'AM' : 'PM'))
+    var current_date = ((minDate.getMonth()+1)+'-'+minDate.getDate()+'-'+minDate.getFullYear() + ' '+(getHour<12 ? getHour : getHour - 12)+':'+ (minDate.getMinutes()<30 ? '00' : "30") +' ' + (minDate.getHours()<12 ? 'AM' : 'PM'))
 
     $("#demo").val(current_date);
     var instance = mobiscroll.datetime('#demo', {
