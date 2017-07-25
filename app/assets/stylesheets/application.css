@@ -442,6 +442,7 @@ input[type=checkbox], input[type=radio] {
   z-index: 1;
 }
 
+
 .start_move_body {
   height: 100%;
 }
@@ -2107,7 +2108,7 @@ a:focus, a:hover {
     max-height: 395px;
   }
   .scroll_div_new{
-    margin-top: 20px;
+    margin-top: 2px;
     max-height: 385px;
   }
   .size-of-move-val-check-div{
