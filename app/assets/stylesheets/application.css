@@ -447,13 +447,10 @@ input[type=checkbox], input[type=radio] {
   height: 100%;
 }
 
-/*.search-map {
-=======
 .search-map {
->>>>>>> 35b803f54d85629f712e0146d2cc984847ae8778
   height: 266px;
 }
-*/
+
 .bottom_div {
   position: absolute;
   width: 100%;
@@ -1727,7 +1724,7 @@ a:focus, a:hover {
     margin-top: 150px !important;
   }
   .mr-to-20 {
-    margin-top: -25px !important; 
+    margin-top: -16px !important; 
   }
   .search-map-div p {
     margin: 0px;
@@ -1839,7 +1836,7 @@ a:focus, a:hover {
   }
 
   .mr-to-20 {
-    margin-top: -25px !important; 
+    margin-top: -16px !important; 
   }
 
   .size-of-move-val-check-div{
@@ -2319,6 +2316,10 @@ a:focus, a:hover {
     margin-top: 31px !important;
 }
 
+  .pad-95 {
+     margin-top: 0px !important; 
+}
+
 }
 
 .fa-info-circle{
@@ -2402,4 +2403,8 @@ input::-webkit-inner-spin-button {
   width: 20px;
   height: 20px;
   border-radius: 12px;
+}
+
+.pad-95 {
+  margin-top: 85px;
 }
