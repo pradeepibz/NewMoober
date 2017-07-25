@@ -442,6 +442,11 @@ input[type=checkbox], input[type=radio] {
   z-index: 1;
 }
 
+
+.start_move_body {
+  height: 100%;
+}
+
 .search-map {
   height: 266px;
 }
@@ -1729,7 +1734,7 @@ a:focus, a:hover {
     margin-top: 150px !important;
   }
   .mr-to-20 {
-    margin-top: -25px !important; 
+    margin-top: -16px !important; 
   }
   .search-map-div p {
     margin: 0px;
@@ -1836,12 +1841,12 @@ a:focus, a:hover {
     max-height: 340px;
   }
   .scroll_div_new{
-    margin-top: 20px;
+    margin-top: 2px;
     max-height: 323px;
   }
 
   .mr-to-20 {
-    margin-top: -25px !important; 
+    margin-top: -16px !important; 
   }
 
   .size-of-move-val-check-div{
@@ -2110,7 +2115,7 @@ a:focus, a:hover {
     max-height: 395px;
   }
   .scroll_div_new{
-    margin-top: 20px;
+    margin-top: 2px;
     max-height: 385px;
   }
   .size-of-move-val-check-div{
@@ -2321,6 +2326,10 @@ a:focus, a:hover {
     margin-top: 31px !important;
 }
 
+  .pad-95 {
+     margin-top: 0px !important; 
+}
+
 }
 
 .fa-info-circle{
@@ -2389,4 +2398,23 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.title .fa-times {
+  float: right;
+  font-size: 13px;
+  margin-top: -9px;
+  margin-right: -7px;
+  color: #fff;
+  padding-top: 3px;
+  padding-left: 1px;
+  font-weight: bold;
+  background: #3a69aa;
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+}
+
+.pad-95 {
+  margin-top: 85px;
 }
