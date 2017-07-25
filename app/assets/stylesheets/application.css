@@ -429,10 +429,10 @@ input[type=checkbox], input[type=radio] {
   height: 100%;
 }
 
-.search-map {
+/*.search-map {
   height: 266px;
 }
-
+*/
 .bottom_div {
   position: absolute;
   width: 100%;
@@ -1772,7 +1772,7 @@ a:focus, a:hover {
     max-height: 340px;
   }
   .scroll_div_new{
-    margin-top: 20px;
+    margin-top: 2px;
     max-height: 323px;
   }
 
@@ -2308,4 +2308,19 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.title .fa-times {
+  float: right;
+  font-size: 13px;
+  margin-top: -9px;
+  margin-right: -7px;
+  color: #fff;
+  padding-top: 3px;
+  padding-left: 1px;
+  font-weight: bold;
+  background: #3a69aa;
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
 }
