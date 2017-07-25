@@ -1665,3 +1665,26 @@ $(document).on('click', '.prop-acpt-go-back-btn', function(){
 $(document).on('click', '.payment-go-back-btn', function(){
   window.location.href = "/moves/proposal/accept"
 })
+$(document).on('click', '.card-close', function(){
+  var id = $(this).data("id")
+  $('.card_id').val(id);
+  $('#remove_card').modal();
+});
+
+$(document).on('click', '.confirm-remove-card', function(){
+  var id = $('.card_id').val();
+  var API_URL = "http://45.56.72.52/api/userapi/";
+  var current_user = localStorage.getItem('user_id');
+  var remove_card_params = '{"card_id": '+id+'}'
+  console.log(remove_card_params)
+  if (current_user != "" && current_user != null && current_user != undefined) {
+    $.ajax({
+      url: API_URL+"deleteCardDetail",
+      type: 'POST',
+      data: remove_card_params,
+    })
+    .done(function(data) {
+      window.location.href = "/payment-methods"
+    });
+  }
+});
