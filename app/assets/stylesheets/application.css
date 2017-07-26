@@ -357,7 +357,7 @@ a {
 }
 
 .new-scrol-div {
-  margin-bottom: 50px !important;
+  margin-bottom: 90px !important;
 }
 .scroll_div .row, #room-type-section.row, .move_row.row {
     margin-right: 3px;
@@ -1321,8 +1321,8 @@ input:focus {
   margin-right: 20px;
 }
 .um-values p, .pm-values p {
-  margin-left: 40px;
-  margin-right: 30px; 
+  margin-left: 0px;
+  margin-right: 0px; 
 }
 .no-move-data {
   text-align: center;
@@ -1839,11 +1839,11 @@ a:focus, a:hover {
   }
   .scroll_div{
     margin-top: 10px;
-    max-height: 342px;
+    max-height: 308px;
   }
   .scroll_div_new{
     margin-top: 2px;
-    max-height: 360px;
+    max-height: 320px;
   }
 
   .mr-to-20 {
@@ -1960,7 +1960,7 @@ a:focus, a:hover {
     margin-top: 20px;
   }
   .upcoming-title {
-    margin-left: 27px;
+    margin-left: -13px;
   }
   .upcoming-pro-count mark {
     left: 7px;
@@ -2113,11 +2113,15 @@ a:focus, a:hover {
   }
   .scroll_div{
     margin-top: 20px;
-    max-height: 395px;
+    max-height: 362px;
   }
   .scroll_div_new{
     margin-top: 2px;
-    max-height: 422px;
+    max-height: 382px;
+  }
+
+  .image-upload-button {
+    margin-top: 30px !important;
   }
   .size-of-move-val-check-div{
     margin: 0px;
@@ -2412,3 +2416,6 @@ input::-webkit-inner-spin-button {
   border-radius: 12px;
 }
 
+.no-img-sty {
+  font-weight: bold;
+}
