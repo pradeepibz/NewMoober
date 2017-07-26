@@ -1,21 +1,26 @@
 <%= render 'shared/static_header' %>
 
 <section class="list_of_moves_page">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4 up-col-md-12">
+  <div class="col-md-12 up-col-md-12">
     <div class="col-md-12 up-col-md-12">
-      <div class="upcoming_moves">Upcoming Moves</div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="upcoming_moves">Upcoming Moves</div>
+      </div>
+      <div class="col-md-4"></div>
       <div class="upcoming_values">
       </div>
     </div>
+
     <div class="col-md-12 up-col-md-12">
-      <div class="past_moves">Past Moves</div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="past_moves">Past Moves</div>
+      </div>
+      <div class="col-md-4"></div>
       <div class="past_values">
       </div>
     </div>
-  </div>
-  <div class="col-md-4">
   </div>
 </section>
 
@@ -45,13 +50,31 @@
         $.each(data.data.upcoming ,function(key, res){
           console.log(res)
           console.log("res")
-          var upcoming = '<div class="um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+''+yellowNotification(res)+'</p></div><hr>'
+          var upcoming = '<div class="col-md-12 upcome-border"><div class="col-md-8 um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+''+yellowNotification(res)+'</p></div><div class="col-md-4 upcoming-images_'+res.moving_request_id+'"></div></div>'
           $('.upcoming_values').append(upcoming)
+          if (res.moving_request_images.length > 0){ 
+            $.each(res.moving_request_images, function(i, img){
+              var images = '<div class="col-md-6"><img src="'+img.image_thumb+'"></div>'
+              $('.upcoming-images_'+res.moving_request_id+'').append(images)
+            })
+          }else{
+            var images = '<div class="col-md-6">No Images</div>'
+            $('.upcoming-images_'+res.moving_request_id+'').append(images)
+          }
         });
 
         $.each(data.data.past ,function(key, res){
-          var upcoming = '<div class="um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+''+yellowNotification(res)+'</p></div><hr>'
+          var upcoming = '<div class="col-md-12 upcome-border"><div class="col-md-8 um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+res.room_type_name+'</p><p>'+res.move_date_time+'</p><p>'+res.from_address+'</p><p>'+res.to_address+''+yellowNotification(res)+'</p></div><div class="col-md-4 past-images_'+res.moving_request_id+'"></div></div>'
           $('.past_values').append(upcoming)
+          if (res.moving_request_images.length > 0){ 
+            $.each(res.moving_request_images, function(i, img){
+              var images = '<div class="col-md-6"><img src="'+img.image_thumb+'"></div>'
+              $('.past-images_'+res.moving_request_id+'').append(images)
+            })
+          }else{
+            var images = '<div class="col-md-6">No Images</div>'
+            $('.past-images_'+res.moving_request_id+'').append(images)
+          }
         });
 
       })

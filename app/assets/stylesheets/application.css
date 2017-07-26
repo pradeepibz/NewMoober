@@ -1707,6 +1707,16 @@ a:focus, a:hover {
   margin-bottom: 20px;
 }
 
+.card-close {
+  margin-left: 57px;
+  cursor: pointer;
+}
+.upcome-border {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+}
 /*responsive code*/
 /*iPhone 5, 5s*/
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px){

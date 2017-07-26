@@ -6,7 +6,9 @@
       <div class="card-body col-md-6 text-center">
         <div class="col-md-12">
           <div class="col-md-4">
-            <div class='col-md-12'><div class='col-md-12'><div class='payment-go-back-btn'>Go Back</div></div></div>
+            <% if url_for(:back) == "http://localhost:3000/moves/proposal/accept" || url_for(:back) == "http://stage.moober.com/moves/proposal/accept"%>
+              <div class='col-md-12'><div class='col-md-12'><div class='payment-go-back-btn'>Go Back</div></div></div>
+            <% end %>
           </div>
           <div class="col-md-8 payment-header">
             <h2>Payment Methods</h2>
@@ -96,6 +98,25 @@
   </div>
 </div>
 
+<div id="remove_card" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog modal-sm mt-50 page_valid_align new_page_valid_align">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body" align="center">
+        <div class="popup_image">
+          <img src="/assets/popup_logo.png">
+        </div>
+        <div class="popup_content">
+          <h4 class="modal-title">Are you sure? Do you want to remove the card detail?</h4>
+          <input type="hidden" name="" class="card_id">
+          <button class="new-popup-btn confirm-remove-card">Okay</button>
+          <button class="new-popup-btn" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
   $(document).ready(function(){
     if ($(window).width() < 750) {
@@ -141,14 +162,14 @@
         $(data.data).each(function(index, card){
           var card_id = localStorage.getItem("card_id")
           if (card_id === card.id) {
-            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<br>');
+            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
           }
           else if(index === 0){
-            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<br>');
+            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
             localStorage.setItem("card_id", card.id);
             localStorage.setItem("card_number", card.card_number);
           }else{
-            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'"> XXXX XXXX XXXX '+card.card_number+'<br>');
+            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'"> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
           }
         })
       })
