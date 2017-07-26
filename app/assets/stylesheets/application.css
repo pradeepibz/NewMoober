@@ -312,7 +312,7 @@ a {
   display: none;
 }
 .mt-40{
-  margin-top: 5%;
+  margin-top: 3%;
 }
 .start-heading {
   border-bottom: 2px solid #d6d6c2;
@@ -320,6 +320,7 @@ a {
   width: 100%;
   padding-bottom: 0;
   height: 60px;
+  margin-top:27px;
 }
 .start-heading h4 {
   font-size: 14px;
@@ -352,7 +353,7 @@ a {
   margin-top: 100px;
   max-height: 460px;
   overflow-y: auto;
-  margin-bottom: 65px;
+  margin-bottom: 62.5px;
 }
 
 .new-scrol-div {
@@ -444,20 +445,19 @@ input[type=checkbox], input[type=radio] {
 
 
 .start_move_body {
-  height: 100%;
+  /*height: 100%;*/
 }
 
 .search-map {
-  height: 266px;
+  /*height: 266px;*/
 }
 
 .bottom_div {
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 0;
-  height: 65px;
-  background: #fff;
+  bottom: 0px;
+  height: 66px;
 }
 .new-next-btn {
   background: #ffc043 none repeat scroll 0 0;
@@ -482,6 +482,7 @@ input[type=checkbox], input[type=radio] {
   color: #000;
   padding-bottom: 15px;
   width: 100%;
+  margin-top:27px;
 }
 .start-heading1 h4 {
   font-size: 14px;
@@ -1828,11 +1829,11 @@ a:focus, a:hover {
   }
   .scroll_div{
     margin-top: 10px;
-    max-height: 340px;
+    max-height: 342px;
   }
   .scroll_div_new{
     margin-top: 2px;
-    max-height: 323px;
+    max-height: 360px;
   }
 
   .mr-to-20 {
@@ -1843,34 +1844,34 @@ a:focus, a:hover {
     margin: 5px;
   }
   .pd-15 {
-  	margin-right: 0px !important;
+    margin-right: 0px !important;
   }
   .slide__image--left {
-  	margin-left: 0%;
+    margin-left: 0%;
   }
   .slide__image--right {
-  	margin-left: -5%;
+    margin-left: -5%;
   }
   .notified_slide__image{
-  	width: 180%;
-  	margin-top: 0%;
+    width: 180%;
+    margin-top: 0%;
   }
   .welcome_section_left .new_slide__media{
-  	width: 500px;
-  	height: 200px;
-  	float: left;
+    width: 500px;
+    height: 200px;
+    float: left;
   }
   .new_slide__image{
-  	width: 100%;
-  	left: -16%;
-  	margin-top: -7%;
+    width: 100%;
+    left: -16%;
+    margin-top: -7%;
   }
   .welcome_section_right{
-  	float: left;
+    float: left;
   }
   .welcome_section_right .slide__text{
-  	line-height: 1.40;
-	}
+    line-height: 1.40;
+  }
   .list_of_moves_page {
     margin-top: 22% !important;
   }
@@ -2086,7 +2087,7 @@ a:focus, a:hover {
     width: 90%;
   }
   .mt-40 {
-    margin-top: 21%;
+    margin-top: 16%;
   }
   .image-div-submit{
     width: auto;
@@ -2106,7 +2107,7 @@ a:focus, a:hover {
   }
   .scroll_div_new{
     margin-top: 2px;
-    max-height: 385px;
+    max-height: 422px;
   }
   .size-of-move-val-check-div{
     margin: 0px;
@@ -2115,7 +2116,7 @@ a:focus, a:hover {
     margin: 50px !important;
   }
   .pd-15 {
-  	margin-right: 0px !important;
+    margin-right: 0px !important;
   }
   .list_of_moves_page {
     margin-top: 20% !important;
@@ -2129,45 +2130,45 @@ a:focus, a:hover {
     padding-left: 0px !important;
   }
   .slide__image--left {
-  	margin-left: 0%;
+    margin-left: 0%;
   }
   .slide__image--right {
-  	margin-left: -5%;
+    margin-left: -5%;
   }
   .notified_slide__image{
-  	width: 180%;
-  	margin-top: 0%;
+    width: 180%;
+    margin-top: 0%;
   }
   .welcome_section_left .new_slide__media{
-  	width: 600px;
-  	height: 250px;
-  	float: left;
+    width: 600px;
+    height: 250px;
+    float: left;
   }
   .new_slide__image{
-  	width: 100%;
-  	left: -19%;
-  	margin-top: -7%;
+    width: 100%;
+    left: -19%;
+    margin-top: -7%;
   }
   .welcome_section_right{
-  	float: left;
+    float: left;
   }
   .welcome_section_right .slide__text{
-  	line-height: 1.40;
+    line-height: 1.40;
   }
   .saving_section_left .fasterBrand {
-  	margin: 20px auto 0;
-  	max-width: 430px;
-  	text-align: center;
-  	width: 40%;
+    margin: 20px auto 0;
+    max-width: 430px;
+    text-align: center;
+    width: 40%;
   }
   .saving_section_left .fasterBrand img {
-  	width: 100%;
-  	margin-top: 15%;
-  	margin-bottom: 15%;
+    width: 100%;
+    margin-top: 15%;
+    margin-bottom: 15%;
   }
   .saving_section_left .chartLegend {
-  	font-size: 25px;
-  	margin-top: 40px;
+    font-size: 25px;
+    margin-top: 40px;
   }
   .modal_loading img {
     margin-top: 50%;
@@ -2309,17 +2310,13 @@ a:focus, a:hover {
    }
 
   .mt-40 {
-    margin-top: 21% !important;
+    margin-top: 16% !important;
   }
 
   .join .logos {
     margin-top: 31px !important;
 }
-
-  .pad-95 {
-     margin-top: 0px !important; 
-}
-
+ 
 }
 
 .fa-info-circle{
@@ -2405,6 +2402,3 @@ input::-webkit-inner-spin-button {
   border-radius: 12px;
 }
 
-.pad-95 {
-  margin-top: 85px;
-}

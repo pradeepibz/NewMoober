@@ -6,11 +6,11 @@
   <div class="row pd-15">
     <div class="col-md-4 search-map-div new-form">
       <p><span><img src="/assets/map-icon2.png"></span>Moving from</p>
-      <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()">
+      <input type="text" name="" id="start" placeholder="Pickup address" onFocus="geolocate()" value="chennai">
     </div>
     <div class="col-md-4 search-map-div new-form">
       <p><span><img src="/assets/map-icon1.png"></span>Moving to</p>
-      <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()">
+      <input type="" name="" id="end" placeholder="Destination address" onFocus="geolocate()" value="madurai">
     </div>
     <div class="col-md-4 search-map-div" align="center">
       <button class="hidden-btn" id="map_search_btn"></button>
@@ -144,7 +144,6 @@
 </section>
 <section class="slide" id="moving-extra-section">
   <div class="mt-40">
-    <!-- <p>moving-extra</p> -->
     <div class="container">
       <div class="row">
         <div class="col-md-12" align="center">
@@ -160,46 +159,45 @@
             <!-- <p>(e.g Piano)</p> -->
           </div>
         </div>
-      <div class="scroll_div">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <div class="ins-align">
-              <input id="yes" type="checkbox" class="new-app-ins moving-extra-model-yes">
-              <label for="yes">Yes</label><br />
-            </div>
-            <div class="new_popup_success_content">
+        <div class="scroll_div_new new-scrol-div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
               <div class="ins-align">
-                <input id="no" type="checkbox" class="new-app-ins moving-extra-model-no">
-                <label for="no">No</label>
+                <input id="yes" type="checkbox" class="new-app-ins moving-extra-model-yes">
+                <label for="yes">Yes</label><br />
+              </div>
+              <div class="new_popup_success_content">
+                <div class="ins-align">
+                  <input id="no" type="checkbox" class="new-app-ins moving-extra-model-no">
+                  <label for="no">No</label>
+                </div>
+              </div>
+              <div class="popup_success_content"></div>
+              <div class="add_new_btn">
+                <a class="" data-toggle="modal" data-target="#moving-extra">add more items</a>
               </div>
             </div>
-            <div class="popup_success_content"></div>
-            <div class="add_new_btn">
-              <a class="" data-toggle="modal" data-target="#moving-extra">add more items</a>
-            </div>
+            <div class="col-md-4"></div>
           </div>
-          <div class="col-md-4"></div>
         </div>
-      </div>
-      <div class="bottom_div">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <div align="center">
-              <a href='#building-type-setion' data-section_id="#moving-extra-section" class="new-next-btn smooth_scroll" id="extra-large">CONTINUE</a>
+        <div class="bottom_div">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <div align="center">
+                <a href='#building-type-setion' data-section_id="#moving-extra-section" class="new-next-btn smooth_scroll" id="extra-large">CONTINUE</a>
+              </div>
             </div>
+            <div class="col-md-4"></div>
           </div>
-          <div class="col-md-4"></div>
         </div>
-      </div>
       </div>
     </div>
   </div>
 </section>
 <section class="slide" id="building-type-setion">
   <div class="mt-40">
-    <!-- <p>building-type</p> -->
     <div class="container">
       <div class="row">
         <div class="col-md-12" align="center">
@@ -214,8 +212,8 @@
               <span class="span3 size-of-move-val-check-img"><img class="icon-image back_btn" src="/assets/back btn.jpg" data-back_section="#moving-extra-section" data-current_section="#building-type-setion"></span><span class="back-one-step">Back one step</span></h4>
           </div>
         </div>
-        <div class="scroll_div">
-          <div class="row">
+        <div class="scroll_div_new new-scrol-div">
+           <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4 new-content-div">
               <div class="new-left">
