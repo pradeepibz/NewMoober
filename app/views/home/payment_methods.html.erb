@@ -139,6 +139,7 @@
           console.log(data);
           $('.add_card_details').text("Change Card");
           $(".payment-message").text("Card Available")
+          cardDetails(current_user)
         },
         error: function(data){
           console.log(data);
@@ -150,33 +151,8 @@
       $('.add_card_details').text("Change Card");
       $(".payment-message").text("Card Available")
     <% end %>
-    var card_params = '{"user_id":"'+current_user+'"}'
     if (current_user != "" && current_user != null && current_user != undefined) {
-      $.ajax({
-        url: API_URL+"getUserCards",
-        type: 'POST',
-        data: card_params,
-      })
-      .done(function(data) {
-        console.log(data);
-        $(data.data).each(function(index, card){
-          var card_id = localStorage.getItem("card_id")
-          if (card_id === card.id) {
-            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
-          }
-          else if(index === 0){
-            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
-            localStorage.setItem("card_id", card.id);
-            localStorage.setItem("card_number", card.card_number);
-          }else{
-            $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'"> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
-          }
-        })
-      })
-      .fail(function(data) {
-        console.log(data);
-        console.log("error");
-      });
+      cardDetails(current_user)
     }
   });
   $(document).on('click', '.choose_card', function(){
@@ -186,4 +162,35 @@
     localStorage.setItem("card_number", card_number);
     $("#card-changed").modal();
   });
+
+  function cardDetails(current_user){
+    var API_URL = "http://45.56.72.52/api/userapi/";
+    var card_params = '{"user_id":"'+current_user+'"}'
+    $.ajax({
+      url: API_URL+"getUserCards",
+      type: 'POST',
+      data: card_params,
+    })
+    .done(function(data) {
+      console.log(data);
+      $(".card-methods").html("")
+      $(data.data).each(function(index, card){
+        var card_id = localStorage.getItem("card_id")
+        if (card_id === card.id) {
+          $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
+        }
+        else if(index === 0){
+          $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'" checked> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
+          localStorage.setItem("card_id", card.id);
+          localStorage.setItem("card_number", card.card_number);
+        }else{
+          $('.card-methods').append('<input type="radio" name="card" value="male" class="choose_card" data-id="'+card.id+'" data-card="'+card.card_number+'"> XXXX XXXX XXXX '+card.card_number+'<span class="card-close" aria-hidden="true" data-id="'+card.id+'">&#10006;</span><br>');
+        }
+      })
+    })
+    .fail(function(data) {
+      console.log(data);
+      console.log("error");
+    });
+  }
 </script>
