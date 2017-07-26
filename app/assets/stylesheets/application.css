@@ -357,7 +357,7 @@ a {
 }
 
 .new-scrol-div {
-  margin-bottom: 90px !important;
+  margin-bottom: 50px !important;
 }
 .scroll_div .row, #room-type-section.row, .move_row.row {
     margin-right: 3px;
@@ -1499,7 +1499,7 @@ ul li.user_moves .moves-count mark {
 }
 .upcoming-title {
   font-size: 18px;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 .no-proposal-message{
   font-size: 24px;
@@ -2045,6 +2045,10 @@ a:focus, a:hover {
     text-align: center;
   }
 
+  .new-scrol-div {
+    margin-bottom: 90px !important;
+  }
+
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -2304,6 +2308,10 @@ a:focus, a:hover {
     text-align: center;
   }
 
+  .new-scrol-div {
+    margin-bottom: 90px !important;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -2330,6 +2338,7 @@ a:focus, a:hover {
   .join .logos {
     margin-top: 31px !important;
 }
+
  
 }
 
@@ -2418,4 +2427,32 @@ input::-webkit-inner-spin-button {
 
 .no-img-sty {
   font-weight: bold;
+}
+
+.um-values span {
+  font-weight: bold;
+}
+
+.sqr-ft {
+  margin-top: -5px;
+  padding-top: 14px;
+  position: absolute;
+  background: orange;
+  margin-left: 58%;
+  padding: 10px 11px 6px;
+  color: #fff;
+  font-weight: bold;
+  display: none;
+}
+
+.sqr-ft1 {
+  margin-top: -5px;
+  padding-top: 14px;
+  position: absolute;
+  background: orange;
+  margin-left: 58%;
+  padding: 10px 11px 6px;
+  color: #fff;
+  font-weight: bold;
+  display: none;
 }
