@@ -1680,7 +1680,7 @@ a:focus, a:hover {
 }
 .payment-header h2{
   margin-top: 3px;
-  text-align: left;
+  text-align: center;
 }
 .acpt-go-back-btn {
   background-color: #ffc043;
