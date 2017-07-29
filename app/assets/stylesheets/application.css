@@ -2456,3 +2456,25 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
   display: none;
 }
+
+
+
+.coming-thum-img .col-img img {
+  width: 100%;
+}
+
+.coming-thum-img .no-img-sty {
+  overflow: hidden;
+}
+
+
+@media (min-width: 1200px) {
+   .coming-thum-img  {
+    overflow-x: scroll;
+    display: inline-flex;
+  }
+
+  .coming-thum-img col-img {
+    margin-left: -29px;
+  }.
+}
