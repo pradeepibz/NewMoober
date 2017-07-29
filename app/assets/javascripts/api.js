@@ -87,7 +87,7 @@ $(function(){
             $.each(data.data ,function(key, image) {
               console.log(image)
               if (key == 0){
-                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><span class=' sqr-ft sqr-ft_"+key+"'>500sqft</span> <span class='edit-icon edit-check-div_"+key+"'><img src='assets/edit-icon.png'> </span> <img class='move-type' src='/assets/add-image.jpg'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
+                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><span class=' sqr-ft sqr-ft_"+key+"'>500sqft</span> <span class='edit-icon edit-check-div_"+key+"'><img src='assets/edit-icon.png'> </span> <img class='move-type' src='"+image.image+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
                 $('.room_image').append(get_room_image);
               }
               else if (key == 5 || key == 6) {
