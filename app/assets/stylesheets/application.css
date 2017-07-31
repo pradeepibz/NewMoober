@@ -2486,3 +2486,20 @@ input::-webkit-inner-spin-button {
     margin-left: -29px;
   }
 }
+.pro-image {
+  display: inline;
+  margin: 0px;
+  padding: 5px;
+  width: 50%;
+}
+.coming-thum-img {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  height: auto;
+  max-width: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space:nowrap;
+}
