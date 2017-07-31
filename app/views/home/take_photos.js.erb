@@ -1,5 +1,5 @@
 <% @images.each do |img| %>
-  $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src='<%= root_url %><%= img %>' alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o'></i></span></div></div></div>");
+  $('.image-content').append("<div class='col-md-4 hide_image_div'><div class='col-md-12 portfolio-item'><img class='mphotos' src='<%= root_url %><%= img %>' alt=''><div class='image-cancel'><span><i class='fa fa-2x fa-times-circle-o img-can'></i></span></div></div></div>");
 <% end %>
 <% if @images.present? %>
   $('#skip-upload-images').css( 'pointer-events', 'none' );
