@@ -2050,6 +2050,9 @@ a:focus, a:hover {
   .new-scrol-div {
     margin-bottom: 90px !important;
   }
+  .prop-acpt-go-back-btn {
+    width: 50%;
+  }
 
 }
 
@@ -2312,6 +2315,9 @@ a:focus, a:hover {
 
   .new-scrol-div {
     margin-bottom: 90px !important;
+  }
+  .prop-acpt-go-back-btn {
+    width: 50%;
   }
 
 }
