@@ -24,17 +24,17 @@
 
                     <div class="col-md-8">
                       <div class="row">
-                        <label class="control-label">Expiration</label>
                         <div class="form-row">
                           <div class='col-xs-6 form-group expiration required'>
+                           <label class="control-label">Expiration Month</label>
                             <!-- <label class='control-label'>Expiration</label> -->
-                            <input class='form-control card-expiry-month' type="text" size="2" maxlength="2" data-stripe="exp-month"/ onkeypress='return validateQty(event);'>
+                            <input class='form-control card-expiry-month' type="text" size="2" maxlength="2" placeholder="MM" data-stripe="exp-month"/ onkeypress='return validateQty(event);'>
                           </div>
                         </div>
                         <div class="form-row">
                           <div class='col-xs-6 form-group expiration required'>
-                            <!-- <label class='control-label'> </label> -->
-                            <input class='form-control card-expiry-year' type="text" size="4" maxlength="4" data-stripe="exp-year"/ onkeypress='return validateQty(event);'>
+                            <label class='control-label'>Expiration Year </label>
+                            <input class='form-control card-expiry-year' type="text" size="4" maxlength="4" placeholder="YY" data-stripe="exp-year"/ onkeypress='return validateQty(event);'>
                           </div>
                         </div>
                       </div>

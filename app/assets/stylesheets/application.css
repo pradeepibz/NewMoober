@@ -1323,8 +1323,8 @@ input:focus {
   margin-right: 20px;
 }
 .um-values p, .pm-values p {
-  margin-left: 40px;
-  margin-right: 30px; 
+  margin-left: 0px;
+  margin-right: 0px; 
 }
 .no-move-data {
   text-align: center;
@@ -1501,7 +1501,7 @@ ul li.user_moves .moves-count mark {
 }
 .upcoming-title {
   font-size: 18px;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 .no-proposal-message{
   font-size: 24px;
@@ -1682,7 +1682,7 @@ a:focus, a:hover {
 }
 .payment-header h2{
   margin-top: 3px;
-  text-align: left;
+  text-align: center;
 }
 .acpt-go-back-btn {
   background-color: #ffc043;
@@ -1841,11 +1841,11 @@ a:focus, a:hover {
   }
   .scroll_div{
     margin-top: 10px;
-    max-height: 342px;
+    max-height: 308px;
   }
   .scroll_div_new{
     margin-top: 2px;
-    max-height: 360px;
+    max-height: 320px;
   }
 
   .mr-to-20 {
@@ -1962,7 +1962,7 @@ a:focus, a:hover {
     margin-top: 20px;
   }
   .upcoming-title {
-    margin-left: 27px;
+    margin-left: -13px;
   }
   .upcoming-pro-count mark {
     left: 7px;
@@ -2047,6 +2047,10 @@ a:focus, a:hover {
     text-align: center;
   }
 
+  .new-scrol-div {
+    margin-bottom: 90px !important;
+  }
+
 }
 
 /*iPhone 6+, 6s+, 7+*/
@@ -2115,11 +2119,15 @@ a:focus, a:hover {
   }
   .scroll_div{
     margin-top: 20px;
-    max-height: 395px;
+    max-height: 362px;
   }
   .scroll_div_new{
     margin-top: 2px;
-    max-height: 422px;
+    max-height: 382px;
+  }
+
+  .image-upload-button {
+    margin-top: 30px !important;
   }
   .size-of-move-val-check-div{
     margin: 0px;
@@ -2302,6 +2310,10 @@ a:focus, a:hover {
     text-align: center;
   }
 
+  .new-scrol-div {
+    margin-bottom: 90px !important;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -2328,6 +2340,7 @@ a:focus, a:hover {
   .join .logos {
     margin-top: 31px !important;
 }
+
  
 }
 
@@ -2414,3 +2427,56 @@ input::-webkit-inner-spin-button {
   border-radius: 12px;
 }
 
+.no-img-sty {
+  font-weight: bold;
+}
+
+.um-values span {
+  font-weight: bold;
+}
+
+.sqr-ft {
+  margin-top: -5px;
+  padding-top: 14px;
+  position: absolute;
+  background: orange;
+  margin-left: 58%;
+  padding: 10px 11px 6px;
+  color: #fff;
+  font-weight: bold;
+  display: none;
+}
+
+.sqr-ft1 {
+  margin-top: -5px;
+  padding-top: 14px;
+  position: absolute;
+  background: orange;
+  margin-left: 58%;
+  padding: 10px 11px 6px;
+  color: #fff;
+  font-weight: bold;
+  display: none;
+}
+
+
+
+.coming-thum-img .col-img img {
+  width: 100%;
+}
+
+.coming-thum-img .no-img-sty {
+  overflow: hidden;
+}
+
+
+@media (min-width: 1200px) {
+   .coming-thum-img  {
+    overflow-x: scroll;
+    display: inline-flex;
+  }
+
+  .coming-thum-img col-img {
+    margin-left: -29px;
+  }
+}
