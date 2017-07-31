@@ -2440,23 +2440,23 @@ input::-webkit-inner-spin-button {
   padding-top: 14px;
   position: absolute;
   background: orange;
-  margin-left: 58%;
   padding: 10px 11px 6px;
   color: #fff;
   font-weight: bold;
   display: none;
+  right: 52px;
 }
 
 .sqr-ft1 {
-  margin-top: -5px;
+  margin-top: 0px;
   padding-top: 14px;
   position: absolute;
   background: orange;
-  margin-left: 58%;
-  padding: 10px 11px 6px;
+  padding: 5px 11px 6px;
   color: #fff;
   font-weight: bold;
   display: none;
+  right: 52px;
 }
 
 

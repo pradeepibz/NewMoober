@@ -69,6 +69,7 @@ $(function (){
     if (success_value != '') {
       $(".edit-check-div_0").css("display", "block");
       $(".sqr-ft_0").css("display", "block");
+      $(".sqr-ft_0").text(success_value);
       $(".sqr-ft_5").css("display", "none");
       $(".sqr-ft_6").css("display", "none");
       $(".edit-check-div_5").css("display", "none");
@@ -95,6 +96,7 @@ $(function (){
       $(".edit-check-div_5").css("display", "block");
       $(".sqr-ft_0").css("display", "none");
       $(".sqr-ft_5").css("display", "block");
+      $(".sqr-ft_5").text(success_value+ " sq ft");
       $(".sqr-ft_6").css("display", "none");
       $(".edit-check-div_6").css("display", "none");
       localStorage.setItem('size_of_small_move', success_value)
@@ -114,6 +116,7 @@ $(function (){
       $(".sqr-ft_0").css("display", "none");
       $(".sqr-ft_5").css("display", "none");
       $(".sqr-ft_6").css("display", "block");
+      $(".sqr-ft_6").text(success_value + " sq ft");
       $(".edit-check-div_6").css("display", "block");
       localStorage.setItem('size_of_large_move', success_value)
       $('.item7').prop('checked', true);
