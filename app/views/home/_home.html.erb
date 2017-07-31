@@ -1,17 +1,15 @@
 <section class="slide bg_video">
   <div class="slide--videoCover">
-    <div class="slide__videoWrapper">
-      <div class="slide_videoCover"></div>
-      <video autoplay loop muted id="welcomeVideo">
-        <% browser = Browser.new(request.env['HTTP_USER_AGENT'], accept_language: "en-us") %>
-        <% if browser.safari? %>
-        <source src="http://50.116.5.156/moober.mp4" type="video/mp4" width="100%">
-          <% else %>
-          <source src="/assets/videos/moober.webm" type="video/webm" width="100%">
-            <% end %>
-      </video>
+    <!-- <div class="slide__videoWrapper"> -->
+    <div class="slide_videoCover"></div>
+    <div id="video-bg" class="slide__videoWrapper">
+      <!-- <video autoplay loop muted id="welcomeVideo"> -->
+      <video loop autoplay id="bg-video">
+        <source src="https://s3-us-west-2.amazonaws.com/moober/moober.mp4" type="video/mp4" type="video/mp4" style="wiidth:100%">
+      </video>  
       <img src="/assets/videoposter-mobile.jpg" class="home_image">
     </div>
+    <!-- </div> -->
     <div class="slide__content home">
       <h1 class="slide__content__title"> MOVING.</br> MADE.</br> SIMPLE. </h1>
       <div class="play videoPlayer" data-video="#welcomeVideo" data-toggle="modal" data-target="#myModal"> <img src="assets/play-mobile.svg" alt="Play Moober Video"> </div>
@@ -22,3 +20,4 @@
     </div>
   </div>
 </section>
+
