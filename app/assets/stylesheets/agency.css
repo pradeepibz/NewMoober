@@ -95,7 +95,7 @@ h6 {
 }
 .slide--videoCover .slide__content .play img, .slide_videoCover {
     height: 100%;
-    width: 100%;
+    /*width: 100%;*/
 }
 .slide__content__title{
   color: #fff;
@@ -135,9 +135,10 @@ h6 {
   overflow: hidden;
   width: 100%;
 }
-.slide__videoWrapper video{
+/*.slide__videoWrapper video{
   height: 100%;
-}
+  width: 100%;
+}*/
 /*side menu*/
 .mrf-webLateralMenu {
   min-height: 100vh;
@@ -312,7 +313,7 @@ h6 {
   display: block;
 }
 #welcomeVideo {
-  transform: translateX(-16%) translateY(-23%);
+  /*transform: translateX(-6%) translateY(-23%);*/
   z-index: 0;
 }
 .navbar-brand{
@@ -1273,6 +1274,13 @@ a {
   #welcomeVideo{
     display: none;
   }
+
+  #bg-video {
+
+    display: none;
+  }
+
+
   .home_image{
     display: block;
   }
@@ -1612,4 +1620,25 @@ a {
     margin-top: 1px;
     left: 0px;
   }
+}
+
+
+#video-bg {
+  /*position: fixed;*/
+  top: -8; right: 0; bottom: 0; left: 0;
+  overflow: hidden;
+}
+#video-bg > video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 1. No object-fit support: */
+@media (min-aspect-ratio: 16/9) {
+  #video-bg > video { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  #video-bg > video { width: 300%; left: -100%; }
 }
