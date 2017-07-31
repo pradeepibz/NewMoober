@@ -333,7 +333,6 @@ a {
 .icon-image {
   height: 40px;
   margin-right: 10px;
-  cursor: pointer;
 }
 .start-heading h4 .span2 {
   width: 60%;
@@ -346,6 +345,9 @@ a {
   text-align: center;
 }
 .start-heading .back_btn {
+  cursor: pointer;
+}
+.back_btn {
   cursor: pointer;
 }
 .scroll_div {
@@ -773,7 +775,7 @@ input[type=checkbox], input[type=radio] {
       width: calc(100% - 40px);
     height: 50px;
     box-sizing: border-box;
-    padding: 15px;
+    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #E6E6E6;
     border-radius: 8px;
@@ -1480,7 +1482,7 @@ ul li.user_moves .moves-count mark {
   padding-right: 0px;
 }
 .contact-mt-10 .contact-form, .contact-mt-10 .edit-profile {
-  height: 330px;
+  height: 385px;
 }
 .file-form {
   display: none;
@@ -2048,6 +2050,9 @@ a:focus, a:hover {
   .new-scrol-div {
     margin-bottom: 90px !important;
   }
+  .prop-acpt-go-back-btn {
+    width: 50%;
+  }
 
 }
 
@@ -2311,6 +2316,9 @@ a:focus, a:hover {
   .new-scrol-div {
     margin-bottom: 90px !important;
   }
+  .prop-acpt-go-back-btn {
+    width: 50%;
+  }
 
 }
 
@@ -2438,23 +2446,23 @@ input::-webkit-inner-spin-button {
   padding-top: 14px;
   position: absolute;
   background: orange;
-  margin-left: 58%;
   padding: 10px 11px 6px;
   color: #fff;
   font-weight: bold;
   display: none;
+  right: 52px;
 }
 
 .sqr-ft1 {
-  margin-top: -5px;
+  margin-top: 0px;
   padding-top: 14px;
   position: absolute;
   background: orange;
-  margin-left: 58%;
-  padding: 10px 11px 6px;
+  padding: 5px 11px 6px;
   color: #fff;
   font-weight: bold;
   display: none;
+  right: 52px;
 }
 
 

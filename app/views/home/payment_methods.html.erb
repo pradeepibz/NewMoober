@@ -5,12 +5,12 @@
       <div class="col-md-3"></div>
       <div class="card-body col-md-6 text-center">
         <div class="col-md-12">
-          <div class="col-md-2">
+          <div class="col-md-3">
             <% if url_for(:back) == "http://localhost:3000/moves/proposal/accept" || url_for(:back) == "http://stage.moober.com/moves/proposal/accept"%>
-              <div class='col-md-12'><div class='col-md-12'><div class='payment-go-back-btn'>Go Back</div></div></div>
+              <div class='payment-go-back-btn'>Go Back</div>
             <% end %>
           </div>
-          <div class="col-md-8 payment-header">
+          <div class="col-md-7 payment-header">
             <h2>Payment Methods</h2>
             <div class="card-methods">
             </div>
@@ -120,6 +120,12 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+    var payment_page = localStorage.getItem("payment_card")
+    if (payment_page == "true"){
+      $('.payment-go-back-btn').show();
+    }else{
+      $('.payment-go-back-btn').hide();
+    }
     if ($(window).width() < 750) {
       $("#mrf-contactBubbles").css("display","block");
       $("#mrf-contactBubbles").css("z-index","2");

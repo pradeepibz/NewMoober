@@ -87,11 +87,11 @@ $(function(){
             $.each(data.data ,function(key, image) {
               console.log(image)
               if (key == 0){
-                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><span class=' sqr-ft sqr-ft_"+key+"'>500sqft</span> <span class='edit-icon edit-check-div_"+key+"'><img src='assets/edit-icon.png'> </span> <img class='move-type' src='/assets/add-image.jpg'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
+                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><span class=' sqr-ft sqr-ft_"+key+"'>500sqft</span> <span class='edit-icon edit-check-div_"+key+"'><img src='assets/edit-icon.png'> </span> <img class='move-type' src='"+image.image+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
                 $('.room_image').append(get_room_image);
               }
               else if (key == 5 || key == 6) {
-                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><span class='sqr-ft sqr-ft_"+key+"'>500sqft</span><span class='edit-icon edit-check-div_"+key+"'><img src='assets/edit-icon.png'></span><img class='move-type' src='"+image.image+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
+                var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><span class='sqr-ft1 sqr-ft_"+key+"'>500sqft</span><span class='edit-icon edit-check-div_"+key+"'><img src='assets/edit-icon.png'></span><img class='move-type' src='"+image.image+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
                 $('.room_image').append(get_room_image);
               }else {
                 var get_room_image = "<div class='col-md-4'><div class='col-md-12 mt-25'><img class='move-type' src='"+image.image+"'><label for='room_image"+image.id+"' class='full-label'></label><div class='check-div'><div class='ins-image-align'><input id='room_image"+image.id+"' type='checkbox' class='new-app-ins item"+image.id+"' name='movesize' value='"+image.name+"' data-value='"+image.id+"' ><label>"+image.name+"</label></div></div></div></div>";
@@ -121,6 +121,9 @@ $(function(){
     var item5 = $('.item5').is(':checked');
     var item6 = $('.item6').is(':checked');
     var item7 = $('.item7').is(':checked');
+    if (item1 != true){
+      $('.size_of_move_value').val('');
+    }
     if (item1 == true || item2 == true || item3 == true || item4 == true || item5 == true || item6 == true || item7 == true) {
       $('#room_type').click();
     }else{
@@ -741,7 +744,7 @@ $(document).on('click', '#move-size', function(){
   var msize = $('input[name=movesize]:checked');
   localStorage.setItem('move_size', msize.val());
   localStorage.setItem('move_size_id', msize.data('value'));
-  if (msize.val() != "A single item") {
+  if (msize.val() != "Single Item") {
     localStorage.setItem('size_of_move', '');
   }
   if (msize.val() != "Small Office"){
@@ -769,10 +772,11 @@ $(document).on('click', '#move-images', function(){
 $(document).on('click', '#skip-upload-images', function(){
   var photos = []
   // if($('.image-content').is(".mphotos")) {
-    $('.mphotos').each(function(index){
-      // console.log($(this).attr('src'));
-      photos[index] = $(this).attr('src')
-    });
+    if ($(".image-content").hasClass("mphotos")) {
+      $('.mphotos').each(function(index){
+        photos[index] = $(this).attr('src')
+      });
+    }
   // }
   localStorage.setItem("images", JSON.stringify(photos));
 });
@@ -1351,7 +1355,7 @@ function movingProposals(request_id, lat, lang){
         console.log(data)
         $(".map-prop").show();
         $.each(data.data ,function(key, res){
-          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-9 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-3 pull-right'><div class='text-center accept-btn' data-request-id="+res.moving_request_id+" data-id="+res.id+" data-company="+res.company_name+" data-price="+res.price+"> Accept </div></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span>Proposed Time: </span><span><b>"+res.created_date+"</b></span></div></div></div><div class='col-md-12'><hr></div>");
+          $(".proposal_results").append("<div class='success-proposals'><div class='col-md-12'> <div class='col-md-9 col-xs-8 pro-cmpny-name'><span>Company: </span><span><b><u>"+ res.company_name+"</u></b></span> </div><div class='col-xs-4 col-md-3 pull-right'><div class='text-center accept-btn' data-request-id="+res.moving_request_id+" data-id="+res.id+" data-company="+res.company_name+" data-price="+res.price+"> Accept </div></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span> Proposed Price: </span><span><b>$"+res.price+"</b></span></div></div><div class='col-md-12'><div class='col-md-9 col-xs-8'><span>Proposed Time: </span><span><b>"+res.updated_move_date_time+"</b></span></div></div></div><div class='col-md-12'><hr></div>");
         });
       
       })
@@ -1686,5 +1690,17 @@ $(document).on('click', '.confirm-remove-card', function(){
     .done(function(data) {
       window.location.href = "/payment-methods"
     });
+  }
+});
+$(document).on('click', '.add_card_details', function(){
+  localStorage.setItem("payment_card", "true")
+}); 
+$(document).on('click', '.payment_methods', function(){
+  localStorage.setItem("payment_card", '')
+});
+$(document).on('click', '.img-can', function(){
+  var photos_length = $(".mphotos").length
+  if (photos_length <= 1){
+    $('#skip-upload-images').css( 'pointer-events', 'visible' );
   }
 });
