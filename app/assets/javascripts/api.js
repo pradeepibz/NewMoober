@@ -744,7 +744,7 @@ $(document).on('click', '#move-size', function(){
   var msize = $('input[name=movesize]:checked');
   localStorage.setItem('move_size', msize.val());
   localStorage.setItem('move_size_id', msize.data('value'));
-  if (msize.val() != "A single item") {
+  if (msize.val() != "Single Item") {
     localStorage.setItem('size_of_move', '');
   }
   if (msize.val() != "Small Office"){
@@ -772,10 +772,11 @@ $(document).on('click', '#move-images', function(){
 $(document).on('click', '#skip-upload-images', function(){
   var photos = []
   // if($('.image-content').is(".mphotos")) {
-    $('.mphotos').each(function(index){
-      // console.log($(this).attr('src'));
-      photos[index] = $(this).attr('src')
-    });
+    if ($(".image-content").hasClass("mphotos")) {
+      $('.mphotos').each(function(index){
+        photos[index] = $(this).attr('src')
+      });
+    }
   // }
   localStorage.setItem("images", JSON.stringify(photos));
 });
