@@ -93,15 +93,6 @@ $(function (){
       $(".edit-check-div_6").css("display", "none");
       localStorage.setItem('size_of_small_move', success_value)
       $('.item6').prop('checked', true);
-      $('.size-of-move-val-check-link').html('');
-      var append_value = "<a href='#building-type-setion' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
-      $('.size-of-move-val-check-link').html(append_value);
-      $('.size-of-move-val-check-img').html('');
-      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#photos-section' data-current_section='#building-type-setion'>";
-      $('.size-of-move-val-check-img').html(img_append_value);
-      $('.size-of-move-val-check-div').html('');
-      var div_append_value = "<a href='#building-type-setion' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
-      $('.size-of-move-val-check-div').html(div_append_value);
     }
   });
 
@@ -117,15 +108,6 @@ $(function (){
       $(".edit-check-div_6").css("display", "block");
       localStorage.setItem('size_of_large_move', success_value)
       $('.item7').prop('checked', true);
-      $('.size-of-move-val-check-link').html('');
-      var append_value = "<a href='#building-type-setion' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
-      $('.size-of-move-val-check-link').html(append_value);
-      $('.size-of-move-val-check-img').html('');
-      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#photos-section' data-current_section='#building-type-setion'>";
-      $('.size-of-move-val-check-img').html(img_append_value);
-      $('.size-of-move-val-check-div').html('');
-      var div_append_value = "<a href='#building-type-setion' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
-      $('.size-of-move-val-check-div').html(div_append_value);
     }
   });
 
@@ -397,6 +379,15 @@ $(function (){
   $(document).on('change', '.item6', function(e){
     if ( $('.item1').is(':checked') ) {
       $('.item1').prop('checked', false)
+      $('.size-of-move-val-check-link').html('');
+      var link_append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
+      $('.size-of-move-val-check-link').html(link_append_value);
+      $('.size-of-move-val-check-img').html('');
+      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#moving-extra-section' data-current_section='#building-type-setion'>";
+      $('.size-of-move-val-check-img').html(img_append_value);
+      $('.size-of-move-val-check-div').html('');
+      var div_append_value = "<a href='#moving-extra-section' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
+      $('.size-of-move-val-check-div').html(div_append_value);
     }
     if ( $('.item2').is(':checked') ) {
       $('.item2').prop('checked', false)
@@ -424,6 +415,15 @@ $(function (){
   $(document).on('change', '.item7', function(e){
     if ( $('.item1').is(':checked') ) {
       $('.item1').prop('checked', false)
+      $('.size-of-move-val-check-link').html('');
+      var link_append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
+      $('.size-of-move-val-check-link').html(link_append_value);
+      $('.size-of-move-val-check-img').html('');
+      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#moving-extra-section' data-current_section='#building-type-setion'>";
+      $('.size-of-move-val-check-img').html(img_append_value);
+      $('.size-of-move-val-check-div').html('');
+      var div_append_value = "<a href='#moving-extra-section' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
+      $('.size-of-move-val-check-div').html(div_append_value);
     }
     if ( $('.item2').is(':checked') ) {
       $('.item2').prop('checked', false)
@@ -530,6 +530,36 @@ $(function (){
     }
     if ( $('.item5').is(':checked') ) {
       $('.item5').prop('checked', false)
+    }
+    if ( $('.item6').is(':checked') ) {
+      $('.item6').prop('checked', false)
+    }
+    if ( $('.item7').is(':checked') ) {
+      $('.item7').prop('checked', false)
+    }
+  });
+
+  $(document).on('change', '.item5', function(){
+    if ( $('.item1').is(':checked') ) {
+      $('.item1').prop('checked', false)
+      $('.size-of-move-val-check-link').html('');
+      var link_append_value = "<a href='#moving-extra-section' data-section_id='#photos-section' class='smooth_scroll'>Skip</a>";
+      $('.size-of-move-val-check-link').html(link_append_value);
+      $('.size-of-move-val-check-img').html('');
+      var img_append_value = "<img class='icon-image back_btn' src='/assets/back btn.jpg' data-back_section='#moving-extra-section' data-current_section='#building-type-setion'>";
+      $('.size-of-move-val-check-img').html(img_append_value);
+      $('.size-of-move-val-check-div').html('');
+      var div_append_value = "<a href='#moving-extra-section' id='add_images' data-section_id='#photos-section' class='hidden-btn smooth_scroll'>CONTINUE</a><a class='image-div-submit add_images_section' id='move-images'>CONTINUE</a>";
+      $('.size-of-move-val-check-div').html(div_append_value);
+    }
+    if ( $('.item2').is(':checked') ) {
+      $('.item2').prop('checked', false)
+    }
+    if ( $('.item3').is(':checked') ) {
+      $('.item3').prop('checked', false)
+    }
+    if ( $('.item4').is(':checked') ) {
+      $('.item4').prop('checked', false)
     }
     if ( $('.item6').is(':checked') ) {
       $('.item6').prop('checked', false)

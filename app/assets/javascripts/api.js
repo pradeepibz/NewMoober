@@ -121,6 +121,9 @@ $(function(){
     var item5 = $('.item5').is(':checked');
     var item6 = $('.item6').is(':checked');
     var item7 = $('.item7').is(':checked');
+    if (item1 != true){
+      $('.size_of_move_value').val('');
+    }
     if (item1 == true || item2 == true || item3 == true || item4 == true || item5 == true || item6 == true || item7 == true) {
       $('#room_type').click();
     }else{
