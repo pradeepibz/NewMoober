@@ -297,15 +297,24 @@
           <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-              <div class="new-left">
+              <div class="new-left datetime-section">
                 <!-- <input id="move-date" type="text" class="datepicker new-app-input"> -->
-                <div mbsc-page class="demo-rtl">
+                <!-- <div mbsc-page class="demo-rtl">
                   <input id="demo" placeholder="Please Select..." />
 
                   <button id="clear">Clear</button>
                   <button id="show">Show</button>
+
+
+                </div> -->
+                  <div class="calendar-section">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" name="date3" id="date3" class="mobiscroll" />
+                        </div>
+                    </div>
+                  </div>
                   
-                </div>
               </div>
             </div>
             <div class="col-md-3"></div>
@@ -496,5 +505,8 @@
       $(".title").remove();
     }
   });
+
+  $("#date3").scroller({ theme: 'ios', lang: 'EN', preset: 'datetime' });
+
 </script>
 

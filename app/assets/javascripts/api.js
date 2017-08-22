@@ -154,6 +154,7 @@ $(function(){
     var item5 = $('.destination-elevator').is(':checked');
     var item6 = $('.destination-residential').is(':checked');
     if ((item1 == true || item2 == true || item3 == true) && (item4 == true || item5 == true || item6 == true) ) {
+      $("#date3").trigger("click");
       $('#walk_up_section').click();
     }else{
       $('#page_valid').modal();
@@ -814,7 +815,8 @@ $(document).on('click', '#pickup-destination', function(){
 });
 
 $(document).on('click', '#date_move', function(){
-  var movetime = $('#demo').val();
+  $("#dw_set").trigger("click");
+  var movetime = $('#date3').val();
   localStorage.setItem('move_date', movetime);
   var flexDate = $('#date-flexible').is(':checked')
   var flextime = $('#time-flexible').is(':checked')

@@ -21,11 +21,12 @@
 //= require api
 //= require mobiscroll.javascript.min
 //= require jquery.scrollify
-//= require mobile_nav
 //= require iscroll
+//= require mobile_nav
 //= require jquery.remotipart
 //= require charges
 //= require cable
+//= require mobiscroll
 
 // disable double tab to zoom 
 (function($) {

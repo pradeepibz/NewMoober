@@ -25,6 +25,7 @@ $(function() {
   
   // Back Button on Start a Move page
   $(document).on('click', '.back_btn', function(event) {
+    $("#date3").trigger("click");
     var back_section_div = $(this).data('back_section');
     var current_section_div = $(this).data('current_section');
     var back_section_height= $(back_section_div).height();

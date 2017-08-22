@@ -19,6 +19,7 @@
  *= require home
  *= require mobiscroll.javascript.min
  *= require mobile_nav
+ *= require mobiscroll
  */
 $main-color: #fff;
 $highlight-color: #66bb6a;
@@ -1718,6 +1719,9 @@ a:focus, a:hover {
   margin-bottom: 20px;
   border: 0;
   border-bottom: 1px solid #eee;
+}
+#date3 {
+  display: none;
 }
 /*responsive code*/
 /*iPhone 5, 5s*/
