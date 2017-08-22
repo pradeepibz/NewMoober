@@ -588,7 +588,6 @@
             $('input').prop('disabled', true);
             // Show
             dwo.show().off('click').on('click', function() {
-              alert("yes")
                 that.hide()
             });
             dw.attr('class', 'dw ' + s.theme).show();
@@ -664,7 +663,6 @@
 
         // Init show datewheel
         $(elm).addClass('scroller').off('click').on('click', function (e) {
-              alert("no")
             if (s.showOnFocus)
                 that.show();
         });
