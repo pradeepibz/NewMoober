@@ -815,9 +815,6 @@ $(document).on('click', '#pickup-destination', function(){
 });
 
 $(document).on('click', '#date_move', function(){
-  $("#dw_set").trigger("click");
-  var movetime = $('#date3').val();
-  localStorage.setItem('move_date', movetime);
   var flexDate = $('#date-flexible').is(':checked')
   var flextime = $('#time-flexible').is(':checked')
   localStorage.setItem('flexible_date', flexDate);
@@ -840,7 +837,9 @@ $(document).on('click', '#date_move', function(){
 $(document).on('click', '#contact_continue', function(){
   var name = $('#name').val();
   var phone = $('#phone').val();
-
+  $("#dw_set").trigger("click");
+  var movetime = $('#date3').val();
+  localStorage.setItem('move_date', movetime);
   localStorage.setItem('name', name);
   localStorage.setItem('phone', phone);
   var size_of_move = localStorage.getItem('size_of_move')

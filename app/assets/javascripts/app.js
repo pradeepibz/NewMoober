@@ -125,6 +125,7 @@ $(function (){
 
   $(document).on('click', '.size_of_move_cancel', function(){
     $(".edit-check-div_0").css("display", "none");
+    $(".sqr-ft_0").css("display", "none");
     if ( $('.item1').is(':checked') ) {
       localStorage.setItem('size_of_move', '')
       $('.item1').prop('checked', false);
@@ -142,6 +143,7 @@ $(function (){
 
   $(document).on('click', '.size_of_move_small_cancel', function(){
     $(".edit-check-div_5").css("display", "none");
+    $(".sqr-ft_5").css("display", "none");
     if ( $('.item6').is(':checked') ) {
       localStorage.setItem('size_of_small_move', '')
       $('.item6').prop('checked', false);
@@ -159,6 +161,7 @@ $(function (){
 
   $(document).on('click', '.size_of_move_large_cancel', function(){
     $(".edit-check-div_6").css("display", "none");
+    $(".sqr-ft_6").css("display", "none");
     if ( $('.item7').is(':checked') ) {
       localStorage.setItem('size_of_large_move', '')
       $('.item7').prop('checked', false);

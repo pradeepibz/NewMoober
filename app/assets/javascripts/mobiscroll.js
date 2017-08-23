@@ -84,7 +84,7 @@
         this.disable = function() {
             s.disabled = true;
             if ($(elm).is('input'))
-                $(elm).prop('disabled', true);
+                $("#date3").prop('disabled', true);
         }
 
         /**
@@ -502,7 +502,7 @@
                                 w[s.monthText][i] =
                                     (s.dateOrder.search(/MM/) < 0 ?
                                     (s.dateOrder.search(/M/) < 0 ?
-                                    (s.dateOrder.search(/mm/) < 0 ? (i + 1) : (i < 9) ? ('0' + (i + 1)) : (i + 1)) : s.monthNamesShort[i]) : s.monthNames[i]);
+                                    (s.dateOrder.search(/mm/) < 0 ? (i + 1) : (i < 9) ? ('0' + (i + 1)) : (i + 1)) : s.monthNamesShort[i]) : s.monthNamesShort[i]);
                         }
                         else if (k == dOrd) {
                             w[s.dayText] = {};
@@ -585,7 +585,7 @@
 
             // Disable inputs to prevent bleed through (Android bug)
             $('input:not(:disabled)').addClass('dwtd');
-            $('input').prop('disabled', true);
+            $('#date3').prop('disabled', true);
             // Show
             dwo.show().off('click').on('click', function() {
                 that.hide()
@@ -727,9 +727,10 @@
             ampm: true,
             seconds: false,
             timeFormat: 'hh:ii A',
-            startYear: date.getFullYear() - 100,
+            startYear: date.getFullYear(),
             endYear: date.getFullYear() + 1,
             monthNames: ['January','February','March','April','May','June', 'July','August','September','October','November','December'],
+            currentMonthName: date.getMonth(),
             monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
             dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],

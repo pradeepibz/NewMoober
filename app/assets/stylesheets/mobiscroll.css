@@ -4,7 +4,7 @@
     position: absolute;
     top: 5%;
     left: 0;
-    z-index: 1001;
+    z-index: 1;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1000;
+    z-index: 1;
     opacity: .7 !important;
     filter:Alpha(Opacity=70);
 }
@@ -88,7 +88,7 @@
     display: block;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 .dww li {
     list-style: none;
