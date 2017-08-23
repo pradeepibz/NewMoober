@@ -2070,6 +2070,9 @@ a:focus, a:hover {
   .dw.ios .dwhl {
     margin-left: 0px !important;
   }
+  .dww ul{
+    width: 50% !important;
+  }
 
 }
 
@@ -2339,6 +2342,9 @@ a:focus, a:hover {
   
   .dw.ios .dwhl {
     margin-left: 0px !important;
+  }
+  .dww ul{
+    width: 50% !important;
   }
 
 }
