@@ -39,7 +39,7 @@ $(function (){
     $('#edit-building-type-pickup').modal('hide');
     if (success_value != '') {
       $('.edit-pickup-value-append').html('');
-      var append_value = "<p><span class='walkup_full_content' data-edit_pickup_value='"+success_value+"'>"+success_value+"</span><span class='pull-right pickup_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p>"
+      var append_value = "<p><span class='walkup_full_content' title='"+success_value+"' data-edit_pickup_value='"+success_value+"'>"+success_value+"</span><span class='pull-right pickup_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p>"
       $('.edit-pickup-value-append').html(append_value);
     }
   });
@@ -57,7 +57,7 @@ $(function (){
     $('#edit-building-type-destination').modal('hide');
     if (success_value != '') {
       $('.edit-destination-value-append').html('');
-      var append_value = "<p><span class='destination_full_content' data-edit_destination_value='"+success_value+"'>"+success_value+"</span><span class='pull-right destination_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p>"
+      var append_value = "<p><span class='destination_full_content' title='"+success_value+"' data-edit_destination_value='"+success_value+"'>"+success_value+"</span><span class='pull-right destination_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p>"
       $('.edit-destination-value-append').html(append_value);
     }
   });
@@ -70,6 +70,7 @@ $(function (){
       $(".edit-check-div_0").css("display", "block");
       $(".sqr-ft_0").css("display", "block");
       $(".sqr-ft_0").text(success_value);
+      $('.sqr-ft_0').attr('title', success_value);
       $(".sqr-ft_5").css("display", "none");
       $(".sqr-ft_6").css("display", "none");
       $(".edit-check-div_5").css("display", "none");
@@ -601,7 +602,7 @@ $(function (){
       if (success_value != '') {
         var success_value = $('.moving-extra_value').val();
         var random_val = Math.random();
-        var success_content = "<div class='ins-align'><div class='popup_success'><p><span class='full_content' data-find_extra='"+random_val+"'data-moving_value='"+success_value+"'>"+success_value+"</span><span class='pull-right popup_success_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p></div></div>";
+        var success_content = "<div class='ins-align'><div class='popup_success'><p><span class='full_content' title='"+success_value+"' data-find_extra='"+random_val+"'data-moving_value='"+success_value+"'>"+success_value+"</span><span class='pull-right popup_success_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p></div></div>";
         if (success_value_count == 2) {
           $('.add_new_btn').css("display", "none");
         }else{
@@ -705,7 +706,7 @@ $(function (){
     $('.destination-success-content').css("display", "none");
     var success_value = $('.destination-value').val();
     if (success_value != '') {
-      var success_content = "<div class='ins-align'><div class='popup_success edit-destination-value-append'><p><span class='destination_full_content' data-edit_destination_value='"+success_value+"'>"+success_value+"</span><span class='pull-right destination_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p></div></div>";
+      var success_content = "<div class='ins-align'><div class='popup_success edit-destination-value-append'><p><span class='destination_full_content' title='"+success_value+"' data-edit_destination_value='"+success_value+"'>"+success_value+"</span><span class='pull-right destination_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p></div></div>";
       $('.new_destination-success-content').html(success_content);
     }else{
       if ($('.new_destination-success-content').is(':empty')) {
@@ -748,7 +749,7 @@ $(function (){
     $('.pickup-success-content').css("display", "none");
     var success_value = $('.pickup-value').val();
     if (success_value != '') {
-      var success_content = "<div class='ins-align'><div class='popup_success edit-pickup-value-append'><p><span class='walkup_full_content' data-edit_pickup_value='"+success_value+"'>"+success_value+"</span><span class='pull-right pickup_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p></div></div>";
+      var success_content = "<div class='ins-align'><div class='popup_success edit-pickup-value-append'><p><span class='walkup_full_content' title='"+success_value+"' data-edit_pickup_value='"+success_value+"'>"+success_value+"</span><span class='pull-right pickup_cancel_btn'><i class='fa fa-2x fa-times-circle-o'></i></span></p></div></div>";
       $('.new_pickup-success-content').html(success_content);
     }else{
       if ($('.new_pickup-success-content').is(':empty')) {    

@@ -629,7 +629,9 @@ input[type=checkbox], input[type=radio] {
  position: absolute;
  width: 70%;
  max-width: 367px;
- overflow-y: auto;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
 }
 .destination_full_content{
   cursor: pointer;
@@ -638,7 +640,9 @@ input[type=checkbox], input[type=radio] {
  position: absolute;
  width: 70%;
  max-width: 367px;
- overflow-y: auto;
+ overflow: hidden;
+ white-space: nowrap;
+ text-overflow: ellipsis;
 }
 .full_content {
   cursor: pointer;
@@ -647,7 +651,9 @@ input[type=checkbox], input[type=radio] {
   position: absolute;
   width: 70%;
   max-width: 367px;
-  overflow-y: auto;
+  overflow: hidden;
+  white-space: nowrap;
+ text-overflow: ellipsis;
 }
 .pickup_cancel_btn {
   cursor: pointer;
@@ -2481,6 +2487,8 @@ input::-webkit-inner-spin-button {
   max-width: 286px;
   width: 100%;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .sqr-ft1 {
