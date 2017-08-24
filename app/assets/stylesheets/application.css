@@ -2079,6 +2079,10 @@ a:focus, a:hover {
   .dww ul{
     width: 50% !important;
   }
+  .sqr-ft{
+    right: 52px;
+    max-width: 300px;
+  }
 
 }
 
@@ -2351,6 +2355,10 @@ a:focus, a:hover {
   }
   .dww ul{
     width: 50% !important;
+  }
+  .sqr-ft{
+    right: 62px;
+    max-width: 330px;
   }
 
 }
