@@ -2081,7 +2081,7 @@ a:focus, a:hover {
   }
   .sqr-ft{
     right: 52px;
-    max-width: 300px;
+    max-width: 300px !important;
   }
 
 }
@@ -2357,8 +2357,8 @@ a:focus, a:hover {
     width: 50% !important;
   }
   .sqr-ft{
-    right: 62px;
-    max-width: 330px;
+    right: 62px !important;
+    max-width: 330px !important;
   }
 
 }
