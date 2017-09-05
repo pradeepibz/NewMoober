@@ -521,7 +521,12 @@
                         w[s.hourText][i] = (i < 10) ? ('0' + i) : i;
                     w[s.minuteText] = {};
                     for (var i = 0; i < 60; i += s.stepMinute)
-                        w[s.minuteText][i] = (i < 10) ? ('0' + i) : i;
+                        if (i == 0){
+                          w[s.minuteText][i] = "00"
+                        }else if(i == 1){
+                          w[s.minuteText][i] = "30"
+                        }
+
                     if (s.seconds) {
                         w[s.secText] = {};
                         for (var i = 0; i < 60; i += s.stepSecond)
