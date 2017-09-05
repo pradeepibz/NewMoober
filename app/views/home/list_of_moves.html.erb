@@ -53,7 +53,7 @@
         $.each(data.data.upcoming ,function(key, res){
           console.log(res)
           console.log("res")
-          var upcoming = '<div class="col-md-12 upcome-border"><div class="col-md-8 um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+'<span> Room_type: </span> ' + res.room_type_name+'</p><p>'+ ' <span> Moving Date: </span> ' + res.move_date_time+'</p><p>'+ ' <span> Pickup Address : </span> ' + res.from_address+'</p><p>'+ '<span> Destination Address : </span> ' + res.to_address+''+yellowNotification(res)+'</p></div><div class="col-md-4"><div class="coming-thum-img upcoming-images_'+res.moving_request_id+'"></div></div></div>'
+          var upcoming = '<div class="col-md-12 upcome-border"><div class="col-md-8 um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposals</p><p>'+'<span> Move Type: </span> ' + res.room_type_name+'</p><p>'+ ' <span> Moving Date: </span> ' + res.move_date_time+'</p><p>'+ ' <span> Pickup Address : </span> ' + res.from_address+'</p><p>'+ '<span> Destination Address : </span> ' + res.to_address+''+yellowNotification(res)+'</p></div><div class="col-md-4"><div class="coming-thum-img upcoming-images_'+res.moving_request_id+'"></div></div></div>'
           $('.upcoming_values').append(upcoming)
           if (res.moving_request_images.length > 0){ 
             $.each(res.moving_request_images, function(i, img){
@@ -67,7 +67,7 @@
         });
 
         $.each(data.data.past ,function(key, res){
-          var upcoming = '<div class="col-md-12 upcome-border"><div class="col-md-8 um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposalssss</p><p>'+ '<span> Room_type: </span> ' + res.room_type_name+'</p><p>'+ ' <span> Moving Date: </span> ' +  res.move_date_time+'</p><p>'+ ' <span> Pickup Address : </span> ' + res.from_address+'</p><p>'+ '<span> Destination Address : </span> ' +  res.to_address+''+yellowNotification(res)+'</p></div><div class="col-md-4"><div class="coming-thum-img past-images_'+res.moving_request_id+'"></div></div></div>'
+          var upcoming = '<div class="col-md-12 upcome-border"><div class="col-md-8 um-values"><div class="moving-requests" data-request-id="'+res.moving_request_id+'" data-from-add="'+res.from_address+'">'+redNotification(res)+'</div><p>Awaiting Proposalssss</p><p>'+ '<span> Move Type: </span> ' + res.room_type_name+'</p><p>'+ ' <span> Moving Date: </span> ' +  res.move_date_time+'</p><p>'+ ' <span> Pickup Address : </span> ' + res.from_address+'</p><p>'+ '<span> Destination Address : </span> ' +  res.to_address+''+yellowNotification(res)+'</p></div><div class="col-md-4"><div class="coming-thum-img past-images_'+res.moving_request_id+'"></div></div></div>'
           $('.past_values').append(upcoming)
           if (res.moving_request_images.length > 0){ 
             $.each(res.moving_request_images, function(i, img){
@@ -98,6 +98,8 @@
   function yellowNotification(res){
     if (res.notification_count > 0){
       return '<span class="up-pro-count"><mark>'+res.notification_count+'</mark></span>'
+    }else{
+      return ""
     }
   }
 </script>

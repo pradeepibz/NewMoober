@@ -2492,8 +2492,8 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
   display: none;
   right: 52px;
-  max-width: 286px;
-  width: 100%;
+  max-width: 290px;
+  width: auto;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -2548,4 +2548,7 @@ input::-webkit-inner-spin-button {
   overflow-y: hidden;
   overflow-x: auto;
   white-space:nowrap;
+}
+#move-size{
+  margin-top: 25px;
 }
