@@ -40,7 +40,7 @@ function initMap() {
       icon: image
     });
     var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
-    directionsDisplay.setOptions( { suppressMarkers: true } );
+    directionsDisplay.setOptions( { suppressMarkers: true, preserveViewport: true } );
     var onChangeHandler = function() {
       calculateAndDisplayRoute(directionsService, directionsDisplay, markerArray, map);
     };
@@ -109,8 +109,11 @@ function initMap() {
     };
     directionsService.route(request, function(response, status) {
      if (status === 'OK') {
+      var tmpZoom = map.getZoom();
       directionsDisplay.setDirections(response);
       showSteps(response, markerArray, map);
+
+      var tmpZoom = map.getZoom();
      }
     });
   }
@@ -146,7 +149,7 @@ function initMap() {
           marker.setPosition(result.geometry.location);
           marker.setIcon(image);
           // if($(window).width()>640){
-            map.setZoom(13);
+          map.setZoom(13);
           // }
         }
     });
