@@ -1061,6 +1061,9 @@ $(document).on('click', '.start-move-done-ok', function(){
   }else if(window.location.hostname == "moober.com"){
     window.location.href = "http://moober.com/"
   }
+  else if(window.location.hostname == "www.moober.com"){
+    window.location.href = "http://www.moober.com/"
+  }
 });
 
 $(document).on('click', '.start-move-error-ok', function(){
@@ -1612,7 +1615,7 @@ $(document).on('click', '.edit-password-btn', function(){
 
 $(document).on('click', '.payment-updated', function(){
   var referrer =  document.referrer;
-  if (referrer === "http://localhost:3000/moves/proposal/accept" || referrer === "http://stage.moober.com/moves/proposal/accept" || referrer === "http://moober.com/moves/proposal/accept") {
+  if (referrer === "http://localhost:3000/moves/proposal/accept" || referrer === "http://stage.moober.com/moves/proposal/accept" || referrer === "http://moober.com/moves/proposal/accept" || referrer === "http://www.moober.com/moves/proposal/accept") {
     window.location.href = "/moves/proposal/accept"
   }else {
     $("#card-changed").modal("hide");
