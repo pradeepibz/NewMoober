@@ -4,7 +4,7 @@ $(function(){
   });
 });
 $(function(){
-  const API_URL = "http://45.56.72.52/api/userapi/";
+  const API_URL = "http://dashboard.moober.com/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   localStorage.setItem('statmov_signin', "");
   var homepageShare = localStorage.getItem('homapage_share');
@@ -946,7 +946,7 @@ $(document).on('click', '#contact_continue', function(){
 $(document).on('click', '#start_mov_btn', function(){
   $(this).attr('disabled', 'disabled');
   $('.modal_loading').show();
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var move_size_id = localStorage.getItem('move_size_id')
   var move_size = localStorage.getItem('move_size');
   var items = JSON.parse(localStorage.getItem("items"))
@@ -1086,7 +1086,7 @@ $(document).on('click', '.website-signup-btn', function() {
     userRegistration(email, password, re_password)
   });
 $(document).on('click', '.web-forget-btn', function(){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var email = $('.forget_email').val();
   var forget_params = '{"email":"'+email+'"}'
   console.log(forget_params)
@@ -1165,7 +1165,7 @@ $(document).on('click', '.forget-pswrd-link', function(){
 });
 
 function userLogin(email, password){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var device_id = '';
   var token = '';
   var login_params = '{"email":"'+email+'","password":"'+password+'","device_id":"'+device_id+'","token":"'+token+'"}'
@@ -1247,7 +1247,7 @@ function userLogin(email, password){
 }
 
 function userRegistration(email, password, password_confirmation) {
-    var API_URL = "http://45.56.72.52/api/userapi/";
+    var API_URL = "http://dashboard.moober.com/api/userapi/";
     var device_id = '';
     var token = '';
     var sign_up_params = '{"email":"'+email+'","re_password":"'+password_confirmation+'","device_id":"'+device_id+'","password":"'+password+'","token":"'+token+'"}'
@@ -1349,7 +1349,7 @@ $(document).on('click', '.moving-requests', function(){
 });
 
 function movingProposals(request_id, lat, lang){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   var proposal_params = '{"moving_request_id":'+ request_id +',"user_id": '+ current_user +'}'
   if (current_user != "" && current_user != null && current_user != undefined){
@@ -1413,7 +1413,7 @@ function movingProposals(request_id, lat, lang){
 }
 
 function userMovesRequest(current_user){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   if (current_user != "" && current_user != null && current_user != undefined) {
     var user_params = '{"user_id": '+ current_user +'}'
     $.ajax({
@@ -1473,7 +1473,7 @@ $(document).on('click', '.accept-btn', function(){
 });
 
 function acceptCompany(){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   var request_id = localStorage.getItem('proposal_accept_request');
   var company_name = localStorage.getItem('company_name');
@@ -1555,7 +1555,7 @@ $(document).on('click', '.add-card-payment', function(){
 });
 
 $(document).on('click', '.edit-profile-btn', function(){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   var name = $('.edit-name').val();
   var phone = $('.edit-number').val();
@@ -1587,7 +1587,7 @@ $(document).on('click', '.edit-profile-btn', function(){
 });
 
 $(document).on('click', '.edit-password-btn', function(){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   var current_password = $(".edit-current-pswd").val();
   var new_password = $(".edit-new-pswd").val();
@@ -1623,7 +1623,7 @@ $(document).on('click', '.payment-updated', function(){
 });
 
 $(document).on('click', '.approve-btn', function(){
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   var proposal_id = localStorage.getItem("proposal_id");
   var promo_code = localStorage.getItem("promo_code");
@@ -1685,7 +1685,7 @@ $(document).on('click', '.card-close', function(){
 
 $(document).on('click', '.confirm-remove-card', function(){
   var id = $('.card_id').val();
-  var API_URL = "http://45.56.72.52/api/userapi/";
+  var API_URL = "http://dashboard.moober.com/api/userapi/";
   var current_user = localStorage.getItem('user_id');
   var remove_card_params = '{"card_id": '+id+'}'
   console.log(remove_card_params)

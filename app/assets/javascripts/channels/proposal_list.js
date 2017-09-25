@@ -11,7 +11,7 @@ $(document).ready(function(){
     },
     received: function(data) {
       // var current_user = localStorage.getItem('user_id');
-      // var API_URL = "http://45.56.72.52/api/userapi/";
+      // var API_URL = "http://dashboard.moober.com/api/userapi/";
       // var proposal_params = '{"user_id": '+ current_user +'}'
       // if (current_user != "" && current_user != null && current_user != undefined){
       //   $.ajax({

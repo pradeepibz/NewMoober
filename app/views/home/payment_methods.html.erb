@@ -131,7 +131,7 @@
       $("#mrf-contactBubbles").css("z-index","2");
       $(".page_valid_align").css("top","95px");
     }
-    var API_URL = "http://45.56.72.52/api/userapi/";
+    var API_URL = "http://dashboard.moober.com/api/userapi/";
     var current_user = localStorage.getItem('user_id');
     var card_id = "<%= session[:card_id]%>"
     var customer_id = "<%= session[:stripe_customer_id]%>"
@@ -171,7 +171,7 @@
   });
 
   function cardDetails(current_user){
-    var API_URL = "http://45.56.72.52/api/userapi/";
+    var API_URL = "http://dashboard.moober.com/api/userapi/";
     var card_params = '{"user_id":"'+current_user+'"}'
     $.ajax({
       url: API_URL+"getUserCards",

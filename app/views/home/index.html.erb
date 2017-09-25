@@ -106,7 +106,7 @@
     $(".mrf-gradient").click();
     var homepageShare = localStorage.getItem('homapage_share');
     <% if session[:fb_token].present? && session[:email].present? && session[:password] %>
-      var API_URL = "http://45.56.72.52/api/userapi/";
+      var API_URL = "http://dashboard.moober.com/api/userapi/";
       var email = "<%= session[:email] %>"
       var uid = "<%= session[:uid] %>"
       var name = "<%= session[:name] %>"
